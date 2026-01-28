@@ -1,0 +1,172 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "data": {
+        "banner_title": "About Our Institute",
+        "banner_subtitle": "We are committed to excellence.",
+        "banner_subtitle1": "We are committed.",
+        "banner_description": "We are committed to excellence.",
+        "banner_image": "/uploads/banner.jpg"
+      }
+    },
+    {
+      "type": "ourVisionAndMission",
+      "data": {
+        "title": "Our Vision & Mission",
+        "subtitle": "Redefining the Future of Leadership",
+        "description": "To cultivate visionary leaders who drive innovation, embrace responsibility, and shape industries and communities for a better tomorrow.",
+        "items": [
+          {
+            "title": "Innovates <br/> Fearlessly",
+            "desc": "Challenges the status quo and builds bold new business solutions.",
+            "imageSrc": "/bg-images/banner/about-us/vission-3.png"
+          },
+          {
+            "title": "Leads <br/> Responsibly",
+            "desc": "Makes strategic, ethical, and high-impact decisions.",
+            "imageSrc": "/bg-images/banner/about-us/vission-1.png"
+          },
+          {
+            "title": "Shapes Industries & <br/> Communities",
+            "desc": "Transforms businesses and society for the better.",
+            "imageSrc": "/bg-images/banner/about-us/vission-2.png"
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "outJourney",
+      "data": {
+        "banner_title": "The ASBS Story",
+        "banner_subtitle": "What if management education prepares students for the real world - not just the next exam?",
+        "banner_description": "Founded in 2009, ASBS has pioneered a practical, skills-based approach to management education that bridges the gap between theory and practice.",
+        "banner_image": "/uploads/banner.jpg"
+      }
+    },
+    
+    {
+      "type": "milestones",
+      "data": {
+        "items": [
+          {
+            "year": 2009,
+            "title": "<strong>ASBS MBA was incorporated.</strong>"
+          },
+          {
+            "year": 2010,
+            "list": [
+              "<strong>27th July – Batch 1 Launched.</strong>",
+              "<strong>IMEX & MERC Pune </strong> became <strong> Akademia Supported Business Schools.</strong>"
+            ]
+          },
+          {
+            "year": 2011,
+            "title": "<strong>Two batches began.</strong>"
+          },
+          {
+            "year": 2012,
+            "title": "<strong>ASBS signed with Oriental School of Business</strong>"
+          },
+          {
+            "year": 2014,
+            "title": "<strong>HKIMSR Andheri </strong> was added.</strong>"
+          },
+          {
+            "year": 2017,
+            "list": [
+              "<strong>ASBS became India’s first CEEMAN Member.</strong>",
+              "<strong>First International Immersion </strong>",
+              "<strong>ISMR Pune & UKS Kurla</strong> signed to become <strong>Akademia Supported B-Schools.</strong>"
+            ]
+          },
+          {
+            "year": 2018,
+            "title": "<strong>OIM MMS </strong> became an <strong>ASBS Aggregated entity.</strong>"
+          },
+          {
+            "year": 2023,
+            "title": "Career Prof signed with FFOI & KMMIAS."
+          },
+          {
+            "year": 2024,
+            "title": "Career Prof signed with <strong>IIT Madras</strong>."
+          },
+          {
+            "year": 2025,
+            "list": [
+              "ASBS expands nationally – Signs a PGDM partnership."
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "leadershipTeam",
+      "data": {
+        "members": [
+          {
+            "name": "Vinayak Kudva",
+            "imgSrc": "/bg-images/banner/about-us/leader-with-bg/vinayak.webp",
+            "titles": ["Learning Leader", "Career Strategist", "Mentor MMS, NMIMS"],
+            "experience": "20+ years in education"
+          },
+          {
+            "name": "Munira Lokhandwala",
+            "imgSrc": "/bg-images/banner/about-us/leader-with-bg/munira.webp",
+            "titles": ["Author", "Strategist", "CFA®", "FRM®"],
+            "experience": "20+ years mentoring MBA aspirants"
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "whatWillYouGet",
+      "data": {
+        "items": [
+          {
+            "Src": "/icons/group.png",
+            "title": "India's Only CEEMAN-Connected B-school",
+            "desc": "A global seal of excellence"
+          },
+          {
+            "Src": "/icons/bulb.png",
+            "title": "97% Placement Success",
+            "desc": "Backed by 250+ recruiters"
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "pedagogy",
+      "data": {
+        "items": [
+          { "Src": "/icons/student.png", "title": "Core Academics", "desc": "Strong foundation" },
+          { "Src": "/icons/tracking.png", "title": "Skill Labs", "desc": "Hands-on experience" }
+        ]
+      }
+    },
+
+    {
+      "type": "topCollages",
+      "data": {
+        "collages": [
+          {
+            "collageSrc": "/home/top-collages/terna.png",
+            "collageName": "Terna Global Business School",
+            "location": "Nerul"
+          },
+          {
+            "collageSrc": "/home/top-collages/osb.png",
+            "collageName": "Oriental School of Business",
+            "location": "Vashi"
+          }
+        ]
+      }
+    }
+  ]
+}

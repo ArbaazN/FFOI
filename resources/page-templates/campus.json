@@ -1,0 +1,356 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "subtitle": "",
+        "description": "",
+        "highlightsInput": "",
+        "typertextInput": "",
+        "backgroundImage": "",
+        "backgroundMobileImage": "",
+        "partnerMultipleImages": [],
+        "logoMultipleImages": []
+      }
+    },
+    {
+      "type": "placementStats",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "placements": [
+          {
+            "iconImg": "",
+            "countNumberInput": "",
+            "preNumberInput": "",
+            "postNumberInput": "",
+            "descriptionInput": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "topRecruiterLogos",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "multipleImages": []
+      }
+    },
+    {
+      "type": "mentor",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "list": [
+          {
+            "titleInput": "Jane Smith",
+            "image": "/mentors/jane_smith.png",
+            "descriptionInput": "Senior Career Coach"
+          }
+        ]
+      }
+    },
+    {
+      "type": "reasonsToChoose",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "programNameInput": "",
+        "items": [
+          {
+            "iconImage": "/icons/global.png",
+            "titleInput": "World-Class Faculty",
+            "descriptionTextarea": "Industry leaders and academic experts are bridging theory with real-world insights."
+          },
+          {
+            "iconImage": "/icons/pedagogy.png",
+            "titleInput": "Dynamic, Hands-On Learning",
+            "descriptionTextarea": "Case studies, global programs, and practical projects for real-world readiness."
+          },
+          {
+            "iconImage": "/icons/program.png",
+            "titleInput": "Dual Specialization",
+            "descriptionTextarea": "High-demand specializations: Marketing & Finance"
+          },
+          {
+            "iconImage": "/icons/placements.png",
+            "titleInput": "Top Placements",
+            "descriptionTextarea": "Strong corporate connections for excellent career opportunities."
+          },
+          {
+            "iconImage": "/icons/global.png",
+            "titleInput": "The Best ROI MBA Program",
+            "descriptionTextarea": "Value-driven education ensures high returns on investment."
+          }
+        ]
+      }
+    },
+    {
+      "type": "studentTestimonials",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "list": [
+          {
+            "nameInput": "",
+            "profileImg": "",
+            "ratingInput": "",
+            "reviewTextarea": "",
+            "designationInput": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "studentVideoTestimonials",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "list": [
+          {
+            "videoUrlInput": "",
+            "nameInput": "",
+            "designationInput": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "AdProcessData",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "processdata": [
+          {
+            "image": "",
+            "descriptionTextarea": "Submit Online Application"
+          },
+          {
+            "image": "",
+            "descriptionTextarea": "Appear for Entrance Test (CET/CAT/MAT/CMAT/XAT)"
+          },
+          {
+            "image": "",
+            "descriptionTextarea": "Personal Interviews"
+          },
+          {
+            "image": "",
+            "descriptionTextarea": "Final Selection and Enrollment"
+          }
+        ]
+      }
+    },
+    {
+      "type": "WhoShouldApply",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "criteria": [
+          {
+            "iconImg": "",
+            "descriptionTextarea": "10+2+3 / 10+2+4 Graduates from Commerce, Finance, Management, Science or Engineering backgrounds with minimum 50% Marks. Final year students may apply"
+          },
+          {
+            "iconImg": "",
+            "descriptionTextarea": "Want core finance careers in investment, markets, and risk. Prefer data-backed decision making over theory-heavy learning."
+          },
+          {
+            "iconImg": "",
+            "descriptionTextarea": "No prior coding or advanced mathematics background is mandatory. The curriculum builds competency progressively."
+          },
+          {
+            "iconImg": "",
+            "descriptionTextarea": "No prior coding or advanced mathematics background is mandatory. The curriculum builds competency progressively."
+          }
+        ]
+      }
+    },
+    {
+      "type": "curriculumOverview",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "curriculum": [
+          {
+            "titleInput": "Semester 1",
+            "subtitleInput": "Finance & Quantitative Foundations",
+            "detailsTextarea": "<p>Financial Accounting, Business Statistics, Managerial Economics, Marketing Management, Organizational Behavior, Business Communication, Legal Aspects of Business, IT for Managers</p>"
+          },
+          {
+            "titleInput": "Semester 1",
+            "subtitleInput": "Finance & Quantitative Foundations",
+            "detailsTextarea": "<p>Financial Accounting, Business Statistics, Managerial Economics, Marketing Management, Organizational Behavior, Business Communication, Legal Aspects of Business, IT for Managers</p>"
+          }
+        ]
+      }
+    },
+    {
+      "type": "campusesLogo",
+      "status": "enable",
+      "data": {
+        "titleInput": "<p>Our Campuses</p>",
+        "descriptionTextarea": "<p>We Stand By You Every Step Of The Way</p>",
+        "multipleImages": []
+      }
+    },
+    {
+      "type": "FacultyData",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "alumni": [
+          {
+            "nameInput": "",
+            "designationInput": "",
+            "profileImg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "illustrativeCarrerPath",
+      "status": "enable",
+      "data": {
+        "titleInput": "Illustrative Career Paths that Define Success",
+        "descriptionTextarea": "Step into the high-stakes world of finance and carve your path to success!",
+        "careerPaths": [
+          {
+            "nameInput": "",
+            "titleInput": "",
+            "subtitleInput": "",
+            "descriptionTextarea": "",
+            "startSalaryInput": "",
+            "topSalaryInput": "",
+            "profileImg": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "programSnapShots",
+      "status": "enable",
+      "data": {
+        "titleInput": "<p>Program Snapshots</p>",
+        "descriptionTextarea": "<p>Key Highlights of ASBS PGDM</p>",
+        "snapshots": [
+          {
+            "labelInput": "",
+            "valueInput": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "AlumniData",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "alumni": [
+          {
+            "nameInput": "",
+            "designationInput": "",
+            "profileImg": "",
+            "companyLogo": ""
+          },
+          {
+            "nameInput": "",
+            "designationInput": "",
+            "profileImg": "",
+            "companyLogo": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "feesFinanceData ",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "fees_data": [
+          {
+            "titleInput": "",
+            "yearsInput": "",
+            "fees": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "Infrastructure",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "alumni": [
+          {
+            "image": "",
+            "nameInput": "",
+            "descriptionTextarea": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExtracurricularActivities",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "activities": [
+          {
+            "image": "",
+            "titleInput": "",
+            "list": [
+              {
+                "name": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "questions": [
+          {
+            "questionsInput": "What is ASBS PGDM?",
+            "answerTextarea": "ASBS PGDM is a 2-year AICTE-approved Post Graduate Diploma in Management (PGDM) designed to prepare students for modern, high-growth careers with practical training and global exposure"
+          },
+          {
+            "questionsInput": "",
+            "answerTextarea": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "footer",
+      "status": "enable",
+      "data": {
+        "mobileInput": "",
+        "emailInput": "",
+        "cityInput": "",
+        "addressTextarea": ""
+      }
+    }
+  ]
+}

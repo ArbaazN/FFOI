@@ -1,0 +1,594 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "badge": "Admissions Open for 2026",
+        "title": "MBA in <span class=\"text-blue\">Financial Engineering</span>",
+        "subtitle": "Build Your Future in Core Global Finance.",
+        "description": "Investment Banking | Hedge Funds | Equity Research | Risk & Quant Roles",
+        "highlights": "UGC Approved | 2-Year Full-Time MBA",
+        "backgroundImage": "images/student_banner.png",
+        "multipleImg": [],
+        "ctaButtons": [
+          {
+            "labelInput": "Enquire Now",
+            "actionInput": "enquire",
+            "styleInput": "primary"
+          },
+          {
+            "labelInput": "Download Brochure",
+            "actionInput": "download_brochure",
+            "styleInput": "outline"
+          }
+        ],
+        "stats": [
+          {
+            "countInput": "25+",
+            "labelInput": "Years of Legacy"
+          },
+          {
+            "countInput": "25k+",
+            "labelInput": "Individuals Inspired"
+          },
+          {
+            "countInput": "1k+",
+            "labelInput": "Institutes Partnered"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Prospect_companies",
+      "data": {
+        "multipleImg": []
+      }
+    },
+    {
+      "type": "programSnapshot",
+      "data": {
+        "titleInput": "Program <span class=\"text-blue\">Snapshot</span>",
+        "subtitleInput": "A quick look at the program's value, ROI, and accreditation.",
+        "items": [
+          {
+            "keyInput": "program_fee",
+            "iconInput": "fee",
+            "valueInput": "₹12L",
+            "labelInput": "Program Fee"
+          },
+          {
+            "keyInput": "career_trajectory",
+            "iconInput": "growth",
+            "valueInput": "₹30 LPA*",
+            "labelInput": "Career Trajectory Within 3 Years"
+          },
+          {
+            "keyInput": "roi_horizon",
+            "iconInput": "roi",
+            "valueInput": "~15 Mths",
+            "labelInput": "ROI Horizon"
+          },
+          {
+            "keyInput": "duration",
+            "iconInput": "calendar",
+            "valueInput": "2 Year",
+            "labelInput": "Full Time"
+          },
+          {
+            "keyInput": "approval",
+            "iconInput": "approval",
+            "valueInput": "UGC",
+            "labelInput": "Approved"
+          },
+          {
+            "keyInput": "seats",
+            "iconInput": "seats",
+            "valueInput": "60 Intakes",
+            "labelInput": "Seats Available"
+          }
+        ],
+        "highlight-badgeInput": "Exclusive Offer",
+        "highlight-titleInput": "100% Tuition Fee Scholarship",
+        "highlight-descriptionTextarea": "Available for CAT 99+ percentilers. Other CAT takers can apply for Scholarship Test.",
+        "ctaButtons": [
+          {
+            "labelInput": "Enquire Now",
+            "actionInput": "enquire",
+            "styleInput": "primary"
+          }
+        ],
+        "highlight-disclaimerTextarea": "* Career trajectory projections are based on current placement data, alumni performance reviews, and projected industry trends for the financial engineering sector in India (2024–2027). Actual results may vary based on individual performance and market conditions."
+      }
+    },
+    {
+      "type": "testimonials",
+      "data": {
+        "titleInput": "What Our <span class=\"text-blue\">Students</span> Say",
+        "slider": true,
+        "items": [
+          {
+            "nameInput": "Saloni Bhosle",
+            "image": "images/saloni.png",
+            "quoteTextarea": "From financial modelling to IPO strategies, this MBA has shaped my future in global finance."
+          },
+          {
+            "nameInput": "Pai Nitesh Nagesh",
+            "image": "images/pai.png",
+            "quoteTextarea": "FFOI's faculty combines deep industry knowledge with practical insights, making learning impactful and relevant."
+          },
+          {
+            "nameInput": "Mitali Goyal",
+            "image": "images/mitali.png",
+            "quoteTextarea": "The practical learning approach and industry connections have made all the difference in my career."
+          },
+          {
+            "nameInput": "Melvin Rodrigues",
+            "image": "images/melvin.png",
+            "quoteTextarea": "FFOI's comprehensive curriculum has given me a competitive edge in the world of investment banking."
+          },
+          {
+            "nameInput": "Akhtar Shah",
+            "image": "images/akhtar.png",
+            "quoteTextarea": "FFOI's MBA program has provided me with the skills and confidence to excel in investment banking."
+          },
+          {
+            "nameInput": "Ishwari Kalsekar",
+            "image": "images/ishwar.png",
+            "quoteTextarea": "The live market simulations have been invaluable for real-world finance applications."
+          },
+          {
+            "nameInput": "Adwait Sunil",
+            "image": "images/adwait.png",
+            "quoteTextarea": "The MBA in Investment Banking has opened doors to a global career in finance."
+          },
+          {
+            "nameInput": "Falak Nawab",
+            "image": "images/falak.png",
+            "quoteTextarea": "The hands-on training and industry exposure have made me job-ready for top financial firms."
+          }
+        ]
+      }
+    },
+    {
+      "type": "whyFinancialEngineering",
+      "data": {
+        "titleInput": "Why MBA in <span class=\"text-blue\">Financial Engineering?</span>",
+        "subtitleTextarea": "Financial Engineering is no longer optional — it is the infrastructure of global finance.",
+        "items": [
+          {
+            "keyInput": "quant_aum",
+            "iconInput": "growth",
+            "statInput": "$3+ Trillion",
+            "headingInput": "Managed by Quant Strategies",
+            "descriptionTextarea": "Quantitative and engineered strategies dominate hedge funds and institutional investing globally, reshaping asset management."
+          },
+          {
+            "keyInput": "algo_trading",
+            "iconInput": "algorithm",
+            "statInput": "60–70%",
+            "headingInput": "Algorithmic Global Trades",
+            "descriptionTextarea": "Financial engineering skills power modern trading, pricing, and risk systems. The majority of market volume is now code-driven."
+          },
+          {
+            "keyInput": "roi_multiplier",
+            "iconInput": "roi",
+            "statInput": "2–3× ROI",
+            "headingInput": "Higher Salary Potential",
+            "descriptionTextarea": "Top finance roles pay 2–3× traditional MBA roles. Global IB, quant, and risk roles consistently outperform average salaries."
+          },
+          {
+            "keyInput": "derivatives_market",
+            "iconInput": "market",
+            "statInput": "$600T",
+            "headingInput": "Derivatives Market Value",
+            "descriptionTextarea": "Financial engineering underpins pricing, hedging, and risk control of these massive markets, exceeding global GDP."
+          },
+          {
+            "keyInput": "job_growth",
+            "iconInput": "trend",
+            "statInput": "15% Growth",
+            "headingInput": "Finance + Data Roles",
+            "descriptionTextarea": "Growing faster than conventional finance and general management roles. Demand for tech-savvy finance professionals is surging."
+          },
+          {
+            "keyInput": "bank_adoption",
+            "iconInput": "bank",
+            "statInput": "80%+",
+            "headingInput": "Tier-1 Bank Adoption",
+            "descriptionTextarea": "Over 80% of top banks use quantitative risk models. Valuation and capital adequacy depend on these frameworks."
+          }
+        ]
+      }
+    },
+    {
+      "type": "eligibility",
+      "data": {
+        "titleInput": "Who Should <span class=\"text-blue\">Apply?</span>",
+        "subtitleTextarea": "This program is suited for candidates who:",
+        "image": {
+          "src": "images/student4.png",
+          "alt": "MBA Financial Engineering Student",
+          "style": "grayscale"
+        },
+        "criteria": [
+          {
+            "keyInput": "education",
+            "iconInput": "check",
+            "textTextarea": "10+2+3 / 10+2+4 graduates from Commerce, Finance, Management, Science or Engineering backgrounds with minimum 50% marks. Final year students may apply."
+          },
+          {
+            "keyInput": "career_intent",
+            "iconInput": "target",
+            "textTextarea": "Aspirants aiming for core finance careers in investment, markets, and risk who prefer data-backed decision making over theory-heavy learning."
+          },
+          {
+            "keyInput": "no_coding_required",
+            "iconInput": "learning",
+            "textTextarea": "No prior coding or advanced mathematics background is mandatory. The curriculum builds competency progressively."
+          }
+        ],
+        "cta": {
+          "labelInput": "Enquire Now",
+          "actionInput": "enquire",
+          "styleInput": "primary"
+        }
+      }
+    },
+    {
+      "type": "industryPotential",
+      "data": {
+        "titleInput": "Industry Potential for <span class=\"text-blue\">MBA in Financial Engineering</span>",
+        "subtitleTextarea": "Financial Engineering sits at the core of how global capital is structured, traded, protected, and scaled.",
+        "items": [
+          {
+            "keyInput": "capital_markets",
+            "iconInput": "markets",
+            "titleInput": "Global Capital Markets",
+            "valueInput": "USD 270+ Trillion",
+            "descriptionTextarea": "Across equities and fixed income—engineered, traded, and risk-managed by investment banks, hedge funds, and global institutions."
+          },
+          {
+            "keyInput": "investment_banking",
+            "iconInput": "banking",
+            "titleInput": "Investment Banking Revenues",
+            "valueInput": "USD 150+ Billion",
+            "descriptionTextarea": "Annual revenues driven by M&A, capital markets, structured finance, and complex deal advisory."
+          },
+          {
+            "keyInput": "hedge_funds",
+            "iconInput": "hedge",
+            "titleInput": "Hedge Fund AUM",
+            "valueInput": "USD 4.5 Trillion",
+            "descriptionTextarea": "Projected to reach USD 8–9 trillion by 2030, powered by quantitative strategies and advanced financial models."
+          },
+          {
+            "keyInput": "derivatives",
+            "iconInput": "derivatives",
+            "titleInput": "Derivatives Market",
+            "valueInput": "USD 600+ Trillion",
+            "descriptionTextarea": "Where pricing, structuring, and risk management demand deep financial engineering expertise."
+          },
+          {
+            "keyInput": "risk_quant",
+            "iconInput": "risk",
+            "titleInput": "Risk & Quant Infrastructure",
+            "valueInput": "USD 300+ Billion",
+            "descriptionTextarea": "Annual global spend with 8–12% CAGR growth in core finance and quantitative roles."
+          }
+        ],
+        "conclusionTextarea": "Financial Engineering sits at the core of how global capital is structured, traded, protected, and scaled—making it one of the most powerful MBA specialisations for careers in Investment Banking, Hedge Funds, Risk, and Global Markets."
+      }
+    },
+    {
+      "type": "careerPaths",
+      "data": {
+        "titleInput": "Illustrative <span class=\"text-blue\">Career Paths</span> that Define Success",
+        "subtitleInput": "Step into the high-stakes world of finance and carve your path to success!",
+        "slider": true,
+        "items": [
+          {
+            "nameInput": "Nidhi Mehta",
+            "image": "images/student1.png",
+            "roleInput": "Investment Banking Analyst",
+            "taglineInput": "Financial Architect",
+            "responsibilities": [
+              "Works on high-value transactions and valuations",
+              "Builds and analyses financial models for deals",
+              "Supports billion-dollar capital market operations"
+            ],
+            "salary": {
+              "startingInput": "₹10 – ₹15 LPA",
+              "topInput": "₹50 – ₹80 LPA+"
+            }
+          },
+          {
+            "nameInput": "Kunal Sharma",
+            "image": "images/student2_cp.png",
+            "roleInput": "Private Equity Associate",
+            "taglineInput": "The Deal Maker",
+            "responsibilities": [
+              "Evaluates high-growth investment opportunities",
+              "Works with portfolio companies to maximize returns",
+              "Structures and negotiates high-value deals"
+            ],
+            "salary": {
+              "startingInput": "₹12 – ₹18 LPA",
+              "topInput": "₹60 – ₹100 LPA+"
+            }
+          },
+          {
+            "nameInput": "Priya Iyer",
+            "image": "images/student3_cp.png",
+            "roleInput": "Risk & Compliance Officer",
+            "taglineInput": "The Guardian of Finance",
+            "responsibilities": [
+              "Ensures regulatory compliance across investments",
+              "Identifies and mitigates financial risks",
+              "Develops fraud prevention and risk management frameworks"
+            ],
+            "salary": {
+              "startingInput": "₹8 – ₹12 LPA",
+              "topInput": "₹40 – ₹70 LPA+"
+            }
+          },
+          {
+            "nameInput": "Rajiv Malhotra",
+            "image": "images/student4_cp.png",
+            "roleInput": "M&A Consultant",
+            "taglineInput": "The Power Negotiator",
+            "responsibilities": [
+              "Advises on mergers, acquisitions, and corporate buyouts",
+              "Conducts market research to identify opportunities",
+              "Structures deals for maximum profitability"
+            ],
+            "salary": {
+              "startingInput": "₹15 – ₹20 LPA",
+              "topInput": "₹70 – ₹120 LPA+"
+            }
+          },
+          {
+            "nameInput": "Aditi Joshi",
+            "image": "images/student5_cp.png",
+            "roleInput": "Corporate Finance Strategist",
+            "taglineInput": "The Mastermind Behind Growth",
+            "responsibilities": [
+              "Develops financial plans for corporate expansion",
+              "Analyzes business performance to drive profitability",
+              "Manages capital allocation and investment portfolios"
+            ],
+            "salary": {
+              "startingInput": "₹12 – ₹16 LPA",
+              "topInput": "₹50 – ₹90 LPA+"
+            }
+          },
+          {
+            "nameInput": "Aniket Mehta",
+            "image": "images/student6_cp.png",
+            "roleInput": "Investment Banking Operations Specialist",
+            "taglineInput": "The Backbone of Transactions",
+            "responsibilities": [
+              "Manages trade settlements and reconciliations",
+              "Ensures smooth processing of investment transactions",
+              "Collaborates with compliance and regulatory teams"
+            ],
+            "salary": {
+              "startingInput": "₹8 – ₹12 LPA",
+              "topInput": "₹40 – ₹80 LPA+"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "programFramework",
+      "data": {
+        "titleInput": "The FFOI <span class=\"text-blue\">Financial Engineering Frameworks</span>",
+        "subtitleTextarea": "The program follows a structured framework ensuring conceptual depth, applied learning, and role readiness.",
+        "image": {
+          "src": "images/mandala.svg",
+          "alt": "Financial Engineering Framework Diagram"
+        },
+        "pillars": [
+          {
+            "keyInput": "pedagogy",
+            "iconInput": "education",
+            "titleInput": "Future-Ready Pedagogy",
+            "descriptionTextarea": "A future-ready pedagogy shaping leaders in Financial Engineering."
+          },
+          {
+            "keyInput": "practice",
+            "iconInput": "growth",
+            "titleInput": "Theory Meets Practice",
+            "descriptionTextarea": "Where theory meets real-world finance and market excellence."
+          },
+          {
+            "keyInput": "analytics",
+            "iconInput": "analytics",
+            "titleInput": "Analytical Excellence",
+            "descriptionTextarea": "Building analytical minds for global financial markets."
+          },
+          {
+            "keyInput": "strategy",
+            "iconInput": "strategy",
+            "titleInput": "Strategic Finance Mastery",
+            "descriptionTextarea": "Designed to master derivatives, risk, and strategic finance."
+          }
+        ],
+        "cta": {
+          "labelInput": "Enquire Now",
+          "actionInput": "enquire"
+        }
+      }
+    },
+    {
+      "type": "admissionProcess",
+      "data": {
+        "titleInput": "Admission <span style=\"color:var(--main-blue-color)\">Process</span>",
+        "subtitleTextarea": "A streamlined, transparent process designed to identify and nurture future finance leaders.",
+        "steps": [
+          {
+            "step": 1,
+            "labelInput": "Online Application",
+            "descriptionTextarea": "Complete the comprehensive application form with your academic records and professional background."
+          },
+          {
+            "step": 2,
+            "labelInput": "Profile Evaluation",
+            "descriptionTextarea": "Our expert admissions committee meticulously reviews your profile to ensure eligibility and program fit."
+          },
+          {
+            "step": 3,
+            "labelInput": "Personal Interaction",
+            "description": "Selected candidates are invited for a personal interview to assess aptitude, career goals, and potential."
+          },
+          {
+            "step": 4,
+            "labelInput": "Offer & Enrollment",
+            "descriptionTextarea": "Successful candidates receive a formal admission offer to secure their seat in the upcoming cohort."
+          }
+        ],
+        "cta": {
+          "labelInput": "Enquire Now",
+          "actionInput": "enquire"
+        }
+      }
+    },
+    {
+      "type": "scholarship",
+      "data": {
+        "titleInput": "100% Tuition Fee Scholarship for <span class=\"text-blue\">CAT 99+%ilers</span>",
+        "descriptionTextarea": "Candidates scoring 99+ percentile and above in CAT are eligible for a 100% tuition fee waiver, subject to:",
+        "image": {
+          "src": "images/scholar.png",
+          "alt": "CAT Scholarship",
+          "style": "grayscale"
+        },
+        "conditions": [
+          "Score verification",
+          "Admission process clearance",
+          "Limited scholarship seats",
+          "Other CAT takers can apply for Scholarship Test"
+        ],
+        "cta": {
+          "labelInput": "Enquire Now",
+          "actionInput": "enquire",
+          "styleInput": "primary"
+        }
+      }
+    },
+    {
+      "type": "about",
+      "data": {
+        "titleInput": "<span class=\"text-blue\">About</span> Us",
+        "image": {
+          "src": "images/about.png",
+          "alt": "About FFOI",
+          "style": "grayscale"
+        },
+        "content": [
+          "Since its inception in 2000, the Finance Forum of India (FFOI) has been at the forefront of promoting financial literacy and nurturing Financial Acumen Skills (FAS), with a strong commitment to bridging the gap between economics and business.",
+          "Over the years, FFOI has empowered more than 25,000 individuals through partnerships with 1,000+ institutions, leaving a significant mark on India’s financial education landscape.",
+          "For those aiming to thrive in Financial Engineering, FFOI’s MBA program offers a dynamic platform to acquire cutting-edge knowledge and expertise. Join us and become part of a legacy that shapes the next generation of leaders with exceptional FAS."
+        ],
+        "cta": {
+          "labelInput": "Enquire Now",
+          "actionInput": "enquire"
+        }
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "titleInput": "Frequently Asked <span class=\"text-blue\">Questions</span>",
+        "subtitleInput": "Get answers to common questions about our program",
+        "items": [
+          {
+            "questionInput": "How is MBA in Financial Engineering different from a regular MBA Finance?",
+            "answerTextarea": "Focuses on quantitative finance, risk, derivatives, and global markets; more technical and core finance-oriented than regular MBA Finance."
+          },
+          {
+            "questionInput": "Do I need prior coding or advanced mathematics knowledge?",
+            "answerTextarea": "No. Skills are built progressively from fundamentals."
+          },
+          {
+            "questionInput": "What kind of careers can I pursue after this program?",
+            "answerTextarea": "Roles include Investment Banking Analyst, Private Equity Associate, Risk Officer, M&A Consultant, Corporate Finance Strategist, and Operations Specialist."
+          },
+          {
+            "questionInput": "What is the placement potential and ROI of this program?",
+            "answerTextarea": "Starting salaries: ₹8–20 LPA | Top roles: ₹40–120 LPA+ | ROI horizon: ~15 months."
+          },
+          {
+            "questionInput": "Is there a scholarship opportunity?",
+            "answerTextarea": "Yes. 100% tuition fee waiver for CAT 99 percentile candidates, subject to verification and limited seats."
+          },
+          {
+            "questionInput": "Who is eligible to apply for this program?",
+            "answerTextarea": "Graduates (10+2+3 / 10+2+4) from Commerce, Finance, Management, Science, or Engineering with 50%+ marks. Final-year students may apply."
+          },
+          {
+            "questionInput": "Are placements guaranteed?",
+            "answerTextarea": "Placements are not guaranteed; outcomes depend on individual performance and market conditions."
+          },
+          {
+            "questionInput": "What industries and companies can I work with after graduation?",
+            "answerTextarea": "Global Investment Banks, Hedge Funds, Private Equity, Asset Management, Consulting, and FinTech."
+          },
+          {
+            "questionInput": "Is the program practical or only theory-based?",
+            "answerTextarea": "It is a blend of theory and applied learning using real-world projects and the FFOI Financial Engineering Mandala."
+          },
+          {
+            "questionInput": "How long is the program and is it UGC-approved?",
+            "answerTextarea": "2-Year Full-Time MBA, UGC Approved."
+          }
+        ],
+        "cta": {
+          "labelInput": "Enquire Now",
+          "actionInput": "enquire"
+        }
+      }
+    },
+    {
+      "type": "finalCta",
+      "data": {
+        "taglineInput": "Ready to Transform Your Career?",
+        "titleInput": "If you are serious about a career in <span style=\"color:var(--main-color)\">core global finance</span>, this program is built for you.",
+        "buttons": [
+          {
+            "labelInput": "Enquire Now",
+            "actionInput": "enquire",
+            "styleInput": "primary"
+          },
+          {
+            "labelInput": "Download Brochure",
+            "actionInput": "download_brochure",
+            "styleInput": "outline"
+          }
+        ],
+        "footerTextInput": "Join 1000+ professionals who’ve transformed their careers with FFOI"
+      }
+    },
+    {
+      "type": "footer",
+      "data": {
+        "copyrightInput": "© 2025 Finance Forum of India. All rights reserved.",
+        "credits": {
+          "textInput": "Developed by Webiknows IT Solutions",
+          "highlightInput": "Webiknows IT Solutions"
+        },
+        "links": [
+          {
+            "labelInput": "Privacy Policy",
+            "urlInput": "/privacy-policy"
+          },
+          {
+            "labelInput": "Terms & Conditions",
+            "urlInput": "/terms-and-conditions"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "sections": [
+    {
+      "type": "OG",
+      "data": {
+        "ogImg": "",
+        "ogTitle": "",
+        "ogDesc": ""
+      }
+    },
+    {
+      "type": "BasicInformation",
+      "data": {
+        "site_name": "",
+        "site_title": "",
+        "tagline": ""
+      }
+    },
+    {
+      "type": "Branding",
+      "data": {
+        "logoImg": "",
+        "favImg": "",
+        "footer_logo_img": ""
+      }
+    },
+    {
+      "type": "contactInformation",
+      "data": {
+        "email": "",
+        "supportEmail": "",
+        "phone": "",
+        "google_map_url": ""
+      }
+    },
+    {
+      "type": "socialLinks",
+      "data": {
+        "facebook": "",
+        "instagram": "",
+        "linkedin": "",
+        "youtube": "",
+        "twitter": "",
+        "whatsapp": ""
+      }
+    },
+    {
+      "type": "SEM",
+      "data": {
+        "google_analytics_code": "",
+        "google_tag_manager": "",
+        "facebook_pixel_code": "",
+        "linkedinTag": ""
+      }
+    },
+    {
+      "type": "Footer",
+      "data": {
+        "title": ""
+      }
+    },
+    {
+      "type": "AlumniData",
+      "data": {
+        "alumni":[
+          {
+            "name": "",
+            "designation": "",
+            "profileImg": "",
+            "companyLogo": ""
+          },
+          {
+            "name": "",
+            "designation": "",
+            "profileImg": "",
+            "companyLogo": ""
+          }
+        ]
+      }
+    }
+  ]
+}

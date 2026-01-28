@@ -1,0 +1,16 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "titleInput": "Blogs",
+        "subtitle": "Insights That <span class=\"text-xs\">Inspire</span>,\r\nYour MBA Journey.",
+        "descriptionTextarea": "Stay ahead with expert tips, student stories, and career advice—curated to guide your growth, one blog at a time..",
+        "backgroundImage": 51,
+        "backgroundMobileImage": 52,
+        "buttonText": "Explore More"
+      }
+    }
+  ]
+}

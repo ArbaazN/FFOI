@@ -1,0 +1,16 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "data": {
+        "title": "Where Ambition Meets Opportunity",
+        "subtitle1": "ASBS MBA Placements:",
+        "subtitle2": "From Classroom to",
+        "highlightedText": "Boardroom",
+        "description": "At ASBS MBA, we dont just teach business—we build leaders. Our placement process is a structured 3-Stage Approach (Pre, During, and Post Placements) designed to equip students with the right skills, industry connections, and real-world exposure to outperform the competition and excel in the corporate world",
+        "backgroundImage": "/Banner/image/image_name.png",
+        "backgroundVideo": "/Banner/video/video_name.mp4"
+      }
+    }
+  ]
+}

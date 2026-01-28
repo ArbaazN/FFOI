@@ -1,0 +1,769 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "titleInput": "<p class=\"MsoNormal\"><span id=\"docs-internal-guid-0e1f017d-7fff-76a1-4af5-1c361d1bdec7\"><span style=\"font-size: 13pt; font-family: Arial, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;\">Welcome to ASBS MBA 1Chain B-School Platform</span></span></p>",
+        "subtitle": "<p class=\"MsoNormal\"><b><u><span style=\"font-size: 52px;\">No. 1</span></u><span style=\"font-size: 52px;\"> </span><span style=\"font-size: 52px;\">for Core Finance</span><o:p></o:p></b></p>\r\n\r\n<p class=\"MsoNormal\"><span style=\"font-size: 24px;\">Placements for Freshers with excellence in Marketing &amp; HR</span></p>",
+        "description": "<p><span style=\"font-size: 14px;\">AICTE / UGC Approved | 2-Year Full-Time PGDM &amp; MMS</span></p><p><span style=\"font-size: 14px;\">10,000+ Alumni Network | 15+ Years of Academic Excellence</span></p>",
+        "highlightsInput": "",
+        "typertextInput": "<p>ADMISSION OPEN FOR 2026 - 28!*</p>",
+        "backgroundImage": 203,
+        "backgroundMobileImage": "",
+        "backgroundLinkInput": "https://www.youtube.com/embed/zIGNYvyrlQk",
+        "partnerMultipleImages": [],
+        "logoMultipleImages": []
+      }
+    },
+    {
+      "type": "placementStats",
+      "status": "enable",
+      "data": {
+        "titleInput": "Maximizing Your ROI",
+        "descriptionTextarea": "Transforming Aspirations into Tangible Success",
+        "placements": [
+          {
+            "iconImg": 95,
+            "countNumberInput": 8,
+            "preNumberInput": "₹",
+            "postNumberInput": "LPA",
+            "descriptionInput": "Average Salary"
+          },
+          {
+            "iconImg": 96,
+            "countNumberInput": 12,
+            "preNumberInput": "₹",
+            "postNumberInput": "LPA",
+            "descriptionInput": "Highest Salary"
+          },
+          {
+            "iconImg": 97,
+            "countNumberInput": 30,
+            "preNumberInput": "₹",
+            "postNumberInput": "LPA",
+            "descriptionInput": "Career Trajectory within 3 Years"
+          },
+          {
+            "iconImg": 98,
+            "countNumberInput": 15,
+            "preNumberInput": "~",
+            "postNumberInput": "Months",
+            "descriptionInput": "ROI Horizon"
+          }
+        ]
+      }
+    },
+    {
+      "type": "programSnapShots",
+      "status": "enable",
+      "data": {
+        "titleInput": "Program & Placement Snapshot",
+        "descriptionTextarea": "A quick look at the program's value, 2026 placements ROI, and accreditation.",
+        "snapshots": [
+          {
+            "labelInput": "Program Fee",
+            "valueInput": "~ ₹6 to 8 Lac"
+          },
+          {
+            "labelInput": "Average Salary",
+            "valueInput": "₹8 LPA"
+          },
+          {
+            "labelInput": "Highest Salary",
+            "valueInput": "₹12 LPA"
+          },
+          {
+            "labelInput": "*Career Trajectory Within 3 Years",
+            "valueInput": "₹30 LPA"
+          },
+          {
+            "labelInput": "ROI Horizon",
+            "valueInput": "~15 Months"
+          },
+          {
+            "labelInput": "Intake",
+            "valueInput": "60 Students"
+          }
+        ],
+        "disclaimerTextarea": "* Career trajectory projections are based on current placement data,\r\n            alumni performance reviews, and projected industry trends for the\r\n            financial engineering sector in India (2024–2027). Actual results\r\n            may vary based on individual performance and market conditions.",
+        "patchBadgeInput": "Exclusive Offer",
+        "patchTitleInput": "100% Tuition Fee Scholarship",
+        "patchSubtitleInput": "Available for CAT 95+%ilers candidates.Other CAT takers can apply for Scholarship Test.",
+        "patchDescriptionTextarea": ""
+      }
+    },
+    {
+      "type": "SliderData",
+      "status": "enable",
+      "data": {
+        "Sliders": [
+          {
+            "image": 51,
+            "urlInput": "https://youtube.com/shorts/5BqhfrcGXR0?si=vuJSEVl6nlKzpbfb"
+          },
+          {
+            "image": 52,
+            "urlInput": "https://youtube.com/shorts/n5MyyTdT8-M?si=VS6s4GE-SCHt7XXK"
+          },
+          {
+            "image": 53,
+            "urlInput": "https://youtube.com/shorts/YxrPIYj0iv8?si=1N7fD7SnNMu1AG9P"
+          },
+          {
+            "image": 54,
+            "urlInput": "https://youtube.com/shorts/MazxyRFxgPc?si=PUTs6wrCQEFaQH0Q"
+          },
+          {
+            "image": 55,
+            "urlInput": "https://youtube.com/shorts/H_Hx8fJA2uQ?si=tCWs8aL9M-OXKEP8"
+          },
+          {
+            "image": 56,
+            "urlInput": "https://youtube.com/shorts/Bxt6QnPOH6k?si=ZfDXJBNCJ31jLMz2"
+          },
+          {
+            "image": 57,
+            "urlInput": "https://youtube.com/shorts/6zz2xXvrL7E?feature=share"
+          },
+          {
+            "image": 58,
+            "urlInput": "https://youtube.com/shorts/fhowWUq0tlU?si=uKgPn-lAIWhgQIbi"
+          },
+          {
+            "image": 59,
+            "urlInput": "https://youtube.com/shorts/RN6SwmRlOes?si=Tj3YO84ZCD3MrPVX"
+          }
+        ]
+      }
+    },
+    {
+      "type": "topRecruiterLogos",
+      "status": "enable",
+      "data": {
+        "titleInput": "Our Top",
+        "descriptionTextarea": "Recruiters We stand by you every step of the way.",
+        "multipleImages": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84
+        ]
+      }
+    },
+    {
+      "type": "HomeGallaryData",
+      "status": "enable",
+      "data": {
+        "gallary": [
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 46
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 47
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 48
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 49
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 50
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus0",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus1",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus2",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus3",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus4",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus5",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          },
+          {
+            "titleInput": "Life at ASBS Campus6",
+            "descTextarea": "",
+            "galleryImage": 0
+          }
+        ]
+      }
+    },
+    {
+      "type": "PlacementExcellence",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "list": [
+          {
+            "profileImg": "",
+            "nameInput": "",
+            "subtitleInput": "",
+            "companyLogo": "",
+            "linkInput": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "studentTestimonials",
+      "status": "enable",
+      "data": {
+        "titleInput": "Placement Success",
+        "descriptionTextarea": "What Our Students Say \r\n(Batch 2024-26)",
+        "list": [
+          {
+            "nameInput": "Karishma Maity",
+            "profileImg": 99,
+            "ratingInput": 5,
+            "reviewTextarea": "The PGDM program at ASBS went beyond my expectations. The industry-driven curriculum and hands-on projects gave me the skills to succeed in the corporate world.",
+            "designationInput": "India",
+            "companyNameInput":""
+          },
+          {
+            "nameInput": "Nitesh Pai",
+            "profileImg": 100,
+            "ratingInput": 5,
+            "reviewTextarea": "The entrepreneurship workshops gave me the push I needed to start my own business. ASBS provided the right guidance and resources to turn my ideas into reality.",
+            "designationInput": "India",
+            "companyNameInput":""
+          },
+          {
+            "nameInput": "Rohit Usapkar",
+            "profileImg": 101,
+            "ratingInput": 5,
+            "reviewTextarea": "Industry exposure and collaborative projects helped me build strong professional connections, expanding my career prospects.",
+            "designationInput": "India",
+            "companyNameInput":""
+          },
+          {
+            "nameInput": "Asmita Gaude",
+            "profileImg": 102,
+            "ratingInput": 5,
+            "reviewTextarea": "<p>The PGDM program’s practical approach changed the way I think about business. It gave me the experience and knowledge to thrive in my field.</p>",
+            "designationInput": "India",
+            "companyNameInput":""
+          },
+          {
+            "nameInput": "Sania Kazi",
+            "profileImg": 103,
+            "ratingInput": 5,
+            "reviewTextarea": "<p>ASBS’s product management training helped me bridge my skill gaps and made me fully prepared for the industry.</p>",
+            "designationInput": "India",
+            "companyNameInput":""
+          },
+          {
+            "nameInput": "Kaushik Bajaj",
+            "profileImg": 204,
+            "ratingInput": "",
+            "reviewTextarea": "Joining ASBS was the best decision for my career. The institute gave me strong domain knowledge, practical exposure, and continuous mentorship. That preparation helped me confidently step into a global role.",
+            "designationInput": "Placed at Morgan Stanley",
+            "companyNameInput":""
+          }
+        ]
+      }
+    },
+    {
+      "type": "studentVideoTestimonials",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "list": [
+          {
+            "videoUrlInput": "https://youtube.com/shorts/5BqhfrcGXR0?si=vuJSEVl6nlKzpbfb",
+            "nameInput": "Aishwarya Mudaliyar",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/MazxyRFxgPc?si=PUTs6wrCQEFaQH0Q",
+            "nameInput": "Sakshi Varma",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/YxrPIYj0iv8?si=1N7fD7SnNMu1AG9P",
+            "nameInput": "Mansi Patil",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Bxt6QnPOH6k?si=ZfDXJBNCJ31jLMz2",
+            "nameInput": "Aditi Mane",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/n5MyyTdT8-M?si=VS6s4GE-SCHt7XXK",
+            "nameInput": "Kaushik Bajaj",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/n5MyyTdT8-M?si=VS6s4GE-SCHt7XXK",
+            "nameInput": "Kaushik Bajaj",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/6zz2xXvrL7E?feature=share",
+            "nameInput": "Harsh Gangawani",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/RN6SwmRlOes?si=Tj3YO84ZCD3MrPVX",
+            "nameInput": "Shwetank Bote",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/zOlOR6YSJGE?feature=share",
+            "nameInput": "Liya Selastin",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Pv2iklTm-sg?si=2bWCR7bHasntcqLJ",
+            "nameInput": "Prachiti Pawar",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Bxt6QnPOH6k?si=ZfDXJBNCJ31jLMz2",
+            "nameInput": "Aditi Mane",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Bxt6QnPOH6k?si=ZfDXJBNCJ31jLMz2",
+            "nameInput": "Aditi Mane",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/n5MyyTdT8-M?si=VS6s4GE-SCHt7XXK",
+            "nameInput": "Kaushik Bajaj",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/6zz2xXvrL7E?feature=share",
+            "nameInput": "Harsh Gangawani",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/RN6SwmRlOes?si=Tj3YO84ZCD3MrPVX",
+            "nameInput": "Shwetank Bote",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/zOlOR6YSJGE?feature=share",
+            "nameInput": "Liya Selastin",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Pv2iklTm-sg?si=2bWCR7bHasntcqLJ",
+            "nameInput": "Prachiti Pawar",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/RN6SwmRlOes?si=Tj3YO84ZCD3MrPVX",
+            "nameInput": "Shwetank Bote",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/zOlOR6YSJGE?feature=share",
+            "nameInput": "Liya Selastin",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Pv2iklTm-sg?si=2bWCR7bHasntcqLJ",
+            "nameInput": "Prachiti Pawar",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq",
+            "nameInput": "Sakshi Jadhav",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/jUuAAVRPJd8?si=xKrN88JynCzcnx6W",
+            "nameInput": "Tanya Patel",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/zOlOR6YSJGE?feature=share",
+            "nameInput": "Liya Selastin",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Pv2iklTm-sg?si=2bWCR7bHasntcqLJ",
+            "nameInput": "Prachiti Pawar",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq",
+            "nameInput": "Sakshi Jadhav",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/jUuAAVRPJd8?si=xKrN88JynCzcnx6W",
+            "nameInput": "Tanya Patel",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/RN6SwmRlOes?si=Tj3YO84ZCD3MrPVX",
+            "nameInput": "Shwetank Bote",
+            "designationInput": "PGDM Marketing 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/zOlOR6YSJGE?feature=share",
+            "nameInput": "Liya Selastin",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Pv2iklTm-sg?si=2bWCR7bHasntcqLJ",
+            "nameInput": "Prachiti Pawar",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq",
+            "nameInput": "Sakshi Jadhav",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/jUuAAVRPJd8?si=xKrN88JynCzcnx6W",
+            "nameInput": "Tanya Patel",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/zOlOR6YSJGE?feature=share",
+            "nameInput": "Liya Selastin",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Pv2iklTm-sg?si=2bWCR7bHasntcqLJ",
+            "nameInput": "Prachiti Pawar",
+            "designationInput": ""
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq",
+            "nameInput": "Sakshi Jadhav",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/jUuAAVRPJd8?si=xKrN88JynCzcnx6W",
+            "nameInput": "Tanya Patel",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq",
+            "nameInput": "Sakshi Jadhav",
+            "designationInput": "PGDM Finance 2024–26"
+          },
+          {
+            "videoUrlInput": "https://youtube.com/shorts/jUuAAVRPJd8?si=xKrN88JynCzcnx6W",
+            "nameInput": "Tanya Patel",
+            "designationInput": "PGDM Finance 2024–26"
+          }
+        ]
+      }
+    },
+    {
+      "type": "AlumniData",
+      "status": "enable",
+      "data": {
+        "titleInput": "Alumni Success Stories",
+        "descriptionTextarea": "Inspiring Stories. Lasting Impact.",
+        "alumni": [
+          {
+            "nameInput": "Dipti Nadkarni",
+            "designationInput": "Assistant Vice President",
+            "profileImg": 89,
+            "companyLogo": 90
+          },
+          {
+            "nameInput": "Jay Raval",
+            "designationInput": "Manager - Business Consulting",
+            "profileImg": 91,
+            "companyLogo": 92
+          },
+          {
+            "nameInput": "Sagar Shinde",
+            "designationInput": "Vice President - Research",
+            "profileImg": 93,
+            "companyLogo": 94
+          }
+        ]
+      }
+    },
+    {
+      "type": "ExtracurricularActivities",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "activities": [
+          {
+            "image": "",
+            "titleInput": "",
+            "list": [
+              {
+                "name": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "finalCta",
+      "status": "enable",
+      "data": {
+        "titleInput": "Ready To Redefine Your Future?",
+        "subtitleTextarea": "Join ASBS MBA today and make an impact that matters!",
+        "contactTitleInput": "JOIN ASBS MBA",
+        "descriptionTextarea": "Experience world-class education, global exposure, and top-tier placements—all in the serene yet dynamic setting of ASBS MBA. Your journey to success starts here.",
+        "contactNumberInput": "+91 8065138222",
+        "emailInput": "connect@asbsmba.com",
+        "cityInput": "Vashi",
+        "addressTextarea": "Bharatiya Vidya Bhavan, Plot 3A, Sector-30, Vashi, Navi Mumbai – 400703"
+      }
+    },
+    {
+      "type": "faq",
+      "status": "enable",
+      "data": {
+        "titleInput": "",
+        "descriptionTextarea": "",
+        "questions": [
+          {
+            "questionsInput": "1. What is ASBS MBA?",
+            "answerTextarea": "ASBS MBA (Akademia School of Business Studies) is India’s leading 1-Chain B-School platform, powering AICTE-approved PGDM and UGC-approved MMS programs across partner institutions—empowering the 99% to outperform the top 1%.\r\nRanked India’s No. 1 for Core Finance placements for freshers, with equally strong results in Marketing and HR, ASBS MBA offers one of the strongest >100% ROI propositions in management education: ₹6–8 lakh average fees, ₹8 LPA+ average placements, a ₹12 LPA highest CTC, and a ~15-month payback period. Many graduates accelerate to a ₹30 LPA career trajectory within 3 years through specialised, outcome-driven MBA pathways.\r\nASBS MBA is trusted by industry, with a robust 250+ recruiter network, including recruiters such as Morgan Stanley, Anarock, Opus Fund Services, HC Global, ISS Stoxx, Kotak, HDFC Life, Citco, and Today Group, to name a few.\r\nWith 80% industry-expert faculty, a strong 10,000+ alumni network, 15+ years of academic excellence, and 12+ campuses across Mumbai, Goa, Bangalore, and Pune, ASBS ensures consistency, credibility, and economies of scale. As India’s only CEEMAN institutional member, ASBS connects its students to 200+ global B-schools, bringing global thinking to Indian careers.\r\nASBS MBA is where students build careers, parents see assured value, and corporates hire job-ready leaders."
+          },
+          {
+            "questionsInput": "2. Which programs are offered under ASBS MBA?",
+            "answerTextarea": "ASBS MBA offers the following full-time and work-integrated programs:\r\nFFOI Powered PGDM in Global Core Finance (Core Finance focus)\r\nASBS Multi-City Global MBA (PGDM with India + Europe exposure)\r\nASBS MBA – PGDM (General Management with specialisations)\r\nASBS MMS+ (UGC-approved MMS with enhanced industry exposure)\r\nASBS MMS (University-affiliated MMS)\r\nASBS Job+ MBA (Work-integrated earn-while-you-learn format)\r\nAll programs are designed with placement and ROI as the primary outcome."
+          },
+          {
+            "questionsInput": "3. Are ASBS MBA programs AICTE or UGC approved?",
+            "answerTextarea": "Yes.\r\nPGDM programs are AICTE-approved\r\nMMS programs are UGC-approved and university-affiliated\r\nASBS operates strictly within regulatory norms and partner institutions are duly approved."
+          },
+          {
+            "questionsInput": "4. Why Choose ASBS MBA?",
+            "answerTextarea": "India’s No. 1 for Core Finance Placements for Freshers\r\nWith equally strong outcomes in Marketing & HR, ASBS MBA is built for real careers—not just degrees.\r\nExceptional ROI & Career Growth\r\n₹6–8 lakh fees, ₹8 LPA+ average placements, ₹12 LPA highest CTC, ~15-month ROI, and a proven ₹30 LPA career trajectory within 3 years.\r\nPlacement-First, Industry-Driven Learning\r\nBacked by 250+ recruiters and 80% industry-expert mentors, ensuring students are job-ready from Day One.\r\nGlobal Exposure with Indian Advantage\r\nIndia’s only CEEMAN institutional member, connected to 200+ global B-schools and European immersion opportunities.\r\nScale, Trust & Legacy\r\n15+ years of excellence, 10,000+ alumni, and 12+ campuses across Mumbai, Goa, Bangalore, and Pune—delivering consistency, credibility, and outcomes.\r\nBuilt for the 99% to Win\r\nA proven platform designed to empower the 99% to outperform the top 1%—for students, parents, and recruiters alike."
+          },
+          {
+            "questionsInput": "5. What is European-approach rolling admissions at ASBS MBA?",
+            "answerTextarea": "ASBS MBA follows a rolling admissions approach, inspired by European B-Schools and aligned with its membership in CEEMAN.\r\nThis means:\r\nApplications are evaluated continuously\r\nSeats are offered cycle-by-cycle\r\nPrograms close once capacity is filled\r\nEarly applicants get priority for interviews, scholarships, campuses, and specialisations."
+          },
+          {
+            "questionsInput": "6. Which entrance exams are accepted for ASBS MBA admissions?",
+            "answerTextarea": "ASBS MBA accepts scores from the following national and state-level exams:\r\nCAT\r\nXAT\r\nSNAP\r\nNMAT\r\nMAH MBA CET\r\nMAT\r\nCMAT\r\nFinal selection is based on entrance score + interview performance + profile evaluation."
+          },
+          {
+            "questionsInput": "7. What is the eligibility criteria for ASBS MBA?",
+            "answerTextarea": "To apply, candidates must:\r\nHold a Bachelor’s degree from a recognized university\r\nHave minimum 50% aggregate marks (45% for reserved categories)\r\nFinal-year students are eligible to apply\r\nWork experience is not mandatory for most programs."
+          },
+          {
+            "questionsInput": "8. What is ASSET – ASBS Scholarship Entrance Test?",
+            "answerTextarea": "ASSET (Akademia Schools Skills Evaluation Test) is a merit-based internal test conducted by ASBS for candidates who are not CAT 95+ percentilers but seek scholarship consideration.\r\nPerformance in ASSET determines partial to full tuition fee scholarships, subject to availability."
+          },
+          {
+            "questionsInput": "9. Who is eligible for the 100% Tuition Fee Scholarship?",
+            "answerTextarea": "Candidates with CAT 95+ percentile are eligible for 100% tuition fee scholarship\r\nOther CAT candidates may qualify via ASSET (Akademia Schools Skills Evaluation Test)\r\nScholarships are merit-based, limited, and offered during early admission cycles."
+          },
+          {
+            "questionsInput": "10. What specialisations are offered at ASBS MBA?",
+            "answerTextarea": "ASBS MBA offers recruiter-driven, role-aligned specialisations, including:\r\nFFOI Powered - Global Core Finance\r\nInvestment Banking & Hedge Fund Operations\r\nBFSI Management\r\nCorporate Finance\r\nBusiness Analytics & AI\r\nReal Estate & PropTech\r\nMarTech, Digital Marketing & AI\r\nStrategic Brand & Product Management\r\nHR Leadership & People Analytics\r\nSpecialisations are aligned with live hiring roles and industry demand."
+          },
+          {
+            "questionsInput": "11. How strong are placements at ASBS MBA?",
+            "answerTextarea": "ASBS MBA has a placement-first model with:\r\n₹8 LPA average salary\r\n₹12 LPA highest salary\r\n₹30 LPA projected career trajectory within 3 years*\r\n~15 months average ROI horizon\r\n250+ recruiters across BFSI, Investment Banking, Hedge Fund Operations, Consulting, Tech, FMCG, Healthcare, Real Estate & Analytics\r\n*Projections based on alumni and market data; outcomes depend on individual performance."
+          },
+          {
+            "questionsInput": "12. Which companies recruit from ASBS MBA?",
+            "answerTextarea": "ASBS alumni and students work with leading global and Indian organisations, including investment banks, hedge funds, consulting firms, BFSI institutions, corporates, startups, and MNCs across multiple sectors.\r\nRecruitment is supported through live projects, mock interviews, and mentor-led preparation."
+          },
+          {
+            "questionsInput": "13. What is the mentor model at ASBS MBA?",
+            "answerTextarea": "ASBS follows a blended mentorship model:\r\n80% Industry Mentors – active professionals leading real businesses\r\n20% Academic Faculty – strong conceptual grounding\r\nThis ensures students are industry-ready from Day One."
+          },
+          {
+            "questionsInput": "14. Does ASBS MBA offer international exposure?",
+            "answerTextarea": "Yes. Select programs offer European immersion and global exposure through academic and industry linkages, including collaboration with IEDC-Bled School of Management."
+          },
+          {
+            "questionsInput": "15. Where are ASBS MBA campuses and partner institutions located?",
+            "answerTextarea": "ASBS MBA operates through multiple partner institutions across:\r\nMumbai (Jogeshwari, Kurla)\r\nNavi Mumbai  (Vashi, Nerul, Kharghar, Karjat)\r\nPune\r\nBangalore\r\nGoa\r\nDharashiv (Osmanabad)\r\nThis allows students to choose campuses based on location, program, and career goals."
+          },
+          {
+            "questionsInput": "16. Is ASBS MBA suitable for freshers?",
+            "answerTextarea": "Yes. ASBS MBA is especially known for core finance placements for freshers, supported by structured training, internships, and placement preparation.\r\nFinal-year students and fresh graduates form a significant portion of each cohort."
+          },
+          {
+            "questionsInput": "17. Can working professionals apply to ASBS MBA?",
+            "answerTextarea": "Absolutely. ASBS MBA is suitable for:\r\nWorking professionals seeking career acceleration\r\nCareer switchers moving into finance, analytics, marketing, or leadership roles\r\nEntrepreneurs building scalable ventures\r\nThe Job+ MBA is specifically designed for working learners."
+          },
+          {
+            "questionsInput": "18. How can I apply for ASBS MBA admissions 2026–28?",
+            "answerTextarea": "You can apply online by:\r\nFilling the online application form\r\nSubmitting entrance exam details\r\nAppearing for a personal interview / ASSET (Akademia Schools Skills Evaluation Test)\r\nCompleting selection and enrollment formalities\r\nEarly applications are strongly recommended due to rolling admissions."
+          },
+          {
+            "questionsInput": "19. Is free career counselling available before applying?",
+            "answerTextarea": "Yes. ASBS MBA offers free 1-on-1 career counselling to help students:\r\nChoose the right program\r\nSelect suitable specialisations\r\nUnderstand ROI and placement paths"
+          },
+          {
+            "questionsInput": "20. What is the duration of the ASBS MBA programs?",
+            "answerTextarea": "Most ASBS MBA programs are 2-year full-time programs.\r\nThe Job+ MBA follows a work-integrated structure while maintaining academic rigor and placement support."
+          },
+          {
+            "questionsInput": "21. How can I contact ASBS MBA for admissions support?",
+            "answerTextarea": "+91 8065138222\r\nBharatiya Vidya Bhavan, Plot 3A, Sector-30, Vashi, Navi Mumbai – 400703\r\nYou can also use the Apply Now or Get In Touch options on the website."
+          }
+        ]
+      }
+    }
+  ]
+}

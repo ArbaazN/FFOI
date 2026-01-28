@@ -1,0 +1,20 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "data": {
+        "title": "Insights That Inspire,Your MBA Journey.",
+        "desc": "Stay ahead with expert tips, student stories, and career advice—curated to guide your growth, one blog at a time..",
+        "banner_image": "/uploads/banner.jpg"
+      }
+    },
+    {
+      "type": "eventsGallery",
+      "data": {
+        "title": "Events Gallery",
+        "desc": "Explore our vibrant events through this curated gallery, showcasing moments of learning, connection, and celebration.",
+        "multipleImg": []
+      }
+    }
+  ]
+}
