@@ -2,171 +2,395 @@
   "sections": [
     {
       "type": "banner",
+      "status": "enable",
       "data": {
-        "banner_title": "About Our Institute",
-        "banner_subtitle": "We are committed to excellence.",
-        "banner_subtitle1": "We are committed.",
-        "banner_description": "We are committed to excellence.",
-        "banner_image": "/uploads/banner.jpg"
-      }
+          "banner_title": "Finance Education Built on Skills,<br> Structure & National Recognition",
+          "banner_subtitle": "Section 8  |  NSQF-Aligned  |  RT-MSSU-Affiliated  |  NCVT-Mapped",
+          "banner_description":"Finance Forum of India (FFOI) is a Section 8 Not-for-Profit institution dedicated to advancing structured, skill-based finance education in India. <br>We operate at the intersection of education, skills, assessment, and national recognition, helping learners and institutions build credible, future-ready finance careers.",
+          "banner_image": 237,
+          "buttons": [
+              {
+                "labelInput": "Explore Programs",
+                "actionInput": "explore_programs",
+                "styleInput": "primary"
+              },
+              {
+                "labelInput": "Join the Finance Education Series (Free)",
+                "actionInput": "join_finance_series",
+                "styleInput": "outline"
+              }
+            ]
+        }
     },
     {
-      "type": "ourVisionAndMission",
+      "type": "TrustAndCredibility",
+      "status": "enable",
       "data": {
-        "title": "Our Vision & Mission",
-        "subtitle": "Redefining the Future of Leadership",
-        "description": "To cultivate visionary leaders who drive innovation, embrace responsibility, and shape industries and communities for a better tomorrow.",
+        "title": "Trust & Credibility Badges",
         "items": [
           {
-            "title": "Innovates <br/> Fearlessly",
-            "desc": "Challenges the status quo and builds bold new business solutions.",
-            "imageSrc": "/bg-images/banner/about-us/vission-3.png"
+            "title": "Section 8 <br/> Company (India)",
+            "iconImg": 238
           },
           {
-            "title": "Leads <br/> Responsibly",
-            "desc": "Makes strategic, ethical, and high-impact decisions.",
-            "imageSrc": "/bg-images/banner/about-us/vission-1.png"
+            "title": "NSQF <br/> Aligned",
+            "iconImg": 239
           },
           {
-            "title": "Shapes Industries & <br/> Communities",
-            "desc": "Transforms businesses and society for the better.",
-            "imageSrc": "/bg-images/banner/about-us/vission-2.png"
+            "title": "RT-MSSU <br/> Affiliated",
+            "iconImg": 240
+          },
+          {
+            "title": "NCVET <br/> Mapped",
+            "iconImg": 240
+          },
+          {
+            "title": "Established in <br/> 2000",
+            "iconImg": 240
           }
         ]
       }
     },
-
     {
-      "type": "outJourney",
+      "type": "outAchivements",
+      "status": "enable",
       "data": {
-        "banner_title": "The ASBS Story",
-        "banner_subtitle": "What if management education prepares students for the real world - not just the next exam?",
-        "banner_description": "Founded in 2009, ASBS has pioneered a practical, skills-based approach to management education that bridges the gap between theory and practice.",
-        "banner_image": "/uploads/banner.jpg"
-      }
-    },
-    
-    {
-      "type": "milestones",
-      "data": {
-        "items": [
+        "title": "Built for long-term capability, <br/> not short-term certifications.",
+        "imgSrc": 241,
+        "cards": [
           {
-            "year": 2009,
-            "title": "<strong>ASBS MBA was incorporated.</strong>"
+            "titleInput": "Years of public-interest impact",
+            "count": "25+"
           },
           {
-            "year": 2010,
-            "list": [
-              "<strong>27th July – Batch 1 Launched.</strong>",
-              "<strong>IMEX & MERC Pune </strong> became <strong> Akademia Supported Business Schools.</strong>"
+            "titleInput": "Learners trained across finance domains",
+            "count": "25k+"
+          },
+          {
+            "titleInput": "Institutions engaged",
+            "count": "1k+"
+          }
+        ],
+        "description":[
+                    "Pan-India Presence",
+                    "Government-Aligned Frameworks"
+                 ] 
+
+      }
+    },
+    {
+      "type": "WhoWeAre",
+      "status": "enable",
+      "data": {
+        "eyebrowTitle": "Who we are",
+        "title": "Strengthening India’s <br/> Finance Capability <br/> Ecosystem",
+        "imgSrc": 242,
+        "descriptionInput": "Finance Forum of India (FFOI) is a mission-driven, Section 8 Not-for-Profit organisation established to strengthen India’s finance talent ecosystem by aligning education, skills, assessment, and employability. <br/> Founded in 2000, FFOI operates with a public-interest mandate. All surpluses are reinvested into education delivery, skill development, assessment frameworks, research, and community impact.",
+        "FFOIWork": [
+          {
+            "titleInput": "FFOI works with",
+            "items": [
+              {
+                "title": "Student & <br/> Professional",
+                "iconImg": 243
+              },
+              {
+                "title": "Colleges, universities <br/> & B-schools",
+                "iconImg": 244
+              },
+              {
+                "title": "Corporates & <br/> industry bodies",
+                "iconImg": 245
+              },
+              {
+                "title": "Skill development <br/> ecosystems",
+                "iconImg": 246
+              }
+            ]
+          }
+        ],
+        "defineFFOI": [
+          {
+            "titleInput": "What Defines FFOI",
+            "description": [
+              "Pan-India Presence",
+              "Government-Aligned Frameworks"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "WhyExist",
+      "status": "enable",
+      "data": {
+        "eyebrowTitle": "Why FFOI Exists",
+        "title": "The Gap We Solve",
+        "subtitleInput": "FFOI programs follow a nationally aligned pathway:",
+        "thereality":[
+                    "Finance degrees ≠ job readiness",
+                    "Skill courses ≠ national recognition"
+                 ],
+        "note": "Careers stall due to fragmented learning paths",
+        "typertextInput": "FFOI’s Role",
+        "descriptionInput": "We don’t add more disconnected courses. We add structure, progression, and recognition. <br/> FFOI creates clear, mapped pathways from learning",
+        "items":[
+                {
+                  "titleInput": "Learning",
+                  "iconImg": 247
+                },
+                {
+                  "titleInput": "Assessment",
+                  "iconImg": 248
+                },
+                {
+                  "titleInput": "Certification",
+                  "iconImg": 249
+                },
+                {
+                  "titleInput": "Career Readiness",
+                  "iconImg": 250
+                }
+          ]
+      }
+    },
+    {
+      "type": "nationalAlignment",
+      "status": "enable",
+      "data": {
+        "eyebrowTitle": "Our National Alignment Framework",
+        "title": "Built Inside India’s Formal Education & Skill Ecosystem",
+        "subtitleInput": "FFOI programs follow a nationally aligned pathway:",
+        "items": [
+          {
+            "imageSrc": 251,
+            "titleInput": "NSQF – Aligned",
+            "highlightsInput": "All FFOI programs are mapped to the National Skills Qualifications Framework, enabling:",
+            "description": [
+              "Clear skill levels",
+              "Measurable learning outcomes",
+              "Vertical & lateral career mobility"
             ]
           },
           {
-            "year": 2011,
-            "title": "<strong>Two batches began.</strong>"
-          },
-          {
-            "year": 2012,
-            "title": "<strong>ASBS signed with Oriental School of Business</strong>"
-          },
-          {
-            "year": 2014,
-            "title": "<strong>HKIMSR Andheri </strong> was added.</strong>"
-          },
-          {
-            "year": 2017,
-            "list": [
-              "<strong>ASBS became India’s first CEEMAN Member.</strong>",
-              "<strong>First International Immersion </strong>",
-              "<strong>ISMR Pune & UKS Kurla</strong> signed to become <strong>Akademia Supported B-Schools.</strong>"
+            "imageSrc": 252,
+            "titleInput": "RT-MSSU – Affiliated",
+            "highlightsInput": "FFOI is affiliated with Ratan Tata Maharashtra State Skills University, India’s first State Skills University.",
+            "description": [
+              "Academic legitimacy",
+              "Credit-based pathways",
+              "Government recognition"
             ]
           },
           {
-            "year": 2018,
-            "title": "<strong>OIM MMS </strong> became an <strong>ASBS Aggregated entity.</strong>"
-          },
-          {
-            "year": 2023,
-            "title": "Career Prof signed with FFOI & KMMIAS."
-          },
-          {
-            "year": 2024,
-            "title": "Career Prof signed with <strong>IIT Madras</strong>."
-          },
-          {
-            "year": 2025,
-            "list": [
-              "ASBS expands nationally – Signs a PGDM partnership."
+            "imageSrc": 253,
+            "titleInput": "NCVET – Mapped",
+            "highlightsInput": "Programs aligned with National Council for Vocational Training standards.",
+            "description": [
+              "National benchmarking",
+              "Employer trust",
+              "Skill India compatibility"
             ]
           }
         ]
       }
     },
-
     {
-      "type": "leadershipTeam",
+      "type": "OurWorkArea",
+      "status": "enable",
       "data": {
-        "members": [
-          {
-            "name": "Vinayak Kudva",
-            "imgSrc": "/bg-images/banner/about-us/leader-with-bg/vinayak.webp",
-            "titles": ["Learning Leader", "Career Strategist", "Mentor MMS, NMIMS"],
-            "experience": "20+ years in education"
-          },
-          {
-            "name": "Munira Lokhandwala",
-            "imgSrc": "/bg-images/banner/about-us/leader-with-bg/munira.webp",
-            "titles": ["Author", "Strategist", "CFA®", "FRM®"],
-            "experience": "20+ years mentoring MBA aspirants"
-          }
-        ]
-      }
-    },
-
-    {
-      "type": "whatWillYouGet",
-      "data": {
+        "eyebrowTitle": "What FFOI Does in Practice",
+        "title": "Our Core Areas of Work",
         "items": [
           {
-            "Src": "/icons/group.png",
-            "title": "India's Only CEEMAN-Connected B-school",
-            "desc": "A global seal of excellence"
+            "iconImg": 254,
+            "titleInput": "Finance Skill Programs",
+            "descriptionInput": "Advanced certification and industry-grade <br/> skill-building modules designed for the <br/> modern market."
           },
           {
-            "Src": "/icons/bulb.png",
-            "title": "97% Placement Success",
-            "desc": "Backed by 250+ recruiters"
+            "imageSrc": 255,
+            "titleInput": "Career Mapping & <br/> Assessments",
+            "descriptionInput": "Precision diagnostic tools and personalized <br/> career path identification to guide your <br/> financial journey."
+          },
+          {
+            "imageSrc": 256,
+            "titleInput": "Professional Memberships",
+            "descriptionInput": "Exclusive networking community for finance <br/> professionals and ambitious students <br/> worldwide."
+          },
+          {
+            "imageSrc": 257,
+            "titleInput": "Events & Conclaves",
+            "descriptionInput": "High-impact industry gatherings, global <br/> summits, and expert-led conclaves on <br/> market trends."
+          },
+          {
+            "imageSrc": 258,
+            "titleInput": "Research & Thought <br/> Leadership",
+            "descriptionInput": "Cutting-edge whitepapers and strategic <br/> financial market insights for the global <br/> landscape."
+          },
+          {
+            "imageSrc": 259,
+            "titleInput": "Institutional Partnerships",
+            "descriptionInput": "Strategic B2B collaborations and global <br/> academic alliances for large-scale financial <br/> empowerment."
           }
         ]
       }
     },
-
     {
-      "type": "pedagogy",
+      "type": "WhyDifferent",
+      "status": "enable",
       "data": {
+        "eyebrowTitle": "How FFOI is Different",
+        "title": "Not a Coaching Institute. Not a Short-Course Platform.",
         "items": [
-          { "Src": "/icons/student.png", "title": "Core Academics", "desc": "Strong foundation" },
-          { "Src": "/icons/tracking.png", "title": "Skill Labs", "desc": "Hands-on experience" }
-        ]
+                {
+                    "titleInput": "Typical Model",
+                    "desc": [
+                        "Course-centric",
+                        "Private certifications",
+                        "Limited recognition",
+                        "Short-term outcomes",
+                        "Profit-driven"
+                    ]
+                },
+                {
+                    "titleInput": "FFOI Model",
+                    "desc": [
+                        "Career-centric",
+                        "National framework alignment",
+                        "University & NSQF backed",
+                        "Long-term career mobility",
+                        "Section 8 public interest"
+                    ]
+                }
+            ]
       }
     },
-
     {
-      "type": "topCollages",
+      "type": "LeadershipAndStewardship",
+      "status": "enable",
       "data": {
-        "collages": [
-          {
-            "collageSrc": "/home/top-collages/terna.png",
-            "collageName": "Terna Global Business School",
-            "location": "Nerul"
-          },
-          {
-            "collageSrc": "/home/top-collages/osb.png",
-            "collageName": "Oriental School of Business",
-            "location": "Vashi"
-          }
+        "eyebrowTitle": "Leadership & Stewardship",
+        "title": "Guided by Experience, Integrity & Purpose",
+        "items": [
+                {
+                    "imageSrc": 260,
+                    "Name": "Dr. Asim Kumar Sengupta",
+                    "Designation": "Chairman Emeritus",
+                    "desc": "Academic leadership, research & policy perspective"
+                },
+                {
+                    "imageSrc": 261,
+                    "Name": "Mr. Nilesh Sarawate",
+                    "Designation": "Honorary CEO",
+                    "desc": "Finance education, investment banking & ecosystem building"
+                },
+                {
+                    "imageSrc": 262,
+                    "Name": "Ms. Munira Lokhandwala",
+                    "Designation": "Program Director",
+                    "desc": "Curriculum design, analytics & global certifications"
+                },
+                {
+                    "imageSrc": 263,
+                    "Name": "Mr. Vishal Bhojani",
+                    "Designation": "Program Head",
+                    "desc": "Curriculum design, analytics & global certifications"
+                }
+            ]
+      }
+    },
+    {
+      "type": "ImpactAndTrust",
+      "status": "enable",
+      "data": {
+        "eyebrowTitle": "Impact & Trust",
+        "title": "Our Impact Speaks for Itself",
+        "subtitle": "Impact measured in careers built, not certificates issued.",
+        "items": [
+                {
+                    "IconImg": 264,
+                    "count": "2000",
+                    "descriptionInput": "Established Year"
+                },
+                {
+                    "IconImg": 265,
+                    "count": "25,000+",
+                    "descriptionInput": "Learners Impacted"
+                },
+                {
+                    "IconImg": 266,
+                    "count": "1,000+",
+                    "descriptionInput": "Institutions Engaged"
+                }
+            ],
+        "description": [
+                {
+                    "IconImg": 267,
+                    "descriptionInput": "Section 8 Not-for-Profit (India)"
+                },
+                {
+                    "IconImg": 268,
+                    "descriptionInput": "Trusted by Academia & Industry"
+                }
+            ]
+      }
+    },
+    {
+        "type": "WhyBuiltFor",
+        "status": "enable",
+        "data": {
+          "title": "Who FFOI is Built for",
+          "items": [
+                {
+                    "IconImg": 268,
+                    "titleInput": "Students & Graduates"
+                },
+                {
+                    "IconImg": 269,
+                    "titleInput": "Working Professionals"
+                },
+                {
+                    "IconImg": 270,
+                    "titleInput": "Parents"
+                },
+                {
+                    "IconImg": 271,
+                    "titleInput": "Institutions"
+                },
+                {
+                    "IconImg": 272,
+                    "titleInput": "Corporates & Government"
+                }
+            ],
+          "disclaimerTextarea": "If you value credibility, structure, and long-term outcomes, FFOI is built for you."
+
+        }
+    },
+    {
+      "type": "footer",
+      "status": "enable",
+      "data": {
+        "title": "Start Your Finance Skill Journey",
+        "description": "Whether you are a student, professional, institution, or corporate, FFOI provides structured pathways to build finance capability that truly matters.",
+        "buttons": [
+            {
+              "labelInput": "Explore programs",
+              "actionInput": "explore_programs",
+              "styleInput": "primary"
+            },
+            {
+              "labelInput": "Join Free Finance Education Series",
+              "actionInput": "join_free_finance_education_series",
+              "styleInput": "outline"
+            },
+            {
+              "labelInput": "SPEAK TO AN ADVISOR",
+              "actionInput": "speak_to_an_advisor",
+              "styleInput": "default"
+            }
         ]
       }
     }
+   
   ]
 }
