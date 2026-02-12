@@ -61,6 +61,7 @@
 
     const ADD_CLASS = {
         'Small Text': 'text-2xl',
+        'Lime':'text-lime',
         'Bold + Bigger': 'text-3xl sm:text-6xl xl:text-6xl 2xl:text-7xl'
     };
 

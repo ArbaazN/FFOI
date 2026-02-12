@@ -27,6 +27,34 @@
         ]
       }
     },
+        {
+      "type": "banner1",
+      "status": "enable",
+      "data": {
+        "titleInput": "India’s Finance Skills, Assessments & Certification Platform",
+        "subtitle": "Building Job-Ready Finance Professionals<br>for the Real World",
+        "description": "RT MSSU COE Section 8 Not-for-Profit",
+        "featuredLabel": [
+          {
+            "label": "Featured In"
+          }
+        ],
+        "backgroundImage": null,
+        "backgroundImage1": null,
+        "buttons": [
+          {
+            "labelInput": "Explore Programs",
+            "actionInput": "explore_programs",
+            "buttonStyleSelect": "primary"
+          },
+          {
+            "labelInput": "Join the Finance Education Series (Free)",
+            "actionInput": "join_finance_series",
+            "buttonStyleSelect": "secondary"
+          }
+        ]
+      }
+    },
     {
       "type": "professional_finance_ecosystem",
       "status": "enable",
