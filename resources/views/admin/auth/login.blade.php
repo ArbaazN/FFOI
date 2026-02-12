@@ -6,8 +6,8 @@
         <!-- Logo -->
         <span class="app-brand-logo demo mt-2">
             <span class="text-primary p-4">
-                <img src="{{ asset('assets/logo/nav_logo.png') }}" alt="" srcset="" height="200"
-                    width="200" class="img-fluid">
+                <img src="{{ asset('assets/logo/nav_logo.png') }}" alt="" srcset="" height="100"
+                    width="100" class="img-fluid">
             </span>
         </span>
         <!-- /Logo -->

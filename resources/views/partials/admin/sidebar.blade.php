@@ -3,7 +3,7 @@
         <a href="{{ route('home') }}" class="app-brand-link">
             <span class="app-brand-logo demo">
                 <span class="text-primary">
-                    <img src="{{ asset('assets/logo/nav_logo.png') }}" class="img-fluid" alt="logo">
+                    <img src="{{ asset('assets/logo/nav_logo.png') }}" class="img-fluid" alt="logo" height="100" width="100">
                 </span>
             </span>
         </a>
@@ -29,14 +29,14 @@
         @endif
 
         {{-- CAMPUSES --}}
-        @if(auth()->user()->canAny(['campus.view', 'campus.create', 'campus.edit']))
+        {{-- @if(auth()->user()->canAny(['campus.view', 'campus.create', 'campus.edit']))
         <li class="menu-item {{ request()->is('campuses*') ? 'active' : '' }}">
             <a href="{{ route('campuses.index') }}" class="menu-link">
                 <i class="menu-icon icon-base ti tabler-building"></i>
                 <div data-i18n="Campuses">Campuses</div>
             </a>
         </li>
-        @endif
+        @endif --}}
 
         {{-- PROGRAMS --}}
         @if(auth()->user()->canAny(['program.view', 'program.create', 'program.edit']))
@@ -79,7 +79,7 @@
 
         {{-- PAGES --}}
         @if(auth()->user()->canAny(['page.view', 'page.create', 'page.edit']))
-        <li class="menu-item {{ request()->is('admin/pages*') ? 'active' : '' }}">
+        <li class="menu-item {{ request()->is('pages*') ? 'active' : '' }}">
             <a href="{{ route('pages.index') }}" class="menu-link">
                 <i class="menu-icon icon-base ti tabler-sitemap"></i>
                 <div data-i18n="Pages">Pages</div>
@@ -89,7 +89,7 @@
 
         {{-- SETTINGS --}}
         @if(auth()->user()->canAny(['settings.view', 'settings.update']))
-            <li class="menu-item {{ request()->is('admin/settings*') ? 'active' : '' }}">
+            <li class="menu-item {{ request()->is('settings*') ? 'active' : '' }}">
                 <a href="{{ route('settings') }}" class="menu-link">
                     <i class="menu-icon icon-base ti tabler-settings-bolt"></i>
                     <div data-i18n="Settings">Settings</div>
