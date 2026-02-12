@@ -12,6 +12,26 @@ use Validator;
 
 class ContactController extends Controller
 {
+
+    public function index()
+    {
+        try {
+            $contacts = Contact::latest()->get();
+            return response()->json([
+                'status' => true,
+                'message' => 'Contacts fetched successfully.',
+                'data' => $contacts
+            ], 200);
+        } catch (\Exception $e) {
+
+           \Log::error('Contact Fetch Error: ' . $e->getMessage());
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong.'
+            ], 500);
+        }
+    }
+
     public function store(Request $request)
     {
         try{
@@ -57,4 +77,5 @@ class ContactController extends Controller
             ], 500);
         }
     }
+    
 }
