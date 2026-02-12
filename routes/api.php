@@ -4,6 +4,8 @@ use App\Http\Controllers\API\BlogApiController;
 use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\UtmApiController;
 use App\Http\Controllers\API\WebsiteApiController;
+use App\Http\Controllers\API\ContactController;
+
 use Illuminate\Support\Facades\Route;
 
 //Blogs
@@ -18,3 +20,4 @@ Route::middleware('api_key')->group(function () {
     // Route::get('/pages', [PageController::class, 'index']);
     Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '.*');
 });
+Route::post('contact/save', [ContactController::class, 'store']);
