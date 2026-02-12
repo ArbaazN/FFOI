@@ -14,7 +14,8 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        try{
+            $validator = Validator::make($request->all(), [
                 'fullname' => 'required|string|max:255',
                 'email' => 'required|email',
                 'contact' => 'nullable|string|max:20',
@@ -32,14 +33,11 @@ class ContactController extends Controller
                 ], 422);
             }
 
-            // Save to DB
             $contact = Contact::create($request->all());
 
-            // 1️⃣ Send confirmation to User
             Mail::to($contact->email)
                 ->send(new ContactConfirmationMail($contact));
 
-            // 2️⃣ Send notification to Admin
             Mail::to(config('mail.admin_email'))
                 ->send(new AdminContactNotificationMail($contact));
 
@@ -48,5 +46,15 @@ class ContactController extends Controller
                 'message' => 'Contact form submitted successfully.',
                 'data' => $contact
             ], 200);
+        } catch (\Exception $e) {
+
+            // Log error for debugging
+            Log::error('Contact API Error: ' . $e->getMessage());
+
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong. Please try again later.'
+            ], 500);
+        }
     }
 }
