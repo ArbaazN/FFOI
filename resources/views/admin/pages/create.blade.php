@@ -158,6 +158,9 @@
 
                                 $isInput = Str::contains(strtolower($field), 'input');
                                 $isTextarea = Str::contains(strtolower($field), 'textarea');
+                                $isEnabledKey = Str::contains(strtolower($field), 'enabled');
+                                $isSelectKey = Str::contains(strtolower($field), 'select') || Str::contains(strtolower($field), 'styleinput');
+                                $isButtonStyleSelect = strtolower($field) === 'buttonstyleselect';
                                 $isGallery = Str::contains(strtolower($field), 'multipleimages');
                                 $isImage = Str::contains(strtolower($field), ['img', 'image', 'src', 'logo']);
                                 $isVideo = Str::contains(strtolower($field), ['video', 'mp4', 'webm', 'ogg']);
@@ -201,6 +204,31 @@
                                     <label class="form-label fw-bold">{{ formatSectionName($label) }}</label>
                                     <textarea class="form-control" name="sections[{{ $index }}][data][{{ $field }}]"
                                         rows="4">{{ $value }}</textarea>
+                                </div>
+                            @elseif ($isEnabledKey)
+                                <div class="mb-3 pt-1">
+                                    <label class="form-label fw-bold">{{ formatSectionName($label) }}</label>
+                                    <select class="form-select" name="sections[{{ $index }}][data][{{ $field }}]">
+                                        <option value="true" {{ $value ? 'selected' : '' }}>true</option>
+                                        <option value="false" {{ !$value ? 'selected' : '' }}>false</option>
+                                    </select>
+                                </div>
+                            @elseif ($isSelectKey)
+                                @php
+                                    $buttonStyleOptions = ['primary', 'secondary', 'default'];
+                                    if (is_string($value) && $value !== '' && !in_array($value, $buttonStyleOptions, true)) {
+                                        $buttonStyleOptions[] = $value;
+                                    }
+                                @endphp
+                                <div class="mb-3 pt-1">
+                                    <label class="form-label fw-bold">{{ formatSectionName($label) }}</label>
+                                    <select class="form-select" name="sections[{{ $index }}][data][{{ $field }}]">
+                                        @foreach ($buttonStyleOptions as $opt)
+                                            <option value="{{ $opt }}" {{ $value === $opt ? 'selected' : '' }}>
+                                                {{ ucfirst($opt) }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             @elseif ($isGallery)
                                 <div class="mb-3 pt-1">
@@ -273,11 +301,45 @@
                                     <label class="form-label fw-bold">{{ formatSectionName($label) }}</label>
 
                                     @foreach ($value as $childKey => $childVal)
+                                        @php
+                                            $childKeyLower = strtolower($childKey);
+                                            $childIsEnabled = $childKeyLower === 'enabled' || Str::contains($childKeyLower, 'enabled');
+                                            $childIsButtonStyleSelect = $childKeyLower === 'buttonstyleselect';
+                                            $childIsSelect = $childIsButtonStyleSelect || Str::contains($childKeyLower, 'select') || Str::contains($childKeyLower, 'styleinput');
+                                            $childIsScalar = is_string($childVal) || is_numeric($childVal) || is_bool($childVal) || is_null($childVal);
+                                            $childDisplay = $childIsScalar ? $childVal : json_encode($childVal);
+
+                                            $buttonStyleOptions = ['primary', 'secondary', 'default'];
+                                            if ($childIsSelect && is_string($childVal) && $childVal !== '' && !in_array($childVal, $buttonStyleOptions, true)) {
+                                                $buttonStyleOptions[] = $childVal;
+                                            }
+                                        @endphp
                                         <div class="mb-3 pt-1">
                                             <label class="form-label fw-bold">{{ ucfirst($childKey) }}</label>
-                                            <input type="text"
-                                                name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]"
-                                                class="form-control" value="{{ $childVal }}">
+                                            @if ($childIsEnabled)
+                                                <select class="form-select"
+                                                    name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]">
+                                                    <option value="true" {{ $childVal ? 'selected' : '' }}>true</option>
+                                                    <option value="false" {{ !$childVal ? 'selected' : '' }}>false</option>
+                                                </select>
+                                            @elseif ($childIsSelect)
+                                                <select class="form-select"
+                                                    name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]">
+                                                    @foreach ($buttonStyleOptions as $opt)
+                                                        <option value="{{ $opt }}" {{ $childVal === $opt ? 'selected' : '' }}>
+                                                            {{ ucfirst($opt) }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            @elseif ($childIsScalar)
+                                                <input type="text"
+                                                    name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]"
+                                                    class="form-control" value="{{ $childDisplay }}">
+                                            @else
+                                                <textarea class="form-control"
+                                                    name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]"
+                                                    rows="3">{{ $childDisplay }}</textarea>
+                                            @endif
                                         </div>
                                     @endforeach
                                 </div>
@@ -302,6 +364,7 @@
                                                         $itemLabel = ucfirst(str_replace('_', ' ', $itemField));
                                                         $itemPath = "sections[$index][data][$field][$itemIndex][$itemField]";
                                                         $itemIsArray = is_array($itemValue);
+                                                        $itemIsAssocObject = $itemIsArray && array_keys($itemValue) !== range(0, count($itemValue) - 1);
                                                         $isNestedRepeater =
                                                             $itemIsArray &&
                                                             isset($itemValue[0]) &&
@@ -320,6 +383,9 @@
                                                         $itemIsIcon = Str::contains(strtolower($itemField), 'icon');
                                                         $itemIsInput = Str::contains(strtolower($itemField), 'input');
                                                         $itemIsTextarea = Str::contains(strtolower($itemField), 'textarea');
+                                                        $itemIsEnabled = Str::contains(strtolower($itemField), 'enabled');
+                                                        $itemIsSelect = Str::contains(strtolower($itemField), 'select') || Str::contains(strtolower($itemField), 'styleinput');
+                                                        $itemIsButtonStyleSelect = strtolower($itemField) === 'buttonstyleselect';
                                                         $itemIsImage = Str::contains(strtolower($itemField), [
                                                             'img',
                                                             'image',
@@ -382,6 +448,80 @@
                                                             <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }}</label>
                                                             <textarea class="form-control" name="{{ $itemPath }}" rows="4">{{ $itemValue }}</textarea>
                                                         </div>
+                                                        @elseif ($itemIsEnabled) <div class="mb-3 pt-1">
+                                                            <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }}</label>
+                                                            <select class="form-select" name="{{ $itemPath }}">
+                                                                <option value="true" {{ $itemValue ? 'selected' : '' }}>true</option>
+                                                                <option value="false" {{ !$itemValue ? 'selected' : '' }}>false</option>
+                                                            </select>
+                                                        </div>
+                                                        @elseif ($itemIsSelect) <div class="mb-3 pt-1">
+                                                            @php
+                                                                $buttonStyleOptions = ['primary', 'secondary', 'default'];
+                                                                if (is_string($itemValue) && $itemValue !== '' && !in_array($itemValue, $buttonStyleOptions, true)) {
+                                                                    $buttonStyleOptions[] = $itemValue;
+                                                                }
+                                                            @endphp
+                                                            <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }}</label>
+                                                            <select class="form-select" name="{{ $itemPath }}">
+                                                                @foreach ($buttonStyleOptions as $opt)
+                                                                    <option value="{{ $opt }}" {{ $itemValue === $opt ? 'selected' : '' }}>
+                                                                        {{ ucfirst($opt) }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        @elseif ($itemIsAssocObject)
+                                                            <div class="mb-3 pt-1 border p-3 rounded">
+                                                                <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }}</label>
+                                                                @foreach ($itemValue as $childKey => $childVal)
+                                                                    @php
+                                                                        $childKeyLower = strtolower($childKey);
+                                                                        $childIsEnabled =
+                                                                            $childKeyLower === 'enabled' ||
+                                                                            Str::contains($childKeyLower, 'enabled');
+                                                                        $childIsSelect = Str::contains($childKeyLower, 'select') || Str::contains($childKeyLower, 'styleinput');
+                                                                        $childIsScalar =
+                                                                            is_string($childVal) ||
+                                                                            is_numeric($childVal) ||
+                                                                            is_bool($childVal) ||
+                                                                            is_null($childVal);
+                                                                        $childDisplay = $childIsScalar ? $childVal : json_encode($childVal);
+
+                                                                        $buttonStyleOptions = ['primary', 'secondary', 'default'];
+                                                                        if ($childIsSelect && is_string($childVal) && $childVal !== '' && !in_array($childVal, $buttonStyleOptions, true)) {
+                                                                            $buttonStyleOptions[] = $childVal;
+                                                                        }
+                                                                    @endphp
+                                                                    <div class="mb-3 pt-1">
+                                                                        <label class="form-label fw-bold">{{ ucfirst($childKey) }}</label>
+                                                                        @if ($childIsEnabled)
+                                                                            <select class="form-select"
+                                                                                name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $childKey }}]">
+                                                                                <option value="true" {{ $childVal ? 'selected' : '' }}>true</option>
+                                                                                <option value="false" {{ !$childVal ? 'selected' : '' }}>false</option>
+                                                                            </select>
+                                                                        @elseif ($childIsSelect)
+                                                                            <select class="form-select"
+                                                                                name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $childKey }}]">
+                                                                                @foreach ($buttonStyleOptions as $opt)
+                                                                                    <option value="{{ $opt }}" {{ $childVal === $opt ? 'selected' : '' }}>
+                                                                                        {{ ucfirst($opt) }}
+                                                                                    </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        @elseif ($childIsScalar)
+                                                                            <input type="text"
+                                                                                name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $childKey }}]"
+                                                                                class="form-control" value="{{ $childDisplay }}">
+                                                                        @else
+                                                                            <textarea class="form-control"
+                                                                                name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $childKey }}]"
+                                                                                rows="3">{{ $childDisplay }}</textarea>
+                                                                        @endif
+                                                                    </div>
+                                                                @endforeach
+                                                            </div>
 
                                                         {{-- LIST inside object --}}
                                                         @elseif ($itemIsListHtml) <div class="mb-3 pt-1">

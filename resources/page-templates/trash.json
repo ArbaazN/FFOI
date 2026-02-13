@@ -1,0 +1,73 @@
+[{
+    "type": "national_alignment",
+    "status": "enable",
+    "data": {
+        "eyebrowTitle": "National Alignment & Certification Credibility",
+        "title": "Skills That Are Structured, Recognised & Scalable",
+        "subtitleInput": "FFOI programs follow a nationally aligned pathway:",
+        "items": [
+            {
+                "iconImg": 211,
+                "titleInput": "Skills Training"
+            },
+            {
+                "iconImg": 212,
+                "titleInput": "Assessment"
+            },
+            {
+                "iconImg": 213,
+                "titleInput": "Certification"
+            },
+            {
+                "iconImg": 214,
+                "titleInput": "Employability Enablement"
+            }
+        ]
+    }
+},
+{
+    "type": "certification_alignment",
+    "status": "enable",
+    "data": {
+        "items": [
+            {
+                "imageSrc": 215,
+                "titleInput": "NSQF – Aligned",
+                "highlightsInput": "All FFOI programs are mapped to the National Skills Qualifications Framework, enabling:",
+                "description": [
+                    "Clear skill levels",
+                    "Measurable learning outcomes",
+                    "Vertical & lateral career mobility"
+                ]
+            },
+            {
+                "imageSrc": 216,
+                "titleInput": "RT-MSSU – Affiliated",
+                "highlightsInput": "FFOI is affiliated with Ratan Tata Maharashtra State Skills University, India’s first State Skills University.",
+                "description": [
+                    "Academic legitimacy",
+                    "Credit-based pathways",
+                    "Government recognition"
+                ]
+            },
+            {
+                "imageSrc": 217,
+                "titleInput": "NCVET – Mapped",
+                "highlightsInput": "Programs aligned with National Council for Vocational Training standards.",
+                "description": [
+                    "National benchmarking",
+                    "Employer trust",
+                    "Skill India compatibility"
+                ]
+            }
+        ],
+        "disclaimerTextarea": "This ensures that FFOI certifications are credible, transparent, and future-ready.",
+        "buttons": [
+            {
+                "labelInput": "Understand Certification Framework",
+                "actionInput": "certification_framework",
+                "styleInput": "primary"
+            }
+        ]
+    }
+}]
