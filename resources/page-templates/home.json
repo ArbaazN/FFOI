@@ -15,39 +15,13 @@
         "backgroundImage": null,
         "buttons": [
           {
+            "enabled": true,
             "labelInput": "Explore Programs",
             "actionInput": "explore_programs",
             "buttonStyleSelect": "primary"
           },
           {
-            "labelInput": "Join the Finance Education Series (Free)",
-            "actionInput": "join_finance_series",
-            "buttonStyleSelect": "secondary"
-          }
-        ]
-      }
-    },
-        {
-      "type": "banner1",
-      "status": "enable",
-      "data": {
-        "titleInput": "India’s Finance Skills, Assessments & Certification Platform",
-        "subtitle": "Building Job-Ready Finance Professionals<br>for the Real World",
-        "description": "RT MSSU COE Section 8 Not-for-Profit",
-        "featuredLabel": [
-          {
-            "label": "Featured In"
-          }
-        ],
-        "backgroundImage": null,
-        "backgroundImage1": null,
-        "buttons": [
-          {
-            "labelInput": "Explore Programs",
-            "actionInput": "explore_programs",
-            "buttonStyleSelect": "primary"
-          },
-          {
+            "enabled": true,
             "labelInput": "Join the Finance Education Series (Free)",
             "actionInput": "join_finance_series",
             "buttonStyleSelect": "secondary"
@@ -63,7 +37,7 @@
         "subtitle": "Not a B-School. Not a Coaching Institute.",
         "description": "<p>Finance Forum of India (FFOI) is India’s structured finance skills ecosystem—designed to bridge the gap between academic learning and core finance roles.</p><p> FFOI focuses on skills training, assessment-led certification, industry validation, and governance-driven credibility, enabling learners, institutions, and employers to make better, faster, and more reliable decisions.</p>",
         "typertextInput": "FFOI exists to solve one core problem",
-        "sectionImage": null,
+        "backgroundImage": null,
         "problemList": [
           {
             "label": "Degrees alone do not guarantee job-ready finance capability."
@@ -166,7 +140,7 @@
         "labelInput": "Program Architecture",
         "title": "From Foundation Skills to Super-Specialist Finance Roles",
         "subtitleInput": "FFOI follows a layered, long-term finance career architecture:",
-        "sectionImage": null,
+        "backgroundImage": null,
         "infoBlock": {
           "titleInput": "FFOI exists to solve one core problem",
           "list": [
@@ -208,7 +182,6 @@
         "subtitle": "The Flagship Degree-Integrated Finance Pathway",
         "descriptionTextarea": "The MBA in Financial Engineering is FFOI’s most advanced academic pathway—designed for learners targeting core global finance careers, not general management roles.",
         "backgroundImage": null,
-        "sectionImage": null,
         "items": [
           {
             "blockTitleInput": "This Program Integrates",
@@ -498,7 +471,7 @@
             "label": "Corporate & Industry Validation",
             "title": "Designed with the Market, Not in Isolation",
             "validationTitleInput": "FFOI works closely with",
-            "sectionImage": null,
+            "backgroundImage": null,
             "description": "to ensure programs remain relevant, practical, and hiring-aligned.",
             "list": [
               {
@@ -523,7 +496,7 @@
             "title": "Shaping India’s Finance Skills Ecosystem",
             "validationTitleInput": "",
             "description": "FFOI’s Honorary Membership brings together CXOs, CFOs, senior professionals, academicians, and policymakers to guide ecosystem development.",
-            "sectionImage": 235,
+            "backgroundImage": 235,
             "list": [
               {
                 "labelInput": ""
@@ -540,7 +513,7 @@
             "label": "Governance, Ethics & Trust",
             "title": "Built for the Long Term",
             "validationTitleInput": "FFOI operates as a Section 8 Not-for-Profit Organisation, guided by:",
-            "sectionImage": 235,
+            "backgroundImage": 235,
             "list": [
               {
                 "labelInput": "Independent governance"
