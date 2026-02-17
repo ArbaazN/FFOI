@@ -15,7 +15,6 @@ class ApiKeyMiddleware
         // ----------------------------
         $clientKey = $request->header('X-API-KEY');
         $serverKey = env('API_SECRET_KEY');
-
         if (!$clientKey || $clientKey !== $serverKey) {
             return response()->json([
                 'success' => false,

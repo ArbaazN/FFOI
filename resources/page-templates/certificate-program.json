@@ -1,0 +1,271 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "Typertext": "Certificate Program in",
+        "titleInput": "Investment Banking &<br> Hedge Fund (Operations)",
+        "subtitle": "Build Your 10 LPA+ Career in Core Finance",
+        "description": "Investment Banking Operations | Hedge Fund Operations | Market Trading Support | Risk & Compliance Roles",
+        "items": [
+          {
+            "iconImage": null,
+            "titleInput": "Duration",
+            "descriptionInput": "6 Months"
+          },
+          {
+            "iconImage": null,
+            "titleInput": "EMI Starts from",
+            "descriptionInput": "₹7,500*"
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Deadline",
+            "descriptionInput": "14 Feb 2026"
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Batch Starts",
+            "descriptionInput": "18 Apr 2026"
+          }
+        ],
+        "our_achievements": [
+          {
+            "count": "25+",
+            "label": "Years of Legacy"
+          },
+          {
+            "count": "1K+",
+            "label": "Institutes Partnered"
+          },
+          {
+            "count": "25K+",
+            "label": "ndividuals Inspired"
+          }
+        ],
+        "backgroundImage": null,
+        "buttons": [
+          {
+            "labelInput": "Apply Now",
+            "actionInput": "apply_now",
+            "buttonStyleSelect": "primary"
+          },
+          {
+            "labelInput": "Download Brochure",
+            "actionInput": "download_brochure",
+            "buttonStyleSelect": "outline"
+          }
+        ]
+      }
+    },
+    {
+      "type": "student_testimonials",
+      "status": "enable",
+      "data": {
+        "title": "What Our Students Say Students Say",
+        "students": [
+          {
+            "nameInput": "Ishwari Kalsekar",
+            "descriptionInput": "The live market simulations have been invaluable for real-world finance applications.",
+            "studentImage": null
+          },
+          {
+            "nameInput": "Adwait Sunil",
+            "courseInput": "The MBA in Investment Banking has opened doors to a global career in finance.",
+            "studentImage": null
+          },
+          {
+            "nameInput": "Mitali Goyal",
+            "courseInput": "The practical learning approach and industry connections have made all the difference in my career.",
+            "studentImage": null
+          },
+          {
+            "nameInput": "Pai Nitesh Nagesh",
+            "courseInput": "FFOI's faculty combines deep industry knowledge with practical insights, making learning impactful and relevant.",
+            "studentImage": null
+          },
+          {
+            "nameInput": "Saloni Bhosle",
+            "courseInput": "From financial modelling to IPO strategies, this MBA has shaped my future in global finance.",
+            "studentImage": null
+          },
+          {
+            "nameInput": "Melvin Rodrigues",
+            "descriptionInput": "FFOI's comprehensive curriculum has given me a competitive edge in the world of investment banking.",
+            "studentImage": null
+          },
+          {
+            "nameInput": "Akhtar Shah",
+            "descriptionInput": "FFOI's MBA program has provided me with the skills and confidence to excel in investment banking.",
+            "studentImage": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "program_structure",
+      "status": "enable",
+      "data": {
+        "titleInput": "Program Structure",
+        "subtitle": "Comprehensive learning designed for working professionals and students",
+        "items": [
+          {
+            "iconImage": null,
+            "Typertext": "Live Learning Format",
+            "titleInput": "Weekend",
+            "descriptionInput": "Live sessions in Core Finance"
+          },
+          {
+            "iconImage": null,
+            "Typertext": "Session Duration",
+            "titleInput": "3 Hours",
+            "descriptionInput": "Each on Saturday & Sunday"
+          },
+          {
+            "iconImage": null,
+            "Typertext": "Total Learning Hours",
+            "titleInput": "120 Hours",
+            "descriptionInput": "Comprehensive curriculum"
+          },
+          {
+            "iconImage": null,
+            "Typertext": "Program Duration",
+            "titleInput": "~6 Months",
+            "descriptionInput": "Flexible learning schedule"
+          },
+          {
+            "iconImage": null,
+            "Typertext": "Mode",
+            "titleInput": "Online / Hybrid",
+            "descriptionInput": "Learn from anywhere"
+          },
+          {
+            "iconImage": null,
+            "Typertext": "Total Program Fee",
+            "titleInput": "₹1.25 Lac",
+            "descriptionInput": "Easy instalments available"
+          }
+        ]
+      }
+    },
+    {
+      "type": "admissions_open",
+      "status": "enable",
+      "data": {
+        "titleInput": "Admissions Open – Hurry up! Secure your spot",
+        "subtitle": "Rolling Admission Cycle",
+        "items": [
+          {
+            "cycle_number": "01",
+            "date": "14 Feb 2026",
+            "status": "Active"
+          },
+          {
+            "cycle_number": "02",
+            "date": "28 Feb 2026",
+            "status": "If seats remain"
+          },
+          {
+            "cycle_number": "03",
+            "date": "14 Mar 2026",
+            "status": "If seats remain"
+          }
+        ],
+        "batch_start_from":"18 April 2026",
+        "disclaimerTextarea": "Note: Admission Cycles 2 and 3 will open only if seats remain available after Cycle 1.<br/>*The batch start date may be advanced if seats are filled earlier in Cycle 1."
+      }
+    },
+    {
+
+      "type": "program-fee_&_payment_plan",
+      "status": "enable",
+      "data": {
+        "titleInput": "Program Fee & Payment Plan",
+        "subtitle": "Flexible, Student-Friendly Payment Options",
+        "program_fee": [
+          {
+            "totalfeeInput": "₹1,25,000",
+            "items": [
+                {
+                    "Typertext":"Upfront Admission Fee",
+                    "feeInput":"₹5,000",
+                    "descriptionInput":"Payable at application • Confirms your seat"
+                },
+                {
+                    "Typertext":"Remaining via EMI",
+                    "feeInput":"₹1,20,000",
+                    "descriptionInput":"Flexible EMI through our partners"
+                }
+              
+            ]
+          }
+        ],
+        "payment_plan": [
+          {
+            "iconImage1": null,
+            "iconImage2": null,
+            "description": [
+                "Up to 100% payment assistance for the remaining fee",
+                "Interest-free EMI options available",
+                "Flexible EMI tenures as per partner policies",
+                "No collateral required; approval subject to eligibility and documentation"
+            ],
+            "buttons": [
+                {
+                    "labelInput": "Apply Now",
+                    "actionInput": "apply_now",
+                    "buttonStyleSelect": "primary"
+                }
+            ]
+          }
+        ]
+      }
+    },
+    {
+        "type": "best_of_industry",
+        "status": "enable",
+        "data": {
+        "titleInput": "Learn from the Best of Industry Industry",
+        "items": [
+          {
+            "iconImage": null,
+            "nameInput": "Live Learning Format",
+            "titleInput": "Weekend",
+            "descriptionInput": "Live sessions in Core Finance"
+          },
+          {
+            "iconImage": null,
+            "nameInput": "Dr. Asim Kumar Sengupta",
+            "designationInput": "Educationist | Researcher<br>Former Director – SPJIMR",
+            "linkedinurlInput": "https://linkedin.com"
+          },
+          {
+            "iconImage": null,
+            "nameInput": "Ms. Munira Lokhandwala",
+            "designationInput": "Program Director | Author | Strategist<br>MBA | IIM Calcutta | CFA",
+            "linkedinurlInput": "https://linkedin.com"
+          },
+          {
+            "iconImage": null,
+            "nameInput": "Mr. Vishal Bhojani",
+            "designationInput": "Program Head | Investment Banker<br>Entrepreneur | Trainer & Coach",
+            "linkedinurlInput": "https://linkedin.com"
+          },
+          {
+            "iconImage": null,
+            "nameInput": "Mr. Fenil Zaveri",
+            "designationInput": "Founder, Private Wealth Solutions<br>CFA Charter holder",
+            "linkedinurlInput": "https://linkedin.com"
+          },
+          {
+            "iconImage": null,
+            "nameInput": "Mr. Ashish Chodankar",
+            "designationInput": "CXO Consultant | Growth Hacker<br>Brand Strategist",
+            "linkedinurlInput": "https://linkedin.com"
+          }
+        ]
+      }
+    }
+  ]
+}

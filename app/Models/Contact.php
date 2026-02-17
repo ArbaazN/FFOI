@@ -10,7 +10,8 @@ use Spatie\Permission\Traits\HasRoles;
 
 class Contact extends Model
 {
-    use HasFactory,HasRoles, Notifiable,SoftDeletes;
+    use HasFactory,HasRoles, Notifiable;
+
     protected $table = 'contacts';
 
     protected $fillable = [
