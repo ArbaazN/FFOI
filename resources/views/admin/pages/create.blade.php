@@ -2,6 +2,22 @@
 @section('page_title', 'Page: ' . $page->title)
 
 @section('admin-main-content')
+    <style>
+        .quick-nav-links {
+            scrollbar-width: thin;
+            scrollbar-color: #9aa0a6 transparent;
+        }
+        .quick-nav-links::-webkit-scrollbar {
+            height: 6px;
+        }
+        .quick-nav-links::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .quick-nav-links::-webkit-scrollbar-thumb {
+            background-color: #9aa0a6;
+            border-radius: 999px;
+        }
+    </style>
     @php
         use Illuminate\Support\Str;
         use App\Models\Admin\Media;
@@ -90,11 +106,13 @@
                 <h5 class="mb-2">Quick Navigation</h5>
                 <button class="btn btn-success">Save Changes</button>
             </div>
-            @foreach ($content['sections'] as $i => $sec)
-                <a href="#section-{{ $i }}" class="btn btn-sm btn-outline-primary me-2 mb-2">
-                    {{ formatSectionName(ucfirst($sec['type'])) }}
-                </a>
-            @endforeach
+            <div class="quick-nav-links d-flex flex-nowrap gap-2 pb-1" style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+                @foreach ($content['sections'] as $i => $sec)
+                    <a href="#section-{{ $i }}" class="btn btn-sm btn-outline-primary flex-shrink-0">
+                        {{ formatSectionName(ucfirst($sec['type'])) }}
+                    </a>
+                @endforeach
+            </div>
         </div>
 
         <hr>
