@@ -201,7 +201,8 @@ class PageController extends Controller
             'bannerImage',
             'partnerMultipleImages',
             'logoMultipleImages',
-            'backgroundMobileImage'
+            'backgroundMobileImage',
+            'iconImageDesktop'
         ];
 
         // Normalize null
