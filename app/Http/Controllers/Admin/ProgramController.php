@@ -72,7 +72,7 @@ class ProgramController extends Controller
     {
         $data = $request->validate([
             'name'   => 'required|string|max:255',
-            'type'   => 'nullable|in:mms,pgdm',
+            'type'   => 'nullable|in:degree,certificate',
             'status' => 'required|in:0,1',
             'show_in_menu' => 'nullable|boolean',
             'menu_order'   => 'nullable|integer|min:1',
@@ -82,8 +82,8 @@ class ProgramController extends Controller
 
         try {
             $slugPrefix = match ($data['type'] ?? null) {
-                'mms'  => 'mms_programs/',
-                'pgdm' => 'pgdm_programs/',
+                'degree'  => 'degree_programs/',
+                'certificate' => 'certificate_programs/',
                 default => 'programs/',
             };
 
@@ -127,7 +127,7 @@ class ProgramController extends Controller
     {
         $data = $request->validate([
             'name'   => 'required|string|max:255',
-            'type'   => 'nullable|in:mms,pgdm',
+            'type'   => 'nullable|in:degree,certificate',
             'status' => 'required|in:0,1',
             'show_in_menu' => 'nullable|boolean',
             'menu_order'   => 'nullable|integer|min:1',
@@ -140,8 +140,8 @@ class ProgramController extends Controller
             $page    = $program->pages()->first();
 
             $slugPrefix = match ($data['type'] ?? null) {
-                'mms'  => 'mms_programs/',
-                'pgdm' => 'pgdm_programs/',
+                'degree'  => 'degree_programs/',
+                'certificate' => 'certificate_programs/',
                 default => 'programs/',
             };
 
