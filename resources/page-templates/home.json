@@ -4,27 +4,21 @@
       "type": "banner",
       "status": "enable",
       "data": {
-        "titleInput": "India’s Finance Skills, Assessments & Certification Platform",
-        "subtitle": "Building Job-Ready Finance Professionals<br>for the Real World",
-        "description": "RT MSSU COE Section 8 Not-for-Profit",
+        "title": "India's <span class=\"text-lime\">Finance Adaptive</span> Skills, <span class=\"text-lime\">Knowledge Assessment</span> & <span class=\"text-lime\">Certification</span> Platform",
+        "subtitle": "Building Job-Ready Finance Professionals for the Real World",
+        "description": "Section 8 Not-for-Profit",
         "featuredLabel": [
           {
             "label": "Featured In"
           }
         ],
-        "backgroundImage": null,
+        "backgroundImage": 2,
         "buttons": [
           {
-            "enabled": true,
+            "enabled": "true",
             "labelInput": "Explore Programs",
-            "actionInput": "explore_programs",
+            "actionInput": "#programhero",
             "buttonStyleSelect": "primary"
-          },
-          {
-            "enabled": true,
-            "labelInput": "Join the Finance Education Series (Free)",
-            "actionInput": "join_finance_series",
-            "buttonStyleSelect": "secondary"
           }
         ]
       }
@@ -33,11 +27,11 @@
       "type": "professional_finance_ecosystem",
       "status": "enable",
       "data": {
-        "title": "A Professional Finance Skills Ecosystem.",
-        "subtitle": "Not a B-School. Not a Coaching Institute.",
-        "description": "<p>Finance Forum of India (FFOI) is India’s structured finance skills ecosystem—designed to bridge the gap between academic learning and core finance roles.</p><p> FFOI focuses on skills training, assessment-led certification, industry validation, and governance-driven credibility, enabling learners, institutions, and employers to make better, faster, and more reliable decisions.</p>",
+        "title": "A <span class=\"text-green\">Professional Finance Skills</span> Ecosystem",
+        "subtitle": "Not a <span class=\"text-green\">B-School</span>. Not a <span class=\"text-green\">Coaching Institute</span>.",
+        "description": "<p>Finance Forum of India (FFOI) is India’s structured finance skills ecosystem—designed to bridge the gap between academic learning and core finance roles.</p>\r\n<p>FFOI focuses on skills training, assessment-led certification, industry validation, and governance-driven credibility, enabling learners, institutions, and employers to make better, faster, and more reliable decisions.</p>",
         "typertextInput": "FFOI exists to solve one core problem",
-        "backgroundImage": null,
+        "backgroundImage": 11,
         "problemList": [
           {
             "label": "Degrees alone do not guarantee job-ready finance capability."
@@ -89,9 +83,9 @@
           }
         ],
         "buttons": {
-          "enabled": true,
+          "enabled": "true",
           "labelInput": "Learn About FFOI",
-          "actionInput": "learn_about_ffoi",
+          "actionInput": "about-us",
           "buttonStyleSelect": "primary"
         }
       }
@@ -100,33 +94,37 @@
       "type": "ecosystem",
       "status": "enable",
       "data": {
-        "labelInput": "A FFOI Ecosystem",
-        "title": "Designed for Employability. Built for Credibility.",
+        "labelInput": "A FFOI <span class=\"text-green\">Ecosystem</span>",
+        "title": "Designed for <span class=\"text-green\">Employability</span>. Built for <span class=\"text-green\">Credibility</span>.",
         "subtitleInput": "FFOI operates as a four-pillar finance ecosystem:",
         "items": [
           {
-            "iconImage": null,
+            "iconImage": 3,
+            "iconImageDesktop": 4,
             "titleInput": "Skills Training",
             "descriptionTextarea": "Role-specific, domain-mapped finance programs built for real job functions."
           },
           {
-            "iconImage": null,
+            "iconImage": 5,
+            "iconImageDesktop": 6,
             "titleInput": "Assessment & Certification",
             "descriptionTextarea": "Objective evaluation through structured frameworks such as FAAT (Financial Adaptive Skills & Assessment Test)."
           },
           {
-            "iconImage": null,
+            "iconImage": 7,
+            "iconImageDesktop": 8,
             "titleInput": "Industry Validation",
             "descriptionTextarea": "Continuous corporate review loop ensuring relevance, rigour, and market alignment."
           },
           {
-            "iconImage": null,
+            "iconImage": 9,
+            "iconImageDesktop": 10,
             "titleInput": "Membership & Governance",
             "descriptionTextarea": "Honorary, professional, and institutional membership ensuring neutrality and trust."
           }
         ],
         "buttons": {
-          "enabled": true,
+          "enabled": "true",
           "labelInput": "View Ecosystem Architecture",
           "actionInput": "view_ecosystem_architecture",
           "buttonStyleSelect": "primary"
@@ -137,15 +135,15 @@
       "type": "program_architecture",
       "status": "enable",
       "data": {
-        "labelInput": "Program Architecture",
-        "title": "From Foundation Skills to Super-Specialist Finance Roles",
+        "labelInput": "Program <span class=\"text-green\">Architecture</span>",
+        "title": "From <span class=\"text-green\">Foundation Skills</span> to <span class=\"text-green\">Super-Specialist Finance</span> Roles",
         "subtitleInput": "FFOI follows a layered, long-term finance career architecture:",
         "backgroundImage": null,
-        "infoBlock": {
+        "infoBlock": [{
           "titleInput": "FFOI exists to solve one core problem",
           "list": [
             {
-              "label": "Degrees alone do not guarantee job-ready finance capability."
+              "label": "Degrees alone do not guarantee job-ready finance capability"
             },
             {
               "label": "FFOI does not award standalone degrees."
@@ -157,18 +155,18 @@
               "label": "FFOI enables measurable, assessable, and industry-validated finance skills."
             }
           ]
-        },
+        }],
         "buttons": [
           {
-            "enabled": true,
+            "enabled": "true",
             "labelInput": "Explore Programs",
-            "actionInput": "explore_programs",
+            "actionInput": "#programhero",
             "buttonStyleSelect": "primary"
           },
           {
-            "enabled": true,
+            "enabled": "true",
             "labelInput": "View Career Pathways",
-            "actionInput": "career_pathways",
+            "actionInput": "MaintenancePage",
             "buttonStyleSelect": "outline"
           }
         ]
@@ -178,10 +176,11 @@
       "type": "program_hero_section",
       "status": "enable",
       "data": {
-        "title": "MBA in Financial Engineering",
+        "title": "MBA / PGP in <span class=\"text-green\">Financial Engineering</span>",
         "subtitle": "The Flagship Degree-Integrated Finance Pathway",
-        "descriptionTextarea": "The MBA in Financial Engineering is FFOI’s most advanced academic pathway—designed for learners targeting core global finance careers, not general management roles.",
-        "backgroundImage": null,
+        "descriptionTextarea": "The MBA / PGP in Financial Engineering is FFOI’s most advanced academic pathway—designed for learners targeting core global finance careers, not general management roles.",
+        "backgroundImage": 12,
+        "disclaimerTextarea": "The MBA / PGP in Financial Engineering is FFOI’s most advanced academic pathway—designed for learners targeting core global finance careers, not general management roles.",
         "items": [
           {
             "blockTitleInput": "This Program Integrates",
@@ -221,7 +220,7 @@
             "blockTitleInput": "Key Highlights",
             "list": [
               {
-                "label": "2 Year full-time UGC-approved MBA delivered via partner institutions"
+                "label": "2 Year FUll time UGC-approved* MBA delivered via partner institution"
               },
               {
                 "label": "Integrated with FFOI’s skills & assessment ecosystem"
@@ -236,7 +235,7 @@
           }
         ],
         "buttons": {
-          "enabled": true,
+          "enabled": "true",
           "labelInput": "Explore MBA in Financial Engineering",
           "actionInput": "explore_mba_financial_engineering",
           "buttonStyleSelect": "primary"
@@ -247,38 +246,38 @@
       "type": "student_testimonials",
       "status": "enable",
       "data": {
-        "title": "What Our Students Say",
+        "title": "<span class=\"text-green\">Students</span> Who <span class=\"text-green\">Loved FFOI</span>",
         "students": [
           {
-            "nameInput": "Student 1",
-            "courseInput": "Course 1",
-            "overlayImage": 220,
-            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq"
-          },
-          {
-            "nameInput": "Student 2",
-            "courseInput": "Course 2",
-            "overlayImage": 221,
-            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq"
-          },
-          {
-            "nameInput": "Sakshi Verma",
+            "nameInput": "Zoya Khan",
             "courseInput": "MBA in Financial Engineering",
-            "overlayImage": 222,
-            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq",
-            "active": true
+            "overlayImage": 13,
+            "videoUrlInput": "https://www.youtube.com/embed/4R7i_GGLsu8?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1"
           },
           {
-            "nameInput": "Student 4",
-            "courseInput": "Course 4",
-            "overlayImage": 223,
-            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq"
+            "nameInput": "Saloni Bhosle",
+            "courseInput": "MBA in Financial Engineering",
+            "overlayImage": 14,
+            "videoUrlInput": "https://www.youtube.com/embed/jOL_4s_X2zg?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1"
           },
           {
-            "nameInput": "Student 5",
-            "courseInput": "Course 5",
-            "overlayImage": 224,
-            "videoUrlInput": "https://youtube.com/shorts/Iue2OnlkTJI?si=_bQi7GrRcR3Vvjgq"
+            "nameInput": "Akhtar Shah",
+            "courseInput": "MBA in Financial Engineering",
+            "overlayImage": 15,
+            "videoUrlInput": "https://www.youtube.com/embed/b2_wQmBzI1o?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1",
+            "active": "true"
+          },
+          {
+            "nameInput": "Falak Nawab",
+            "courseInput": "MBA in Financial Engineering",
+            "overlayImage": 16,
+            "videoUrlInput": "https://www.youtube.com/embed/y7hjr93qLv0?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1"
+          },
+          {
+            "nameInput": "Nitesh Pai",
+            "courseInput": "MBA in Financial Engineering",
+            "overlayImage": 17,
+            "videoUrlInput": "https://www.youtube.com/embed/FXf2GxJWe7Q?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1"
           }
         ]
       }
@@ -287,43 +286,59 @@
       "type": "Placements",
       "status": "enable",
       "data": {
-        "titleInput": "Placements",
+        "titleInput": "<span class=\"text-green\">Placements</span>",
         "highlight": {
-          "countInput": "30+",
+          "countInput": 30,
           "descriptionInput": "Students placed in niche FAS roles"
         },
         "companies": [
           {
             "nameInput": "BNP Paribas",
-            "logoImage": "bnp_paribas.svg"
+            "logoImage": 18
           },
           {
             "nameInput": "Credit Suisse",
-            "logoImage": "credit_suisse.svg"
+            "logoImage": 19
           },
           {
             "nameInput": "CITCO",
-            "logoImage": "citco.svg"
+            "logoImage": 20
           },
           {
             "nameInput": "ISS",
-            "logoImage": "iss.svg"
+            "logoImage": 21
           },
           {
             "nameInput": "J.P. Morgan",
-            "logoImage": "jp_morgan.svg"
+            "logoImage": 22
           },
           {
             "nameInput": "Morgan Stanley",
-            "logoImage": "morgan_stanley.svg"
+            "logoImage": 23
           },
           {
             "nameInput": "HSBC",
-            "logoImage": "hsbc.svg"
+            "logoImage": 24
           },
           {
             "nameInput": "Deutsche Bank",
-            "logoImage": "deutsche_bank.svg"
+            "logoImage": 25
+          },
+          {
+            "nameInput": "Ascent Group",
+            "logoImage": 26
+          },
+          {
+            "nameInput": "HC Global",
+            "logoImage": 27
+          },
+          {
+            "nameInput": "WAY",
+            "logoImage": 28
+          },
+          {
+            "nameInput": "Opus Fund",
+            "logoImage": 29
           }
         ]
       }
@@ -332,50 +347,50 @@
       "type": "certificate_program",
       "status": "enable",
       "data": {
-        "title": "Certificate Program",
+        "title": "<span class=\"text-green\">Certificate</span> Program",
         "subtitle": "Short-Cycle | Role-Focused | Skills-First",
         "programs": [
           {
             "titleInput": "Financial Engineering",
-            "image": 225,
+            "image": 30,
             "features": [
               {
                 "labelInput": "Careers",
-                "iconImage": null,
-                "descriptionInput": ""
+                "iconImage": "",
+                "descriptionInput": "Markets | Risk | Financial Analytics"
               },
               {
                 "labelInput": "ideal for",
-                "iconImage": null,
-                "descriptionInput": ""
+                "iconImage": "",
+                "descriptionInput": "MBA students, finance graduates, working professionals"
               }
             ],
             "button": {
-              "enabled": true,
+              "enabled": "true",
               "labelInput": "View Program Details",
-              "actionInput": "explore_financial_engineering_program",
+              "actionInput": "certificate-program-in-financial-engineering",
               "buttonStyleSelect": "primary"
             }
           },
           {
             "titleInput": "Investment Banking & Hedge Fund Operations",
-            "image": 226,
+            "image": 31,
             "features": [
               {
                 "labelInput": "Careers",
-                "iconImage": null,
-                "descriptionInput": ""
+                "iconImage": "",
+                "descriptionInput": "IB Operations | Trade Support | Fund Operations"
               },
               {
-                "labelInput": "ideal for",
-                "iconImage": null,
-                "descriptionInput": ""
+                "labelInput": "Ideal for",
+                "iconImage": "",
+                "descriptionInput": "Commerce & management graduates, BFSI aspirants"
               }
             ],
             "button": {
-              "enabled": true,
+              "enabled": "true",
               "labelInput": "View Program Details",
-              "actionInput": "explore_financial_engineering_program",
+              "actionInput": "certificate-program-in-investment-banking-and-hedge-fund",
               "buttonStyleSelect": "primary"
             }
           }
@@ -387,23 +402,23 @@
       "status": "enable",
       "data": {
         "labelInput": "Finance Education Series (Free)",
-        "title": "Your Gateway into Core Finance Domains",
+        "title": "Your <span class=\"text-green\">Gateway</span> into <span class=\"text-green\">Core Finance</span> Domains",
         "descriptionTextarea": "FFOI runs daily and weekly 90-minute expert-led finance sessions, designed as an entry point for learners to understand real finance roles before committing to programs.",
-        "topicsTitle": "Most Topics Covered",
+        "topicsTitle": "Most <span class=\"text-green\">Topics</span> Covered",
         "topics": [
           {
             "titleInput": "Investment Banking",
-            "displayImage": null,
+            "displayImage": 32,
             "linkInput": ""
           },
           {
             "titleInput": "Financial Analysis",
-            "displayImage": null,
+            "displayImage": 33,
             "linkInput": ""
           },
           {
             "titleInput": "Corporate Finance",
-            "displayImage": null,
+            "displayImage": 34,
             "linkInput": ""
           }
         ]
@@ -414,12 +429,12 @@
       "status": "enable",
       "data": {
         "labelInput": "Assessment-Led Differentiation",
-        "title": "FAAT – Financial Adaptive Skills & Assessment Test",
+        "title": "<span class=\"text-green\">FAAT</span> –  <span class=\"text-green\">FAS Acumen </span>  <span class=\"text-green\">Assessment</span> Test",
         "description": "FFOI runs daily and weekly 90-minute expert-led finance sessions, designed as an entry point for learners to understand real finance roles before committing to programs.",
         "ffatItems": [
           {
             "titleInput": "Students & Professionals",
-            "image": 230,
+            "image": 35,
             "list": [
               {
                 "labelInput": "Benchmark real finance capability"
@@ -432,15 +447,15 @@
               }
             ],
             "buttons": {
-              "enabled": true,
+              "enabled": "true",
               "labelInput": "FAAT for Students",
-              "actionInput": "faat_students",
+              "actionInput": "MaintenancePage",
               "buttonStyleSelect": "primary"
             }
           },
           {
             "titleInput": "Corporates",
-            "image": 231,
+            "image": 36,
             "list": [
               {
                 "labelInput": "Role-wise candidate shortlisting"
@@ -453,9 +468,9 @@
               }
             ],
             "buttons": {
-              "enabled": true,
+              "enabled": "true",
               "labelInput": "FAAT for Corporates",
-              "actionInput": "faat_corporates",
+              "actionInput": "MaintenancePage",
               "buttonStyleSelect": "primary"
             }
           }
@@ -468,11 +483,11 @@
       "data": {
         "items": [
           {
-            "label": "Corporate & Industry Validation",
-            "title": "Designed with the Market, Not in Isolation",
+            "label": "<span class=\"text-green\">Corporate</span> & <span class=\"text-green\">Industry</span> Validation",
+            "title": "<span class=\"text-green\">Designed</span> with the <span class=\"text-green\">Market</span>,<br>Not in <span class=\"text-green\">Isolation</span>",
             "validationTitleInput": "FFOI works closely with",
-            "backgroundImage": null,
-            "description": "to ensure programs remain relevant, practical, and hiring-aligned.",
+            "backgroundImage": 37,
+            "description": "<p>to ensure programs remain relevant, practical, and hiring-aligned.</p>\r\n<p class=\"text-secondary\">FFOI enables <span class=\"text-green\">Employability Readiness</span>, not placement guarantees.<p>",
             "list": [
               {
                 "labelInput": "Finance employers"
@@ -485,27 +500,27 @@
               }
             ],
             "buttons": {
-              "enabled": true,
+              "enabled": "true",
               "labelInput": "Work With FFOI (Corporates)",
-              "actionInput": "work_with_ffoi",
+              "actionInput": "MaintenancePage",
               "buttonStyleSelect": "primary"
             }
           },
           {
-            "label": "Membership & Leadership Stewardship",
-            "title": "Shaping India’s Finance Skills Ecosystem",
+            "label": "<span class=\"text-green\">Membership</span> &amp; <span class=\"text-green\">Leadership</span> Stewardship",
+            "title": "Shaping <span class=\"text-green\">India's Finance<br>Skills</span> Ecosystem",
             "validationTitleInput": "",
             "description": "FFOI’s Honorary Membership brings together CXOs, CFOs, senior professionals, academicians, and policymakers to guide ecosystem development.",
-            "backgroundImage": 235,
+            "backgroundImage": 38,
             "list": [
               {
                 "labelInput": ""
               }
             ],
             "buttons": {
-              "enabled": true,
+              "enabled": "true",
               "labelInput": "Explore Membership",
-              "actionInput": "explore_membership",
+              "actionInput": "MaintenancePage",
               "buttonStyleSelect": "primary"
             }
           },
@@ -513,7 +528,7 @@
             "label": "Governance, Ethics & Trust",
             "title": "Built for the Long Term",
             "validationTitleInput": "FFOI operates as a Section 8 Not-for-Profit Organisation, guided by:",
-            "backgroundImage": 235,
+            "backgroundImage": 39,
             "list": [
               {
                 "labelInput": "Independent governance"
@@ -530,15 +545,15 @@
             ],
             "buttons": [
               {
-                "enabled": true,
+                "enabled": 1,
                 "labelInput": "Governance & Ethics",
                 "actionInput": "governance_ethics",
                 "buttonStyleSelect": "primary"
               },
               {
-                "enabled": true,
+                "enabled": 1,
                 "labelInput": "Industry Advisory Council",
-                "actionInput": "industry_advisory_council",
+                "actionInput": "MaintenancePage",
                 "buttonStyleSelect": "outline"
               }
             ]
@@ -550,23 +565,17 @@
       "type": "footer",
       "status": "enable",
       "data": {
-        "title": "Start Your Finance Skill Journey",
+        "title": "Start Your Finance Skill Journe",
         "descriptionTextarea": "Whether you are a student, professional, institution, or corporate, FFOI provides structured pathways to build finance capability that truly matters.",
         "buttons": [
           {
-            "enabled": true,
-            "labelInput": "Explore programs",
-            "actionInput": "explore_programs",
+            "enabled": "true",
+            "labelInput": "Explore Programs",
+            "actionInput": "#programhero",
             "buttonStyleSelect": "primary"
           },
           {
-            "enabled": true,
-            "labelInput": "Join Free Finance Education Series",
-            "actionInput": "join_free_finance_education_series",
-            "buttonStyleSelect": "outline"
-          },
-          {
-            "enabled": true,
+            "enabled": "true",
             "labelInput": "SPEAK TO AN ADVISOR",
             "actionInput": "speak_to_an_advisor",
             "buttonStyleSelect": "default"
