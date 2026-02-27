@@ -227,8 +227,8 @@
                                 <div class="mb-3 pt-1">
                                     <label class="form-label fw-bold">{{ formatSectionName($label) }}</label>
                                     <select class="form-select" name="sections[{{ $index }}][data][{{ $field }}]">
-                                        <option value="true" {{ $value ? 'selected' : '' }}>true</option>
-                                        <option value="false" {{ !$value ? 'selected' : '' }}>false</option>
+                                        <option value="true" {{ ($value === true || $value === 'true' || $value === 1 || $value === '1') ? 'selected' : '' }}>true</option>
+                                        <option value="false" {{ ($value === false || $value === 'false' || $value === 0 || $value === '0') ? 'selected' : '' }}>false</option>
                                     </select>
                                 </div>
                             @elseif ($isSelectKey)
@@ -337,8 +337,8 @@
                                             @if ($childIsEnabled)
                                                 <select class="form-select"
                                                     name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]">
-                                                    <option value="true" {{ $childVal ? 'selected' : '' }}>true</option>
-                                                    <option value="false" {{ !$childVal ? 'selected' : '' }}>false</option>
+                                                    <option value="true" {{ ($childVal === true || $childVal === 'true' || $childVal === 1 || $childVal === '1') ? 'selected' : '' }}>true</option>
+                                                    <option value="false" {{ ($childVal === false || $childVal === 'false' || $childVal === 0 || $childVal === '0') ? 'selected' : '' }}>false</option>
                                                 </select>
                                             @elseif ($childIsSelect)
                                                 <select class="form-select"
@@ -487,8 +487,8 @@
 
                                                                             @if ($nestedIsEnabled)
                                                                                 <select class="form-select" name="{{ $nestedPath }}">
-                                                                                    <option value="true" {{ $nestedValue ? 'selected' : '' }}>true</option>
-                                                                                    <option value="false" {{ !$nestedValue ? 'selected' : '' }}>false</option>
+                                                                                    <option value="true" {{ ($nestedValue === true || $nestedValue === 'true' || $nestedValue === 1 || $nestedValue === '1') ? 'selected' : '' }}>true</option>
+                                                                                    <option value="false" {{ ($nestedValue === false || $nestedValue === 'false' || $nestedValue === 0 || $nestedValue === '0') ? 'selected' : '' }}>false</option>
                                                                                 </select>
                                                                             @elseif ($nestedIsSelect)
                                                                                 <select class="form-select" name="{{ $nestedPath }}">
@@ -602,8 +602,8 @@
                                                         @elseif ($itemIsEnabled) <div class="mb-3 pt-1">
                                                             <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }}</label>
                                                             <select class="form-select" name="{{ $itemPath }}">
-                                                                <option value="true" {{ $itemValue ? 'selected' : '' }}>true</option>
-                                                                <option value="false" {{ !$itemValue ? 'selected' : '' }}>false</option>
+                                                                <option value="true" {{ ($itemValue === true || $itemValue === 'true' || $itemValue === 1 || $itemValue === '1') ? 'selected' : '' }}>true</option>
+                                                                <option value="false" {{ ($itemValue === false || $itemValue === 'false' || $itemValue === 0 || $itemValue === '0') ? 'selected' : '' }}>false</option>
                                                             </select>
                                                         </div>
                                                         @elseif ($itemIsSelect) <div class="mb-3 pt-1">
@@ -649,8 +649,8 @@
                                                                         @if ($childIsEnabled)
                                                                             <select class="form-select"
                                                                                 name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $childKey }}]">
-                                                                                <option value="true" {{ $childVal ? 'selected' : '' }}>true</option>
-                                                                                <option value="false" {{ !$childVal ? 'selected' : '' }}>false</option>
+                                                                                <option value="true" {{ ($childVal === true || $childVal === 'true' || $childVal === 1 || $childVal === '1') ? 'selected' : '' }}>true</option>
+                                                                                <option value="false" {{ ($childVal === false || $childVal === 'false' || $childVal === 0 || $childVal === '0') ? 'selected' : '' }}>false</option>
                                                                             </select>
                                                                         @elseif ($childIsSelect)
                                                                             <select class="form-select"
