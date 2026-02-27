@@ -81,6 +81,7 @@ class ProgramController extends Controller
         DB::beginTransaction();
 
         try {
+           
             $slugPrefix = match ($data['type'] ?? null) {
                 'degree'  => 'degree_programs/',
                 'certificate' => 'certificate_programs/',
@@ -99,8 +100,13 @@ class ProgramController extends Controller
                         ->where('show_in_menu', true)
                         ->max('menu_order') ?? 0) + 1;
             }
-
-            $jsonContent = file_get_contents(resource_path('page-templates/programs.json'));
+            $filename = "programs.json";
+            if($data['type']=='certificate'){
+                $filename = "certificate-program.json";
+            }else if($data['type']=='degree'){
+                $filename = "certificate-program.json";
+            }
+            $jsonContent = file_get_contents(resource_path('page-templates/'.$filename));
 
             $program->pages()->create([
                 'title'        => $data['name'],
