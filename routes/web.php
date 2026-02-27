@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UtmLinkController;
 use App\Http\Controllers\Admin\WebsiteSettingController;
+use App\Http\Controllers\Admin\WebinarController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,6 +42,23 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('blog/category', BlogCategoryController::class)->names('blog.categories');
         Route::resource('blog', BlogController::class)->names('blog');
+
+        Route::get('webinar/upcomingsession', [WebinarController::class,'sessionList'])->name('webinar.session.list');
+        Route::get('webinar/upcomingsession/create/{id?}', [WebinarController::class,'sessionCreate'])->name('webinar.session.create');
+        Route::post('webinar/upcomingsession/store', [WebinarController::class,'sessionStore'])->name('webinar.session.store');
+        Route::post('webinar/upcomingsession/update/{id?}', [WebinarController::class,'sessionUpdate'])->name('webinar.session.update');
+
+        Route::get('webinar/session-details', [WebinarController::class,'sessionDetailList'])->name('webinar.session.detail.list');
+        Route::get('webinar/session-details/create', [WebinarController::class,'sessionDetailsAdd'])->name('webinar.session.detail.create');
+        Route::get('webinar/session-details/edit/{id?}', [WebinarController::class,'sessionDetailsAdd'])->name('webinar.session.detail.edit');
+        Route::post('webinar/session-details/store', [WebinarController::class,'sessionDetailStore'])->name('webinar.session.detail.store');
+        Route::post('webinar/session-details/update/{id?}', [WebinarController::class,'sessionDetailUpdate'])->name('webinar.detail.session.update');
+
+        Route::get('webinar', [WebinarController::class,'webinarList'])->name('webinar.list');
+        Route::get('webinar/create/{id?}', [WebinarController::class,'webinarAdd'])->name('webinar.create');
+        Route::post('webinar/store', [WebinarController::class,'webinarStore'])->name('webinar.store');
+        Route::post('webinar/update/{id?}', [WebinarController::class,'webinarUpdate'])->name('webinar.update');
+       
 
         Route::get('settings', [WebsiteSettingController::class, 'index'])->name('settings');
         Route::post('settings/update', [WebsiteSettingController::class, 'update'])->name('settings.update');

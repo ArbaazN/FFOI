@@ -5,12 +5,17 @@ use App\Http\Controllers\API\PageController;
 use App\Http\Controllers\API\UtmApiController;
 use App\Http\Controllers\API\WebsiteApiController;
 use App\Http\Controllers\API\ContactController;
+use App\Http\Controllers\API\WebinarController;
 
 use Illuminate\Support\Facades\Route;
 
 //Blogs
 Route::middleware('api_key')->group(function () {
     Route::get('/contacts', [ContactController::class, 'index']);
+    
+    Route::get('/webinar', [WebinarController::class, 'show']);
+    Route::get('/sessions/{id}', [WebinarController::class, 'sessionDetail']);
+
     Route::get('/allBlogs', [BlogApiController::class, 'latestBlogs']);
     Route::get('/blog/{slug}', [BlogApiController::class, 'blogDetail']);
 
