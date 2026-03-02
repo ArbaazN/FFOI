@@ -33,6 +33,23 @@
                     @endif
 
                     <div class="mb-4">
+                        <label class="form-label fw-bold">Image</label>
+
+                        @if ($isEdit && $session->image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    
+                    <div class="mb-4">
                         <label class="form-label fw-bold">Session Name</label>
                         <input type="text" name="session_name" class="form-control @error('title') is-invalid @enderror"
                             value="{{ old('session_name', $isEdit ? $session->session_name : '') }}">

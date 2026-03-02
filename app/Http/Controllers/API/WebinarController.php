@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\WebinarUpcomingSession;
 use App\Models\WebinarUpcomingSessionCategory;
+use App\Models\WebinarRegistration;
 use App\Models\Webinar;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Exception;
+use Validator;
 
 class WebinarController extends Controller
 {
@@ -71,6 +73,46 @@ class WebinarController extends Controller
             'status' => true,
             'session' => $session
         ]);
+    }
+
+
+    public function saveWebinar(Request $request)
+    {
+        try{
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'email' => 'required|email',
+                'contact' => 'required|string|max:20',
+                'city' => 'nullable|string|max:100',
+                'highest_qualification' => 'nullable|string|max:255',
+                'current_status' => 'nullable|in:Student,Fresher,Working',
+                'topic_interested_in' => 'nullable|string',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => $validator->errors()
+                ], 422);
+            }
+
+            $webinar = WebinarRegistration::create($request->all());
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Webinar form submitted successfully.',
+                'data' => $webinar
+            ], 200);
+        } catch (\Exception $e) {
+
+            // Log error for debugging
+            Log::error('Webinar registration API Error: ' . $e->getMessage());
+
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong. Please try again later.'
+            ], 500);
+        }
     }
 
 }

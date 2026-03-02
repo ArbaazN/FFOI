@@ -29,6 +29,23 @@
                     @endif
 
                     <div class="mb-4">
+                        <label class="form-label fw-bold">Banner Image</label>
+
+                        @if ($isEdit && $session->banner_image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->banner_image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="banner_image" class="form-control @error('banner_image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('banner_image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
                         <label class="form-label fw-bold">Session Name</label>
 
                         <select name="session_id" class="form-control @error('session_id') is-invalid @enderror">
@@ -78,7 +95,7 @@
                     <div class="mb-4">
                         <label class="form-label fw-bold">Date</label>
                         <input type="date" name="date" class="form-control @error('date') is-invalid @enderror"
-                            value="{{ old('date', $isEdit ? $session->date : '') }}">
+                             value="{{ old('date', isset($session) ? \Carbon\Carbon::parse($session->date)->format('Y-m-d') : '') }}">
                         @error('date') 
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -191,6 +208,23 @@
                     <h5>Who Should Attend?</h5>
 
                     <div class="mb-4">
+                        <label class="form-label fw-bold">Image</label>
+
+                        @if ($isEdit && $session->image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
                         <label class="form-label fw-bold">Heading</label>
                         <input type="text" name="who_attend_heading" class="form-control @error('who_attend_heading') is-invalid @enderror"
                             value="{{ old('who_attend_heading', $isEdit ? $session->who_attend_heading : '') }}">
@@ -277,6 +311,23 @@
 
                     <hr>
                     <h5>How This Session Helps Your Career</h5>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Image</label>
+
+                        @if ($isEdit && $session->image_attend)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->image_attend) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="image_attend" class="form-control @error('image_attend') is-invalid @enderror"
+                            accept="image/*">
+                        @error('image_attend')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
 
                     <div class="mb-4">
                         <label class="form-label fw-bold">Heading</label>

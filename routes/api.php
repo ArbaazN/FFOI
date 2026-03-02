@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 //Blogs
 Route::middleware('api_key')->group(function () {
     Route::get('/contacts', [ContactController::class, 'index']);
-    
+    Route::post('contact/save', [ContactController::class, 'store']);
+
     Route::get('/webinar', [WebinarController::class, 'show']);
     Route::get('/sessions/{id}', [WebinarController::class, 'sessionDetail']);
+    Route::POST('/webinar/registration', [WebinarController::class, 'saveWebinar']);
 
     Route::get('/allBlogs', [BlogApiController::class, 'latestBlogs']);
     Route::get('/blog/{slug}', [BlogApiController::class, 'blogDetail']);
@@ -28,4 +30,3 @@ Route::middleware('api_key')->group(function () {
 
 });
 
-Route::post('contact/save', [ContactController::class, 'store']);

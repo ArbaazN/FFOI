@@ -12,6 +12,7 @@ class WebinarUpcomingSessionCategory extends Model
     protected $table = 'webinar_upcoming_session_category';
 
     protected $fillable = [
+        'image',
         'slug',
         'session_name',
         'heading',

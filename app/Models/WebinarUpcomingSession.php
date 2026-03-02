@@ -13,6 +13,7 @@ class WebinarUpcomingSession extends Model
     protected $table = 'webinar_upcoming_session';
 
     protected $fillable = [
+        'banner_image',
         'slug',
         'session_id',
         'topic_name',
@@ -22,6 +23,7 @@ class WebinarUpcomingSession extends Model
         'time',
         'mode',
         'by',
+        'image',
         'why_attend_section_heading',
         'why_attend_section_points',
         'why_learn_heading',
@@ -32,6 +34,7 @@ class WebinarUpcomingSession extends Model
         'career_role_heading',
         'career_role_points',
         'career_role_disclaimer',
+        'image_attend',
         'how_session_help_heading',
         'how_session_help_points',
         'how_session_help_disclaimer',

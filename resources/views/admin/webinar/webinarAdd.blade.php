@@ -30,6 +30,23 @@
                     @endif
 
                     <div class="mb-4">
+                        <label class="form-label fw-bold">Banner Image</label>
+
+                        @if ($isEdit && $webinar->banner_image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $webinar->banner_image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="banner_image" class="form-control @error('banner_image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('banner_image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
                         <label class="form-label fw-bold">Title</label>
                         <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
                             value="{{ old('title', $isEdit ? $webinar->title : '') }}">
@@ -85,6 +102,23 @@
 
                     <hr>
                     <h5>Who Should Attend?</h5>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Image</label>
+
+                        @if ($isEdit && $webinar->image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $webinar->image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                     <div class="mb-4 dynamic-points">
                         <label class="form-label fw-bold">Points</label>
                         <div class="points-wrapper">
