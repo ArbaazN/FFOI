@@ -2,6 +2,22 @@
 @section('page_title', 'Page: ' . $page->title)
 
 @section('admin-main-content')
+    <style>
+        .quick-nav-links {
+            scrollbar-width: thin;
+            scrollbar-color: #9aa0a6 transparent;
+        }
+        .quick-nav-links::-webkit-scrollbar {
+            height: 6px;
+        }
+        .quick-nav-links::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .quick-nav-links::-webkit-scrollbar-thumb {
+            background-color: #9aa0a6;
+            border-radius: 999px;
+        }
+    </style>
     @php
         use Illuminate\Support\Str;
         use App\Models\Admin\Media;
@@ -90,11 +106,13 @@
                 <h5 class="mb-2">Quick Navigation</h5>
                 <button class="btn btn-success">Save Changes</button>
             </div>
-            @foreach ($content['sections'] as $i => $sec)
-                <a href="#section-{{ $i }}" class="btn btn-sm btn-outline-primary me-2 mb-2">
-                    {{ formatSectionName(ucfirst($sec['type'])) }}
-                </a>
-            @endforeach
+            <div class="quick-nav-links d-flex flex-nowrap gap-2 pb-1" style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+                @foreach ($content['sections'] as $i => $sec)
+                    <a href="#section-{{ $i }}" class="btn btn-sm btn-outline-primary flex-shrink-0">
+                        {{ formatSectionName(ucfirst($sec['type'])) }}
+                    </a>
+                @endforeach
+            </div>
         </div>
 
         <hr>
@@ -209,8 +227,8 @@
                                 <div class="mb-3 pt-1">
                                     <label class="form-label fw-bold">{{ formatSectionName($label) }}</label>
                                     <select class="form-select" name="sections[{{ $index }}][data][{{ $field }}]">
-                                        <option value="true" {{ $value ? 'selected' : '' }}>true</option>
-                                        <option value="false" {{ !$value ? 'selected' : '' }}>false</option>
+                                        <option value="true" {{ ($value === true || $value === 'true' || $value === 1 || $value === '1') ? 'selected' : '' }}>true</option>
+                                        <option value="false" {{ ($value === false || $value === 'false' || $value === 0 || $value === '0') ? 'selected' : '' }}>false</option>
                                     </select>
                                 </div>
                             @elseif ($isSelectKey)
@@ -319,8 +337,8 @@
                                             @if ($childIsEnabled)
                                                 <select class="form-select"
                                                     name="sections[{{ $index }}][data][{{ $field }}][{{ $childKey }}]">
-                                                    <option value="true" {{ $childVal ? 'selected' : '' }}>true</option>
-                                                    <option value="false" {{ !$childVal ? 'selected' : '' }}>false</option>
+                                                    <option value="true" {{ ($childVal === true || $childVal === 'true' || $childVal === 1 || $childVal === '1') ? 'selected' : '' }}>true</option>
+                                                    <option value="false" {{ ($childVal === false || $childVal === 'false' || $childVal === 0 || $childVal === '0') ? 'selected' : '' }}>false</option>
                                                 </select>
                                             @elseif ($childIsSelect)
                                                 <select class="form-select"
@@ -420,15 +438,148 @@
                                                                     <h6>Item {{ $nestedIndex + 1 }}</h6>
 
                                                                     @foreach ($nestedItem as $nestedField => $nestedValue)
+                                                                        @php
+                                                                            $nestedFieldLower = strtolower($nestedField);
+                                                                            $nestedPath =
+                                                                                "sections[$index][data][$field][$itemIndex][$itemField][$nestedIndex][$nestedField]";
+                                                                            $nestedIsInput = Str::contains($nestedFieldLower, 'input');
+                                                                            $nestedIsTextarea = Str::contains($nestedFieldLower, 'textarea');
+                                                                            $nestedIsEnabled = Str::contains($nestedFieldLower, 'enabled');
+                                                                            $nestedIsSelect = Str::contains($nestedFieldLower, 'select') || Str::contains($nestedFieldLower, 'styleinput');
+                                                                            $nestedIsImage = Str::contains($nestedFieldLower, [
+                                                                                'img',
+                                                                                'image',
+                                                                                'src',
+                                                                                'logo',
+                                                                                'icon',
+                                                                            ]);
+                                                                            $nestedIsArray = is_array($nestedValue);
+                                                                            $nestedIsGallery =
+                                                                                $nestedIsArray &&
+                                                                                !empty($nestedValue) &&
+                                                                                Str::contains($nestedFieldLower, [
+                                                                                    'images',
+                                                                                    'gallery',
+                                                                                    'photos',
+                                                                                ]);
+                                                                            $nestedIsVideo = Str::contains($nestedFieldLower, [
+                                                                                'video',
+                                                                                'mp4',
+                                                                                'webm',
+                                                                                'ogg',
+                                                                            ]);
+                                                                            $nestedIsHtml =
+                                                                                is_string($nestedValue) &&
+                                                                                Str::contains($nestedValue, ['<strong', '<p', '<br', '</']);
+                                                                            $nestedIsPlainText =
+                                                                                is_string($nestedValue) && !$nestedIsHtml && !$nestedIsImage && !$nestedIsVideo;
+
+                                                                            $buttonStyleOptions = ['primary', 'secondary', 'default'];
+                                                                            if ($nestedIsSelect && is_string($nestedValue) && $nestedValue !== '' && !in_array($nestedValue, $buttonStyleOptions, true)) {
+                                                                                $buttonStyleOptions[] = $nestedValue;
+                                                                            }
+                                                                        @endphp
+
                                                                         <div class="mb-2">
                                                                             <label class="form-label fw-bold">
                                                                                 {{ formatSectionName($nestedField) }}
                                                                             </label>
 
-                                                                            <input type="text"
-                                                                                class="form-control"
-                                                                                name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $nestedIndex }}][{{ $nestedField }}]"
-                                                                                value="{{ $nestedValue }}">
+                                                                            @if ($nestedIsEnabled)
+                                                                                <select class="form-select" name="{{ $nestedPath }}">
+                                                                                    <option value="true" {{ ($nestedValue === true || $nestedValue === 'true' || $nestedValue === 1 || $nestedValue === '1') ? 'selected' : '' }}>true</option>
+                                                                                    <option value="false" {{ ($nestedValue === false || $nestedValue === 'false' || $nestedValue === 0 || $nestedValue === '0') ? 'selected' : '' }}>false</option>
+                                                                                </select>
+                                                                            @elseif ($nestedIsSelect)
+                                                                                <select class="form-select" name="{{ $nestedPath }}">
+                                                                                    @foreach ($buttonStyleOptions as $opt)
+                                                                                        <option value="{{ $opt }}" {{ $nestedValue === $opt ? 'selected' : '' }}>
+                                                                                            {{ ucfirst($opt) }}
+                                                                                        </option>
+                                                                                    @endforeach
+                                                                                </select>
+                                                                            @elseif ($nestedIsTextarea)
+                                                                                <textarea class="form-control" name="{{ $nestedPath }}" rows="4">{{ $nestedValue }}</textarea>
+                                                                            @elseif ($nestedIsInput)
+                                                                                <input type="text" class="form-control" name="{{ $nestedPath }}"
+                                                                                    value="{{ $nestedValue }}">
+                                                                            @elseif ($nestedIsGallery)
+                                                                                <div class="border p-2 rounded">
+                                                                                    <div class="d-flex flex-wrap gap-2">
+                                                                                        @foreach ($nestedValue as $nestedImgIndex => $nestedImgItem)
+                                                                                            @php
+                                                                                                $nestedImgMedia = is_numeric($nestedImgItem) ? Media::find($nestedImgItem) : null;
+                                                                                                $nestedImgUrl = $nestedImgMedia ? $nestedImgMedia->file_url : (is_string($nestedImgItem) ? $nestedImgItem : null);
+                                                                                                $nestedImgId = is_numeric($nestedImgItem) ? $nestedImgItem : null;
+                                                                                            @endphp
+                                                                                            @if ($nestedImgUrl)
+                                                                                                <div class="gallery-item position-relative border rounded p-1"
+                                                                                                    style="width:100px; height:100px; overflow:hidden;"
+                                                                                                    data-img-id="{{ $nestedImgId }}">
+                                                                                                    <img src="{{ $nestedImgUrl }}" class="w-100 h-100"
+                                                                                                        style="object-fit:cover;">
+                                                                                                    <button type="button"
+                                                                                                        class="btn btn-sm btn-danger delete-gallery-image position-absolute"
+                                                                                                        style="top:0px; right:0px; border-radius:50%; padding:1px 5px;">
+                                                                                                        X
+                                                                                                    </button>
+                                                                                                    <input type="hidden"
+                                                                                                        name="{{ $nestedPath }}[keep][]"
+                                                                                                        value="{{ $nestedImgId }}">
+                                                                                                </div>
+                                                                                            @endif
+                                                                                        @endforeach
+                                                                                    </div>
+                                                                                    <hr>
+                                                                                    <label class="fw-bold">Add More Images</label>
+                                                                                    <input type="file" class="form-control" accept="image/*"
+                                                                                        name="{{ $nestedPath }}[files][]" multiple>
+                                                                                    <input type="hidden" name="{{ $nestedPath }}[old]"
+                                                                                        value="{{ json_encode($nestedValue) }}">
+                                                                                    <input type="hidden" name="{{ $nestedPath }}[_is_gallery]" value="1">
+                                                                                </div>
+                                                                            @elseif ($nestedIsImage)
+                                                                                @php
+                                                                                    $nestedMedia = is_numeric($nestedValue) ? Media::find($nestedValue) : null;
+                                                                                    $nestedImgUrl = $nestedMedia ? $nestedMedia->file_url : (is_string($nestedValue) ? $nestedValue : null);
+                                                                                @endphp
+                                                                                @if ($nestedImgUrl)
+                                                                                <div class="">
+                                                                                    <a href="{{ $nestedImgUrl }}" target="_blank"
+                                                                                        class="d-inline-block mb-2 text-primary">
+                                                                                        <div class="border rounded d-flex align-items-center justify-content-center"
+                                                                                            style="width:120px; height:120px; overflow:hidden; background:#f8f9fa;">
+                                                                                            <img src="{{ $nestedImgUrl }}" alt=""
+                                                                                                style="max-width:100%; max-height:100%; object-fit:contain;">
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                @endif
+                                                                                <input type="file" class="form-control" name="{{ $nestedPath }}" accept="image/*">
+                                                                                <input type="hidden" name="{{ $nestedPath }}_old" value="{{ $nestedValue }}">
+                                                                            @elseif ($nestedIsVideo)
+                                                                                @if (is_string($nestedValue) && $nestedValue)
+                                                                                    <div class="border rounded d-inline-block mb-2"
+                                                                                        style="width:240px; height:135px; overflow:hidden; background:#f8f9fa;">
+                                                                                        <video controls class="w-100 h-100">
+                                                                                            <source src="{{ $nestedValue }}" type="video/mp4">
+                                                                                        </video>
+                                                                                    </div>
+                                                                                @endif
+                                                                                <input type="file" class="form-control" name="{{ $nestedPath }}"
+                                                                                    accept="video/mp4,video/webm,video/ogg">
+                                                                                <input type="hidden" name="{{ $nestedPath }}_old"
+                                                                                    value="{{ $nestedValue }}">
+                                                                            @elseif ($nestedIsHtml)
+                                                                                <textarea class="form-control editor autosize" name="{{ $nestedPath }}" rows="3">{{ $nestedValue }}</textarea>
+                                                                            @elseif ($nestedIsPlainText)
+                                                                                <textarea class="form-control editor autosize" name="{{ $nestedPath }}" rows="3">{{ $nestedValue }}</textarea>
+                                                                            @else
+                                                                                <input type="text"
+                                                                                    class="form-control"
+                                                                                    name="{{ $nestedPath }}"
+                                                                                    value="{{ is_string($nestedValue) ? $nestedValue : json_encode($nestedValue) }}">
+                                                                            @endif
                                                                         </div>
                                                                     @endforeach
                                                                 </div>
@@ -451,8 +602,8 @@
                                                         @elseif ($itemIsEnabled) <div class="mb-3 pt-1">
                                                             <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }}</label>
                                                             <select class="form-select" name="{{ $itemPath }}">
-                                                                <option value="true" {{ $itemValue ? 'selected' : '' }}>true</option>
-                                                                <option value="false" {{ !$itemValue ? 'selected' : '' }}>false</option>
+                                                                <option value="true" {{ ($itemValue === true || $itemValue === 'true' || $itemValue === 1 || $itemValue === '1') ? 'selected' : '' }}>true</option>
+                                                                <option value="false" {{ ($itemValue === false || $itemValue === 'false' || $itemValue === 0 || $itemValue === '0') ? 'selected' : '' }}>false</option>
                                                             </select>
                                                         </div>
                                                         @elseif ($itemIsSelect) <div class="mb-3 pt-1">
@@ -498,8 +649,8 @@
                                                                         @if ($childIsEnabled)
                                                                             <select class="form-select"
                                                                                 name="sections[{{ $index }}][data][{{ $field }}][{{ $itemIndex }}][{{ $itemField }}][{{ $childKey }}]">
-                                                                                <option value="true" {{ $childVal ? 'selected' : '' }}>true</option>
-                                                                                <option value="false" {{ !$childVal ? 'selected' : '' }}>false</option>
+                                                                                <option value="true" {{ ($childVal === true || $childVal === 'true' || $childVal === 1 || $childVal === '1') ? 'selected' : '' }}>true</option>
+                                                                                <option value="false" {{ ($childVal === false || $childVal === 'false' || $childVal === 0 || $childVal === '0') ? 'selected' : '' }}>false</option>
                                                                             </select>
                                                                         @elseif ($childIsSelect)
                                                                             <select class="form-select"
@@ -544,11 +695,17 @@
                                                             <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }} (Image)</label>
 
                                                             @if ($itemMedia)
+                                                                <div>
                                                                 <a href="{{ $itemMedia->file_url }}" target="_blank"
-                                                                class="d-block mb-2 text-primary">
-                                                                    <img src="{{ $itemMedia->file_url }}" alt="" class="img-fluid mb-2"
-                                                                        style="max-height: 150px; object-fit: contain;">
-                                                                </a> @endif
+                                                                class="d-inline-block mb-2 text-primary">
+                                                                    <div class="border rounded d-flex align-items-center justify-content-center"
+                                                                        style="width:120px; height:120px; overflow:hidden; background:#f8f9fa;">
+                                                                        <img src="{{ $itemMedia->file_url }}" alt=""
+                                                                            style="max-width:100%; max-height:100%; object-fit:contain;">
+                                                                    </div>
+                                                                </a>
+                                                                </div>
+                                                                 @endif
 
                                                     <input type="file" class="form-control"
                                                         name="{{ $itemPath }}" accept="image/*">
@@ -562,9 +719,12 @@
                                                 <label class="form-label fw-bold">{{ formatSectionName($itemLabel) }} (Video)</label>
 
                                                 @if (is_string($itemValue) && $itemValue)
-                                                    <video controls width="250" class="d-block mb-2">
-                                                        <source src="{{ $itemValue }}" type="video/mp4">
-                                                    </video>
+                                                    <div class="border rounded d-inline-block mb-2"
+                                                        style="width:240px; height:135px; overflow:hidden; background:#f8f9fa;">
+                                                        <video controls class="w-100 h-100">
+                                                            <source src="{{ $itemValue }}" type="video/mp4">
+                                                        </video>
+                                                    </div>
                                                 @endif
 
                                                 <input type="file" class="form-control" name="{{ $itemPath }}"
@@ -631,9 +791,12 @@
 
             @if ($imgUrl)
                 <div>
-                    <a href="{{ $imgUrl }}" target="_blank" class="d-block mb-2 text-primary">
-                        <img src="{{ $imgUrl }}" alt="" class="img-fluid mb-2"
-                            style="max-height: 60px; object-fit: contain;">
+                    <a href="{{ $imgUrl }}" target="_blank" class="d-inline-block mb-2 text-primary">
+                        <div class="border rounded d-flex align-items-center justify-content-center"
+                            style="width:120px; height:120px; overflow:hidden; background:#f8f9fa;">
+                            <img src="{{ $imgUrl }}" alt=""
+                                style="max-width:100%; max-height:100%; object-fit:contain;">
+                        </div>
                     </a>
                 </div>
             @endif
@@ -654,9 +817,12 @@
             <label class="form-label fw-bold">{{ formatSectionName($label) }} (Video)</label>
 
             @if ($videoUrl)
-                <video controls width="250" class="d-block mb-2">
-                    <source src="{{ $videoUrl }}" type="video/mp4">
-                </video>
+                <div class="border rounded d-inline-block mb-2"
+                    style="width:240px; height:135px; overflow:hidden; background:#f8f9fa;">
+                    <video controls class="w-100 h-100">
+                        <source src="{{ $videoUrl }}" type="video/mp4">
+                    </video>
+                </div>
                 <a href="{{ $videoUrl }}" target="_blank" class="d-block text-primary mb-2">
                     Download / View Video
                 </a>

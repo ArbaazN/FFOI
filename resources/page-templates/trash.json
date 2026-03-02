@@ -1,73 +1,237 @@
-[{
-    "type": "national_alignment",
-    "status": "enable",
-    "data": {
-        "eyebrowTitle": "National Alignment & Certification Credibility",
-        "title": "Skills That Are Structured, Recognised & Scalable",
-        "subtitleInput": "FFOI programs follow a nationally aligned pathway:",
-        "items": [
-            {
-                "iconImg": 211,
-                "titleInput": "Skills Training"
-            },
-            {
-                "iconImg": 212,
-                "titleInput": "Assessment"
-            },
-            {
-                "iconImg": 213,
-                "titleInput": "Certification"
-            },
-            {
-                "iconImg": 214,
-                "titleInput": "Employability Enablement"
-            }
-        ]
+[
+    {
+        "type": "national_alignment",
+        "status": "enable",
+        "data": {
+            "eyebrowTitle": "National Alignment & Certification Credibility",
+            "title": "Skills That Are Structured, Recognised & Scalable",
+            "subtitleInput": "FFOI programs follow a nationally aligned pathway:",
+            "items": [
+                {
+                    "iconImg": 211,
+                    "titleInput": "Skills Training"
+                },
+                {
+                    "iconImg": 212,
+                    "titleInput": "Assessment"
+                },
+                {
+                    "iconImg": 213,
+                    "titleInput": "Certification"
+                },
+                {
+                    "iconImg": 214,
+                    "titleInput": "Employability Enablement"
+                }
+            ]
+        }
+    },
+    {
+        "type": "certification_alignment",
+        "status": "enable",
+        "data": {
+            "items": [
+                {
+                    "imageSrc": 215,
+                    "titleInput": "NSQF – Aligned",
+                    "highlightsInput": "All FFOI programs are mapped to the National Skills Qualifications Framework, enabling:",
+                    "description": [
+                        "Clear skill levels",
+                        "Measurable learning outcomes",
+                        "Vertical & lateral career mobility"
+                    ]
+                },
+                {
+                    "imageSrc": 216,
+                    "titleInput": "RT-MSSU – Affiliated",
+                    "highlightsInput": "FFOI is affiliated with Ratan Tata Maharashtra State Skills University, India’s first State Skills University.",
+                    "description": [
+                        "Academic legitimacy",
+                        "Credit-based pathways",
+                        "Government recognition"
+                    ]
+                },
+                {
+                    "imageSrc": 217,
+                    "titleInput": "NCVET – Mapped",
+                    "highlightsInput": "Programs aligned with National Council for Vocational Training standards.",
+                    "description": [
+                        "National benchmarking",
+                        "Employer trust",
+                        "Skill India compatibility"
+                    ]
+                }
+            ],
+            "disclaimerTextarea": "This ensures that FFOI certifications are credible, transparent, and future-ready.",
+            "buttons": [
+                {
+                    "labelInput": "Understand Certification Framework",
+                    "actionInput": "certification_framework",
+                    "styleInput": "primary"
+                }
+            ]
+        }
+    },
+    {
+        "type": "TrustAndCredibility",
+        "status": "enable",
+        "data": {
+            "title": "Trust & Credibility Badges",
+            "items": [
+                {
+                    "title": "Section 8 <br/> Company (India)",
+                    "iconImg": 238
+                },
+                {
+                    "title": "NSQF <br/> Aligned",
+                    "iconImg": 239
+                },
+                {
+                    "title": "RT-MSSU <br/> Affiliated",
+                    "iconImg": 240
+                },
+                {
+                    "title": "NCVET <br/> Mapped",
+                    "iconImg": 240
+                },
+                {
+                    "title": "Established in <br/> 2000",
+                    "iconImg": 240
+                }
+            ]
+        }
+    },
+    {
+        "type": "outAchivements",
+        "status": "enable",
+        "data": {
+            "title": "Built for long-term capability, <br/> not short-term certifications.",
+            "imgSrc": 241,
+            "cards": [
+                {
+                    "titleInput": "Years of public-interest impact",
+                    "count": "25+"
+                },
+                {
+                    "titleInput": "Learners trained across finance domains",
+                    "count": "25k+"
+                },
+                {
+                    "titleInput": "Institutions engaged",
+                    "count": "1k+"
+                }
+            ],
+            "description": [
+                "Pan-India Presence",
+                "Government-Aligned Frameworks"
+            ]
+        }
+    },
+    {
+        "type": "nationalAlignment",
+        "status": "enable",
+        "data": {
+            "eyebrowTitle": "Our National Alignment Framework",
+            "title": "Built Inside India’s Formal Education & Skill Ecosystem",
+            "subtitleInput": "FFOI programs follow a nationally aligned pathway:",
+            "items": [
+                {
+                    "imageSrc": 251,
+                    "titleInput": "NSQF – Aligned",
+                    "highlightsInput": "All FFOI programs are mapped to the National Skills Qualifications Framework, enabling:",
+                    "description": [
+                        "Clear skill levels",
+                        "Measurable learning outcomes",
+                        "Vertical & lateral career mobility"
+                    ]
+                },
+                {
+                    "imageSrc": 252,
+                    "titleInput": "RT-MSSU – Affiliated",
+                    "highlightsInput": "FFOI is affiliated with Ratan Tata Maharashtra State Skills University, India’s first State Skills University.",
+                    "description": [
+                        "Academic legitimacy",
+                        "Credit-based pathways",
+                        "Government recognition"
+                    ]
+                },
+                {
+                    "imageSrc": 253,
+                    "titleInput": "NCVET – Mapped",
+                    "highlightsInput": "Programs aligned with National Council for Vocational Training standards.",
+                    "description": [
+                        "National benchmarking",
+                        "Employer trust",
+                        "Skill India compatibility"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "ImpactAndTrust",
+        "status": "enable",
+        "data": {
+            "eyebrowTitle": "Impact & Trust",
+            "title": "Our Impact Speaks for Itself",
+            "subtitle": "Impact measured in careers built, not certificates issued.",
+            "items": [
+                {
+                    "IconImg": 264,
+                    "count": "2000",
+                    "descriptionInput": "Established Year"
+                },
+                {
+                    "IconImg": 265,
+                    "count": "25,000+",
+                    "descriptionInput": "Learners Impacted"
+                },
+                {
+                    "IconImg": 266,
+                    "count": "1,000+",
+                    "descriptionInput": "Institutions Engaged"
+                }
+            ],
+            "description": [
+                {
+                    "IconImg": 267,
+                    "descriptionInput": "Section 8 Not-for-Profit (India)"
+                },
+                {
+                    "IconImg": 268,
+                    "descriptionInput": "Trusted by Academia & Industry"
+                }
+            ]
+        }
+    },
+    {
+        "type": "WhyBuiltFor",
+        "status": "enable",
+        "data": {
+            "title": "Who FFOI is Built for",
+            "items": [
+                {
+                    "IconImg": 268,
+                    "titleInput": "Students & Graduates"
+                },
+                {
+                    "IconImg": 269,
+                    "titleInput": "Working Professionals"
+                },
+                {
+                    "IconImg": 270,
+                    "titleInput": "Parents"
+                },
+                {
+                    "IconImg": 271,
+                    "titleInput": "Institutions"
+                },
+                {
+                    "IconImg": 272,
+                    "titleInput": "Corporates & Government"
+                }
+            ],
+            "disclaimerTextarea": "If you value credibility, structure, and long-term outcomes, FFOI is built for you."
+        }
     }
-},
-{
-    "type": "certification_alignment",
-    "status": "enable",
-    "data": {
-        "items": [
-            {
-                "imageSrc": 215,
-                "titleInput": "NSQF – Aligned",
-                "highlightsInput": "All FFOI programs are mapped to the National Skills Qualifications Framework, enabling:",
-                "description": [
-                    "Clear skill levels",
-                    "Measurable learning outcomes",
-                    "Vertical & lateral career mobility"
-                ]
-            },
-            {
-                "imageSrc": 216,
-                "titleInput": "RT-MSSU – Affiliated",
-                "highlightsInput": "FFOI is affiliated with Ratan Tata Maharashtra State Skills University, India’s first State Skills University.",
-                "description": [
-                    "Academic legitimacy",
-                    "Credit-based pathways",
-                    "Government recognition"
-                ]
-            },
-            {
-                "imageSrc": 217,
-                "titleInput": "NCVET – Mapped",
-                "highlightsInput": "Programs aligned with National Council for Vocational Training standards.",
-                "description": [
-                    "National benchmarking",
-                    "Employer trust",
-                    "Skill India compatibility"
-                ]
-            }
-        ],
-        "disclaimerTextarea": "This ensures that FFOI certifications are credible, transparent, and future-ready.",
-        "buttons": [
-            {
-                "labelInput": "Understand Certification Framework",
-                "actionInput": "certification_framework",
-                "styleInput": "primary"
-            }
-        ]
-    }
-}]
+]

@@ -26,12 +26,12 @@
                             <div class="col-sm-10">
                                 <select class="form-control @error('type') is-invalid @enderror" name="type">
                                     <option value="">Select Type</option>
-                                    <option value="Degree Programs"
-                                        {{ old('type', $isEdit ? $program->type : '') == 'Degree Programs' ? 'selected' : '' }}>
+                                    <option value="degree"
+                                        {{ old('type', $isEdit ? $program->type : '') == 'degree' ? 'selected' : '' }}>
                                         Degree Programs
                                     </option>
-                                    <option value="Certificate Programs"
-                                        {{ old('type', $isEdit ? $program->type : '') == 'Certificate Programs' ? 'selected' : '' }}>
+                                    <option value="certificate"
+                                        {{ old('type', $isEdit ? $program->type : '') == 'certificate' ? 'selected' : '' }}>
                                         Certificate Programs
                                     </option>
                                 </select>

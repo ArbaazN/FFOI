@@ -71,66 +71,43 @@ class WebsiteApiController extends Controller
             // Build menu JSON
             $menu = [
                 [
-                    "title"  => "ASBS Experience",
+                    "title"  => "Home",
                     "target" => "_self",
-                    "dropdownData" => [
-                        $mapPage($page("about-us")),
-                        $mapPage($page("contact-us")),
-                        $mapPage($page("placements")),
-                        $mapPage($page("events-and-engagement")),
-
-                        [
-                            "name" => "Learning Approach",
-                            "subDropdownData" => $group("learning-experience/")
-                        ],
-
-                        [
-                            "name" => "Faculty",
-                            "subDropdownData" => $group("faculty/")
-                        ],
-                    ]
+                    "href"   => "/home",
                 ],
-
                 [
-                    "title"  => "Programs & Campuses",
+                    "title"  => "About Us",
+                    "target" => "_self",
+                    "href"   => "/about-us",
+                ],
+                [
+                    "title"  => "Education Series",
+                    "target" => "_self",
+                    "href"   => "/education-series",
+                ],
+                [
+                    "title"  => "Programs",
                     "target" => "_self",
                     "dropdownData" => [
-                        // [
-                        //     "name" => "Who Should Apply",
-                        //     "subDropdownData" => $group("who-should-apply/")
-                        // ],
                         [
-                            "name" => "PGDM Programs",
+                            "name" => "Degree Programs",
                             "subDropdownData" => $group("pgdm_programs/")
                         ],
                         [
-                            "name" => "MMS Programs",
+                            "name" => "Certificate Programs",
                             "subDropdownData" => $group("mms_programs/")
-                        ],
-                        [
-                            "name" => "Campuses",
-                            "subDropdownData" => $group("campuses/")
-                        ],
-                        [
-                            "name" => "ASBS Skill's Centres",
-                            "subDropdownData" => [[
-                                "name"   => "Goa",
-                                "href"   => "campuses/goa",
-                                "target" => "_self"
-                            ]],
-                        ],
-                        // [
-                        //     "name" => "Programs",
-                        //     "subDropdownData" => $group("programs/")
-                        // ],
+                        ]
                     ]
                 ],
-
                 [
-                    "target" => "blank",
-                    "title" => "Admissions 2026-28",
-                    "href" => ""
-                    // onClick: () => setOpenAdmissionModal(true),
+                    "title"  => "Workshop",
+                    "target" => "_self",
+                    "href"   => "/workshop",
+                ],
+                [
+                    "title"  => "Membership",
+                    "target" => "_self",
+                    "href"   => "/membership",
                 ],
                 // Single page direct links
                 $mapPage1($page("partner-with-us")),

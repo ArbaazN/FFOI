@@ -437,19 +437,19 @@ class PageController extends Controller
 
         if (is_array($value)) {
 
-            // 🔥 Detect numeric list EVEN IF keys are strings ("0","1")
+            // Detect list even if keys are numeric strings or start at 1
             $keys = array_keys($value);
-            $isList = !array_diff($keys, range(0, count($keys) - 1));
+            $allNumericKeys = !empty($keys) && count(array_filter($keys, 'is_numeric')) === count($keys);
 
             // Case A: repeater / list → FORCE numeric array
-            if ($isList) {
+            if ($allNumericKeys) {
                 $normalized = [];
 
                 foreach ($value as $item) {
                     $normalized[] = $this->normalizeForSaving($item, null, $page);
                 }
 
-                // 🔒 THIS LINE GUARANTEES JSON ARRAY []
+                // Ensure JSON array []
                 return array_values($normalized);
             }
 
