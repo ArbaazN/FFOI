@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('highest_qualification')->nullable();
             $table->string('current_status')->nullable();
-            $table->string('current_status')->nullable();
+            $table->string('topic_interested_in')->nullable();
             $table->timestamps();
         });
     }
