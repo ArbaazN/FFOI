@@ -428,38 +428,52 @@
         "items": [
           {
             "iconImage": null,
-            "nameInput": "Live Learning Format",
-            "titleInput": "Weekend",
-            "descriptionInput": "Live sessions in Core Finance"
-          },
-          {
-            "iconImage": null,
             "nameInput": "Dr. Asim Kumar Sengupta",
             "designationInput": "Educationist | Researcher<br>Former Director – SPJIMR",
+            "descriptionInput": "Live sessions in Core Finance",
+            "areaofexpertiesInput":["Educationist","Researcher","Consultant"],
+            "logoImage1":null,
+            "logoImage2":null,
             "linkedinurlInput": "https://linkedin.com"
           },
           {
             "iconImage": null,
             "nameInput": "Ms. Munira Lokhandwala",
             "designationInput": "Program Director | Author | Strategist<br>MBA | IIM Calcutta | CFA",
+            "descriptionInput": "Live sessions in Core Finance",
+            "areaofexpertiesInput":["Educationist","Researcher","Consultant"],
+            "logoImage1":null,
+            "logoImage2":null,
             "linkedinurlInput": "https://linkedin.com"
           },
           {
             "iconImage": null,
             "nameInput": "Mr. Vishal Bhojani",
             "designationInput": "Program Head | Investment Banker<br>Entrepreneur | Trainer & Coach",
+            "descriptionInput": "Live sessions in Core Finance",
+            "areaofexpertiesInput":["Educationist","Researcher","Consultant"],
+            "logoImage1":null,
+            "logoImage2":null,
             "linkedinurlInput": "https://linkedin.com"
           },
           {
             "iconImage": null,
             "nameInput": "Mr. Fenil Zaveri",
             "designationInput": "Founder, Private Wealth Solutions<br>CFA Charter holder",
+            "descriptionInput": "Live sessions in Core Finance",
+            "areaofexpertiesInput":["Educationist","Researcher","Consultant"],
+            "logoImage1":null,
+            "logoImage2":null,
             "linkedinurlInput": "https://linkedin.com"
           },
           {
             "iconImage": null,
             "nameInput": "Mr. Ashish Chodankar",
             "designationInput": "CXO Consultant | Growth Hacker<br>Brand Strategist",
+            "descriptionInput": "Live sessions in Core Finance",
+            "areaofexpertiesInput":["Educationist","Researcher","Consultant"],
+            "logoImage1":null,
+            "logoImage2":null,
             "linkedinurlInput": "https://linkedin.com"
           }
         ]
