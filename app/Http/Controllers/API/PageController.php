@@ -205,7 +205,13 @@ class PageController extends Controller
             'iconImageDesktop',
             'overlayImage',
             'logoImage',
-            'displayImage'
+            'displayImage',
+            'studentImage',
+            'logoImage1',
+            'logoImage2',
+            'iconImage1',
+            'iconImage2',
+            'profileImage'
         ];
 
         // Normalize null
