@@ -211,7 +211,8 @@ class PageController extends Controller
             'logoImage2',
             'iconImage1',
             'iconImage2',
-            'profileImage'
+            'profileImage',
+            'imageurl'
         ];
 
         // Normalize null
