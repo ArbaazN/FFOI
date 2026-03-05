@@ -104,7 +104,7 @@ class ProgramController extends Controller
             if($data['type']=='certificate'){
                 $filename = "certificate-program.json";
             }else if($data['type']=='degree'){
-                $filename = "certificate-program.json";
+                $filename = "programs.json";
             }
             $jsonContent = file_get_contents(resource_path('page-templates/'.$filename));
 
