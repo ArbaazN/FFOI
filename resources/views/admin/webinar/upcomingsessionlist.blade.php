@@ -23,6 +23,7 @@
                         <tr>
                             <th>Sr.</th>
                             <th>Session Name</th>
+                            <th>Slug</th>
                             <th>Heading</th>
                             <th>Created At</th>
                             <th>Actions</th>
@@ -34,6 +35,7 @@
                             <tr>
                                 <td class="py-1">{{ $loop->iteration }}</td>
                                 <td class="py-1">{{ $row->session_name }}</td>
+                                <td class="py-1">{{ $row->slug }}</td>
                                 <td class="py-1">{{ $row->heading }}</td>
                                 <td class="">{{ $row->created_at->format('d M Y, h:i A') ?? '-'}}</td>
                                 <td class="py-1">

@@ -23,6 +23,7 @@
                         <tr>
                             <th>Sr.</th>
                             <th>Title Name</th>
+                            <th>Slug</th>
                             <th>Subtitle</th>
                             <th>Short Desc</th>
                             <th>Created At</th>
@@ -35,6 +36,7 @@
                             <tr>
                                 <td class="py-1">{{ $loop->iteration }}</td>
                                 <td class="py-1">{{ $row->title }}</td>
+                                <td class="py-1">{{ $row->slug }}</td>
                                 <td class="py-1">{{ $row->subtitle }}</td>
                                 <td class="py-1">{{ $row->short_desc }}</td>
                                 <td class="">{{ $row->created_at->format('d M Y, h:i A') ?? '-'}}</td>
