@@ -203,7 +203,7 @@ class WebinarController extends Controller
                 'session_id' => $request->session_id,
                 'topic_name' => $request->topic_name,
                 'title' => $request->title,
-                'slug' => Str::slug($request->title),  // ✅ unique slug
+                'slug' => Str::slug($request->topic_name),  // ✅ unique slug
                 'subtitle' => $request->subtitle,
                 'date' => $request->date,
                 'time' => $request->time,
@@ -273,8 +273,8 @@ class WebinarController extends Controller
                 'image_attend' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             ]);
 
-            if ($session->title != $request->title) {
-                $slug = Str::slug($request->title);
+            if ($session->topic_name != $request->topic_name) {
+                $slug = Str::slug($request->topic_name);
                 $slugCount = WebinarUpcomingSession::where('slug', 'like', $slug . '%')
                     ->where('id', '!=', $session->id)
                     ->count();

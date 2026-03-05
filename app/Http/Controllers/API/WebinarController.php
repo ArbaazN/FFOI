@@ -66,6 +66,7 @@ class WebinarController extends Controller
                 return [
                     'id' => $session->id,
                     'session_name' => $session->session_name ?? null,
+                    'session_detail_slug' => $session->slug ?? null,
                     'slug' => $session->slug ?? null,
                     'heading' => $session->heading ?? null,
                     'short_desc' => $session->short_desc ?? null,
