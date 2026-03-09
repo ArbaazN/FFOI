@@ -17,7 +17,7 @@ class WebinarController extends Controller
 {
     public function show()
     {
-        $webinar = Webinar::latest()->first(); // Only one saved
+        $webinar = Webinar::latest()->first();
 
         if (!$webinar) {
             return response()->json([
@@ -28,6 +28,17 @@ class WebinarController extends Controller
 
         $sessions = WebinarUpcomingSessionCategory::orderBy('created_at', 'asc')->get();
 
+        // Decode BOI fields
+        $names = json_decode($webinar->name_new ?? '[]');
+        $designations = json_decode($webinar->Designation_new ?? '[]');
+        $descriptions = json_decode($webinar->Description_new ?? '[]');
+        $expertise = json_decode($webinar->Areaofexperties_new ?? '[]');
+        $linkedin = json_decode($webinar->linkedIn_new ?? '[]');
+
+        $images = json_decode($webinar->image_new ?? '[]');
+        $logo1 = json_decode($webinar->logo_image1_new ?? '[]');
+        $logo2 = json_decode($webinar->logo_image2_new ?? '[]');
+
         return response()->json([
             'status' => true,
             'webinar' => [
@@ -37,31 +48,60 @@ class WebinarController extends Controller
                 'short_desc' => $webinar->short_desc,
                 'slug' => $webinar->slug,
 
-                'banner_image_url' => $webinar->banner_image 
-                    ? asset('storage/' . $webinar->banner_image) 
+                'banner_image_url' => $webinar->banner_image
+                    ? asset('storage/' . $webinar->banner_image)
                     : null,
 
-                'who_should_attend_image_url' => $webinar->image 
-                    ? asset('storage/' . $webinar->image) 
+                'who_should_attend_image_url' => $webinar->image
+                    ? asset('storage/' . $webinar->image)
                     : null,
 
-                    // Decode JSON Fields
+                // Decode JSON Fields
                 'desc' => json_decode($webinar->desc),
                 'perfect_for_desc' => json_decode($webinar->perfect_for_desc),
                 'perfect_for_desclaimer' => $webinar->perfect_for_desclaimer,
                 'works_desc' => json_decode($webinar->works_desc),
                 'why_ffoi_heading' => $webinar->why_ffoi_heading,
                 'why_ffoi_desc' => json_decode($webinar->why_ffoi_desc),
-                'faqs' => collect(json_decode($webinar->faqs_question))
-                            ->map(function ($question, $index) use ($webinar) {
-                                $answers = json_decode($webinar->faqs_answer);
-                                return [
-                                    'question' => $question,
-                                    'answer' => $answers[$index] ?? ''
-                                ];
-                            }),
+
+                // FAQs
+                'faqs' => collect(json_decode($webinar->faqs_question ?? '[]'))
+                    ->map(function ($question, $index) use ($webinar) {
+                        $answers = json_decode($webinar->faqs_answer ?? '[]');
+                        return [
+                            'question' => $question,
+                            'answer' => $answers[$index] ?? ''
+                        ];
+                    }),
+                'best_of_industry_heading' => $webinar->best_of_industries_heading,
+
+                // BOI (Best Of Industry)
+                'best_of_industry' => collect($names)->map(function ($name, $index) use ($designations, $descriptions, $expertise, $linkedin, $images, $logo1, $logo2) {
+
+                    return [
+                        'name' => $name,
+                        'designation' => $designations[$index] ?? null,
+                        'description' => $descriptions[$index] ?? null,
+                        'area_of_expertise' => $expertise[$index] ?? null,
+                        'linkedin_url' => $linkedin[$index] ?? null,
+
+                        'profile_image_url' => isset($images[$index])
+                            ? asset('storage/' . $images[$index])
+                            : null,
+
+                        'logo1_url' => isset($logo1[$index])
+                            ? asset('storage/' . $logo1[$index])
+                            : null,
+
+                        'logo2_url' => isset($logo2[$index])
+                            ? asset('storage/' . $logo2[$index])
+                            : null,
+                    ];
+                }),
+
                 'final_CTA_desc' => $webinar->final_CTA_desc,
             ],
+
             'upcoming_sessions' => $sessions->map(function ($session) {
                 return [
                     'id' => $session->id,
@@ -70,7 +110,7 @@ class WebinarController extends Controller
                     'slug' => $session->slug ?? null,
                     'heading' => $session->heading ?? null,
                     'short_desc' => $session->short_desc ?? null,
-                    'image_url' => $session->image 
+                    'image_url' => $session->image
                         ? asset('storage/' . $session->image)
                         : null,
 
@@ -79,23 +119,6 @@ class WebinarController extends Controller
             }),
         ]);
     }
-
-    // public function sessionDetail($slug)
-    // {
-    //     $session = WebinarUpcomingSession::where('slug', $slug)->first();
-
-    //     if (!$session) {
-    //         return response()->json([
-    //             'status' => false,
-    //             'message' => 'Session not found'
-    //         ], 404);
-    //     }
-
-    //     return response()->json([
-    //         'status' => true,
-    //         'session' => $session
-    //     ]);
-    // }
 
     public function sessionDetail($slug)
     {
@@ -111,7 +134,6 @@ class WebinarController extends Controller
         return response()->json([
             'status' => true,
             'session' => [
-
                 'id' => $session->id,
                 'slug' => $session->slug,
                 'session_id' => $session->session_id,
@@ -161,6 +183,21 @@ class WebinarController extends Controller
 
                 'learn_with_ffoi_heading' => $session->learn_with_ffoi_heading,
                 'learn_with_ffoi_points' => json_decode($session->learn_with_ffoi_points),
+
+                'instructor_image' => $session->instructor_image 
+                                ? asset('storage/' . $session->instructor_image)
+                                : null,
+                'instructor_name' => $session->instructor_name,
+                'instructor_designation' => $session->instructor_designation,
+                'instructor_experience' => $session->instructor_experience,
+                'instructor_desc' => $session->instructor_desc,
+                'instructor_logo_image1' => $session->instructor_logo_image1 
+                                        ? asset('storage/' . $session->instructor_logo_image1)
+                                        : null,
+                'instructor_logo_image2' => $session->instructor_logo_image2 
+                                        ? asset('storage/' . $session->instructor_logo_image2)
+                                        : null,
+
 
                 'faqs' => collect(json_decode($session->faqs_question))
                     ->map(function ($question, $index) use ($session) {

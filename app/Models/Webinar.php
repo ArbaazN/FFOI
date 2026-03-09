@@ -27,6 +27,15 @@ class Webinar extends Model
         'why_ffoi_desc',
         'faqs_question',
         'faqs_answer',
+        'best_of_industries_heading',
+        'name_new',
+        'Designation_new',
+        'Description_new',
+        'Areaofexperties_new',
+        'linkedIn_new',
+        'image_new',
+        'logo_image1_new',
+        'logo_image2_new',
         'final_CTA_desc',
     ];
 

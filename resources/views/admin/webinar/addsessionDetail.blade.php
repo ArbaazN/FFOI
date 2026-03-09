@@ -406,6 +406,94 @@
                         </button>
                     </div>
 
+                    <hr>
+                    <h5>Instructor</h5>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Image</label>
+
+                        @if ($isEdit && $session->instructor_image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->instructor_image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="instructor_image" class="form-control @error('instructor_image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('instructor_image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Name</label>
+                        <input type="text" name="instructor_name" class="form-control @error('instructor_name') is-invalid @enderror"
+                            value="{{ old('instructor_name', $isEdit ? $session->instructor_name : '') }}">
+                        @error('instructor_name') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Designation</label>
+                        <input type="text" name="instructor_designation" class="form-control @error('instructor_designation') is-invalid @enderror"
+                            value="{{ old('instructor_designation', $isEdit ? $session->instructor_designation : '') }}">
+                        @error('instructor_designation') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Experience</label>
+                        <input type="text" name="instructor_experience" class="form-control @error('instructor_experience') is-invalid @enderror"
+                            value="{{ old('instructor_experience', $isEdit ? $session->instructor_experience : '') }}">
+                        @error('instructor_experience') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Desc</label>
+                        <input type="text" name="instructor_desc" class="form-control @error('instructor_desc') is-invalid @enderror"
+                            value="{{ old('instructor_desc', $isEdit ? $session->instructor_desc : '') }}">
+                        @error('instructor_desc') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Logo Image1</label>
+                        @if ($isEdit && $session->instructor_logo_image1)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->instructor_logo_image1) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="instructor_logo_image1" class="form-control @error('instructor_logo_image1') is-invalid @enderror"
+                            accept="image/*">
+                        @error('instructor_logo_image1')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Logo Image2</label>
+                        @if ($isEdit && $session->instructor_logo_image2)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->instructor_logo_image2) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="instructor_logo_image2" class="form-control @error('instructor_logo_image2') is-invalid @enderror"
+                            accept="image/*">
+                        @error('instructor_logo_image2')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
 
                     <hr>
                     <h5>FAQs</h5>
@@ -480,66 +568,5 @@
     </div>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    document.addEventListener("click", function (e) {
-
-        if (e.target.classList.contains("add-point")) {
-
-            let section = e.target.closest(".dynamic-points");
-            let wrapper = section.querySelector(".points-wrapper");
-
-            let inputName = wrapper.querySelector("input").getAttribute("name");
-
-            wrapper.insertAdjacentHTML("beforeend", `
-                <div class="input-group mb-2 point-item">
-                    <input type="text"
-                           name="${inputName}"
-                           class="form-control"
-                           placeholder="Enter point">
-                    <button type="button" class="btn btn-danger remove-point">
-                        Remove
-                    </button>
-                </div>
-            `);
-        }
-
-        if (e.target.classList.contains("remove-point")) {
-            e.target.closest(".point-item").remove();
-        }
-
-        if (e.target.classList.contains("add-faq")) {
-
-            let section = e.target.closest(".dynamic-faqs");
-            let wrapper = section.querySelector(".faq-wrapper");
-
-            wrapper.insertAdjacentHTML("beforeend", `
-                <div class="faq-item border p-3 mb-3 rounded">
-                    <div class="mb-2">
-                        <input type="text"
-                               name="faqs_question[]"
-                               class="form-control"
-                               placeholder="Enter question">
-                    </div>
-                    <div class="mb-2">
-                        <textarea name="faqs_answer[]"
-                                  class="form-control"
-                                  placeholder="Enter answer"></textarea>
-                    </div>
-                    <button type="button" class="btn btn-danger remove-faq">
-                        Remove
-                    </button>
-                </div>
-            `);
-        }
-
-        if (e.target.classList.contains("remove-faq")) {
-            e.target.closest(".faq-item").remove();
-        }
-
-    });
-
-});
-</script>
 @endsection

@@ -713,3 +713,146 @@ document.addEventListener('keydown', event => {
 if (document.documentElement.querySelector('#autocomplete')) {
   loadSearchData();
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("add-point")) {
+
+            let section = e.target.closest(".dynamic-points");
+            let wrapper = section.querySelector(".points-wrapper");
+
+            let inputName = wrapper.querySelector("input").getAttribute("name");
+
+            wrapper.insertAdjacentHTML("beforeend", `
+                <div class="input-group mb-2 point-item">
+                    <input type="text"
+                           name="${inputName}"
+                           class="form-control"
+                           placeholder="Enter point">
+                    <button type="button" class="btn btn-danger remove-point">
+                        Remove
+                    </button>
+                </div>
+            `);
+        }
+
+        if (e.target.classList.contains("remove-point")) {
+            e.target.closest(".point-item").remove();
+        }
+
+        if (e.target.classList.contains("add-faq")) {
+
+            let section = e.target.closest(".dynamic-faqs");
+            let wrapper = section.querySelector(".faq-wrapper");
+
+            wrapper.insertAdjacentHTML("beforeend", `
+                <div class="faq-item border p-3 mb-3 rounded">
+                    <div class="mb-2">
+                        <input type="text"
+                               name="faqs_question[]"
+                               class="form-control"
+                               placeholder="Enter question">
+                    </div>
+                    <div class="mb-2">
+                        <textarea name="faqs_answer[]"
+                                  class="form-control"
+                                  placeholder="Enter answer"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-danger remove-faq">
+                        Remove
+                    </button>
+                </div>
+            `);
+        }
+
+        if (e.target.classList.contains("remove-faq")) {
+            e.target.closest(".faq-item").remove();
+        }
+
+        if (e.target.classList.contains("add-boi")) {
+
+              let section = e.target.closest(".dynamic-boi");
+              let wrapper = section.querySelector(".boi-wrapper");
+
+              wrapper.insertAdjacentHTML("beforeend", `
+                  <div class="boi-item border p-3 mb-3 rounded">
+
+                      <div class="mb-2">
+                          <label>Profile image</label>
+                          <input type="file"
+                                name="image_new[]"
+                                class="form-control">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Name</label>
+                          <input type="text"
+                                name="name_new[]"
+                                class="form-control"
+                                placeholder="Enter Name">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Designation</label>
+                          <input type="text"
+                                name="Designation_new[]"
+                                class="form-control"
+                                placeholder="Enter Designation">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Description</label>
+                          <input type="text"
+                                name="Description_new[]"
+                                class="form-control"
+                                placeholder="Enter Description">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Area of experties</label>
+                          <input type="text"
+                                name="Areaofexperties_new[]"
+                                class="form-control"
+                                placeholder="Enter Area of experties">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Logo Image1</label>
+                          <input type="file"
+                                name="logo_image1_new[]"
+                                class="form-control">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Logo Image2</label>
+                          <input type="file"
+                                name="logo_image2_new[]"
+                                class="form-control">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Linkedin url</label>
+                          <input type="text"
+                                name="linkedIn_new[]"
+                                class="form-control"
+                                placeholder="Enter Linkedin url">
+                      </div>
+
+                      <button type="button" class="btn btn-danger remove-boi">
+                          Remove
+                      </button>
+
+                  </div>
+              `);
+          }
+
+          if (e.target.classList.contains("remove-boi")) {
+              e.target.closest(".boi-item").remove();
+          }
+
+    });
+
+});

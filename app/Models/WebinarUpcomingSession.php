@@ -43,6 +43,13 @@ class WebinarUpcomingSession extends Model
         'faqs_question',
         'faqs_answer',
         'final_CTA_desc',
+        'instructor_image',
+        'instructor_name',
+        'instructor_designation',
+        'instructor_experience',
+        'instructor_desc',
+        'instructor_logo_image1',
+        'instructor_logo_image2',
     ];
 
     protected $casts = [
