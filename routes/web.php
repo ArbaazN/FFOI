@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UtmLinkController;
 use App\Http\Controllers\Admin\WebsiteSettingController;
 use App\Http\Controllers\Admin\WebinarController;
+use App\Http\Controllers\Admin\MemberShipController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -60,6 +61,22 @@ use Illuminate\Support\Facades\Route;
         Route::post('webinar/update/{id?}', [WebinarController::class,'webinarUpdate'])->name('webinar.update');
        
 
+        Route::get('membership/type', [MemberShipController::class,'typeList'])->name('membership.type.list');
+        Route::get('membership/type/create/{id?}', [MemberShipController::class,'typeCreate'])->name('membership.type.create');
+        Route::post('membership/type/store', [MemberShipController::class,'typeStore'])->name('membership.type.store');
+        Route::post('membership/type/update/{id?}', [MemberShipController::class,'typeUpdate'])->name('membership.type.update');
+
+        Route::get('membership/benefit', [MemberShipController::class,'benefitList'])->name('membership.benefit.list');
+        Route::get('membership/benefit/create/{id?}', [MemberShipController::class,'benefitCreate'])->name('membership.benefit.create');
+        Route::post('membership/benefit/store', [MemberShipController::class,'benefitStore'])->name('membership.benefit.store');
+        Route::post('membership/benefit/update/{id?}', [MemberShipController::class,'benefitUpdate'])->name('membership.benefit.update');
+
+        Route::get('membership/list', [MemberShipController::class,'memberList'])->name('membership.list');
+        Route::get('membership/create/{id?}', [MemberShipController::class,'memberCreate'])->name('membership.create');
+        Route::post('membership/store', [MemberShipController::class,'memberStore'])->name('membership.store');
+        Route::post('membership/update/{id?}', [MemberShipController::class,'memberUpdate'])->name('membership.update');
+
+        
         Route::get('settings', [WebsiteSettingController::class, 'index'])->name('settings');
         Route::post('settings/update', [WebsiteSettingController::class, 'update'])->name('settings.update');
 

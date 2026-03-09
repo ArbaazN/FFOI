@@ -713,3 +713,65 @@ document.addEventListener('keydown', event => {
 if (document.documentElement.querySelector('#autocomplete')) {
   loadSearchData();
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("add-point")) {
+
+            let section = e.target.closest(".dynamic-points");
+            let wrapper = section.querySelector(".points-wrapper");
+
+            let inputName = wrapper.querySelector("input").getAttribute("name");
+
+            wrapper.insertAdjacentHTML("beforeend", `
+                <div class="input-group mb-2 point-item">
+                    <input type="text"
+                           name="${inputName}"
+                           class="form-control"
+                           placeholder="Enter point">
+                    <button type="button" class="btn btn-danger remove-point">
+                        Remove
+                    </button>
+                </div>
+            `);
+        }
+
+        if (e.target.classList.contains("remove-point")) {
+            e.target.closest(".point-item").remove();
+        }
+
+        if (e.target.classList.contains("add-faq")) {
+
+            let section = e.target.closest(".dynamic-faqs");
+            let wrapper = section.querySelector(".faq-wrapper");
+
+            wrapper.insertAdjacentHTML("beforeend", `
+                <div class="faq-item border p-3 mb-3 rounded">
+                    <div class="mb-2">
+                        <input type="text"
+                               name="faqs_question[]"
+                               class="form-control"
+                               placeholder="Enter question">
+                    </div>
+                    <div class="mb-2">
+                        <textarea name="faqs_answer[]"
+                                  class="form-control"
+                                  placeholder="Enter answer"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-danger remove-faq">
+                        Remove
+                    </button>
+                </div>
+            `);
+        }
+
+        if (e.target.classList.contains("remove-faq")) {
+            e.target.closest(".faq-item").remove();
+        }
+
+    });
+
+});

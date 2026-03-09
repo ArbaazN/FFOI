@@ -106,6 +106,33 @@
         </li>
         @endif
 
+        {{-- MemberShip --}}
+        <li class="menu-item {{ request()->is('membership*') ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon icon-base ti tabler-brand-blogger"></i>
+                <div data-i18n="Webinar">MemberShip</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ request()->is('membership/type') ? 'active' : '' }}">
+                    <a href="{{ route('membership.type.list') }}" class="menu-link">
+                        <div data-i18n="MemberShip Type">MemberShip Type</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ request()->is('membership/benefit') ? 'active' : '' }}">
+                    <a href="{{ route('membership.benefit.list') }}" class="menu-link">
+                        <div data-i18n="MemberShip Benefits">MemberShip Benefits</div>
+                    </a>
+                </li>
+                @can('blog.create')
+                <li class="menu-item {{ request()->is('membership/list') ? 'active' : '' }}">
+                    <a href="{{ route('membership.list') }}" class="menu-link">
+                        <div data-i18n="MemberShip details">MemberShip details</div>
+                    </a>
+                </li>
+                @endcan
+            </ul>
+        </li>
+
         {{-- PAGES --}}
         @if(auth()->user()->canAny(['page.view', 'page.create', 'page.edit']))
         <li class="menu-item {{ request()->is('pages*') ? 'active' : '' }}">
