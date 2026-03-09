@@ -406,6 +406,94 @@
                         </button>
                     </div>
 
+                    <hr>
+                    <h5>Instructor</h5>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Image</label>
+
+                        @if ($isEdit && $session->instructor_image)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->instructor_image) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="instructor_image" class="form-control @error('instructor_image') is-invalid @enderror"
+                            accept="image/*">
+                        @error('instructor_image')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Name</label>
+                        <input type="text" name="instructor_name" class="form-control @error('instructor_name') is-invalid @enderror"
+                            value="{{ old('instructor_name', $isEdit ? $session->instructor_name : '') }}">
+                        @error('instructor_name') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Designation</label>
+                        <input type="text" name="instructor_designation" class="form-control @error('instructor_designation') is-invalid @enderror"
+                            value="{{ old('instructor_designation', $isEdit ? $session->instructor_designation : '') }}">
+                        @error('instructor_designation') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Experience</label>
+                        <input type="text" name="instructor_experience" class="form-control @error('instructor_experience') is-invalid @enderror"
+                            value="{{ old('instructor_experience', $isEdit ? $session->instructor_experience : '') }}">
+                        @error('instructor_experience') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Desc</label>
+                        <input type="text" name="instructor_desc" class="form-control @error('instructor_desc') is-invalid @enderror"
+                            value="{{ old('instructor_desc', $isEdit ? $session->instructor_desc : '') }}">
+                        @error('instructor_desc') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Logo Image1</label>
+                        @if ($isEdit && $session->instructor_logo_image1)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->instructor_logo_image1) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="instructor_logo_image1" class="form-control @error('instructor_logo_image1') is-invalid @enderror"
+                            accept="image/*">
+                        @error('instructor_logo_image1')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold"> Logo Image2</label>
+                        @if ($isEdit && $session->instructor_logo_image2)
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/' . $session->instructor_logo_image2) }}" alt="Image"
+                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                            </div>
+                        @endif
+
+                        <input type="file" name="instructor_logo_image2" class="form-control @error('instructor_logo_image2') is-invalid @enderror"
+                            accept="image/*">
+                        @error('instructor_logo_image2')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
 
                     <hr>
                     <h5>FAQs</h5>

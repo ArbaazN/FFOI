@@ -772,6 +772,87 @@ document.addEventListener("DOMContentLoaded", function () {
             e.target.closest(".faq-item").remove();
         }
 
+        if (e.target.classList.contains("add-boi")) {
+
+              let section = e.target.closest(".dynamic-boi");
+              let wrapper = section.querySelector(".boi-wrapper");
+
+              wrapper.insertAdjacentHTML("beforeend", `
+                  <div class="boi-item border p-3 mb-3 rounded">
+
+                      <div class="mb-2">
+                          <label>Profile image</label>
+                          <input type="file"
+                                name="image_new[]"
+                                class="form-control">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Name</label>
+                          <input type="text"
+                                name="name_new[]"
+                                class="form-control"
+                                placeholder="Enter Name">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Designation</label>
+                          <input type="text"
+                                name="Designation_new[]"
+                                class="form-control"
+                                placeholder="Enter Designation">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Description</label>
+                          <input type="text"
+                                name="Description_new[]"
+                                class="form-control"
+                                placeholder="Enter Description">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Area of experties</label>
+                          <input type="text"
+                                name="Areaofexperties_new[]"
+                                class="form-control"
+                                placeholder="Enter Area of experties">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Logo Image1</label>
+                          <input type="file"
+                                name="logo_image1_new[]"
+                                class="form-control">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Logo Image2</label>
+                          <input type="file"
+                                name="logo_image2_new[]"
+                                class="form-control">
+                      </div>
+
+                      <div class="mb-2">
+                          <label>Linkedin url</label>
+                          <input type="text"
+                                name="linkedIn_new[]"
+                                class="form-control"
+                                placeholder="Enter Linkedin url">
+                      </div>
+
+                      <button type="button" class="btn btn-danger remove-boi">
+                          Remove
+                      </button>
+
+                  </div>
+              `);
+          }
+
+          if (e.target.classList.contains("remove-boi")) {
+              e.target.closest(".boi-item").remove();
+          }
+
     });
 
 });

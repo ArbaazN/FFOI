@@ -110,7 +110,7 @@
         <li class="menu-item {{ request()->is('membership*') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon icon-base ti tabler-brand-blogger"></i>
-                <div data-i18n="Webinar">MemberShip</div>
+                <div data-i18n="MemberShip">MemberShip</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item {{ request()->is('membership/type') ? 'active' : '' }}">

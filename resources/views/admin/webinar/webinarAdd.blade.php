@@ -262,6 +262,141 @@
                     </div>
 
                     <hr>
+                    <h5>Learn from the Best of Industry Industry</h5>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Heading</label>
+                        <input type="text" name="best_of_industries_heading" class="form-control @error('best_of_industries_heading') is-invalid @enderror"
+                            value="{{ old('best_of_industries_heading', $isEdit ? $webinar->best_of_industries_heading : '') }}">
+                        @error('best_of_industries_heading') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4 dynamic-boi">
+                        <div class="boi-wrapper">
+                            @php
+                            $name_news = old('name_new', json_decode($webinar->name_new ?? '[]', true));
+                            $Designation_new = old('Designation_new', json_decode($webinar->Designation_new ?? '[]', true));
+                            $Description_new = old('Description_new', json_decode($webinar->Description_new ?? '[]', true));
+                            $Areaofexperties_new = old('Areaofexperties_new', json_decode($webinar->Areaofexperties_new ?? '[]', true));
+                            $linkedIn_new = old('linkedIn_new', json_decode($webinar->linkedIn_new ?? '[]', true));
+
+                            $image_new = old('image_new', json_decode($webinar->image_new ?? '[]', true));
+                            $logo_image1_new = old('logo_image1_new', json_decode($webinar->logo_image1_new ?? '[]', true));
+                            $logo_image2_new = old('logo_image2_new', json_decode($webinar->logo_image2_new ?? '[]', true));
+
+                            @endphp
+
+                            @foreach($name_news as $index => $name_new)
+                                <div class="boi-item border p-3 mb-3 rounded">
+                                    <div class="mb-2">
+                                        <label for="">Profile image</label>
+                                        @if(!empty($image_new[$index]))
+                                            <div class="mb-2">
+                                                <img src="{{ asset('storage/'.$image_new[$index]) }}"
+                                                    width="80"
+                                                    height="80"
+                                                    style="object-fit:cover;border-radius:5px;">
+                                            </div>
+                                        @endif
+                                      
+                                        <input type="file"
+                                            name="image_new[]"
+                                            class="form-control">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Name</label>
+                                        <input type="text"
+                                            name="name_new[]"
+                                            class="form-control"
+                                            value="{{ $name_new }}"
+                                            placeholder="Enter Name">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Designation</label>
+                                        <input type="text"
+                                            name="Designation_new[]"
+                                            class="form-control"
+                                            value="{{ $Designation_new[$index] ?? '' }}"
+                                            placeholder="Enter Designation">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Description</label>
+                                        <input type="text"
+                                            name="Description_new[]"
+                                            class="form-control"
+                                            value="{{ $Description_new[$index] ?? '' }}"
+                                            placeholder="Enter Description">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Area of experties</label>
+                                        <input type="text"
+                                            name="Areaofexperties_new[]"
+                                            class="form-control"
+                                            value="{{ $Areaofexperties_new[$index] ?? '' }}"
+                                            placeholder="Enter Area of experties">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Logo Image1</label>
+                                        @if(!empty($logo_image1_new[$index]))
+                                            <div class="mb-2">
+                                                <img src="{{ asset('storage/'.$logo_image1_new[$index]) }}"
+                                                    width="80"
+                                                    height="80"
+                                                    style="object-fit:cover;border-radius:5px;">
+                                            </div>
+                                        @endif
+                                        <input type="file"
+                                            name="logo_image1_new[]"
+                                            class="form-control"
+                                            value="{{ $logo_image1_new[$index] ?? '' }}">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Logo Image2</label>
+                                        @if(!empty($logo_image2_new[$index]))
+                                            <div class="mb-2">
+                                                <img src="{{ asset('storage/'.$logo_image2_new[$index]) }}"
+                                                    width="80"
+                                                    height="80"
+                                                    style="object-fit:cover;border-radius:5px;">
+                                            </div>
+                                        @endif
+                                        <input type="file"
+                                            name="logo_image2_new[]"
+                                            class="form-control"
+                                            value="{{ $logo_image2_new[$index] ?? '' }}">
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="">Linkedin url</label>
+                                        <input type="text"
+                                            name="linkedIn_new[]"
+                                            class="form-control"
+                                            value="{{ $linkedIn_new[$index] ?? '' }}"
+                                            placeholder="Enter Linkedinurl">
+                                    </div>
+
+                                    <button type="button" class="btn btn-danger remove-boi">
+                                        Remove
+                                    </button>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <button type="button" class="btn btn-primary mt-2 add-boi">
+                            + Add Best of Industry
+                        </button>
+                    </div>
+
+
+                    <hr>
                     <h5>Final CTA</h5>
                     <div class="mb-4">
                         <label class="form-label fw-bold">CTA Description</label>

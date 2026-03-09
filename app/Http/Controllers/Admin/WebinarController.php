@@ -180,6 +180,9 @@ class WebinarController extends Controller
                 'banner_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image_attend' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'instructor_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'instructor_logo_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'instructor_logo_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             ]);
 
             $bannerImage = null;
@@ -198,8 +201,19 @@ class WebinarController extends Controller
                 $imageAttend = $request->file('image_attend')->store('webinar/session', 'public');
             }
 
-            WebinarUpcomingSession::create([
+            if ($request->hasFile('instructor_image')) {
+                $instructor_image = $request->file('instructor_image')->store('webinar/session', 'public');
+            }
 
+            if ($request->hasFile('instructor_logo_image1')) {
+                $instructor_logo_image1 = $request->file('instructor_logo_image1')->store('webinar/session', 'public');
+            }
+
+            if ($request->hasFile('instructor_logo_image2')) {
+                $instructor_logo_image2 = $request->file('instructor_logo_image2')->store('webinar/session', 'public');
+            }
+
+            WebinarUpcomingSession::create([
                 'session_id' => $request->session_id,
                 'topic_name' => $request->topic_name,
                 'title' => $request->title,
@@ -214,6 +228,14 @@ class WebinarController extends Controller
                 'banner_image' => $bannerImage,
                 'image' => $image,
                 'image_attend' => $imageAttend,
+                'instructor_image' => $instructor_image,
+                'instructor_logo_image1' => $instructor_logo_image1,
+                'instructor_logo_image2' => $instructor_logo_image2,
+
+                'instructor_name' => $request->instructor_name,
+                'instructor_designation' => $request->instructor_designation,
+                'instructor_experience' => $request->instructor_experience,
+                'instructor_desc' => $request->instructor_desc,
 
                 // Section Headings
                 'why_attend_section_heading' => $request->why_attend_section_heading,
@@ -271,6 +293,9 @@ class WebinarController extends Controller
                 'banner_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image_attend' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'instructor_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'instructor_logo_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'instructor_logo_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             ]);
 
             if ($session->title != $request->title) {
@@ -292,14 +317,38 @@ class WebinarController extends Controller
 
             if ($request->hasFile('banner_image')) {
                 $bannerImage = $request->file('banner_image')->store('webinar/session', 'public');
+            }else{
+                $bannerImage = $session->banner_image;
             }
 
             if ($request->hasFile('image')) {
                 $image = $request->file('image')->store('webinar/session', 'public');
+            }else{
+                $bannerImage = $session->image;
             }
 
             if ($request->hasFile('image_attend')) {
                 $imageAttend = $request->file('image_attend')->store('webinar/session', 'public');
+            }else{
+                $bannerImage = $session->image_attend;
+            }
+
+            if ($request->hasFile('instructor_image')) {
+                $instructor_image = $request->file('instructor_image')->store('webinar/session', 'public');
+            }else{
+                $instructor_image = $session->instructor_image;
+            }
+
+            if ($request->hasFile('instructor_logo_image1')) {
+                $instructor_logo_image1 = $request->file('instructor_logo_image1')->store('webinar/session', 'public');
+            }else{
+                $instructor_logo_image1 = $session->instructor_logo_image1;
+            }
+
+            if ($request->hasFile('instructor_logo_image2')) {
+                $instructor_logo_image2 = $request->file('instructor_logo_image2')->store('webinar/session', 'public');
+            }else{
+                $instructor_logo_image2 = $session->instructor_logo_image2;
             }
 
             $session->update([
@@ -317,6 +366,15 @@ class WebinarController extends Controller
                 'banner_image' => $bannerImage,
                 'image' => $image,
                 'image_attend' => $imageAttend,
+
+                'instructor_image' => $instructor_image,
+                'instructor_logo_image1' => $instructor_logo_image1,
+                'instructor_logo_image2' => $instructor_logo_image2,
+
+                'instructor_name' => $request->instructor_name,
+                'instructor_designation' => $request->instructor_designation,
+                'instructor_experience' => $request->instructor_experience,
+                'instructor_desc' => $request->instructor_desc,
 
                 // Section Headings
                 'why_attend_section_heading' => $request->why_attend_section_heading,
@@ -420,6 +478,40 @@ class WebinarController extends Controller
                 $image = $request->file('image')->store('webinar', 'public');
             }
 
+            $image_news = [];
+            $logo1_news = [];
+            $logo2_news = [];
+
+            /* Profile Images */
+            if ($request->hasFile('image_new')) {
+                foreach ($request->file('image_new') as $file) {
+                    if ($file) {
+                        $path = $file->store('webinar', 'public');
+                        $image_news[] = $path;
+                    }
+                }
+            }
+
+            /* Logo Image1 */
+            if ($request->hasFile('logo_image1_new')) {
+                foreach ($request->file('logo_image1_new') as $file) {
+                    if ($file) {
+                        $path = $file->store('webinar', 'public');
+                        $logo1_news[] = $path;
+                    }
+                }
+            }
+
+            /* Logo Image2 */
+            if ($request->hasFile('logo_image2_new')) {
+                foreach ($request->file('logo_image2_new') as $file) {
+                    if ($file) {
+                        $path = $file->store('webinar', 'public');
+                        $logo2_news[] = $path;
+                    }
+                }
+            }
+
             Webinar::create([
 
                 'title' => $request->title,
@@ -442,6 +534,15 @@ class WebinarController extends Controller
 
                 'faqs_question' => json_encode($request->faqs_question ?? []),
                 'faqs_answer' => json_encode($request->faqs_answer ?? []),
+
+                'name_new' => json_encode($request->name_new ?? []),
+                'Designation_new' => json_encode($request->Designation_new ?? []),
+                'Description_new' => json_encode($request->Description_new ?? []),
+                'Areaofexperties_new' => json_encode($request->Areaofexperties_new ?? []),
+                'linkedIn_new' => json_encode($request->linkedIn_new ?? []),
+                'image_new' => json_encode($image_news ?? []),
+                'logo_image1_new' => json_encode($logo1_news ?? []),
+                'logo_image2_new' => json_encode($logo2_news ?? []),
 
                 'final_CTA_desc' => $request->final_CTA_desc,
             ]);
@@ -477,6 +578,8 @@ class WebinarController extends Controller
             $bannerImage = null;
             $image = null;
 
+            $bannerImage = $webinar->banner_image;
+            $image = $webinar->image;
             if ($request->hasFile('banner_image')) {
                 $bannerImage = $request->file('banner_image')->store('webinar', 'public');
             }
@@ -485,11 +588,51 @@ class WebinarController extends Controller
                 $image = $request->file('image')->store('webinar', 'public');
             }
 
+            $oldImages = json_decode($webinar->image_new ?? '[]', true);
+            $oldLogo1 = json_decode($webinar->logo_image1_new ?? '[]', true);
+            $oldLogo2 = json_decode($webinar->logo_image2_new ?? '[]', true);
+ 
+            $image_news = [];
+            foreach ($request->name_new ?? [] as $index => $name) {
+                if ($request->hasFile('image_new') && isset($request->file('image_new')[$index])) {
+                    $file = $request->file('image_new')[$index];
+                    $path = $file->store('webinar', 'public');
+                    $image_news[] = $path;
+                } else {
+                    $image_news[] = $oldImages[$index] ?? null;
+                }
+            }
+
+            /* Logo Image1 */
+            $logo1_news = [];
+            foreach ($request->name_new ?? [] as $index => $name) {
+                if ($request->hasFile('logo_image1_new') && isset($request->file('logo_image1_new')[$index])) {
+                    $file = $request->file('logo_image1_new')[$index];
+                    $path = $file->store('webinar', 'public');
+                    $logo1_news[] = $path;
+                } else {
+                    $logo1_news[] = $oldLogo1[$index] ?? null;
+                }
+            }
+
+            /* Logo Image2 */
+            $logo2_news = [];
+            foreach ($request->name_new ?? [] as $index => $name) {
+                if ($request->hasFile('logo_image2_new') && isset($request->file('logo_image2_new')[$index])) {
+                    $file = $request->file('logo_image2_new')[$index];
+                    $path = $file->store('webinar', 'public');
+                    $logo2_news[] = $path;
+                } else {
+                    $logo2_news[] = $oldLogo2[$index] ?? null;
+                }
+            }
+
             $webinar->update([
                 'title' => $request->title,
                 'slug' => $slug,
                 'subtitle' => $request->subtitle,
                 'short_desc' => $request->short_desc,
+                'best_of_industries_heading' => $request->best_of_industries_heading,
 
                 // Images
                 'banner_image' => $bannerImage,
@@ -507,6 +650,15 @@ class WebinarController extends Controller
                 'faqs_question' => json_encode($request->faqs_question ?? []),
                 'faqs_answer' => json_encode($request->faqs_answer ?? []),
 
+                'name_new' => json_encode($request->name_new ?? []),
+                'Designation_new' => json_encode($request->Designation_new ?? []),
+                'Description_new' => json_encode($request->Description_new ?? []),
+                'Areaofexperties_new' => json_encode($request->Areaofexperties_new ?? []),
+                'linkedIn_new' => json_encode($request->linkedIn_new ?? []),
+                'image_new' => json_encode($image_news ?? []),
+                'logo_image1_new' => json_encode($logo1_news ?? []),
+                'logo_image2_new' => json_encode($logo2_news ?? []),
+                
                 'final_CTA_desc' => $request->final_CTA_desc,
             ]);
 
