@@ -21,6 +21,7 @@ class WebinarUpcomingSession extends Model
         'subtitle',
         'date',
         'time',
+        'time_from',
         'mode',
         'by',
         'image',
@@ -68,7 +69,8 @@ class WebinarUpcomingSession extends Model
 
     public function category()
     {
-        return $this->belongsTo(WebinarUpcomingSessionCategory::class, 'session_id');
+        // return $this->belongsTo(WebinarUpcomingSessionCategory::class, 'session_id');
+        return $this->belongsTo(WebinarUpcomingSessionCategory::class, 'session_id', 'id');
     }
 
     
