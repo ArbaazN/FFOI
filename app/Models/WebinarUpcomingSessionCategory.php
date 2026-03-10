@@ -18,4 +18,9 @@ class WebinarUpcomingSessionCategory extends Model
         'heading',
         'short_desc',
     ];
+
+    public function session()
+    {
+        return $this->hasMany(WebinarUpcomingSession::class, 'session_id', 'id');
+    }
 }

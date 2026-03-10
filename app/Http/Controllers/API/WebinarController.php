@@ -26,8 +26,11 @@ class WebinarController extends Controller
             ], 404);
         }
 
-        $sessions = WebinarUpcomingSessionCategory::orderBy('created_at', 'asc')->get();
-
+        // $sessions = WebinarUpcomingSessionCategory::orderBy('created_at', 'asc')->get();
+        $sessions = WebinarUpcomingSessionCategory::with('session')
+                    ->orderBy('created_at', 'asc')
+                    ->get();
+                    
         // Decode BOI fields
         $names = json_decode($webinar->name_new ?? '[]');
         $designations = json_decode($webinar->Designation_new ?? '[]');
@@ -102,19 +105,22 @@ class WebinarController extends Controller
                 'final_CTA_desc' => $webinar->final_CTA_desc,
             ],
 
-            'upcoming_sessions' => $sessions->map(function ($session) {
+            'upcoming_sessions' => $sessions->map(function ($category) {
+                $session = $category->session->first();
                 return [
-                    'id' => $session->id,
-                    'session_name' => $session->session_name ?? null,
-                    'session_detail_slug' => $session->slug ?? null,
-                    'slug' => $session->slug ?? null,
-                    'heading' => $session->heading ?? null,
-                    'short_desc' => $session->short_desc ?? null,
-                    'image_url' => $session->image
-                        ? asset('storage/' . $session->image)
-                        : null,
+                    'id' => $category->id,
+                    'session_name' => $category->session_name,
+                    'session_detail_slug' => $session->slug,
+                    'slug' => $category->slug ?? null,
+                    'heading' => $category->heading,
+                    'short_desc' => $category->short_desc,
+                    'image_url' => $category->image
+                                ? asset('storage/' . $category->image)
+                                : null,
+                    'from' => $session->time_from ?? null,
+                    'to'   => $session->time ?? null,
 
-                    'created_at' => $session->created_at,
+                    'created_at' => $category->created_at,
                 ];
             }),
         ]);

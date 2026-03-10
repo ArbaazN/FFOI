@@ -102,7 +102,16 @@
                     </div>
 
                     <div class="mb-4">
-                        <label class="form-label fw-bold">Time</label>
+                        <label class="form-label fw-bold">From</label>
+                        <input type="time" name="time_from" class="form-control @error('time_from') is-invalid @enderror"
+                            value="{{ old('time_from', $isEdit ? $session->time_from : '') }}">
+                        @error('time_from') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">To</label>
                         <input type="time" name="time" class="form-control @error('time') is-invalid @enderror"
                             value="{{ old('time', $isEdit ? $session->time : '') }}">
                         @error('time') 

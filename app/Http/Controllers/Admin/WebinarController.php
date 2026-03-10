@@ -177,6 +177,7 @@ class WebinarController extends Controller
                 'title' => 'required|unique:webinar_upcoming_session,title',
                 'date' => 'required',
                 'time' => 'required',
+                'time_from' => 'required',
                 'banner_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image_attend' => 'nullable|image|mimes:jpg,jpeg,png,webp',
@@ -221,6 +222,7 @@ class WebinarController extends Controller
                 'subtitle' => $request->subtitle,
                 'date' => $request->date,
                 'time' => $request->time,
+                'time_from' => $request->time_from,
                 'mode' => $request->mode,
                 'by' => $request->by,
 
@@ -290,6 +292,7 @@ class WebinarController extends Controller
                 'title' => 'required|unique:webinar_upcoming_session,title,' . $session->id,
                 'date' => 'required',
                 'time' => 'required',
+                'time_from' => 'required',
                 'banner_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image_attend' => 'nullable|image|mimes:jpg,jpeg,png,webp',
@@ -359,6 +362,7 @@ class WebinarController extends Controller
                 'subtitle' => $request->subtitle,
                 'date' => $request->date,
                 'time' => $request->time,
+                'time_from' => $request->time_from,
                 'mode' => $request->mode,
                 'by' => $request->by,
 
