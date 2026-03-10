@@ -123,11 +123,36 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label fw-bold">Author</label>
+                            <label class="form-label fw-bold">Author Name</label>
                             <input type="text" name="author" class="form-control @error('author') is-invalid @enderror"
                                 value="{{ old('author', $isEdit ? $blog->author : '') }}">
                             @error('author')
                                 <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Author Image</label>
+
+                            @if ($isEdit && $blog->author_image)
+                                <div class="mb-3">
+                                    <img src="{{ asset('storage/' . $blog->author_image) }}" alt="Blog Image"
+                                        class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                </div>
+                            @endif
+
+                            <input type="file" name="author_image" class="form-control @error('author_image') is-invalid @enderror"
+                                accept="image/*">
+                            @error('author_image')
+                                <span class="invalid-feedback d-block">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Author Description</label>
+                            <textarea name="author_desc" id="editor" class="form-control editor" rows="10">{!! old('author_desc', $isEdit ? $blog->author_desc : '') !!}</textarea>
+                            @error('content')
+                                <span class="text-danger small">{{ $message }}</span>
                             @enderror
                         </div>
 
@@ -152,10 +177,101 @@
 
                         <div class="mb-4">
                             <label class="form-label fw-bold">Content</label>
-                            <textarea name="content" id="editor" class="form-control" rows="10">{!! old('content', $isEdit ? $blog->content : '') !!}</textarea>
+                            <textarea name="content" id="editor" class="form-control editor" rows="10">{!! old('content', $isEdit ? $blog->content : '') !!}</textarea>
                             @error('content')
                                 <span class="text-danger small">{{ $message }}</span>
                             @enderror
+                        </div>
+
+                        <hr>
+                        <h5>Social Share Buttons</h5>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Facebook Url</label>
+                            <input type="text" name="fb_url" class="form-control @error('fb_url') is-invalid @enderror"
+                                value="{{ old('fb_url', $isEdit ? $blog->fb_url : '') }}">
+                            @error('fb_url')
+                                <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Twitter Url</label>
+                            <input type="text" name="twitter_url" class="form-control @error('twitter_url') is-invalid @enderror"
+                                value="{{ old('twitter_url', $isEdit ? $blog->twitter_url : '') }}">
+                            @error('twitter_url')
+                                <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Instagram Url</label>
+                            <input type="text" name="insta_url" class="form-control @error('insta_url') is-invalid @enderror"
+                                value="{{ old('insta_url', $isEdit ? $blog->insta_url : '') }}">
+                            @error('insta_url')
+                                <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">LinkedIn Url</label>
+                            <input type="text" name="linkedIn_url" class="form-control @error('linkedIn_url') is-invalid @enderror"
+                                value="{{ old('linkedIn_url', $isEdit ? $blog->linkedIn_url : '') }}">
+                            @error('linkedIn_url')
+                                <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Youtube Url</label>
+                            <input type="text" name="yt_url" class="form-control @error('yt_url') is-invalid @enderror"
+                                value="{{ old('yt_url', $isEdit ? $blog->yt_url : '') }}">
+                            @error('yt_url')
+                                <span class="invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        
+                        <hr>
+                        <h5>FAQs</h5>
+
+                        <div class="mb-4 dynamic-faqs">
+                            <label class="form-label fw-bold">FAQs</label>
+
+                            <div class="faq-wrapper">
+                                @php
+                                    $questions = old('faqs_question',
+                                        $isEdit && $blog->faqs_question
+                                        ? json_decode($blog->faqs_question, true)
+                                        : ['']);
+
+                                    $answers = old('faqs_answer',
+                                        $isEdit && $blog->faqs_answer
+                                        ? json_decode($blog->faqs_answer, true)
+                                        : ['']);
+                                @endphp
+
+                                @foreach($questions as $index => $question)
+                                    <div class="faq-item border p-3 mb-3 rounded">
+                                        <div class="mb-2">
+                                            <input type="text"
+                                                name="faqs_question[]"
+                                                class="form-control"
+                                                value="{{ $question }}"
+                                                placeholder="Enter question">
+                                        </div>
+
+                                        <div class="mb-2">
+                                            <textarea name="faqs_answer[]"
+                                                    class="form-control"
+                                                    placeholder="Enter answer">{{ $answers[$index] ?? '' }}</textarea>
+                                        </div>
+
+                                        <button type="button" class="btn btn-danger remove-faq">
+                                            Remove
+                                        </button>
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            <button type="button" class="btn btn-primary mt-2 add-faq">
+                                + Add FAQ
+                            </button>
                         </div>
 
                         <div class="mb-4">

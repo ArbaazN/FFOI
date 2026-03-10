@@ -26,7 +26,22 @@ class BlogApiController extends Controller
                     'slug'          => $blog->slug,
                     'image_url'     => $blog->image_url,
                     'content'       => $blog->decoded_content,
-                    'is_featured'   => (bool) ($blog->feature_content ?? false),
+                    'feature_content'   => (bool) ($blog->feature_content ?? false),
+                    'author_image_url'  => $blog->author_image_url,
+                    'author_desc'       => $blog->author_desc,
+                    'fb_url'            => $blog->fb_url,
+                    'twitter_url'       => $blog->twitter_url,
+                    'insta_url'         => $blog->insta_url,
+                    'linkedIn_url'      => $blog->linkedIn_url,
+                    'yt_url'            => $blog->yt_url,
+                    'faqs'              => collect(json_decode($blog->faqs_question ?? '[]'))
+                                                ->map(function ($question, $index) use ($blog) {
+                                                    $answers = json_decode($blog->faqs_answer ?? '[]');
+                                                    return [
+                                                        'question' => $question,
+                                                        'answer' => $answers[$index] ?? ''
+                                                    ];
+                                                }),
                 ]);
 
             $categories = BlogCategory::where('status', 1)
@@ -62,7 +77,6 @@ class BlogApiController extends Controller
     {
         try {
             $blog = Blog::where('slug', $slug)->first();
-
             if (!$blog) {
                 return response()->json([
                     'status'  => false,
@@ -91,7 +105,6 @@ class BlogApiController extends Controller
                     'meta_title'       => $blog->meta_title,
                     'meta_description' => $blog->meta_description,
                     'meta_keywords'    => $blog->meta_keywords,
-
                     'content' => [
                         'sections' => [
                             'blog' => $blog->only([
@@ -104,7 +117,16 @@ class BlogApiController extends Controller
                                 'image_url',
                                 'mobile_image_url', 
                                 'decoded_content',
-                                'is_featured',
+                                'feature_content',
+                                'author_image_url',
+                                'author_desc',
+                                'fb_url',
+                                'twitter_url',
+                                'insta_url',
+                                'linkedIn_url',
+                                'yt_url',
+                                'faqs_question',
+                                'faqs_answer',
                             ]),
                             'suggested_blogs' => $suggested,
                         ],
@@ -127,3 +149,4 @@ class BlogApiController extends Controller
         }
     }
 }
+
