@@ -74,13 +74,25 @@ class BlogController extends Controller
             'status'          => 'required|in:0,1',
             'feature_content' => 'nullable|in:0,1',
             'category_id'     => 'required|string|max:255',
-            'content'         => 'required|string',
+            'content'         => 'required',
+            'author_desc'     => 'nullable',
+            'faqs_question'   => 'nullable',
+            'faqs_answer'     => 'nullable',
+            'fb_url'          => 'nullable',
+            'twitter_url'     => 'nullable',
+            'insta_url'       => 'nullable',
+            'linkedIn_url'    => 'nullable',
+            'yt_url'          => 'nullable',
 
             'images'          => 'nullable|image|mimes:jpg,jpeg,png,webp',
             'mobile_image'     => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'author_image'     => 'nullable|image|mimes:jpg,jpeg,png,webp',
+
         ]);
 
         $validated['feature_content'] = $request->has('feature_content') ? 1 : 0;
+        $validated['faqs_question'] = json_encode($request->faqs_question ?? []);
+        $validated['faqs_answer'] = json_encode($request->faqs_answer ?? []);
 
         DB::beginTransaction();
         try {
@@ -123,11 +135,22 @@ class BlogController extends Controller
             'feature_content' => 'nullable|in:0,1',
             'category_id'     => 'required|string|max:255',
             'content'         => 'required|string',
+            'author_desc'     => 'nullable',
+            'faqs_question'   => 'nullable',
+            'faqs_answer'     => 'nullable',
+            'fb_url'          => 'nullable',
+            'twitter_url'     => 'nullable',
+            'insta_url'       => 'nullable',
+            'linkedIn_url'    => 'nullable',
+            'yt_url'          => 'nullable',
             'images'          => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'author_image'     => 'nullable|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         $validated['feature_content'] = $request->has('feature_content') ? 1 : 0;
-
+        $validated['faqs_question'] = json_encode($request->faqs_question ?? []);
+        $validated['faqs_answer'] = json_encode($request->faqs_answer ?? []);
+        
         DB::beginTransaction();
         try {
             BlogService::update($blog, $validated, $request);

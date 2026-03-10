@@ -57,6 +57,13 @@ class BlogService
             'blog-mobile-images'
         );
 
+        $validated['author_image'] = self::uploadImage(
+            null,
+            $request,
+            'author_image',
+            'author-images'
+        );
+
         return Blog::create($validated);
     }
 
@@ -76,6 +83,13 @@ class BlogService
             $request,
             'mobile_image',
             'blog-mobile-images'
+        );
+
+        $validated['author_image'] = self::uploadImage(
+            $blog,
+            $request,
+            'author_image',
+            'blog-images'
         );
 
         $blog->update($validated);

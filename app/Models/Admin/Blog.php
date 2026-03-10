@@ -25,7 +25,16 @@ class Blog extends Model
         'images',
         'mobile_image',
         'slug',
-        'content'
+        'content',
+        'author_image',
+        'author_desc',
+        'faqs_question',
+        'faqs_answer',
+        'fb_url',
+        'twitter_url',
+        'insta_url',
+        'linkedIn_url',
+        'yt_url'
     ];
 
     protected $casts = [
@@ -44,7 +53,7 @@ class Blog extends Model
         return $this->belongsTo(BlogCategory::class, 'category_id');
     }
 
-    protected $appends = ['image_url','mobile_image_url', 'decoded_content'];
+    protected $appends = ['image_url','mobile_image_url','author_image_url', 'decoded_content'];
     
     public function getImageUrlAttribute()
     {
@@ -54,6 +63,11 @@ class Blog extends Model
     public function getMobileImageUrlAttribute()
     {
         return $this->mobile_image ? asset('storage/' . $this->mobile_image) : null;
+    }
+
+    public function getAuthorImageUrlAttribute()
+    {
+        return $this->author_image ? asset('storage/' . $this->author_image) : null;
     }
 
     // return decoded HTML content
