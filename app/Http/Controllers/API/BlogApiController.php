@@ -76,7 +76,7 @@ class BlogApiController extends Controller
     public function blogDetail($slug)
     {
         try {
-            $blog = Blog::where('slug', $slug)->first();
+            $blog = Blog::with('category')->where('slug', $slug)->first();
             if (!$blog) {
                 return response()->json([
                     'status'  => false,
@@ -112,7 +112,6 @@ class BlogApiController extends Controller
                                 'subtitle',
                                 'author',
                                 'publish_date',
-                                'blog_type',
                                 'slug',
                                 'image_url',
                                 'mobile_image_url', 
@@ -126,8 +125,11 @@ class BlogApiController extends Controller
                                 'linkedIn_url',
                                 'yt_url',
                                 'faqs_question',
-                                'faqs_answer',
-                            ]),
+                                'faqs_answer'
+                            ])
+                             + [
+                                'blog_type' => $blog->category->name ?? null
+                            ],
                             'suggested_blogs' => $suggested,
                         ],
                     ],

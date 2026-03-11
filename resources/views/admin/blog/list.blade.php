@@ -96,6 +96,25 @@
                                                     <i class="icon-base ti tabler-eye icon-22px"></i>
                                                 </a>
                                             @endcan
+                                            @can('blog.delete')
+                                                <form action="{{ route('blog.destroy', $blog->id) }}" method="POST"
+                                                    style="display:inline-block;"
+                                                    onsubmit="return confirm('Are you sure you want to delete this blog?')">
+
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <button type="submit"
+                                                        class="btn btn-text-danger rounded-pill btn-icon"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        title="Delete Blog">
+
+                                                        <i class="icon-base ti tabler-trash icon-22px"></i>
+                                                    </button>
+
+                                                </form>
+                                            @endcan
                                         @else
                                             <span class="text-muted">-</span>
                                         @endif

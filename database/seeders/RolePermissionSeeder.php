@@ -32,7 +32,7 @@ class RolePermissionSeeder extends Seeder
             'program.view', 'program.create', 'program.edit',
 
             // Blog Module
-            'blog.view', 'blog.create', 'blog.edit',
+            'blog.view', 'blog.create', 'blog.edit', 'blog.delete',
 
             // Pages (consistent CRUD, no page.update)
             'page.view', 'page.edit',

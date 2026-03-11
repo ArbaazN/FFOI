@@ -18,7 +18,7 @@ class BlogController extends Controller
         $this->middleware('permission:blog.view|blog.create|blog.edit')->only(['index', 'show']);
         $this->middleware('permission:blog.create')->only(['create', 'store']);
         $this->middleware('permission:blog.edit')->only(['edit', 'update']);
-        // $this->middleware('permission:blog.delete')->only(['destroy']);
+        $this->middleware('permission:blog.delete')->only(['destroy']);
     }
 
     public function index(Request $request)
@@ -169,5 +169,23 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         return view('admin.blog.show', compact('blog'));
+    }
+
+    public function destroy(Blog $blog)
+    {
+        try {
+
+            $blog->forceDelete(); // Hard delete
+
+            return redirect()->route('blog.index')
+                ->with('success', 'Blog deleted permanently.');
+
+        } catch (\Exception $e) {
+
+            Log::error("Error deleting blog: " . $e->getMessage());
+
+            return redirect()->route('blog.index')
+                ->with('error', 'Failed to delete blog.');
+        }
     }
 }

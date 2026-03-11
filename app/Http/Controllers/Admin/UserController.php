@@ -17,7 +17,7 @@ class UserController extends Controller
         $this->middleware('permission:user.view|user.edit')->only(['index', 'show']);
         $this->middleware('permission:user.create')->only(['create', 'store']);
         $this->middleware('permission:user.edit')->only(['edit', 'update']);
-        // $this->middleware('permission:user.delete')->only(['destroy']);
+        $this->middleware('permission:user.delete')->only(['destroy']);
 
         // Permission Management (IMPORTANT)
         $this->middleware('permission:user.edit')->only(['editPermission', 'updatePermission']);
