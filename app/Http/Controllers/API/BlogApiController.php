@@ -12,7 +12,7 @@ class BlogApiController extends Controller
     public function latestBlogs()
     {
         try {
-            $blogs = Blog::where('status', 1)
+            $blogs = Blog::with('category')->where('status', 1)
                 ->whereDate('publish_date', '<=', now()->toDateString())
                 ->orderBy('publish_date', 'DESC')
                 ->take(4)
@@ -22,10 +22,10 @@ class BlogApiController extends Controller
                     'subtitle'      => $blog->subtitle,
                     'author'        => $blog->author,
                     'publish_date'  => optional($blog->publish_date)->format('Y-m-d'),
-                    'blog_type'     => $blog->blog_type,
+                    'blog_type'     => $blog->category->name,
                     'slug'          => $blog->slug,
                     'image_url'     => $blog->image_url,
-                    'content'       => $blog->decoded_content,
+                    // 'content'       => $blog->decoded_content,
                     'feature_content'   => (bool) ($blog->feature_content ?? false),
                     'author_image_url'  => $blog->author_image_url,
                     'author_desc'       => $blog->author_desc,
@@ -44,12 +44,45 @@ class BlogApiController extends Controller
                                                 }),
                 ]);
 
+            // $categories = BlogCategory::where('status', 1)
+            //     ->orderBy('name', 'ASC')
+            //     ->get()
+            //     ->map(fn($category) => [
+            //         $category->name,
+            //     ]);
             $categories = BlogCategory::where('status', 1)
-                ->orderBy('name', 'ASC')
-                ->get()
-                ->map(fn($category) => [
-                    $category->name,
-                ]);
+                        ->orderBy('name', 'ASC')
+                        ->get()
+                        ->map(function ($category) {
+
+                            $blogs = Blog::where('category_id', $category->id)
+                                ->where('status', 1)
+                                ->whereDate('publish_date', '<=', now()->toDateString())
+                                ->orderBy('publish_date', 'DESC')
+                                ->get()
+                                ->map(function ($blog) {
+                                    return [
+                                        'title'         => $blog->title,
+                                        'subtitle'      => $blog->subtitle,
+                                        'author'        => $blog->author,
+                                        'slug'  => $blog->slug,
+                                        'image_url' => $blog->image_url,
+                                        'publish_date' => optional($blog->publish_date)->format('Y-m-d'),
+                                        'author_image_url'  => $blog->author_image_url,
+                                        'author_desc'       => $blog->author_desc,
+                                        'fb_url'            => $blog->fb_url,
+                                        'twitter_url'       => $blog->twitter_url,
+                                        'insta_url'         => $blog->insta_url,
+                                        'linkedIn_url'      => $blog->linkedIn_url,
+                                        'yt_url'            => $blog->yt_url,
+                                    ];
+                                });
+
+                            return [
+                                'name'  => $category->name,
+                                'blogs' => $blogs
+                            ];
+                        });
 
             return response()->json([
                 'status' => true,
