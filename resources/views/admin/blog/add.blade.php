@@ -150,14 +150,14 @@
 
                         <div class="mb-4">
                             <label class="form-label fw-bold">Author Description</label>
-                            <textarea name="author_desc" id="editor" class="form-control editor" rows="10">{!! old('author_desc', $isEdit ? $blog->author_desc : '') !!}</textarea>
+                            <textarea name="author_desc" class="form-control editor" rows="10">{!! old('author_desc', $isEdit ? $blog->author_desc : '') !!}</textarea>
                             @error('content')
                                 <span class="text-danger small">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label fw-bold">Publish Date</label>
+                            <label class="form-label fw-bold">Updated On</label>
                             <input type="date" name="publish_date"
                                 class="form-control @error('publish_date') is-invalid @enderror"
                                 value="{{ old('publish_date', $isEdit && $blog->publish_date ? $blog->publish_date->format('Y-m-d') : '') }}">
@@ -177,7 +177,7 @@
 
                         <div class="mb-4">
                             <label class="form-label fw-bold">Content</label>
-                            <textarea name="content" id="editor" class="form-control editor" rows="10">{!! old('content', $isEdit ? $blog->content : '') !!}</textarea>
+                            <textarea name="content" id="editor" class="form-control" rows="10">{!! old('content', $isEdit ? $blog->content : '') !!}</textarea>
                             @error('content')
                                 <span class="text-danger small">{{ $message }}</span>
                             @enderror
@@ -308,10 +308,87 @@
 
 @push('scripts')
     <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
-
     <script>
+        const uploadedEditorImages = [];
+        const formEl = document.querySelector('form');
+
+        class BlogUploadAdapter {
+            constructor(loader) {
+                this.loader = loader;
+                this.xhr = null;
+            }
+
+            upload() {
+                return this.loader.file
+                    .then(file => new Promise((resolve, reject) => {
+                        this._initRequest();
+                        this._initListeners(resolve, reject, file);
+                        this._sendRequest(file);
+                    }));
+            }
+
+            abort() {
+                if (this.xhr) {
+                    this.xhr.abort();
+                }
+            }
+
+            _initRequest() {
+                const xhr = this.xhr = new XMLHttpRequest();
+                xhr.open('POST', "{{ route('blog.uploadEditorImage') }}", true);
+                xhr.responseType = 'json';
+                xhr.setRequestHeader('X-CSRF-TOKEN', "{{ csrf_token() }}");
+            }
+
+            _initListeners(resolve, reject, file) {
+                const xhr = this.xhr;
+                const genericError = `Couldn't upload file: ${file.name}.`;
+
+                xhr.addEventListener('error', () => reject(genericError));
+                xhr.addEventListener('abort', () => reject());
+                xhr.addEventListener('load', () => {
+                    const response = xhr.response;
+
+                    if (!response || response.error) {
+                        return reject(response?.error?.message || response?.message || genericError);
+                    }
+
+                    if (response.url) {
+                        uploadedEditorImages.push(response.url);
+                    }
+
+                    resolve({
+                        default: response.url
+                    });
+                });
+            }
+
+            _sendRequest(file) {
+                const data = new FormData();
+                data.append('upload', file);
+                this.xhr.send(data);
+            }
+        }
+
+        function BlogUploadAdapterPlugin(editor) {
+            editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+                return new BlogUploadAdapter(loader);
+            };
+        }
+
+        let blogEditorInstance = null;
+
+        function collectEditorImageSrcs(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html || '';
+            return Array.from(div.querySelectorAll('img'))
+                .map(img => img.getAttribute('src'))
+                .filter(Boolean);
+        }
+
         ClassicEditor
             .create(document.querySelector('#editor'), {
+                extraPlugins: [BlogUploadAdapterPlugin],
                 toolbar: {
                     items: [
                         'heading', '|',
@@ -319,10 +396,29 @@
                         'link', '|',
                         'bulletedList', 'numberedList', '|',
                         'blockQuote', '|',
+                        'insertImage', 'imageUpload', 'mediaEmbed', '|',
                         'undo', 'redo'
                     ]
                 },
+                mediaEmbed: {
+                    previewsInData: true
+                }
+            })
+            .then(editor => {
+                blogEditorInstance = editor;
+
+                if (formEl) {
+                    formEl.addEventListener('submit', () => {
+                        const used = new Set(collectEditorImageSrcs(editor.getData()));
+                        const removed = uploadedEditorImages.filter(url => !used.has(url));
+                        const input = document.getElementById('removed_editor_images');
+                        if (input) {
+                            input.value = JSON.stringify(removed);
+                        }
+                    });
+                }
             })
             .catch(error => console.error(error));
+
     </script>
 @endpush

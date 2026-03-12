@@ -43,6 +43,8 @@ use Illuminate\Support\Facades\Route;
 
         Route::resource('blog/category', BlogCategoryController::class)->names('blog.categories');
         Route::resource('blog', BlogController::class)->names('blog');
+        Route::post('blog/upload-editor-image', [BlogController::class, 'uploadEditorImage'])
+                    ->name('blog.uploadEditorImage');
 
         Route::get('webinar/upcomingsession', [WebinarController::class,'sessionList'])->name('webinar.session.list');
         Route::get('webinar/upcomingsession/create/{id?}', [WebinarController::class,'sessionCreate'])->name('webinar.session.create');

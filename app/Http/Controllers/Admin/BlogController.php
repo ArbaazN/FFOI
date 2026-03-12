@@ -188,4 +188,24 @@ class BlogController extends Controller
                 ->with('error', 'Failed to delete blog.');
         }
     }
+
+    public function uploadEditorImage(Request $request)
+    {
+        $request->validate([
+            'upload' => 'required|image|mimes:jpg,jpeg,png,webp,gif|max:4096',
+        ]);
+
+        try {
+            $path = $request->file('upload')->store('blog-content', 'public');
+
+            return response()->json([
+                'url' => asset('storage/' . $path),
+            ]);
+        } catch (Exception $e) {
+            Log::error("Error uploading blog editor image: " . $e->getMessage());
+            return response()->json([
+                'message' => 'Failed to upload image.',
+            ], 500);
+        }
+    }
 }
