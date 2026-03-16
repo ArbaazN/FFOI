@@ -41,6 +41,12 @@ class pageSeeder extends Seeder
                 'slug'  => 'partner-with-us',
                 'file'  => 'partner-with-us.json',
                 'show_in_menu' => true
+            ],
+            [
+                'title' => 'Centre',
+                'slug'  => 'centres',
+                'file'  => 'centres.json',
+                'show_in_menu' => true
             ]
         ];
 

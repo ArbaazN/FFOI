@@ -1,20 +1,196 @@
 {
   "sections": [
-    {
-      "type": "banner",
-      "data": {
-        "title": "Insights That Inspire,Your MBA Journey.",
-        "desc": "Stay ahead with expert tips, student stories, and career advice—curated to guide your growth, one blog at a time..",
-        "banner_image": "/uploads/banner.jpg"
+      {
+        "type": "banner",
+        "status": "enable",
+        "data": {
+          "title": "Build a Scalable Education Business <span class=\"text-green\">in Your City</span>",
+          "subtitleInput": "Applications Open for Limited City-Wise Partnerships",
+          "description": "Own your geography. Run a future-ready finance education business. Powered by a nationally recognised brand & programs.",
+          "backgroundImage": null,
+          "buttons": [
+            {
+              "labelInput": "Apply for Partnership",
+              "actionInput": "scroll-form",
+              "buttonStyleSelect": "primary"
+            },
+            {
+              "labelInput": "Learn More",
+              "actionInput": "modal",
+              "buttonStyleSelect": "secondary"
+            }
+          ]
+        }
+      },
+      {
+        "type": "whyPartner",
+        "status": "enable",
+        "data": {
+          "titleHighlight": "Why <span class=\"text-green\">Partner With FFOI?</span>",
+          "title": "Fill the Finance Education Gap <span class=\"text-green\">in Your City</span>",
+          "description": "India's demand for finance education, upskilling, and career-oriented programs is growing rapidly — but most local markets lack credible, structured, nationally aligned offerings. FFOI Partners fill this gap by delivering industry-led finance programs in their own geography, backed by FFOI's brand, curriculum, and systems. This is not a coaching centre model. This is a long-term, location-based education business.",
+          "backgroundImage": null,
+          "pillars": [
+            { "text": "Exclusive city / zone-level territory rights" },
+            { "text": "Nationally recognised brand & curriculum" },
+            { "text": "Industry-led finance programs portfolio" },
+            { "text": "Central academic governance & support" }
+          ]
+        }
+      },
+      {
+        "type": "whatYouGet",
+        "status": "enable",
+        "data": {
+          "titleHighlight": "Partner <span class=\"text-green\">Benefits</span>",
+          "title": "What You Get as an <span class=\"text-green\">FFOI Partner</span>",
+          "subtitleInput": "Everything you need to launch and grow a finance education business in your territory.",
+          "items": [
+            {
+              "badge": "Territory",
+              "iconImg": null,
+              "titleInput": "Exclusive Territory Rights",
+              "points": [
+                "City / zone-level exclusivity",
+                "No overlapping franchisees in your territory",
+                "You own and grow your local market"
+              ],
+              "tags": ["City Exclusivity", "Zone Rights", "Local Ownership"]
+            },
+            {
+              "badge": "Programs",
+              "iconImg": null,
+              "titleInput": "Ready-to-Launch Programs",
+              "points": [
+                "Investment Banking & Hedge Fund Operations",
+                "Financial Engineering (Certificate & MBA-linked)",
+                "Analytics, FAS, Trading, BFSI, Corporate Finance",
+                "Short-term certifications & workshops"
+              ],
+              "tags": ["IB & HFO", "Fin Engineering", "BFSI", "Workshops"]
+            },
+            {
+              "badge": "Academic",
+              "iconImg": null,
+              "titleInput": "Academic & Curriculum Support",
+              "points": [
+                "Complete curriculum & content access",
+                "Faculty enablement & training support",
+                "Standardised delivery frameworks",
+                "Assessments, certification & evaluation systems"
+              ],
+              "tags": ["Curriculum", "Faculty Support", "Certification"]
+            },
+            {
+              "badge": "Marketing",
+              "iconImg": null,
+              "titleInput": "Marketing & Lead Support",
+              "points": [
+                "Centralised brand positioning & messaging",
+                "Ready landing pages & lead funnels",
+                "National campaigns + local marketing playbooks",
+                "Ongoing lead-generation initiatives"
+              ],
+              "tags": ["Brand Assets", "Lead Funnels", "Campaigns"]
+            },
+            {
+              "badge": "Operations",
+              "iconImg": null,
+              "titleInput": "Business & Operational Systems",
+              "points": [
+                "Franchise onboarding & launch support",
+                "SOPs for admissions, counselling & delivery",
+                "Pricing frameworks & revenue models",
+                "CRM & reporting guidance"
+              ],
+              "tags": ["SOPs", "CRM", "Revenue Models"]
+            }
+          ]
+        }
+      },
+      {
+        "type": "whoShouldApply",
+        "status": "enable",
+        "data": {
+          "titleHighlight": "Ideal <span class=\"text-green\">Candidates</span>",
+          "title": "Who Should <span class=\"text-green\">Apply?</span>",
+          "tagline": "You don't need to be a finance expert — you need a business ownership mindset.",
+          "backgroundImage":null,
+          "items": [
+            {
+              "iconImg": null,
+              "titleInput": "Education Entrepreneurs",
+              "description": "Institute owners or education professionals looking to scale with a national brand."
+            },
+            {
+              "iconImg": null,
+              "titleInput": "Professionals in Transition",
+              "description": "Professionals wanting to move from employment into business ownership."
+            },
+            {
+              "iconImg": null,
+              "titleInput": "Ex-Bankers & Finance Pros",
+              "description": "Finance professionals and ex-bankers leveraging domain expertise to build a business."
+            },
+            {
+              "iconImg": null,
+              "titleInput": "Coaching Centre Owners",
+              "description": "Existing coaching centres looking to upgrade their offering with nationally aligned programs."
+            },
+            {
+              "iconImg": null,
+              "titleInput": "Business Owners",
+              "description": "Entrepreneurs seeking a scalable, knowledge-driven venture with strong demand."
+            }
+          ]
+        }
+      },
+      {
+        "type": "howItWorks",
+        "status": "enable",
+        "data": {
+          "titleHighlight": "Franchise <span class=\"text-green\">Process</span>",
+          "title": "How the Franchise <span class=\"text-green\">Selection Works</span>",
+          "description": "A structured, transparent process to evaluate and onboard the right partners for each territory.",
+          "backgroundImage": null,
+          "steps": [
+            { "text": "Submit Franchise Application" },
+            { "text": "Profile & City Feasibility Review" },
+            { "text": "Business Discussion with FFOI Team" },
+            { "text": "Franchise Approval & Onboarding" },
+            { "text": "Launch & Go-Live Support" }
+          ],
+          "vision": [
+            { "iconImg": null, "text": "100 Franchise Partners in 3 Years" },
+            { "iconImg": null, "text": "Tier-1, Tier-2 & Emerging Cities" },
+            { "iconImg": null, "text": "Early Partner Priority Territories" },
+            { "iconImg": null, "text": "First-Mover Advantage in Your City" }
+          ]
+        }
+      },
+      {
+        "type": "franchiseForm",
+        "status": "enable",
+        "data": {
+          "titleHighlight": "Apply <span class=\"text-green\">Now</span>",
+          "title": "Apply to Become an <span class=\"text-green\">FFOI Partner</span>",
+          "description": "All applications are evaluated carefully. Territories are limited.",
+          "backgroundImage": null
+        }
+      },
+      {
+        "type": "connectBanner",
+        "status": "enable",
+        "data": {
+          "title": "Build a Business. Build a Brand.",
+          "titleHighlight": "Build a Brand.",
+          "description": "Partner with FFOI and lead finance education in your city. Apply now to become a Franchise Partner.",
+          "button": {
+            "labelInput": "Apply for Franchise Partnership",
+            "actionInput": "#franchise-form",
+            "buttonStyleSelect": "primary"
+          }
+        }
       }
-    },
-    {
-      "type": "topbar",
-      "data": {
-        "title": "Insights That Inspire,Your MBA Journey.",
-        "desc": "Stay ahead with expert tips, student stories, and career advice—curated to guide your growth, one blog at a time..",
-        "banner_image": "/uploads/banner.jpg"
-      }
-    }
   ]
 }

@@ -1,0 +1,215 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "Our Physical Presence <span class=\"text-green\">Across India</span>",
+        "subtitleInput": "Vashi · Goa · Bangalore — Growing",
+        "description": "Finance Forum of India (FFOI) operates through strategically located centres across India to deliver industry-aligned finance education, assessments, and certifications. Each centre follows a standardised academic framework, central governance, and national skill alignment — ensuring consistency, credibility, and quality across locations.",
+        "backgroundImage": null,
+        "buttons": [
+          {
+            "labelInput": "Explore Centres",
+            "actionInput": "modal",
+            "buttonStyleSelect": "primary"
+          },
+          {
+            "labelInput": "Partner With Us",
+            "actionInput": "modal",
+            "buttonStyleSelect": "secondary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "howCentresOperate",
+      "status": "enable",
+      "data": {
+        "titleHighlight": "How <span class=\"text-green\">We Operate</span>",
+        "title": "Delivery Hubs, Not <span class=\"text-green\">Independent Units</span>",
+        "description": "FFOI centres are designed to function as delivery and engagement hubs, not independent coaching units. Across all centres, FFOI ensures a consistent academic framework, central governance, and national skill alignment.",
+        "backgroundImage": null,
+        "pillars": [
+          {
+            "text": "Centralised academic control & curriculum governance"
+          },
+          {
+            "text": "Uniform assessment and certification standards"
+          },
+          {
+            "text": "Industry-validated learning outcomes"
+          },
+          {
+            "text": "Hybrid delivery (offline + online enablement)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "centresList",
+      "status": "enable",
+      "data": {
+        "titleHighlight": "Current FFOI <span class=\"text-green\">Centres</span>",
+        "title": "Our Physical Presence <span class=\"text-green\">Across India</span>",
+        "subtitleInput": "Each centre follows a standardised academic framework ensuring consistency, credibility, and quality across locations.",
+        "items": [
+          {
+            "city": "Vashi (Navi Mumbai)",
+            "badge": "Headquarters",
+            "address": "Bharatiya Vidya Bhavan, Plot 3A, Sector-30, Vashi, Navi Mumbai – 400703",
+            "image": null,
+            "mapLink": "https://maps.google.com/?q=Bharatiya+Vidya+Bhavan+Plot+3A+Sector+30+Vashi+Navi+Mumbai",
+            "roles": [
+              "National Headquarters of FFOI",
+              "Academic governance & certification control",
+              "Flagship delivery centre for finance programs and assessments"
+            ],
+            "activities": [
+              "Finance Education Series",
+              "Certificate Programs in Finance",
+              "FAAT",
+              "Institutional & Corporate Engagements"
+            ],
+            "mode": "Hybrid",
+            "region": "Mumbai, Navi Mumbai & Western India"
+          },
+          {
+            "city": "Goa",
+            "badge": "Academic Centre",
+            "address": "ASBS MBA, Shanti Nagar, Porvorim Aradi Socorro, Goa – 403521",
+            "image": null,
+            "mapLink": "https://maps.google.com/?q=ASBS+MBA+Shanti+Nagar+Porvorim+Goa",
+            "roles": [
+              "Program delivery and academic collaboration centre",
+              "Finance skill development for students and professionals"
+            ],
+            "activities": [
+              "Finance Education Series",
+              "Certificate Programs",
+              "Student Assessments & Certification Support"
+            ],
+            "mode": "Hybrid",
+            "region": "Goa & Neighbouring Regions"
+          },
+          {
+            "city": "Bangalore",
+            "badge": "Academic Partner",
+            "address": "St Xavier's College, 15, Queens Road, Bangalore – 560052",
+            "image": null,
+            "mapLink": "https://maps.google.com/?q=St+Xaviers+College+15+Queens+Road+Bangalore",
+            "roles": [
+              "Academic partner centre for finance education initiatives",
+              "Industry-aligned learning and assessment enablement"
+            ],
+            "activities": [
+              "Finance Education Series",
+              "Student Assessments",
+              "Institutional Collaboration"
+            ],
+            "mode": "Hybrid",
+            "region": "Bangalore & Southern India"
+          }
+        ]
+      }
+    },
+    {
+      "type": "learnerExpectations",
+      "status": "enable",
+      "data": {
+        "titleHighlight": "Learner <span class=\"text-green\">Promise</span>",
+        "title": "What You Can Expect at <span class=\"text-green\">Any FFOI Centre</span>",
+        "tagline": "Location changes. Standards don't.",
+        "backgroundImage": null,
+        "items": [
+          {
+            "iconImg": null,
+            "title": "Industry-Aligned Finance Education",
+            "description": "Curriculum designed with real-world finance roles and national skill frameworks in mind."
+          },
+          {
+            "iconImg": null,
+            "title": "Standardised Assessment Frameworks",
+            "description": "Every learner is assessed on the same rigorous, nationally benchmarked standards."
+          },
+          {
+            "iconImg": null,
+            "title": "Nationally Recognised Certification Pathways",
+            "description": "Certifications backed by FFOI's central governance and NSQF-aligned recognition."
+          },
+          {
+            "iconImg": null,
+            "title": "Access to FFOI's Finance Ecosystem",
+            "description": "Connect with FFOI's broader network of institutions, corporates, and finance professionals."
+          },
+          {
+            "iconImg": null,
+            "title": "Seamless Online + Offline Integration",
+            "description": "Hybrid delivery ensures learning continuity regardless of your location."
+          }
+        ]
+      }
+    },
+    {
+      "type": "expansion",
+      "status": "enable",
+      "data": {
+        "titleHighlight": "Growth & <span class=\"text-green\">Future</span>",
+        "title": "Centres, Expansion & <span class=\"text-green\">the Future</span>",
+        "description": "FFOI is expanding thoughtfully across India through academic partnerships, institution-led delivery centres, and future centre partnerships by invitation.",
+        "backgroundImage": null,
+        "channels": [
+          { "text": "Academic partnerships" },
+          { "text": "Institution-led delivery centres" },
+          { "text": "Future centre partnerships (by invitation)" }
+        ],
+        "guidingPrinciples": [
+            { "iconImg": null, "text": "Academic Quality" },
+            { "iconImg": null, "text": "Industry Relevance" },
+            { "iconImg": null, "text": "Governance & Compliance" },
+            { "iconImg": null, "text": "Long-term Ecosystem Building" }
+        ],
+        "button": {
+          "labelInput": "Explore Partnership Opportunities",
+          "actionInput": "/contact-us",
+          "buttonStyleSelect": "primary"
+        }
+      }
+    },
+    {
+      "type": "connectBanner",
+      "status": "enable",
+      "data": {
+        "titleHighlight": "Need to <span class=\"text-green\">Connect?</span>",
+        "title": "Need to Connect With a Centre?",
+        "description": "For admissions, programs, assessments, partnerships, or general enquiries, please use our central communication channels.",
+        "button": {
+          "labelInput": "Visit Contact Us",
+          "actionInput": "/contact-us",
+          "buttonStyleSelect": "primary"
+        }
+      }
+    },
+    {
+      "type": "footer",
+      "status": "enable",
+      "data": {
+        "titleInput": "Start Your Finance Journey at an FFOI Centre",
+        "titleHighlight": "FFOI Centre",
+        "description": "Whether you are a student, professional, or institution — find your nearest FFOI centre and begin a credible, structured finance education pathway.",
+        "buttons": [
+          {
+            "labelInput": "Explore Programs",
+            "actionInput": "/MaintenancePage",
+            "buttonStyleSelect": "primary"
+          },
+          {
+            "labelInput": "Partner With Us",
+            "actionInput": "/contact-us",
+            "buttonStyleSelect": "outline"
+          }
+        ]
+      }
+    }
+  ]
+}
