@@ -47,6 +47,24 @@ class pageSeeder extends Seeder
                 'slug'  => 'centres',
                 'file'  => 'centres.json',
                 'show_in_menu' => true
+            ],
+            [
+                'title' => 'Faat',
+                'slug'  => '/faat/faat-for-b-schools',
+                'file'  => 'faat-bschool.json',
+                'show_in_menu' => true
+            ],
+            [
+                'title' => 'Faat',
+                'slug'  => '/faat/faat-for-corporates',
+                'file'  => 'faat-corporate.json',
+                'show_in_menu' => true
+            ],
+            [
+                'title' => 'Faat',
+                'slug'  => '/faat/faat-for-students',
+                'file'  => 'faat-student.json',
+                'show_in_menu' => true
             ]
         ];
 

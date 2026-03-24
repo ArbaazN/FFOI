@@ -1,0 +1,165 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "A Smarter Way for B-Schools to Shortlist <span class=\"text-green\">Job-Ready Finance Students</span>",
+        "headline": "FAAT – Financial Adaptive Skills Assessment",
+        "subtitle": "NSQF-Aligned | NCVT-Mapped | RT-MSSU Affiliated",
+        "description": "Benchmark finance skills. Improve placements. Build recruiter confidence. By Finance Forum of India (FFOI).",
+        "backgroundImage": "/images/banner-faat-bschools.png",
+        "buttons": [
+          {
+            "labelInput": "Partner with FAAT"
+          },
+          {
+            "labelInput": "Request Institutional Demo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "whyInstitutions",
+      "status": "enable",
+      "data": {
+        "title": "Built for Institutions That Take <span class=\"text-green\">Placements Seriously</span>",
+        "description": "Today's finance recruiters don't just ask: \"Which college are the students from?\" They ask: \"Are they actually job-ready?\"",
+        "endnoteTextarea": "FAAT helps institutions objectively measure finance capability, shortlist the right students, and present credible, assessment-backed talent to recruiters.",
+        "backgroundImage": "/images/faat-b1.png",
+        "pillars": [
+          { "textInput": "Objectively measure finance capability" },
+          { "textInput": "Shortlist the right students" },
+          { "textInput": "Present credible, assessment-backed talent to recruiters" }
+        ]
+      }
+    },
+    {
+      "type": "whatIsFaat",
+      "status": "enable",
+      "data": {
+        "title": "What Is <span class=\"text-green\">FAAT?</span>",
+        "description": "FAAT (Financial Adaptive Skills Acumen & Assessment Test) is a structured, nationally aligned finance assessment framework designed to evaluate real-world financial skills, not just academic knowledge.",
+        "backgroundImage": "/images/faat-cor2.png",
+        "credentials": [
+          {
+            "iconImage": "",
+            "titleInput": "NSQF Aligned",
+            "descTextarea": "National Skills Qualification Framework"
+          },
+          {
+            "iconImage": "",
+            "titleInput": "NCVT Mapped",
+            "descTextarea": "Skill benchmarking"
+          },
+          {
+            "iconImage": "",
+            "titleInput": "RT-MSSU Affiliated",
+            "descTextarea": "Ratan Tata Maharashtra State Skills University"
+          }
+        ],
+        "credentialsNoteTextarea": "This ensures FAAT fits seamlessly into formal education, employability, and placement frameworks."
+      }
+    },
+    {
+      "type": "whyInstitutionsUse",
+      "status": "enable",
+      "data": {
+        "title": "Why Institutions <span class=\"text-green\">Use FAAT</span>",
+        "introInput": "Institutions partner with FAAT to:",
+        "outcomes": [
+          { "iconImage": "", "textInput": "Shortlist job-ready students for finance roles" },
+          { "iconImage": "", "textInput": "Provide credible skill benchmarks to recruiters" },
+          { "iconImage": "", "textInput": "Reduce placement risk due to skill mismatch" },
+          { "iconImage": "", "textInput": "Improve placement outcomes & acceptance ratios" },
+          { "iconImage": "", "textInput": "Identify skill gaps early and plan interventions" }
+        ],
+        "endnoteInput": "FAAT transforms placements from resume-based to capability-based.",
+        "backgroundImage": "/images/faat-b3.png"
+      }
+    },
+    {
+      "type": "placementCell",
+      "status": "enable",
+      "data": {
+        "title": "How FAAT Helps Your <span class=\"text-green\">Placement Cell</span>",
+        "cards": [
+          {
+            "iconImage": "bi-bullseye",
+            "badgeInput": "Shortlisting",
+            "titleInput": "Objective Shortlisting",
+            "points": [
+              "Identify students who meet finance role expectations",
+              "Separate \"degree-qualified\" from \"role-ready\" candidates"
+            ]
+          },
+          {
+            "iconImage": "bi-bar-chart-fill",
+            "badgeInput": "Reports",
+            "titleInput": "Recruiter-Ready Reports",
+            "points": [
+              "Detailed scorecards & skill mapping",
+              "Clear role-fit indicators for BFSI & finance recruiters"
+            ]
+          },
+          {
+            "iconImage": "bi-diagram-3-fill",
+            "badgeInput": "Skill Gap",
+            "titleInput": "Skill Gap Visibility",
+            "points": [
+              "Understand where students are strong",
+              "Identify gaps before final placements"
+            ]
+          },
+          {
+            "iconImage": "bi-graph-up-arrow",
+            "badgeInput": "Credibility",
+            "titleInput": "Stronger Placement Credibility",
+            "points": [
+              "Present FAAT-certified students to corporates",
+              "Build long-term recruiter trust"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "faatLevels",
+      "status": "enable",
+      "data": {
+        "title": "FAAT Levels – One Framework for <span class=\"text-green\">All Student Cohorts</span>",
+        "descriptionTextarea": "FAAT evaluates candidates on 4 progressive levels, enabling institutions to map students to the right finance roles.",
+        "levels": [
+          {
+            "levelInput": "Beginner FAAT",
+            "badgeInput": "L1",
+            "idealForInput": "Final-year students & freshers",
+            "focusAreasInput": "Basic financial fundamentals",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Learners FAAT",
+            "badgeInput": "L2",
+            "idealForInput": "MBA / PGDM students, junior professionals",
+            "focusAreasInput": "Financial statements, quantitative finance",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Practitioner FAAT",
+            "badgeInput": "L3",
+            "idealForInput": "Advanced finance cohorts",
+            "focusAreasInput": "Equity research, fixed income, financial modelling",
+            "iconImage": ""
+          },
+          {
+            "levlevelInputel": "Expert FAAT",
+            "badgeInput": "L4",
+            "idealForInput": "High-potential & senior cohorts",
+            "focusAreasInput": "Advisory, M&A, IPO valuation",
+            "iconImage": "bi-trophy-fill"
+          }
+        ]
+      }
+    }
+  ]
+}

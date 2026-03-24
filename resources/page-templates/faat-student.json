@@ -1,0 +1,312 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "The Modern Employability Benchmark for <span class=\"text-green\">Finance Careers</span>",
+        "headline": "FAAT – Financial Adaptive Skills & Assessment Test",
+        "subtitle": "NSQF-Aligned | NCVT-Mapped | RT-MSSU Affiliated",
+        "description": "Assess what you truly know. Prove what you can do. Get job-ready. By Finance Forum of India (FFOI).",
+        "backgroundImage": "/images/banner-faat-school.png",
+        "buttons": [
+          {
+            "labelInput": "Register Free"
+          },
+          {
+            "labelInput": "Download FAAT Student Guide"
+          }
+        ]
+      }
+    },
+    {
+      "type": "whyStudents",
+      "status": "enable",
+      "data": {
+        "title": "Built for Students Who Want <span class=\"text-green\">Jobs in Finance</span>",
+        "description": "Degrees alone don't get you hired anymore. Finance employers look for applied skills, analytical thinking, and job-readiness.",
+        "endnoteTextarea": "FAAT helps you stand out by giving you a structured, objective assessment of your finance capability — before interviews.",
+        "backgroundImage": "/images/faat-b1.png",
+        "pillars": [
+          { "textInput": "Applied skills & analytical thinking" },
+          { "textInput": "Objective assessment of finance capability" },
+          { "textInput": "Stand out before interviews" }
+        ]
+      }
+    },
+    {
+      "type": "whatIsFaat",
+      "status": "enable",
+      "data": {
+        "title": "What is <span class=\"text-green\">FAAT?</span>",
+        "description": "FAAT (Financial Adaptive Skills Acumen & Assessment Test) is a nationally aligned finance skills assessment that evaluates:",
+        "points": [
+          { "iconImage": "", "textInput": "Financial understanding" },
+          { "iconImage": "", "textInput": "Analytical ability" },
+          { "iconImage": "", "textInput": "Application-based problem solving" },
+          { "iconImage": "", "textInput": "Role-readiness for BFSI & finance jobs" }
+        ],
+        "backgroundImage": "/images/faat-cor2.png",
+        "credentials": [
+          {
+            "iconImage": "",
+            "titleInput": "NSQF Aligned",
+            "descTextarea": "National Skills Qualification Framework"
+          },
+          {
+            "iconImage": "",
+            "titleInput": "NCVT Mapped",
+            "descTextarea": "Skill benchmarking"
+          },
+          {
+            "iconImage": "",
+            "titleInput": "RT-MSSU Affiliated",
+            "descTextarea": "Ratan Tata Maharashtra State Skills University"
+          }
+        ],
+        "credentialsNoteTextarea": "This ensures your assessment has formal recognition + real hiring relevance."
+      }
+    },
+    {
+      "type": "whyFaatDifference",
+      "status": "enable",
+      "data": {
+        "title": "Why FAAT Makes a <span class=\"text-green\">Difference for Students</span>",
+        "introInput": "",
+        "backgroundImage": "/images/faat-b3.png",
+        "outcomes": [
+          { "iconImage": "", "textInput": "Shows recruiters your actual finance capability" },
+          { "iconImage": "", "textInput": "Gives you a detailed scorecard + skill gap insights" },
+          { "iconImage": "", "textInput": "Improves interview confidence with data-backed proof" },
+          { "iconImage": "", "textInput": "Helps you understand where you stand and what to improve" },
+          { "iconImage": "", "textInput": "Makes your résumé stronger and more credible" }
+        ],
+        "endnoteTextarea": ""
+      }
+    },
+    {
+      "type": "whoShouldTake",
+      "status": "enable",
+      "data": {
+        "title": "Who Should <span class=\"text-green\">Take FAAT?</span>",
+        "description": "FAAT is ideal for:",
+        "endnoteTextarea": "If you're serious about employment in finance, FAAT is for you.",
+        "backgroundImage": "/images/faat-b4.png",
+        "items": [
+          { "iconInput": "", "textInput": "B.Com / BBA / BMS / BAF / BBI students" },
+          { "iconInput": "", "textInput": "MBA / PGDM (Finance) students" },
+          { "iconInput": "", "textInput": "Engineering graduates entering finance" },
+          { "iconInput": "", "textInput": "Final-year students & fresh graduates" },
+          { "iconInput": "", "textInput": "Early professionals in BFSI & finance roles" }
+        ]
+      }
+    },
+    {
+      "type": "faatLevels",
+      "status": "enable",
+      "data": {
+        "title": "FAAT Levels – One Framework, <span class=\"text-green\">Multiple Career Stages</span>",
+        "descriptionTextarea": "You can progress through levels as your career grows.",
+        "levels": [
+          {
+            "levelInput": "Beginner FAAT",
+            "badgeInput": "L1",
+            "idealForInput": "Fresh Graduates",
+            "questionsInput": "60",
+            "focusAreasInput": "Basic financial fundamentals",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Learners FAAT",
+            "badgeInput": "L2",
+            "idealForInput": "Junior Finance Professionals",
+            "questionsInput": "75",
+            "focusAreasInput": "Financial statements, quantitative finance",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Practitioner FAAT",
+            "badgeInput": "L3",
+            "idealForInput": "Mid-Level Professionals",
+            "questionsInput": "90",
+            "focusAreasInput": "Equity research, fixed income, financial modelling",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Expert FAAT",
+            "badgeInput": "L4",
+            "idealForInput": "Senior Professionals",
+            "questionsInput": "120",
+            "focusAreasInput": "Advanced advisory, M&A, IPO valuation",
+            "iconImage": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "assessmentPath",
+      "status": "enable",
+      "data": {
+        "title": "FAAT Assessment <span class=\"text-green\">Structure</span>",
+        "paths": [
+          {
+            "levelInput": "Beginner's FAAT",
+            "subtitleInput": "Foundational Assessment",
+            "iconImage": "",
+            "details": [
+              { "keyInput": "Mode", "valueInput": "Online (Merittrac Platform)" },
+              { "keyInput": "Frequency", "valueInput": "3rd Sunday of the first month of every quarter" },
+              { "keyInput": "Duration", "valueInput": "75 minutes" },
+              { "keyInput": "Questions", "valueInput": "60" },
+              {
+                "keyInput": "Focus",
+                "value": [
+                  "Quantitative & statistical skills",
+                  "Data analysis",
+                  "Financial literacy & numeracy",
+                  "Spreadsheet proficiency"
+                ]
+              },
+              { "keyInput": "Types", "valueInput": "MCQs + TITA" },
+              { "keyInput": "Scoring", "valueInput": "MCQs: +3 / −1 | TITA: +3 / No negative" },
+              { "keyInput": "Outcome", "valueInput": "Score report within 1 week + personalised FAS improvement pointers" }
+            ]
+          },
+          {
+            "levelInput": "Learner's FAAT",
+            "subtitleInput": "Intermediate Assessment",
+            "iconImage": "",
+            "details": [
+              { "keyInput": "Mode", "valueInput": "Online (Merittrac Platform)" },
+              { "keyInput": "Frequency", "valueInput": "4th Sunday of the first month of every quarter" },
+              { "keyInput": "Duration", "valueInput": "150 minutes" },
+              { "keyInput": "Questions", "valueInput": "100" },
+              {
+                "keyInput": "Focus",
+                "value": [
+                  "Quantitative finance",
+                  "Economics for finance",
+                  "Financial statements",
+                  "Fixed income, equity, derivatives",
+                  "Foreign exchange",
+                  "Spreadsheet & financial modelling"
+                ]
+              },
+              { "keyInput": "Types", "valueInput": "MCQs + TITA" },
+              { "keyInput": "Scoring", "valueInput": "MCQs: +3 / −1 | TITA: +3 / No negative" },
+              { "keyInput": "Outcome", "valueInput": "Detailed score report + actionable FAS insights" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "studentJourney",
+      "status": "enable",
+      "data": {
+        "title": "How FAAT Works – <span class=\"text-green\">Student Journey</span>",
+        "steps": [
+          { "numberInput": "01", "iconImage": "", "titleInput": "Register for FAAT", "descInput": "Sign up and choose your level" },
+          { "numberInput": "02", "iconImage": "", "titleInput": "Appear for the Online Assessment", "descInput": "Take the test on the Merittrac platform" },
+          { "numberInput": "03", "iconImage": "", "titleInput": "Receive a Detailed Score Report", "descInput": "Get your results within 1 week" },
+          { "numberInput": "04", "iconImage": "", "titleInput": "Understand Strengths & Skill Gaps", "descInput": "Know exactly where you stand" },
+          { "numberInput": "05", "iconImage": "", "titleInput": "Use FAAT Certification in Interviews", "descInput": "Strengthen your résumé with data-backed proof" }
+        ]
+      }
+    },
+    {
+      "type": "careerRoles",
+      "status": "enable",
+      "data": {
+        "title": "Career Roles <span class=\"text-green\">FAAT Supports</span>",
+        "descriptionInput": "FAAT aligns you to roles such as:",
+        "roles": [
+          { "iconImage": "", "textInput": "Investment Banking Operations Analyst" },
+          { "iconImage": "", "textInput": "BFSI Analyst & Operations roles" },
+          { "iconImage": "", "textInput": "Corporate Finance Executive" },
+          { "iconImage": "", "textInput": "Risk & Compliance Analyst" },
+          { "iconImage": "", "textInput": "Finance Analytics & Reporting roles" },
+          { "iconImage": "", "textInput": "KPO / Global Finance Services roles" }
+        ]
+      }
+    },
+    {
+      "type": "whyFFOI",
+      "status": "enable",
+      "data": {
+        "title": "Why Trust <span class=\"text-green\">FFOI?</span>",
+        "description": "FAAT is built by the same ecosystem that trains and evaluates finance talent for industry.",
+        "backgroundImage": "/images/growthhub.png",
+        "stats": [
+          { "iconImage": "", "valueInput": "25+", "labelInput": "Years of finance education legacy" },
+          { "iconImage": "", "valueInput": "25,000+", "labelInput": "Individuals empowered" },
+          { "iconImage": "", "valueInput": "1,000+", "labelInput": "Institutes & corporate partners" }
+        ]
+      }
+    },
+    {
+      "type": "leadership",
+      "status": "enable",
+      "data": {
+        "title": "Leadership Driving <span class=\"text-green\">FAAT</span>",
+        "members": [
+          {
+            "nameInput": "Nilesh Sarawate",
+            "roleInput": "Honorary CEO",
+            "image": "/images/team1.jpg",
+            "credentials": "MBA Finance (TAPMI) | Former Director – IMS Learning | Adjunct Faculty – SPJIMR",
+            "quoteTextarea": "FAAT enables institutions to confidently present job-ready finance talent to recruiters using a credible, standardised benchmark."
+          },
+          {
+            "nameInput": "Munira Lokhandwala",
+            "roleInput": "Program Director",
+            "image": "/images/team2.jpg",
+            "credentials": "IIM Calcutta Alumna | US-CFA & FRM | 24+ Years in Finance & Education",
+            "quoteTextarea": ""
+          },
+          {
+            "nameInput": "Vishal Bhojani",
+            "roleInput": "Program Head",
+            "image": "/images/team3.jpg",
+            "credentials": "MBA Finance | Ex-JP Morgan, BNP Paribas, TCS",
+            "quoteTextarea": ""
+          },
+          {
+            "nameInput": "Dr. Asim Kumar Sengupta",
+            "roleInput": "",
+            "image": "/images/team4.jpg",
+            "credentials": "Ph.D. Commerce | Former Director – SPJIMR & SIESCOMS | Ex-PNB Banker | World Bank Consultant",
+            "quoteTextarea": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "connectBanner",
+      "status": "enable",
+      "data": {
+        "title": "Ready to Take Control of Your <span class=\"text-green\">Finance Career?</span>",
+        "titleHighlight": "Finance Career?",
+        "description": "Your degree gives you eligibility. FAAT gives you proof.",
+        "email": [
+            {
+                "emailInput": "faat.students@ffoi.in"
+            }
+        ],
+        "phoneInput": "+91 XXXXXXXXXX",
+        "websiteInput": "www.ffoi.in",
+        "buttons": [
+          {
+            "labelInput": "Register for FAAT (Free)"
+          },
+          {
+            "labelInput": "Download FAAT Student Guide"
+          },
+          {
+            "labelInput": "Speak to a Career Advisor"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "Smarter Hiring for <span class=\"text-green\">BFSI, Finance & KPO Organisations</span>",
+        "headline": "FAAT – Financial Adaptive Skills Assessment",
+        "subtitle": "Hire Job-Ready Finance Talent | Reduce Risk | Cut Training Costs",
+        "description": "",
+        "backgroundImage": "/images/banner-faat-corporate.png",
+        "buttons": [
+          {
+            "labelInput": "Enquire for Corporate Hiring Solutions"
+          }
+        ]
+      }
+    },
+    {
+      "type": "whyFaatExists",
+      "status": "enable",
+      "data": {
+        "title": "Why <span class=\"text-green\">FAAT Exists</span>",
+        "description": "In today's BFSI and Finance KPO ecosystem, degrees and experience alone are no longer reliable indicators of job readiness.",
+        "backgroundImage": "/images/faatexists.png",
+        "pillarsHeadingInput": "Organisations need professionals who can:",
+        "pillars": [
+          { "textInput": "Understand financial concepts deeply" },
+          { "textInput": "Apply them in real-world scenarios" },
+          { "textInput": "Adapt quickly to complex finance roles" }
+        ],
+        "endnoteTextarea": "FAAT (Financial Adaptive Skills Assessment Test) bridges this critical gap by objectively assessing financial acumen, analytical ability, and practical finance skills — before you hire."
+      }
+    },
+    {
+      "type": "hiringProblem",
+      "status": "enable",
+      "data": {
+        "title": "Why Hiring Right Is <span class=\"text-green\">Harder Than Ever</span>",
+        "description": "Despite the growing number of graduates:",
+        "stats": [
+          {
+            "iconImage": "",
+            "valueInput": "54.81%",
+            "labelInput": "of Indian graduates are unemployable due to gaps in practical skills"
+          },
+          {
+            "iconImage": "",
+            "valueInput": "Interviews",
+            "labelInput": "fail to reveal real financial understanding"
+          },
+          {
+            "iconImage": "",
+            "valueInput": "Skill Mismatch",
+            "labelInput": "leads to high attrition and retraining costs"
+          },
+          {
+            "iconImage": "",
+            "valueInput": "Months",
+            "labelInput": "Organisations spend months training candidates who are not role-ready"
+          }
+        ],
+        "endnoteTextarea": "FAAT solves this problem at the assessment stage itself."
+      }
+    },
+    {
+      "type": "faatOverview",
+      "status": "enable",
+      "data": {
+        "title": "FAAT – The Smarter Way to <span class=\"text-green\">Hire Finance Talent</span>",
+        "description": "FAAT is a standardised, structured, and scalable finance skills assessment framework designed specifically for BFSI, Finance, and allied domains. It evaluates candidates not just on knowledge — but on their ability to think, apply, analyse, and adapt in real finance roles.",
+        "backgroundImage": "/images/faat-cor2.png",
+        "credentials": [
+          {
+            "iconImage": "bi-patch-check-fill",
+            "titleInput": "NSQF Aligned",
+            "descInput": "National Skills Qualification Framework"
+          },
+          {
+            "iconImage": "bi-award-fill",
+            "titleInput": "NCVT Mapped",
+            "descInput": "For skill benchmarking"
+          },
+          {
+            "iconImage": "bi-building-fill",
+            "titleInput": "RT-MSSU Affiliated",
+            "descInput": "Ratan Tata Maharashtra State Skills University"
+          }
+        ],
+        "credentialsNoteTextarea": "This ensures nationally recognised, outcome-oriented hiring benchmarks."
+      }
+    },
+    {
+      "type": "measurableOutcomes",
+      "status": "enable",
+      "data": {
+        "title": "Measurable Outcomes for <span class=\"text-green\">Smarter Hiring</span>",
+        "intro": "With FAAT, organisations achieve:",
+        "backgroundImage": "/images/faat-cor3.png",
+        "outcomes": [
+          { "iconImage": "", "textInput": "Higher quality shortlists based on proven financial skills" },
+          { "iconImage": "", "textInput": "Reduced hiring time through pre-screened candidates" },
+          { "iconImage": "", "textInput": "Lower training costs with job-ready professionals" },
+          { "iconImage": "", "textInput": "Better retention due to skill-role alignment" }
+        ],
+        "endnoteTextarea": "FAAT enables data-driven hiring decisions, not intuition-based ones."
+      }
+    },
+    {
+      "type": "hiringOptions",
+      "status": "enable",
+      "data": {
+        "title": "Two Flexible Ways to Use <span class=\"text-green\">FAAT for Recruitment</span>",
+        "endnoteInput": "You choose the control level. FAAT ensures quality.",
+        "options": [
+          {
+            "badgeInput": "Option 1",
+            "iconImage": "bi-building",
+            "titleInput": "FAAT-Powered Recruitment Drive",
+            "steps": [
+              "You conduct your recruitment drive",
+              "Candidates appear for FAAT",
+              "You shortlist using FAAT score benchmarks"
+            ]
+          },
+          {
+            "badgeInput": "Option 2",
+            "iconImage": "bi-people-fill",
+            "titleInput": "End-to-End Hiring by FFOI",
+            "steps": [
+              "FFOI conducts recruitment as per your JD",
+              "Candidates are assessed via FAAT",
+              "You interview only the top-scoring candidates"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "faatLevels",
+      "status": "enable",
+      "data": {
+        "title": "What FAAT Evaluates – <span class=\"text-green\">4 Progressive Levels</span>",
+        "description": "FAAT helps HR teams map skills to roles accurately, from entry-level to leadership positions.",
+        "levels": [
+          {
+            "levelInput": "Beginner FAAT",
+            "badgeInput": "L1",
+            "idealForInput": "Fresh Graduates",
+            "focusAreasinput": "Financial fundamentals, numeracy",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Learner FAAT",
+            "badgeInput": "L2",
+            "idealForInput": "Junior Professionals",
+            "focusAreasinput": "Financial statements, quant finance",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Practitioner FAAT",
+            "badgeInput": "L3",
+            "idealForInput": "Mid-Level Roles",
+            "focusAreasinput": "Equity, fixed income, modelling",
+            "iconImage": ""
+          },
+          {
+            "levelInput": "Expert FAAT",
+            "badgeInput": "L4",
+            "idealForInput": "Senior Professionals",
+            "focusAreasinput": "M&A, IPO valuation, advisory",
+            "iconImage": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "assessmentPath",
+      "status": "enable",
+      "data": {
+        "title": "FAAT Learning & <span class=\"text-green\">Assessment Path</span>",
+        "paths": [
+          {
+            "levelInput": "Beginner FAAT",
+            "subtitleInput": "Foundational Assessment",
+            "iconImage": "",
+            "details": [
+              { "keyInput": "Mode", "valueInput": "Online (Merittrac Platform)" },
+              { "keyInput": "Duration", "valueInput": "75 minutes" },
+              { "keyInput": "Questions", "valueInput": "60" },
+              { "keyInput": "Focus", "valueInput": "Quant, data analysis, financial literacy" },
+              { "keyInput": "Outcome", "valueInput": "Score report + FAS improvement insights" }
+            ]
+          },
+          {
+            "levelInput": "Learner FAAT",
+            "subtitleInput": "Intermediate Assessment",
+            "iconImage": "bi-bar-chart-fill",
+            "details": [
+              { "keyInput": "Mode", "valueInput": "Online (Merittrac Platform)" },
+              { "keyInput": "Duration", "valueInput": "150 minutes" },
+              { "keyInput": "Questions", "valueInput": "100" },
+              { "keyInput": "Focus", "valueInput": "Financial statements, markets, derivatives" },
+              { "keyInput": "Outcome", "valueInput": "Detailed score + actionable skill insights" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "assessmentFlow",
+      "status": "enable",
+      "data": {
+        "title": "FAAT Assessment <span class=\"text-green\">Flow</span>",
+        "backgroundImage": "/images/faat-cor4.png",
+        "platformInput": "Merittrac (Secure Online)",
+        "assessmentTypeInput": "MCQs, case studies, simulations",
+        "frequencyInput": "Quarterly / On-Demand (Corporate)",
+        "outputTitleInput": "Output",
+        "outputs": [
+          { "iconImage": "", "textInput": "Detailed scorecards" },
+          { "iconImage": "", "textInput": "Skill gap analysis" },
+          { "iconImage": "", "textInput": "Role-fit indicators" }
+        ]
+      }
+    },
+    {
+      "type": "whyFFOI",
+      "status": "enable",
+      "data": {
+        "titleInput": "Why Partner <span class=\"text-green\">with FFOI?</span>",
+        "descriptionTextarea": "Finance Forum of India (FFOI) brings unmatched credibility. FAAT is built on industry credibility, not academic theory.",
+        "backgroundImage": "/images/growthhub.png",
+        "stats": [
+          { "iconImage": "bi-calendar-check-fill", "valueInput": "23+", "labelInput": "Years of finance education legacy" },
+          { "iconImage": "bi-people-fill", "valueInput": "25,000+", "labelInput": "Individuals empowered" },
+          { "iconImage": "bi-building-fill", "valueInput": "1,000+", "labelInput": "Institutes & corporate partners" },
+          { "iconImage": "bi-globe2", "valueInput": "Strong presence", "labelInput": "Across education, assessment & skilling" }
+        ]
+      }
+    },
+    {
+      "type": "leadership",
+      "status": "enable",
+      "data": {
+        "title": "Leadership Driving <span class=\"text-green\">FAAT's Mission</span>",
+        "members": [
+          {
+            "nameInput": "Nilesh Sarawate",
+            "roleInput": "Honorary CEO",
+            "image": "/images/team1.jpg",
+            "credentials": "MBA Finance (TAPMI) | Former Director – IMS Learning | Adjunct Faculty – SPJIMR | Strategic Consultant – RT-MSSU",
+            "quoteTextarea": "FAAT is designed to help BFSI companies hire smarter, faster, and better by identifying candidates who are genuinely job-ready — not just academically qualified."
+          },
+          {
+            "nameInput": "Munira Lokhandwala",
+            "roleInput": "Program Director",
+            "image": "/images/team2.jpg",
+            "credentials": "IIM Calcutta Alumna | US-CFA & FRM | 24+ Years in Finance & Education",
+            "quoteTextarea": ""
+          },
+          {
+            "nameInput": "Vishal Bhojani",
+            "roleInput": "Program Head",
+            "image": "/images/team3.jpg",
+            "credentials": "MBA Finance | Ex-JP Morgan, BNP Paribas, TCS",
+            "quoteTextarea": ""
+          },
+          {
+            "nameInput": "Dr. Asim Kumar Sengupta",
+            "roleInput": "",
+            "image": "/images/team4.jpg",
+            "credentials": "Ph.D. Commerce | Former Director – SPJIMR & SIESCOMS | Ex-PNB Banker | World Bank Consultant",
+            "quoteTextarea": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "connectBanner",
+      "status": "enable",
+      "data": {
+        "title": "Partner With Us for <span class=\"text-green\">Smarter Hiring</span>",
+        "titleHighlight": "Smarter Hiring",
+        "description": "Build a future-ready finance workforce with FAAT.",
+        "email": [
+            {
+                "emailInput":"hirewithfaat@ffoi.in"
+            },
+            {
+                "emailInput":"corporate.faat@ffoi.in"
+            }
+        ],
+        "phoneInput": "+91 XXXXXXXXXX",
+        "websiteInput": "www.ffoi.in",
+        "buttons": [
+          {
+            "labelInput": "Request a Demo"
+          },
+          {
+            "label": "Enquire Now"
+          }
+        ]
+      }
+    }
+  ]
+}
