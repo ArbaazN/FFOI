@@ -1,0 +1,274 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "From Hiring Transactions to <span class=\"text-green\">Talent Capability Partnerships</span>",
+        "subtitle": "Corporate Partnerships",
+        "badge": "NSQF-Aligned | RT MSSU-Affiliated | NCVT-Mapped",
+        "descriptionTextarea": "At Finance Forum of India (FFOI), corporate partnerships are built on a simple belief: sustainable hiring success comes from capability validation, not resumes.",
+        "descriptionNoteTextarea": "We work with corporates to design skills-led, assessment-backed, industry-aligned finance talent pipelines—from entry-level to experienced roles.",
+        "backgroundImage": null
+      }
+    },
+    {
+      "type": "whyRethink",
+      "status": "enable",
+      "data": {
+        "label": "The <span class=\"text-green\">Problem</span>",
+        "title": "Why Corporate Partnerships <span class=\"text-green\">Need a Rethink</span>",
+        "descriptionTextarea": "Most finance organisations face the same challenges:",
+        "taglineTextarea": "FFOI addresses these challenges by helping corporates measure what actually matters—financial adaptive skills, analytical thinking, and role readiness.",
+        "backgroundImage": null,
+        "items": [
+          { "iconImage": "", "textInput": "Candidates look qualified on paper but underperform on the job" },
+          { "iconImage": "", "textInput": "Interview processes fail to test real finance skills" },
+          { "iconImage": "", "textInput": "Training costs escalate post-hiring" },
+          { "iconImage": "", "textInput": "Attrition rises due to role mismatch" }
+        ]
+      }
+    },
+    {
+      "type": "whatMakesDifferent",
+      "status": "enable",
+      "data": {
+        "label": "The <span class=\"text-green\">FFOI Difference</span>",
+        "title": "What Makes an FFOI Corporate <span class=\"text-green\">Partnership Different</span>",
+        "footerInput": "FFOI partnerships focus on capability before compensation.",
+        "traditional": {
+          "headingInput": "Traditional Hiring Model",
+          "items": [
+            "Resume-led shortlisting",
+            "Subjective interviews",
+            "Post-hire skill discovery",
+            "High training & attrition costs"
+          ]
+        },
+        "ffoi": {
+          "headingInput": "FFOI Partnership Model",
+          "items": [
+            "Skills-first assessment",
+            "Objective benchmarking (FAAT & frameworks)",
+            "Pre-validated talent readiness",
+            "Reduced onboarding risk"
+          ]
+        }
+      }
+    },
+    {
+      "type": "partnershipPillars",
+      "status": "enable",
+      "data": {
+        "label": "Partnership <span class=\"text-green\">Pillars</span>",
+        "title": "Corporate Partnership <span class=\"text-green\">Pillars</span>",
+        "items": [
+          {
+            "numberInput": "01",
+            "iconImage": null,
+            "titleInput": "Skills-Based Hiring & Assessment",
+            "introInput": "Corporates partner with FFOI to:",
+            "points": [
+              "Pre-screen candidates using structured assessments",
+              "Benchmark finance skills across domains and experience levels",
+              "Shortlist candidates aligned to specific roles",
+              "Reduce interview cycles and false positives"
+            ],
+            "footerInput": "This is delivered through FFOI's assessment frameworks, including FAAT (Financial Adaptive Skills Assessment Test)."
+          },
+          {
+            "numberInput": "02",
+            "iconImage": null,
+            "titleInput": "Curriculum & Skill Framework Co-Creation",
+            "introInput": "FFOI invites corporate partners to actively shape:",
+            "points": [
+              "Finance skill frameworks",
+              "Domain-specific competency maps",
+              "Role-aligned learning outcomes"
+            ],
+            "footerInput": "This ensures that talent entering the workforce is trained on what the industry actually needs today."
+          },
+          {
+            "numberInput": "03",
+            "iconImage": null,
+            "titleInput": "Early Talent Engagement & Pipeline Building",
+            "introInput": "Corporate partners can:",
+            "points": [
+              "Engage with learners early in their skill-building journey",
+              "Identify high-potential talent before graduation",
+              "Support structured readiness rather than last-minute hiring"
+            ],
+            "footerInput": "This creates predictable, scalable talent pipelines."
+          },
+          {
+            "numberInput": "04",
+            "iconImage": null,
+            "titleInput": "Industry Thought Leadership & Contribution",
+            "introInput": "Senior leaders from partner organisations may engage as:",
+            "points": [
+              "Guest speakers",
+              "Domain advisors",
+              "Panelists & mentors",
+              "Contributors to national skill standards"
+            ],
+            "footerInput": "This positions corporates as capability leaders, not just employers."
+          }
+        ]
+      }
+    },
+    {
+      "type": "partnershipTypes",
+      "status": "enable",
+      "data": {
+        "label": "Partnership <span class=\"text-green\">Models</span>",
+        "title": "Types of Corporate <span class=\"text-green\">Partnerships</span>",
+        "descriptionTextarea": "FFOI supports multiple partnership models, depending on organisational needs:",
+        "items": [
+          {
+            "iconImage": null,
+            "titleInput": "Assessment-Led Hiring Partner",
+            "points": [
+              "Use FAAT to shortlist candidates",
+              "Role-specific benchmarking",
+              "Faster, more accurate hiring"
+            ]
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Curriculum Advisory Partner",
+            "points": [
+              "Participate in skill framework reviews",
+              "Influence domain curriculum updates",
+              "Align education with future roles"
+            ]
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Talent Pipeline Partner",
+            "points": [
+              "Engage with learners over time",
+              "Identify and track high-potential candidates",
+              "Reduce hiring volatility"
+            ]
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Strategic Ecosystem Partner",
+            "points": [
+              "Long-term collaboration across hiring, skills, and standards",
+              "Leadership involvement",
+              "National-level impact"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "domains",
+      "status": "enable",
+      "data": {
+        "label": "Domain <span class=\"text-green\">Coverage</span>",
+        "title": "Domains Where Corporates <span class=\"text-green\">Commonly Partner</span>",
+        "tagline": "Partnerships are designed role-by-role, not one-size-fits-all.",
+        "backgroundImage": null,
+        "items": [
+          { "iconImage": "", "titleInput": "Investment Banking Operations" },
+          { "iconImage": "", "titleInput": "Asset & Wealth Management" },
+          { "iconImage": "", "titleInput": "BFSI & Lending" },
+          { "iconImage": "", "titleInput": "Financial Analytics & Risk" },
+          { "iconImage": "", "titleInput": "Corporate Finance" },
+          { "iconImage": "", "titleInput": "Finance KPO & Shared Services" }
+        ]
+      }
+    },
+    {
+      "type": "nationalAlignment",
+      "status": "enable",
+      "data": {
+        "label": "National <span class=\"text-green\">Alignment</span>",
+        "title": "National Skill & <span class=\"text-green\">Certification Alignment</span>",
+        "description": "All corporate partnerships are anchored in nationally recognised frameworks:",
+        "frameworks": [
+          { "iconImage": "award", "titleInput": "NSQF", "descriptionInput": "National Skills Qualifications Framework" },
+          { "iconImage": "home", "titleInput": "RT MSSU", "descriptionInput": "Ratan Tata Maharashtra State Skills University" },
+          { "iconImage": "check-circle", "titleInput": "NCVT-Mapped", "descriptionInput": "NCVT-Mapped Skill Pathways" }
+        ],
+        "ensures": [
+          { "iconImage": null, "titleInput": "Standardisation" },
+          { "iconImage": null, "titleInput": "Transparency" },
+          { "iconImage": null, "titleInput": "Scalability across institutions and geographies" }
+        ]
+      }
+    },
+    {
+      "type": "governance",
+      "status": "enable",
+      "data": {
+        "label": "Trust & <span class=\"text-green\">Neutrality</span>",
+        "title": "Governance, Neutrality <span class=\"text-green\">& Trust</span>",
+        "descriptionTextarea": "FFOI operates as a Section 8 Not-for-Profit Organisation, ensuring:",
+        "backgroundImage": null,
+        "items": [
+          { "iconImage": null, "titleInput": "Neutral, employer-agnostic standards" },
+          { "iconImage": null, "titleInput": "No conflict of interest in hiring" },
+          { "iconImage": null, "titleInput": "Academic and assessment integrity" }
+        ],
+        "footerInput": "Our role is to strengthen the ecosystem—not push candidates."
+      }
+    },
+    {
+      "type": "whoPartners",
+      "status": "enable",
+      "data": {
+        "label": "Our <span class=\"text-green\">Partners</span>",
+        "title": "Who Typically <span class=\"text-green\">Partners with FFOI</span>",
+        "tagline": "Partnerships are built with organisations that value long-term capability building.",
+        "items": [
+          { "iconImage": null, "titleInput": "Banks & NBFCs" },
+          { "iconImage": null, "titleInput": "Finance KPOs & Shared Service Centres" },
+          { "iconImage": null, "titleInput": "Consulting & Advisory Firms" },
+          { "iconImage": null, "titleInput": "Asset Management & Investment Firms" },
+          { "iconImage": null, "titleInput": "FinTech & RegTech Organisations" }
+        ]
+      }
+    },
+    {
+      "type": "startPartnership",
+      "status": "enable",
+      "data": {
+        "label": "Ready to <span class=\"text-green\">Partner?</span>",
+        "title": "Start a Corporate Partnership <span class=\"text-green\">with FFOI</span>",
+        "descriptionTextarea": "If your organisation is looking to:",
+        "points": [
+          "Improve hiring accuracy",
+          "Reduce training and attrition costs",
+          "Build role-ready finance talent pipelines",
+          "Influence future finance skill standards"
+        ],
+        "footerInput": "We invite you to explore a structured partnership with FFOI.",
+        "noteInput": "All corporate partnerships begin with a capability-needs discussion.",
+        "buttons": [
+          {
+            "labelInput": "Explore FAAT for Hiring"
+          },
+          {
+            "labelInput": "Speak with Corporate Partnerships Team"
+          }
+        ],
+        "backgroundImage": null
+      }
+    },
+    {
+      "type": "connectBanner",
+      "status": "enable",
+      "data": {
+        "title": "Build Role-Ready Finance Teams. Partner with FFOI.",
+        "titleHighlight": "Partner with FFOI.",
+        "descriptionTextarea": "Sustainable hiring success comes from capability validation, not resumes. Start a structured corporate partnership today.",
+        "button": {
+          "labelInput": "Speak with Corporate Partnerships Team"
+        }
+      }
+    }
+  ]
+}

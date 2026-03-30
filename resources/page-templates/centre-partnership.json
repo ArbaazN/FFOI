@@ -1,0 +1,249 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "Build India's Finance Skills <span class=\"text-green\">Infrastructure</span>",
+        "subtitle": "Not Just a Centre",
+        "badge": "NSQF-Aligned | RT MSSU-Affiliated | NCVT-Mapped",
+        "descriptionTextarea": "Finance Forum of India (FFOI) invites select institutions and education entrepreneurs to partner in building a national network of finance skills, assessment, and certification centres.",
+        "descriptionNoteTextarea": "This is not a retail franchise model. It is a long-term academic and delivery partnership.",
+        "backgroundImage": null
+      }
+    },
+    {
+      "type": "whatItIs",
+      "status": "enable",
+      "data": {
+        "label": "Understanding the <span class=\"text-green\">Partnership</span>",
+        "title": "What an FFOI Centre <span class=\"text-green\">Partnership Is</span>",
+        "descriptionTextarea": "An FFOI Centre Partner operates as a regional delivery hub within a centrally governed national finance ecosystem.",
+        "backgroundImage": null,
+        "delivers": [
+          { "iconImage": null, "textInput": "Industry-aligned finance education" },
+          { "iconImage": null, "textInput": "Standardised assessments (FAAT and beyond)" },
+          { "iconImage": null, "textInput": "Nationally aligned certification pathways" },
+          { "iconImage": null, "textInput": "Hybrid learning models (offline + online)" }
+        ],
+        "footerInput": "All under FFOI's central academic, assessment, and certification governance."
+      }
+    },
+    {
+      "type": "whatItIsNot",
+      "status": "enable",
+      "data": {
+        "title": "What an FFOI Centre Partnership <span class=\"text-green\">Is NOT</span>",
+        "description": "To maintain quality and credibility, FFOI is explicit:",
+        "items": [
+          { "textInput": "Not a coaching centre franchise" },
+          { "textInput": "Not a \"buy a brand & run\" model" },
+          { "textInput": "Not syllabus-creation at local level" },
+          { "textInput": "Not a quick-ROI education business" }
+        ],
+        "footerInput": "FFOI partners with organisations that want to build institutions, not outlets."
+      }
+    },
+    {
+      "type": "whoShouldExplore",
+      "status": "enable",
+      "data": {
+        "label": "Ideal <span class=\"text-green\">Partners</span>",
+        "title": "Who Should Explore <span class=\"text-green\">Centre Partnership?</span>",
+        "taglineTextarea": "If your goal is short-term commercial expansion, this model may not be suitable.",
+        "backgroundImage": null,
+        "items": [
+          {
+            "iconImage": null,
+            "titleInput": "Reputed Academic Institutions",
+            "descriptionTextarea": "Established colleges and universities looking to extend their finance education footprint nationally."
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Established Training Organisations",
+            "descriptionTextarea": "Training bodies with proven delivery capability seeking national alignment and certification."
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Education Entrepreneurs",
+            "descriptionTextarea": "Visionary entrepreneurs with long-term commitment to building credible finance education institutions."
+          },
+          {
+            "iconImage": null,
+            "titleInput": "Organisations with Infrastructure",
+            "descriptionTextarea": "Entities with existing governance capability, physical infrastructure, and operational readiness."
+          },
+          {
+            "iconImage": null,
+            "titleInput": "High Finance Talent Demand Regions",
+            "descriptionTextarea": "Regions where finance skill demand is strong but structured, nationally aligned delivery is absent."
+          }
+        ]
+      }
+    },
+    {
+      "type": "whyFFOIExpands",
+      "status": "enable",
+      "data": {
+        "label": "The <span class=\"text-green\">Need</span>",
+        "title": "Why FFOI Expands Through <span class=\"text-green\">Partnerships</span>",
+        "backgroundImage": null,
+        "indiaNeeds": [
+          { "iconImage": null, "textInput": "Standardised finance skill benchmarks" },
+          { "iconImage": null, "textInput": "Industry-validated assessments" },
+          { "iconImage": null, "textInput": "Consistent certification frameworks" },
+          { "iconImage": null, "textInput": "Regional access without quality dilution" }
+        ],
+        "partnershipEnsures": [
+          { "iconImage": null, "textInput": "Central academic control" },
+          { "iconImage": null, "textInput": "Local delivery excellence" },
+          { "iconImage": null, "textInput": "National recognition" },
+          { "iconImage": null, "textInput": "Long-term ecosystem sustainability" }
+        ]
+      }
+    },
+    {
+      "type": "whatFFOIProvides",
+      "status": "enable",
+      "data": {
+        "label": "Central Governance & <span class=\"text-green\">Enablement</span>",
+        "title": "What FFOI <span class=\"text-green\">Provides</span>",
+        "subtitleInput": "FFOI partners receive comprehensive central support across four pillars.",
+        "categories": [
+          {
+            "badgeInput": "Academic",
+            "iconImage": null,
+            "titleInput": "Academic & Curriculum",
+            "points": [
+              "Centrally designed finance curricula",
+              "NSQF-aligned skill pathways",
+              "Continuous curriculum updates via corporate feedback"
+            ],
+            "tags": ["Curriculum", "NSQF", "Corporate Feedback"]
+          },
+          {
+            "badgeInput": "Assessment",
+            "iconImage": null,
+            "titleInput": "Assessment & Certification",
+            "points": [
+              "Access to FAAT and future assessments",
+              "Centralised evaluation & reporting",
+              "Certification issued under FFOI framework",
+              "Alignment with RT MSSU & NCVT pathways"
+            ],
+            "tags": ["FAAT", "NCVT", "RT MSSU", "Certification"]
+          },
+          {
+            "badgeInput": "Faculty",
+            "iconImage": null,
+            "titleInput": "Faculty & Delivery Enablement",
+            "points": [
+              "Faculty orientation & training",
+              "Teaching frameworks & delivery standards",
+              "Assessment rubrics and academic SOPs"
+            ],
+            "tags": ["Faculty Training", "SOPs", "Delivery Standards"]
+          },
+          {
+            "badgeInput": "Brand",
+            "iconImage": null,
+            "titleInput": "Brand & Ecosystem Access",
+            "points": [
+              "Association with FFOI national brand",
+              "Inclusion in FFOI's national centre network",
+              "Participation in finance education initiatives"
+            ],
+            "tags": ["National Brand", "Network", "Initiatives"]
+          }
+        ]
+      }
+    },
+    {
+      "type": "partnerResponsibilities",
+      "status": "enable",
+      "data": {
+        "label": "Partner <span class=\"text-green\">Responsibilities</span>",
+        "title": "What the Centre Partner <span class=\"text-green\">Is Responsible For</span>",
+        "descriptionTextarea": "FFOI governs what is taught, assessed, and certified. Partners govern how it is delivered locally — within standards.",
+        "backgroundImage": null,
+        "items": [
+          { "iconImage": null, "textInput": "Physical infrastructure & classrooms" },
+          { "iconImage": null, "textInput": "Local faculty deployment (as per FFOI norms)" },
+          { "iconImage": null, "textInput": "Student outreach and regional engagement" },
+          { "iconImage": null, "textInput": "Day-to-day centre operations" },
+          { "iconImage": null, "textInput": "Compliance with academic & operational standards" }
+        ]
+      }
+    },
+    {
+      "type": "governance",
+      "status": "enable",
+      "data": {
+        "label": "Non-Negotiable <span class=\"text-green\">Standards</span>",
+        "title": "Governance, Quality & <span class=\"text-green\">Compliance</span>",
+        "descriptionTextarea": "Every FFOI Centre Partner must adhere to central governance.",
+        "requirements": [
+          { "iconImage": null, "textInput": "Central academic governance" },
+          { "iconImage": null, "textInput": "Standardised assessments & evaluation" },
+          { "iconImage": null, "textInput": "NSQF alignment requirements" },
+          { "iconImage": null, "textInput": "Certification protocols" },
+          { "iconImage": null, "textInput": "Periodic audits and reviews" }
+        ],
+        "reserves": [
+          { "iconImage": null, "textInput": "Review centre performance" },
+          { "iconImage": null, "textInput": "Pause or withdraw partnership if standards are not met" }
+        ],
+        "footerInput": "This protects the credibility of all centres in the network."
+      }
+    },
+    {
+      "type": "expansionPhilosophy",
+      "status": "enable",
+      "data": {
+        "label": "Important <span class=\"text-green\">Read</span>",
+        "title": "Expansion <span class=\"text-green\">Philosophy</span>",
+        "descriptionTextarea": "FFOI does not aim to open centres everywhere.",
+        "goals": [
+          { "iconImage": null, "textInput": "Fewer centres" },
+          { "iconImage": null, "textInput": "Higher quality" },
+          { "iconImage": null, "textInput": "Stronger industry credibility" }
+        ],
+        "backgroundImage": null,
+        "principles": [
+          { "iconImage": null, "textInput": "Phased" },
+          { "iconImage": null, "textInput": "Selective" },
+          { "iconImage": null, "textInput": "Governance-driven" }
+        ]
+      }
+    },
+    {
+      "type": "applicationForm",
+      "status": "enable",
+      "data": {
+        "label": "Interested in Becoming an <span class=\"text-green\">FFOI Centre Partner?</span>",
+        "title": "Explore <span class=\"text-green\">Partnership Possibilities</span>",
+        "descriptionTextarea": "If you believe your organisation aligns with FFOI's academic integrity, long-term vision, and governance standards, you may explore partnership possibilities.",
+        "noteTextarea": "This leads to a qualification-based application review, not instant approval.",
+        "backgroundImage": null,
+        "steps": [
+          { "textInput": "Submit an expression of interest" },
+          { "textInput": "Preliminary academic & capability review" },
+          { "textInput": "Alignment discussion with FFOI leadership" },
+          { "textInput": "Structured onboarding (if approved)" }
+        ]
+      }
+    },
+    {
+      "type": "connectBanner",
+      "status": "enable",
+      "data": {
+        "title": "Build an Institution. Build India's Finance Future.",
+        "titleHighlight": "Build India's Finance Future.",
+        "descriptionTextarea": "If your organisation aligns with FFOI's academic integrity, long-term vision, and governance standards — explore centre partnership possibilities.",
+        "button": {
+          "labelInput": "Apply for Centre Partnership"
+        }
+      }
+    }
+  ]
+}

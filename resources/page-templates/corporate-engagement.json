@@ -1,0 +1,227 @@
+{
+  "sections": [
+    {
+      "type": "banner",
+      "status": "enable",
+      "data": {
+        "title": "Building Job-Ready Finance Talent — <span class=\"text-green\">In Partnership with Industry</span>",
+        "subtitle": "Corporate Engagements at FFOI",
+        "badge": "NSQF-Aligned | RT MSSU-Affiliated | NCVT-Mapped",
+        "description": "Finance Forum of India (FFOI) partners with corporates across BFSI, finance, consulting, and allied sectors to strengthen the quality, readiness, and relevance of finance talent in India.",
+        "descriptionNote": "Our corporate engagements are designed to move beyond transactional hiring and into structured, skills-led, assessment-backed collaboration.",
+        "backgroundImage": null
+      }
+    },
+    {
+      "type": "whyCorporatesEngage",
+      "status": "enable",
+      "data": {
+        "label": "The <span class=\"text-green\">Challenge</span>",
+        "title": "Why Corporates <span class=\"text-green\">Engage with FFOI</span>",
+        "descriptionTextarea": "The finance industry today faces a critical challenge: Degrees and resumes no longer reliably signal job readiness.",
+        "taglineInput": "FFOI enables corporates to hire smarter, faster, and with greater confidence.",
+        "backgroundImage": "/images/faat-cor2.png",
+        "items": [
+          { "iconImage": "", "textInput": "Reduce hiring risk" },
+          { "iconImage": "", "textInput": "Improve role-fit and retention" },
+          { "iconImage": "", "textInput": "Benchmark finance skills objectively" },
+          { "iconImage": "", "textInput": "Influence curriculum and skill standards" },
+          { "iconImage": "", "textInput": "Access assessment-validated talent" }
+        ]
+      }
+    },
+    {
+      "type": "whatFFOIIs",
+      "status": "enable",
+      "data": {
+        "label": "Understanding <span class=\"text-green\">FFOI</span>",
+        "title": "What FFOI Is <span class=\"text-green\">(And Is Not)</span> for Corporates",
+        "isItems": [
+          { "iconImage": "", "textInput": "A finance skills, assessment & certification ecosystem" },
+          { "iconImage": "", "textInput": "A neutral, standards-driven industry partner" },
+          { "iconImage": "", "textInput": "An enabler of job-ready finance talent" },
+          { "iconImage": "", "textInput": "A bridge between academia and real-world finance roles" }
+        ],
+        "isNotItems": [
+          { "textInput": "Not a placement agency" },
+          { "textInput": "Not a staffing vendor" },
+          { "textInput": "Not a resume-forwarding platform" },
+          { "textInput": "Not short-term corporate training" }
+        ],
+        "footerInput": "FFOI focuses on capability validation, not candidate volume."
+      }
+    },
+    {
+      "type": "howCorporatesEngage",
+      "status": "enable",
+      "data": {
+        "label": "Engagement <span class=\"text-green\">Models</span>",
+        "title": "How Corporates <span class=\"text-green\">Engage with FFOI</span>",
+        "items": [
+          {
+            "numberInput": "01",
+            "iconImage": "bi-clipboard2-check-fill",
+            "titleInput": "Skills-Based Hiring & Assessment",
+            "introInput": "Corporates use FFOI's assessment frameworks (including FAAT) to:",
+            "points": [
+              "Pre-screen candidates",
+              "Benchmark finance skills objectively",
+              "Shortlist role-ready talent",
+              "Reduce interview and training cycles"
+            ],
+            "tags": ["FAAT", "Pre-screening", "Benchmarking"]
+          },
+          {
+            "numberInput": "02",
+            "iconImage": "bi-book-fill",
+            "titleInput": "Curriculum & Skill Framework Review",
+            "introInput": "Corporate leaders participate in:",
+            "points": [
+              "Curriculum relevance reviews",
+              "Skill gap identification",
+              "Domain-specific framework validation"
+            ],
+            "footerInput": "This ensures finance education stays aligned with real industry needs, not outdated syllabi.",
+            "tags": ["Curriculum Review", "Skill Gaps", "Framework Validation"]
+          },
+          {
+            "numberInput": "03",
+            "iconImage": "bi-graph-up-arrow",
+            "titleInput": "Talent Readiness & Early Engagement",
+            "introInput": "FFOI enables corporates to:",
+            "points": [
+              "Engage with talent early in the learning journey",
+              "Identify high-potential candidates",
+              "Support skill development aligned to future roles"
+            ],
+            "tags": ["Early Talent", "High-Potential", "Future Roles"]
+          },
+          {
+            "numberInput": "04",
+            "iconImage": "bi-megaphone-fill",
+            "titleInput": "Thought Leadership & Industry Contribution",
+            "introInput": "Senior corporate leaders may engage as:",
+            "points": [
+              "Guest speakers",
+              "Domain advisors",
+              "Panel members",
+              "Mentors"
+            ],
+            "footerInput": "This strengthens the industry–academia feedback loop.",
+            "tags": ["Guest Speakers", "Advisors", "Mentors"]
+          }
+        ]
+      }
+    },
+    {
+      "type": "valueProposition",
+      "status": "enable",
+      "data": {
+        "label": "Corporate <span class=\"text-green\">Value Proposition</span>",
+        "title": "The FFOI Corporate <span class=\"text-green\">Value Proposition</span>",
+        "rows": [
+          { "challengeInput": "Poor role-fit hires", "solutionInput": "Skills-based assessment" },
+          { "challengeInput": "Long hiring cycles", "solutionInput": "Pre-validated candidates" },
+          { "challengeInput": "High training costs", "solutionInput": "Job-ready talent" },
+          { "challengeInput": "Skill mismatch", "solutionInput": "Industry-reviewed curriculum" },
+          { "challengeInput": "Attrition", "solutionInput": "Better alignment & readiness" }
+        ]
+      }
+    },
+    {
+      "type": "nationalFrameworks",
+      "status": "enable",
+      "data": {
+        "label": "National <span class=\"text-green\">Alignment</span>",
+        "title": "Alignment with National <span class=\"text-green\">Skill Frameworks</span>",
+        "descriptionTextarea": "FFOI's corporate engagements are anchored in nationally recognised frameworks. This ensures that talent assessment and certification are structured, standardised, scalable, and credible across institutions and regions.",
+        "backgroundImage": null,
+        "frameworks": [
+          {
+            "iconImage": "bi-award-fill",
+            "titleInput": "NSQF",
+            "descriptionInput": "National Skills Qualifications Framework"
+          },
+          {
+            "iconImage": "bi-building",
+            "titleInput": "RT MSSU",
+            "descriptionInput": "Ratan Tata Maharashtra State Skills University"
+          },
+          {
+            "iconImage": "bi-patch-check-fill",
+            "titleInput": "NCVT-Mapped",
+            "descriptionInput": "Skill Pathways mapped to NCVT standards"
+          }
+        ],
+        "qualities": [
+          { "iconImage": "", "titleInput": "Structured" },
+          { "iconImage": "", "titleInput": "Standardised" },
+          { "iconImage": "", "titleInput": "Scalable" },
+          { "iconImage": "", "titleInput": "Credible across institutions and regions" }
+        ]
+      }
+    },
+    {
+      "type": "whoWorksWithFFOI",
+      "status": "enable",
+      "data": {
+        "label": "Our <span class=\"text-green\">Partners</span>",
+        "title": "Who Typically <span class=\"text-green\">Works with FFOI</span>",
+        "taglineInput": "Engagements are customised based on role requirements and skill depth.",
+        "backgroundImage": null,
+        "items": [
+          { "iconImage": "", "titleInput": "Banks & NBFCs" },
+          { "iconImage": "", "titleInput": "Finance KPOs & Shared Service Centres" },
+          { "iconImage": "", "titleInput": "Consulting & Advisory Firms" },
+          { "iconImage": "", "titleInput": "Asset Management & Investment Firms" },
+          { "iconImage": "", "titleInput": "FinTech and Allied Finance Companies" }
+        ]
+      }
+    },
+    {
+      "type": "engagementModels",
+      "status": "enable",
+      "data": {
+        "label": "Flexible <span class=\"text-green\">Collaboration</span>",
+        "title": "Corporate Engagement <span class=\"text-green\">Models</span>",
+        "descriptionTextarea": "FFOI offers flexible engagement models. Specific solutions are designed after understanding your hiring and skill requirements.",
+        "items": [
+          { "iconImage": "", "titleInput": "Assessment-led hiring support" },
+          { "iconImage": "", "titleInput": "Curriculum advisory partnerships" },
+          { "iconImage": "", "titleInput": "Institution–corporate bridges" },
+          { "iconImage": "", "titleInput": "Early talent identification programs" }
+        ]
+      }
+    },
+    {
+      "type": "partnerCTA",
+      "status": "enable",
+      "data": {
+        "label": "Interested in <span class=\"text-green\">Partnering?</span>",
+        "title": "Partner with <span class=\"text-green\">FFOI</span>",
+        "descriptionTextarea": "If your organisation is looking to improve hiring quality, reduce skill mismatch, engage with future finance talent, or contribute to national skill development — FFOI welcomes structured corporate collaboration.",
+        "noteTextarea": "All corporate enquiries are handled centrally to ensure clarity and alignment.",
+        "buttons": [
+          {
+            "labelInput": "Explore FAAT for Hiring"
+          },
+          {
+            "labelInput": "Speak with Corporate Engagement Team"
+          }
+        ]
+      }
+    },
+    {
+      "type": "connectBanner",
+      "status": "enable",
+      "data": {
+        "title": "Hire Smarter. Build Stronger Finance Teams.",
+        "titleHighlight": "Build Stronger Finance Teams.",
+        "descriptionTextarea": "FFOI enables corporates to hire smarter, faster, and with greater confidence through skills-based assessment and industry-aligned talent.",
+        "button": {
+          "labelInput": "Speak with Corporate Engagement Team"
+        }
+      }
+    }
+  ]
+}

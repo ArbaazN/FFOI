@@ -65,6 +65,24 @@ class pageSeeder extends Seeder
                 'slug'  => '/faat/faat-for-students',
                 'file'  => 'faat-student.json',
                 'show_in_menu' => true
+            ],
+            [
+                'title' => 'Corporate Partnerships',
+                'slug'  => '/corporate-partnerships',
+                'file'  => 'corporate-partnership.json',
+                'show_in_menu' => true
+            ],
+            [
+                'title' => 'Corporate Engagement at FFOI',
+                'slug'  => '/corporate-engagement-at-ffoi',
+                'file'  => 'corporate-engagement.json',
+                'show_in_menu' => true
+            ],
+            [
+                'title' => 'Centre Partnerships',
+                'slug'  => '/centre-partnership',
+                'file'  => 'centre-partnership.json',
+                'show_in_menu' => true
             ]
         ];
 
