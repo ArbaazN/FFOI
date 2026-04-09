@@ -29,7 +29,8 @@ Route::middleware('api_key')->group(function () {
 
     //pages
     // Route::get('/pages', [PageController::class, 'index']);
-    Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '.*');
+    // Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '.*');
+    Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '^(?!contact/save$|webinar/registration$).*');
 
 });
 
