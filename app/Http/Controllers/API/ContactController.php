@@ -35,17 +35,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         try{
-            $validator = Validator::make($request->all(), [
-                'fullname' => 'required|string|max:255',
-                'email' => 'required|email',
-                'source' => 'nullable|in:contact_us,partner_with_us',
-                'contact' => 'nullable|string|max:20',
-                'state' => 'nullable|string|max:100',
-                'city' => 'nullable|string|max:100',
-                'who_i_am' => 'nullable|string|max:255',
-                'area_of_interest' => 'nullable|string|max:255',
-                'message' => 'nullable|string',
-            ]);
+            $validator = Validator::make($request->all(), $this->contactRules());
 
             if ($validator->fails()) {
                 return response()->json([
@@ -54,24 +44,7 @@ class ContactController extends Controller
                 ], 422);
             }
 
-            $contactData = $request->all();
-            $contactData['source'] = $request->input('source', $this->resolveSource($request));
-
-            $contact = Contact::create($contactData);
-            $adminEmail = config('mail.admin_email');
-
-            Mail::to($contact->email)
-                ->send(new ContactConfirmationMail($contact));
-
-            if (!empty($adminEmail)) {
-                Mail::to($adminEmail)
-                    ->send(new AdminContactNotificationMail($contact));
-            } else {
-                Log::channel('api')->warning('Contact admin email is not configured.', [
-                    'contact_id' => $contact->id,
-                    'contact_email' => $contact->email,
-                ]);
-            }
+            $contact = $this->saveEnquiry($request, 'contact_us');
 
             return response()->json([
                 'status' => true,
@@ -90,13 +63,88 @@ class ContactController extends Controller
         }
     }
 
-    protected function resolveSource(Request $request): string
+    public function partnerStore(Request $request)
     {
-        if ($request->is('api/partner/save')) {
-            return 'partner_with_us';
-        }
+        try {
+            $validator = Validator::make($request->all(), $this->partnerRules());
 
-        return 'contact_us';
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => $validator->errors()
+                ], 422);
+            }
+
+            $contact = $this->saveEnquiry($request, 'partner_with_us');
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Partner with us form submitted successfully.',
+                'data' => $contact
+            ], 200);
+        } catch (\Exception $e) {
+            Log::channel('api')->error('Partner With Us API Error: ' . $e->getMessage());
+
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong. Please try again later.'
+            ], 500);
+        }
     }
-    
+
+    protected function contactRules(): array
+    {
+        return [
+            'fullname' => 'required|string|max:255',
+            'email' => 'required|email',
+            'source' => 'nullable|in:contact_us,partner_with_us',
+            'contact' => 'nullable|string|max:20',
+            'state' => 'nullable|string|max:100',
+            'city' => 'nullable|string|max:100',
+            'who_i_am' => 'nullable|string|max:255',
+            'area_of_interest' => 'nullable|string|max:255',
+            'message' => 'nullable|string',
+        ];
+    }
+
+    protected function partnerRules(): array
+    {
+        return [
+            'fullname' => 'required|string|max:255',
+            'contact' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'state' => 'required|string|max:100',
+            'city' => 'required|string|max:100',
+            'who_i_am' => 'required|string|max:255',
+            'message' => 'required|string',
+            'consent' => 'required|accepted',
+            'area_of_interest' => 'nullable|string|max:255',
+        ];
+    }
+
+    protected function saveEnquiry(Request $request, string $source): Contact
+    {
+        $contactData = $request->except('consent');
+        $contactData['source'] = $source;
+
+        $contact = Contact::create($contactData);
+        $adminEmail = config('mail.admin_email');
+
+        if($source !== 'partner_with_us') {
+            Mail::to($contact->email)
+                ->send(new ContactConfirmationMail($contact));
+
+            if (!empty($adminEmail)) {
+                Mail::to($adminEmail)
+                    ->send(new AdminContactNotificationMail($contact));
+            } else {
+                Log::channel('api')->warning('Contact admin email is not configured.', [
+                    'contact_id' => $contact->id,
+                    'contact_email' => $contact->email,
+                    'source' => $source,
+                ]);
+            }
+        }
+        return $contact;
+    }
 }

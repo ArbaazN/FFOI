@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['api.logger', 'api_key'])->group(function () {
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::post('contact/save', [ContactController::class, 'store']);
-    Route::post('partner/save', [ContactController::class, 'store']);
+    Route::post('partner/save', [ContactController::class, 'partnerStore']);
 
     Route::get('/webinar', [WebinarController::class, 'show']);
     Route::get('/sessions/{slug}', [WebinarController::class, 'sessionDetail']);
