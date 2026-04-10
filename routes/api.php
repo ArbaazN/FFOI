@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['api.logger', 'api_key'])->group(function () {
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::post('contact/save', [ContactController::class, 'store']);
+    Route::post('partner/save', [ContactController::class, 'store']);
 
     Route::get('/webinar', [WebinarController::class, 'show']);
     Route::get('/sessions/{slug}', [WebinarController::class, 'sessionDetail']);
@@ -30,6 +31,6 @@ Route::middleware(['api.logger', 'api_key'])->group(function () {
     //pages
     // Route::get('/pages', [PageController::class, 'index']);
     // Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '.*');
-    Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '^(?!contact/save$|webinar/registration$).*');
+    Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '^(?!contact/save$|partner/save$|webinar/registration$).*');
 
 });

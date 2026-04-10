@@ -161,6 +161,22 @@
                 </a>
             </li>
         @endif --}}
+
+                @if(auth()->user()->can('enquiry.view'))
+        <li class="menu-item {{ request()->is('enquiries/contact-us*') ? 'active' : '' }}">
+            <a href="{{ route('enquiries.contact-us') }}" class="menu-link">
+                <i class="menu-icon icon-base ti tabler-mail"></i>
+                <div data-i18n="Contact Us">Contact Us</div>
+            </a>
+        </li>
+
+        <li class="menu-item {{ request()->is('enquiries/partner-with-us*') ? 'active' : '' }}">
+            <a href="{{ route('enquiries.partner-with-us') }}" class="menu-link">
+                <i class="menu-icon icon-base ti tabler-building"></i>
+                <div data-i18n="Partner With Us">Partner With Us</div>
+            </a>
+        </li>
+        @endif
     </ul>
 </aside>
 

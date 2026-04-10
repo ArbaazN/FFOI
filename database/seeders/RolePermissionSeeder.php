@@ -40,6 +40,9 @@ class RolePermissionSeeder extends Seeder
             // Settings
             'settings.view', 'settings.edit',
 
+            // Enquiries
+            'enquiry.view',
+
             'utm.view', 'utm.create', 'utm.edit', 'utm.delete',
         ];
 

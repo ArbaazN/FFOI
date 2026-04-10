@@ -38,6 +38,7 @@ class ContactController extends Controller
             $validator = Validator::make($request->all(), [
                 'fullname' => 'required|string|max:255',
                 'email' => 'required|email',
+                'source' => 'nullable|in:contact_us,partner_with_us',
                 'contact' => 'nullable|string|max:20',
                 'state' => 'nullable|string|max:100',
                 'city' => 'nullable|string|max:100',
@@ -53,7 +54,10 @@ class ContactController extends Controller
                 ], 422);
             }
 
-            $contact = Contact::create($request->all());
+            $contactData = $request->all();
+            $contactData['source'] = $request->input('source', $this->resolveSource($request));
+
+            $contact = Contact::create($contactData);
             $adminEmail = config('mail.admin_email');
 
             Mail::to($contact->email)
@@ -84,6 +88,15 @@ class ContactController extends Controller
                 'message' => 'Something went wrong. Please try again later.'
             ], 500);
         }
+    }
+
+    protected function resolveSource(Request $request): string
+    {
+        if ($request->is('api/partner/save')) {
+            return 'partner_with_us';
+        }
+
+        return 'contact_us';
     }
     
 }

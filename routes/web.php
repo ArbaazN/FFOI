@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\UtmLinkController;
 use App\Http\Controllers\Admin\WebsiteSettingController;
 use App\Http\Controllers\Admin\WebinarController;
 use App\Http\Controllers\Admin\MemberShipController;
+use App\Http\Controllers\Admin\EnquiryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -77,6 +78,11 @@ use Illuminate\Support\Facades\Route;
         Route::get('membership/create/{id?}', [MemberShipController::class,'memberCreate'])->name('membership.create');
         Route::post('membership/store', [MemberShipController::class,'memberStore'])->name('membership.store');
         Route::post('membership/update/{id?}', [MemberShipController::class,'memberUpdate'])->name('membership.update');
+
+        Route::get('enquiries/contact-us', [EnquiryController::class, 'contactUs'])->name('enquiries.contact-us');
+        Route::get('enquiries/contact-us/{id}', [EnquiryController::class, 'showContactUs'])->name('enquiries.contact-us.show');
+        Route::get('enquiries/partner-with-us', [EnquiryController::class, 'partnerWithUs'])->name('enquiries.partner-with-us');
+        Route::get('enquiries/partner-with-us/{id}', [EnquiryController::class, 'showPartnerWithUs'])->name('enquiries.partner-with-us.show');
 
         
         Route::get('settings', [WebsiteSettingController::class, 'index'])->name('settings');
