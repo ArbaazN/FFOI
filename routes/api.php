@@ -11,7 +11,7 @@ use App\Http\Controllers\API\MembershipController;
 use Illuminate\Support\Facades\Route;
 
 //Blogs
-Route::middleware('api_key')->group(function () {
+Route::middleware(['api.logger', 'api_key'])->group(function () {
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::post('contact/save', [ContactController::class, 'store']);
 
@@ -33,4 +33,3 @@ Route::middleware('api_key')->group(function () {
     Route::get('/{slug}', [PageController::class, 'handle'])->where('slug', '^(?!contact/save$|webinar/registration$).*');
 
 });
-

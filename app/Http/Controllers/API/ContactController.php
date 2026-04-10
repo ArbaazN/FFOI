@@ -8,11 +8,11 @@ use App\Models\Contact;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactConfirmationMail;
 use App\Mail\AdminContactNotificationMail;
+use Illuminate\Support\Facades\Log;
 use Validator;
 
 class ContactController extends Controller
 {
-
     public function index()
     {
         try {
@@ -24,7 +24,7 @@ class ContactController extends Controller
             ], 200);
         } catch (\Exception $e) {
 
-           \Log::error('Contact Fetch Error: ' . $e->getMessage());
+           Log::channel('api')->error('Contact Fetch Error: ' . $e->getMessage());
             return response()->json([
                 'status' => false,
                 'message' => 'Something went wrong.'
@@ -54,12 +54,20 @@ class ContactController extends Controller
             }
 
             $contact = Contact::create($request->all());
+            $adminEmail = config('mail.admin_email');
 
             Mail::to($contact->email)
                 ->send(new ContactConfirmationMail($contact));
 
-            Mail::to(config('mail.admin_email'))
-                ->send(new AdminContactNotificationMail($contact));
+            if (!empty($adminEmail)) {
+                Mail::to($adminEmail)
+                    ->send(new AdminContactNotificationMail($contact));
+            } else {
+                Log::channel('api')->warning('Contact admin email is not configured.', [
+                    'contact_id' => $contact->id,
+                    'contact_email' => $contact->email,
+                ]);
+            }
 
             return response()->json([
                 'status' => true,
@@ -69,7 +77,7 @@ class ContactController extends Controller
         } catch (\Exception $e) {
 
             // Log error for debugging
-            Log::error('Contact API Error: ' . $e->getMessage());
+            Log::channel('api')->error('Contact API Error: ' . $e->getMessage());
 
             return response()->json([
                 'status' => false,

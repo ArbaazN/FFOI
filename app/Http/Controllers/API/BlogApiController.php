@@ -93,7 +93,7 @@ class BlogApiController extends Controller
             ], 200);
         } catch (\Throwable $e) {
 
-            Log::error('Latest Blogs API Error', [
+            Log::channel('api')->error('Latest Blogs API Error', [
                 'error' => $e->getMessage(),
                 'line'  => $e->getLine(),
                 'file'  => $e->getFile(),
@@ -170,7 +170,7 @@ class BlogApiController extends Controller
             ], 200);
         } catch (\Throwable $e) {
 
-            Log::error('Blog Detail API Error', [
+            Log::channel('api')->error('Blog Detail API Error', [
                 'slug'  => $slug,
                 'error' => $e->getMessage(),
                 'line'  => $e->getLine(),
@@ -184,4 +184,3 @@ class BlogApiController extends Controller
         }
     }
 }
-

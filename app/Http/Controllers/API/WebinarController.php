@@ -250,7 +250,7 @@ class WebinarController extends Controller
         } catch (\Exception $e) {
 
             // Log error for debugging
-            Log::error('Webinar registration API Error: ' . $e->getMessage());
+            Log::channel('api')->error('Webinar registration API Error: ' . $e->getMessage());
 
             return response()->json([
                 'status' => false,

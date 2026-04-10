@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Register Spatie Permission Middleware (Laravel 12)
         $middleware->alias([
             'api_key' => \App\Http\Middleware\ApiKeyMiddleware::class,
+            'api.logger' => \App\Http\Middleware\ApiRequestLogger::class,
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class

@@ -31,7 +31,7 @@ class MembershipController extends Controller
 
         } catch (\Throwable $e) {
 
-            Log::error('Membership API Error', [
+            Log::channel('api')->error('Membership API Error', [
                 'error' => $e->getMessage(),
                 'line'  => $e->getLine(),
                 'file'  => $e->getFile(),
