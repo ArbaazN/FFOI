@@ -31,20 +31,20 @@
                     <p class="mb-0">{{ $enquiry->city ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">State</label>
-                    <p class="mb-0">{{ $enquiry->state ?? '-' }}</p>
+                    <label class="form-label fw-semibold">Preferred Territory</label>
+                    <p class="mb-0">{{ $enquiry->preferred_territory ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">Organisation Type</label>
-                    <p class="mb-0">{{ $enquiry->who_i_am ?? '-' }}</p>
+                    <label class="form-label fw-semibold">Current Occupation / Business</label>
+                    <p class="mb-0">{{ $enquiry->current_occupation_business ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">Area of Interest</label>
-                    <p class="mb-0">{{ $enquiry->area_of_interest ?? '-' }}</p>
+                    <label class="form-label fw-semibold">Consent</label>
+                    <p class="mb-0">{{ $enquiry->consent ? 'Yes' : 'No' }}</p>
                 </div>
                 <div class="col-12">
-                    <label class="form-label fw-semibold">Message</label>
-                    <div class="border rounded p-3 bg-light" style="white-space: pre-wrap;">{{ $enquiry->message ?? '-' }}</div>
+                    <label class="form-label fw-semibold">Why do you want to become an FFOI Partner?</label>
+                    <div class="border rounded p-3 bg-light" style="white-space: pre-wrap;">{{ $enquiry->partner_reason ?? '-' }}</div>
                 </div>
             </div>
         </div>

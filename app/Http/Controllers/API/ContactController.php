@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Contact;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactConfirmationMail;
 use App\Mail\AdminContactNotificationMail;
+use App\Mail\ContactConfirmationMail;
+use App\Models\Contact;
+use App\Models\PartnerEnquiry;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Validator;
 
 class ContactController extends Controller
@@ -17,48 +18,47 @@ class ContactController extends Controller
     {
         try {
             $contacts = Contact::latest()->get();
+
             return response()->json([
                 'status' => true,
                 'message' => 'Contacts fetched successfully.',
-                'data' => $contacts
+                'data' => $contacts,
             ], 200);
         } catch (\Exception $e) {
+            Log::channel('api')->error('Contact Fetch Error: '.$e->getMessage());
 
-           Log::channel('api')->error('Contact Fetch Error: ' . $e->getMessage());
             return response()->json([
                 'status' => false,
-                'message' => 'Something went wrong.'
+                'message' => 'Something went wrong.',
             ], 500);
         }
     }
 
     public function store(Request $request)
     {
-        try{
+        try {
             $validator = Validator::make($request->all(), $this->contactRules());
 
             if ($validator->fails()) {
                 return response()->json([
                     'status' => false,
-                    'message' => $validator->errors()
+                    'message' => $validator->errors(),
                 ], 422);
             }
 
-            $contact = $this->saveEnquiry($request, 'contact_us');
+            $contact = $this->saveContactEnquiry($request);
 
             return response()->json([
                 'status' => true,
                 'message' => 'Contact form submitted successfully.',
-                'data' => $contact
+                'data' => $contact,
             ], 200);
         } catch (\Exception $e) {
-
-            // Log error for debugging
-            Log::channel('api')->error('Contact API Error: ' . $e->getMessage());
+            Log::channel('api')->error('Contact API Error: '.$e->getMessage());
 
             return response()->json([
                 'status' => false,
-                'message' => 'Something went wrong. Please try again later.'
+                'message' => 'Something went wrong. Please try again later.',
             ], 500);
         }
     }
@@ -71,23 +71,23 @@ class ContactController extends Controller
             if ($validator->fails()) {
                 return response()->json([
                     'status' => false,
-                    'message' => $validator->errors()
+                    'message' => $validator->errors(),
                 ], 422);
             }
 
-            $contact = $this->saveEnquiry($request, 'partner_with_us');
+            $partnerEnquiry = $this->savePartnerEnquiry($request);
 
             return response()->json([
                 'status' => true,
                 'message' => 'Partner with us form submitted successfully.',
-                'data' => $contact
+                'data' => $partnerEnquiry,
             ], 200);
         } catch (\Exception $e) {
-            Log::channel('api')->error('Partner With Us API Error: ' . $e->getMessage());
+            Log::channel('api')->error('Partner With Us API Error: '.$e->getMessage());
 
             return response()->json([
                 'status' => false,
-                'message' => 'Something went wrong. Please try again later.'
+                'message' => 'Something went wrong. Please try again later.',
             ], 500);
         }
     }
@@ -96,8 +96,7 @@ class ContactController extends Controller
     {
         return [
             'fullname' => 'required|string|max:255',
-            'email' => 'required|email',
-            'source' => 'nullable|in:contact_us,partner_with_us',
+            'email' => 'required|email|max:255',
             'contact' => 'nullable|string|max:20',
             'state' => 'nullable|string|max:100',
             'city' => 'nullable|string|max:100',
@@ -118,33 +117,56 @@ class ContactController extends Controller
             'who_i_am' => 'required|string|max:255',
             'message' => 'required|string',
             'consent' => 'required|accepted',
-            'area_of_interest' => 'nullable|string|max:255',
         ];
     }
 
-    protected function saveEnquiry(Request $request, string $source): Contact
+    protected function saveContactEnquiry(Request $request): Contact
     {
-        $contactData = $request->except('consent');
-        $contactData['source'] = $source;
+        $contact = Contact::create($request->except('consent'));
 
-        $contact = Contact::create($contactData);
+        $this->sendEnquiryEmails($contact, [
+            'contact_id' => $contact->id,
+            'contact_email' => $contact->email,
+            'type' => 'contact_us',
+        ]);
+
+        return $contact;
+    }
+
+    protected function savePartnerEnquiry(Request $request): PartnerEnquiry
+    {
+        $partnerEnquiry = PartnerEnquiry::create([
+            'fullname' => $request->fullname,
+            'contact' => $request->contact,
+            'email' => $request->email,
+            'preferred_territory' => $request->state,
+            'city' => $request->city,
+            'current_occupation_business' => $request->who_i_am,
+            'partner_reason' => $request->message,
+            'consent' => $request->boolean('consent'),
+        ]);
+
+        $this->sendEnquiryEmails($partnerEnquiry, [
+            'partner_enquiry_id' => $partnerEnquiry->id,
+            'partner_email' => $partnerEnquiry->email,
+            'type' => 'partner_with_us',
+        ]);
+
+        return $partnerEnquiry;
+    }
+
+    protected function sendEnquiryEmails(object $enquiry, array $warningContext): void
+    {
         $adminEmail = config('mail.admin_email');
 
-        if($source !== 'partner_with_us') {
-            Mail::to($contact->email)
-                ->send(new ContactConfirmationMail($contact));
+        Mail::to($enquiry->email)
+            ->send(new ContactConfirmationMail($enquiry));
 
-            if (!empty($adminEmail)) {
-                Mail::to($adminEmail)
-                    ->send(new AdminContactNotificationMail($contact));
-            } else {
-                Log::channel('api')->warning('Contact admin email is not configured.', [
-                    'contact_id' => $contact->id,
-                    'contact_email' => $contact->email,
-                    'source' => $source,
-                ]);
-            }
+        if (! empty($adminEmail)) {
+            Mail::to($adminEmail)
+                ->send(new AdminContactNotificationMail($enquiry));
+        } else {
+            Log::channel('api')->warning('Enquiry admin email is not configured.', $warningContext);
         }
-        return $contact;
     }
 }

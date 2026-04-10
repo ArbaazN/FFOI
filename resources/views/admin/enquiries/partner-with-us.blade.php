@@ -38,10 +38,10 @@
                                     <td>{{ $enquiry->fullname }}</td>
                                     <td>{{ $enquiry->email ?? '-' }}</td>
                                     <td>{{ $enquiry->contact ?? '-' }}</td>
-                                    <td>{{ trim(($enquiry->city ?? '').(!empty($enquiry->city) && !empty($enquiry->state) ? ', ' : '').($enquiry->state ?? '')) ?: '-' }}</td>
-                                    <td>{{ $enquiry->who_i_am ?? '-' }}</td>
-                                    <td>{{ $enquiry->area_of_interest ?? '-' }}</td>
-                                    <td>{{ $enquiry->message ? \Illuminate\Support\Str::words($enquiry->message, 3, '...') : '-' }}</td>
+                                    <td>{{ trim(($enquiry->city ?? '').(!empty($enquiry->city) && !empty($enquiry->preferred_territory) ? ', ' : '').($enquiry->preferred_territory ?? '')) ?: '-' }}</td>
+                                    <td>{{ $enquiry->current_occupation_business ?? '-' }}</td>
+                                    <td>-</td>
+                                    <td>{{ $enquiry->partner_reason ? \Illuminate\Support\Str::words($enquiry->partner_reason, 3, '...') : '-' }}</td>
                                     <td>{{ optional($enquiry->created_at)->format('d M Y, h:i A') ?? '-' }}</td>
                                     <td>
                                         <a href="{{ route('enquiries.partner-with-us.show', $enquiry->id) }}"

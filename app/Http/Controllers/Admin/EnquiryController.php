@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\PartnerEnquiry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -16,31 +17,10 @@ class EnquiryController extends Controller
 
     public function contactUs(Request $request)
     {
-        return $this->renderList($request, 'contact_us', 'admin.enquiries.contact-us', 'Contact Us');
-    }
-
-    public function partnerWithUs(Request $request)
-    {
-        return $this->renderList($request, 'partner_with_us', 'admin.enquiries.partner-with-us', 'Partner With Us');
-    }
-
-    public function showContactUs($id)
-    {
-        return $this->renderShow($id, 'contact_us', 'admin.enquiries.show-contact-us', 'Contact Us');
-    }
-
-    public function showPartnerWithUs($id)
-    {
-        return $this->renderShow($id, 'partner_with_us', 'admin.enquiries.show-partner-with-us', 'Partner With Us');
-    }
-
-    protected function renderList(Request $request, string $source, string $view, string $title)
-    {
         try {
             $search = $request->input('search');
 
             $enquiries = Contact::query()
-                ->where('source', $source)
                 ->when($search, function ($query, $search) {
                     $query->where(function ($builder) use ($search) {
                         $builder->where('fullname', 'LIKE', "%{$search}%")
@@ -55,31 +35,80 @@ class EnquiryController extends Controller
 
             $enquiries->appends(['search' => $search]);
 
-            return view($view, compact('enquiries', 'search', 'title'));
+            return view('admin.enquiries.contact-us', compact('enquiries', 'search'));
         } catch (\Throwable $e) {
-            Log::error("{$title} enquiry list error: ".$e->getMessage(), [
+            Log::error('Contact Us enquiry list error: '.$e->getMessage(), [
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
             ]);
 
-            return back()->with('error', "Unable to load {$title} enquiries.");
+            return back()->with('error', 'Unable to load Contact Us enquiries.');
         }
     }
 
-    protected function renderShow(int $id, string $source, string $view, string $title)
+    public function partnerWithUs(Request $request)
     {
         try {
-            $enquiry = Contact::where('source', $source)->findOrFail($id);
+            $search = $request->input('search');
 
-            return view($view, compact('enquiry', 'title'));
+            $enquiries = PartnerEnquiry::query()
+                ->when($search, function ($query, $search) {
+                    $query->where(function ($builder) use ($search) {
+                        $builder->where('fullname', 'LIKE', "%{$search}%")
+                            ->orWhere('email', 'LIKE', "%{$search}%")
+                            ->orWhere('contact', 'LIKE', "%{$search}%")
+                            ->orWhere('city', 'LIKE', "%{$search}%")
+                            ->orWhere('preferred_territory', 'LIKE', "%{$search}%")
+                            ->orWhere('current_occupation_business', 'LIKE', "%{$search}%");
+                    });
+                })
+                ->latest()
+                ->paginate(config('pagination.per_page'));
+
+            $enquiries->appends(['search' => $search]);
+
+            return view('admin.enquiries.partner-with-us', compact('enquiries', 'search'));
         } catch (\Throwable $e) {
-            Log::error("{$title} enquiry detail error: ".$e->getMessage(), [
+            Log::error('Partner With Us enquiry list error: '.$e->getMessage(), [
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ]);
+
+            return back()->with('error', 'Unable to load Partner With Us enquiries.');
+        }
+    }
+
+    public function showContactUs($id)
+    {
+        try {
+            $enquiry = Contact::findOrFail($id);
+
+            return view('admin.enquiries.show-contact-us', compact('enquiry'));
+        } catch (\Throwable $e) {
+            Log::error('Contact Us enquiry detail error: '.$e->getMessage(), [
                 'enquiry_id' => $id,
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
             ]);
 
-            return back()->with('error', "Unable to load {$title} enquiry details.");
+            return back()->with('error', 'Unable to load Contact Us enquiry details.');
+        }
+    }
+
+    public function showPartnerWithUs($id)
+    {
+        try {
+            $enquiry = PartnerEnquiry::findOrFail($id);
+
+            return view('admin.enquiries.show-partner-with-us', compact('enquiry'));
+        } catch (\Throwable $e) {
+            Log::error('Partner With Us enquiry detail error: '.$e->getMessage(), [
+                'enquiry_id' => $id,
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ]);
+
+            return back()->with('error', 'Unable to load Partner With Us enquiry details.');
         }
     }
 }
