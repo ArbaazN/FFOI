@@ -13,6 +13,7 @@ class Webinar extends Model
     protected $table = 'webinar';
 
     protected $fillable = [
+        'webinar_type',
         'banner_image',
         'slug',
         'title',

@@ -435,8 +435,12 @@ class WebinarController extends Controller
                 });
             }
 
+            if ($request->filled('webinar_type')) {
+                $query->where('webinar_type', $request->webinar_type);
+            }
+
             $webinar = $query->orderBy('title', 'asc')->paginate(config('pagination.per_page'));
-            $webinar->appends($request->only('search'));
+            $webinar->appends($request->only('search', 'webinar_type'));
 
             return view('admin.webinar.webinarList', compact('webinar'));
         } catch (Exception $e) {
@@ -461,6 +465,7 @@ class WebinarController extends Controller
     {
         try {
             $request->validate([
+                'webinar_type' => 'required|in:upcoming,other',
                 'title' => 'required|unique:webinar,title',
                 'subtitle' => 'required',
                 'short_desc' => 'required',
@@ -517,6 +522,7 @@ class WebinarController extends Controller
             }
 
             Webinar::create([
+                'webinar_type' => $request->webinar_type,
 
                 'title' => $request->title,
                 'slug' => $slug,
@@ -571,6 +577,7 @@ class WebinarController extends Controller
 
             $webinar = Webinar::findOrFail($id);
             $request->validate([
+                'webinar_type' => 'required|in:upcoming,other',
                 'title' => 'required|unique:webinar,title,' . $webinar->id,
                 'subtitle' => 'required',
                 'short_desc' => 'required',
@@ -632,6 +639,7 @@ class WebinarController extends Controller
             }
 
             $webinar->update([
+                'webinar_type' => $request->webinar_type,
                 'title' => $request->title,
                 'slug' => $slug,
                 'subtitle' => $request->subtitle,

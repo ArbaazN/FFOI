@@ -6,12 +6,18 @@
 
     <div class="card">
         <div class="card-header border-bottom d-flex justify-content-between align-items-center">
-            <form action="{{ route('webinar.list') }}" method="GET"
-                class="w-25 position-relative search-wrapper">
-                <input type="text" name="search" class="form-control autoSearch" value="{{ request('search') }}"
-                    data-delay="1000" data-min="3" placeholder="Search Webinar Title..." />
-                <span class="clear-search d-none"
-                    style="position:absolute; right:12px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:18px; color:#999;">✖</span>
+            <form action="{{ route('webinar.list') }}" method="GET" class="w-50 d-flex gap-2 align-items-center">
+                <div class="w-100 position-relative search-wrapper">
+                    <input type="text" name="search" class="form-control autoSearch" value="{{ request('search') }}"
+                        data-delay="1000" data-min="3" placeholder="Search Webinar Title..." />
+                    <span class="clear-search d-none"
+                        style="position:absolute; right:12px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:18px; color:#999;">X</span>
+                </div>
+                <select name="webinar_type" class="w-25 form-select" onchange="this.form.submit()">
+                    <option value="">All Types</option>
+                    <option value="upcoming" {{ request('webinar_type') === 'upcoming' ? 'selected' : '' }}>Upcoming</option>
+                    <option value="other" {{ request('webinar_type') === 'other' ? 'selected' : '' }}>Other</option>
+                </select>
             </form>
             <a href="{{ route('webinar.create') }}" class="btn btn-primary">Add Webinar</a>
         </div>
@@ -23,6 +29,7 @@
                         <tr>
                             <th>Sr.</th>
                             <th>Title Name</th>
+                            <th>Type</th>
                             <th>Slug</th>
                             <th>Subtitle</th>
                             <th>Short Desc</th>
@@ -36,6 +43,7 @@
                             <tr>
                                 <td class="py-1">{{ $loop->iteration }}</td>
                                 <td class="py-1">{{ $row->title }}</td>
+                                <td class="py-1 text-capitalize">{{ $row->webinar_type ?? '-' }}</td>
                                 <td class="py-1">{{ $row->slug }}</td>
                                 <td class="py-1">{{ $row->subtitle }}</td>
                                 <td class="py-1">{{ $row->short_desc }}</td>

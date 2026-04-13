@@ -15,9 +15,17 @@ use Validator;
 
 class WebinarController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
-        $webinar = Webinar::latest()->first();
+        $type = $request->query('type', 'upcoming');
+
+        $query = Webinar::query();
+
+        if (in_array($type, ['upcoming', 'other'], true)) {
+            $query->where('webinar_type', $type);
+        }
+
+        $webinar = $query->latest()->first();
 
         if (!$webinar) {
             return response()->json([
@@ -46,6 +54,7 @@ class WebinarController extends Controller
             'status' => true,
             'webinar' => [
                 'id' => $webinar->id,
+                'webinar_type' => $webinar->webinar_type,
                 'title' => $webinar->title,
                 'subtitle' => $webinar->subtitle,
                 'short_desc' => $webinar->short_desc,

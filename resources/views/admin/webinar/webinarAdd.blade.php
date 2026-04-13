@@ -30,6 +30,18 @@
                     @endif
 
                     <div class="mb-4">
+                        <label class="form-label fw-bold">Webinar Type</label>
+                        <select name="webinar_type" class="form-select @error('webinar_type') is-invalid @enderror">
+                            <option value="">Select webinar type</option>
+                            <option value="upcoming" {{ old('webinar_type', $isEdit ? $webinar->webinar_type : 'upcoming') === 'upcoming' ? 'selected' : '' }}>Upcoming</option>
+                            <option value="other" {{ old('webinar_type', $isEdit ? $webinar->webinar_type : '') === 'other' ? 'selected' : '' }}>Other</option>
+                        </select>
+                        @error('webinar_type')
+                            <span class="invalid-feedback d-block">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
                         <label class="form-label fw-bold">Banner Image</label>
 
                         @if ($isEdit && $webinar->banner_image)
