@@ -55,6 +55,7 @@ class WebinarController extends Controller
             'webinar' => [
                 'id' => $webinar->id,
                 'webinar_type' => $webinar->webinar_type,
+                'meeting_link' => $webinar->meeting_link,
                 'title' => $webinar->title,
                 'subtitle' => $webinar->subtitle,
                 'short_desc' => $webinar->short_desc,
@@ -233,6 +234,9 @@ class WebinarController extends Controller
     {
         try{
             $validator = Validator::make($request->all(), [
+                'webinar_id' => 'nullable|exists:webinar,id',
+                'webinar_slug' => 'nullable|string|exists:webinar,slug',
+                'webinar_type' => 'nullable|in:upcoming,other',
                 'name' => 'required|string|max:255',
                 'email' => 'required|email',
                 'contact' => 'required|string|max:20',
@@ -249,7 +253,32 @@ class WebinarController extends Controller
                 ], 422);
             }
 
-            $webinar = WebinarRegistration::create($request->all());
+            $selectedWebinar = null;
+
+            if ($request->filled('webinar_id')) {
+                $selectedWebinar = Webinar::find($request->webinar_id);
+            } elseif ($request->filled('webinar_slug')) {
+                $selectedWebinar = Webinar::where('slug', $request->webinar_slug)->first();
+            } else {
+                $selectedType = $request->input('webinar_type', 'upcoming');
+                $selectedWebinar = Webinar::query()
+                    ->when(in_array($selectedType, ['upcoming', 'other'], true), function ($query) use ($selectedType) {
+                        $query->where('webinar_type', $selectedType);
+                    })
+                    ->latest()
+                    ->first();
+            }
+
+            $webinar = WebinarRegistration::create([
+                'webinar_id' => $selectedWebinar?->id,
+                'name' => $request->name,
+                'email' => $request->email,
+                'contact' => $request->contact,
+                'city' => $request->city,
+                'highest_qualification' => $request->highest_qualification,
+                'current_status' => $request->current_status,
+                'topic_interested_in' => $request->topic_interested_in,
+            ]);
 
             return response()->json([
                 'status' => true,

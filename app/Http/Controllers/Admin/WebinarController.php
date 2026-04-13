@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\WebinarUpcomingSessionCategory;
 use App\Models\WebinarUpcomingSession;
 use App\Models\Webinar;
+use App\Models\WebinarRegistration;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Exception;
@@ -426,7 +427,7 @@ class WebinarController extends Controller
     public function webinarList(Request $request)
     {
         try {
-            $query = Webinar::query();
+            $query = Webinar::withCount('registrations');
             if ($request->search) {
                 $search = $request->search;
 
@@ -449,6 +450,37 @@ class WebinarController extends Controller
         }
     }
 
+    public function webinarRegistrationList(Request $request, $id)
+    {
+        try {
+            $webinar = Webinar::findOrFail($id);
+
+            $query = WebinarRegistration::where('webinar_id', $webinar->id);
+
+            if ($request->search) {
+                $search = $request->search;
+
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'LIKE', "%{$search}%")
+                        ->orWhere('email', 'LIKE', "%{$search}%")
+                        ->orWhere('contact', 'LIKE', "%{$search}%")
+                        ->orWhere('city', 'LIKE', "%{$search}%")
+                        ->orWhere('highest_qualification', 'LIKE', "%{$search}%")
+                        ->orWhere('current_status', 'LIKE', "%{$search}%")
+                        ->orWhere('topic_interested_in', 'LIKE', "%{$search}%");
+                });
+            }
+
+            $registrations = $query->latest()->paginate(config('pagination.per_page'));
+            $registrations->appends($request->only('search'));
+
+            return view('admin.webinar.registrationList', compact('webinar', 'registrations'));
+        } catch (Exception $e) {
+            Log::error("Error fetching webinar registrations: " . $e->getMessage());
+            return back()->with('error', 'Failed to load webinar registrations.');
+        }
+    }
+
     public function webinarAdd($id = null)
     {
         // return view('admin.webinar.addupcomingsession');
@@ -466,6 +498,7 @@ class WebinarController extends Controller
         try {
             $request->validate([
                 'webinar_type' => 'required|in:upcoming,other',
+                'meeting_link' => 'nullable|url|max:2048',
                 'title' => 'required|unique:webinar,title',
                 'subtitle' => 'required',
                 'short_desc' => 'required',
@@ -523,6 +556,7 @@ class WebinarController extends Controller
 
             Webinar::create([
                 'webinar_type' => $request->webinar_type,
+                'meeting_link' => $request->meeting_link,
 
                 'title' => $request->title,
                 'slug' => $slug,
@@ -578,6 +612,7 @@ class WebinarController extends Controller
             $webinar = Webinar::findOrFail($id);
             $request->validate([
                 'webinar_type' => 'required|in:upcoming,other',
+                'meeting_link' => 'nullable|url|max:2048',
                 'title' => 'required|unique:webinar,title,' . $webinar->id,
                 'subtitle' => 'required',
                 'short_desc' => 'required',
@@ -640,6 +675,7 @@ class WebinarController extends Controller
 
             $webinar->update([
                 'webinar_type' => $request->webinar_type,
+                'meeting_link' => $request->meeting_link,
                 'title' => $request->title,
                 'slug' => $slug,
                 'subtitle' => $request->subtitle,

@@ -14,11 +14,8 @@ return new class extends Migration
     {
         Schema::table('webinar', function (Blueprint $table) {
             $table->string('webinar_type')->default('upcoming')->after('slug');
+            $table->string('meeting_link')->nullable()->after('webinar_type');
         });
-
-        DB::table('webinar')
-            ->whereNull('webinar_type')
-            ->update(['webinar_type' => 'upcoming']);
     }
 
     /**
@@ -27,6 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('webinar', function (Blueprint $table) {
+            $table->dropColumn('meeting_link');
             $table->dropColumn('webinar_type');
         });
     }

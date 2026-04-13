@@ -59,6 +59,7 @@ use Illuminate\Support\Facades\Route;
         Route::post('webinar/session-details/update/{id?}', [WebinarController::class,'sessionDetailUpdate'])->name('webinar.detail.session.update');
 
         Route::get('webinar', [WebinarController::class,'webinarList'])->name('webinar.list');
+        Route::get('webinar/{id}/registrations', [WebinarController::class,'webinarRegistrationList'])->name('webinar.registrations');
         Route::get('webinar/create/{id?}', [WebinarController::class,'webinarAdd'])->name('webinar.create');
         Route::post('webinar/store', [WebinarController::class,'webinarStore'])->name('webinar.store');
         Route::post('webinar/update/{id?}', [WebinarController::class,'webinarUpdate'])->name('webinar.update');

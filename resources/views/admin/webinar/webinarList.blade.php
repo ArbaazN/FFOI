@@ -30,6 +30,7 @@
                             <th>Sr.</th>
                             <th>Title Name</th>
                             <th>Type</th>
+                            <th>Registrations</th>
                             <th>Slug</th>
                             <th>Subtitle</th>
                             <th>Short Desc</th>
@@ -42,8 +43,13 @@
                         @forelse ($webinar as $row)
                             <tr>
                                 <td class="py-1">{{ $loop->iteration }}</td>
-                                <td class="py-1">{{ $row->title }}</td>
+                                <td class="py-1">
+                                    <a href="{{ route('webinar.registrations', $row->id) }}" class="text-primary fw-semibold">
+                                        {{ $row->title }}
+                                    </a>
+                                </td>
                                 <td class="py-1 text-capitalize">{{ $row->webinar_type ?? '-' }}</td>
+                                <td class="py-1">{{ $row->registrations_count ?? 0 }}</td>
                                 <td class="py-1">{{ $row->slug }}</td>
                                 <td class="py-1">{{ $row->subtitle }}</td>
                                 <td class="py-1">{{ $row->short_desc }}</td>
@@ -55,6 +61,12 @@
                                             data-bs-toggle="tooltip" data-bs-placement="top"
                                             data-bs-original-title="Edit Session">
                                             <i class="icon-base ti tabler-edit icon-22px"></i>
+                                        </a>
+                                        <a href="{{ route('webinar.registrations', $row->id) }}"
+                                            class="btn btn-text-secondary rounded-pill btn-icon"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-original-title="View Registrations">
+                                            <i class="icon-base ti tabler-eye icon-22px"></i>
                                         </a>
                                     </div>
                                 </td>

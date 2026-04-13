@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
+use App\Models\WebinarRegistration;
 
 class Webinar extends Model
 {
@@ -14,6 +15,7 @@ class Webinar extends Model
 
     protected $fillable = [
         'webinar_type',
+        'meeting_link',
         'banner_image',
         'slug',
         'title',
@@ -57,5 +59,10 @@ class Webinar extends Model
     public function upcomingSessions()
     {
         return $this->hasMany(WebinarUpcomingSession::class, 'webinar_id');
+    }
+
+    public function registrations()
+    {
+        return $this->hasMany(WebinarRegistration::class, 'webinar_id');
     }
 }

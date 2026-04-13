@@ -85,6 +85,16 @@
                         @enderror
                     </div>
 
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Meeting Link</label>
+                        <input type="url" name="meeting_link" class="form-control @error('meeting_link') is-invalid @enderror"
+                            value="{{ old('meeting_link', $isEdit ? $webinar->meeting_link : '') }}"
+                            placeholder="https://example.com/meeting-link">
+                        @error('meeting_link')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                     <hr>
                     <h5>What You’ll Get (In 90 Minutes)</h5>
                     <div class="mb-4 dynamic-points">
