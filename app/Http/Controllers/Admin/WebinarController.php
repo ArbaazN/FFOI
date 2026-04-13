@@ -10,6 +10,7 @@ use App\Models\Webinar;
 use App\Models\WebinarRegistration;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Exception;
 
 class WebinarController extends Controller
@@ -190,6 +191,9 @@ class WebinarController extends Controller
             $bannerImage = null;
             $image = null;
             $imageAttend = null;
+            $instructor_image = null;
+            $instructor_logo_image1 = null;
+            $instructor_logo_image2 = null;
 
             if ($request->hasFile('banner_image')) {
                 $bannerImage = $request->file('banner_image')->store('webinar/session', 'public');
@@ -272,6 +276,8 @@ class WebinarController extends Controller
             return redirect()
                 ->route('webinar.session.detail.list')
                 ->with('success', 'Session created successfully.');
+        } catch (ValidationException $e) {
+            throw $e;
         } catch (\Exception $e) {
 
         // Log error for debugging
@@ -318,6 +324,9 @@ class WebinarController extends Controller
             $bannerImage = null;
             $image = null;
             $imageAttend = null;
+            $instructor_image = $session->instructor_image;
+            $instructor_logo_image1 = $session->instructor_logo_image1;
+            $instructor_logo_image2 = $session->instructor_logo_image2;
 
             if ($request->hasFile('banner_image')) {
                 $bannerImage = $request->file('banner_image')->store('webinar/session', 'public');
@@ -328,13 +337,13 @@ class WebinarController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image')->store('webinar/session', 'public');
             }else{
-                $bannerImage = $session->image;
+                $image = $session->image;
             }
 
             if ($request->hasFile('image_attend')) {
                 $imageAttend = $request->file('image_attend')->store('webinar/session', 'public');
             }else{
-                $bannerImage = $session->image_attend;
+                $imageAttend = $session->image_attend;
             }
 
             if ($request->hasFile('instructor_image')) {
@@ -412,6 +421,8 @@ class WebinarController extends Controller
                 ->route('webinar.session.detail.list')
                 ->with('success', 'Session updated successfully.');
 
+        } catch (ValidationException $e) {
+            throw $e;
         } catch (\Exception $e) {
 
             Log::error('Session Update Error: ' . $e->getMessage());

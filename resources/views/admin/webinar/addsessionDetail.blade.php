@@ -7,7 +7,7 @@
 @section('admin-main-content')
 
 @php
-    $isEdit = isset($session);
+    $isEdit = $session->exists;
     // echo $blog_category;
     // exit;
 @endphp
@@ -95,7 +95,7 @@
                     <div class="mb-4">
                         <label class="form-label fw-bold">Date</label>
                         <input type="date" name="date" class="form-control @error('date') is-invalid @enderror"
-                             value="{{ old('date', isset($session) ? \Carbon\Carbon::parse($session->date)->format('Y-m-d') : '') }}">
+                             value="{{ old('date', $session->date ? \Carbon\Carbon::parse($session->date)->format('Y-m-d') : '') }}">
                         @error('date') 
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
