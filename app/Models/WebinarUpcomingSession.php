@@ -15,6 +15,7 @@ class WebinarUpcomingSession extends Model
     protected $fillable = [
         'banner_image',
         'slug',
+        'webinar_type',
         'session_id',
         'topic_name',
         'title',

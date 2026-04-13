@@ -13,13 +13,8 @@
                     <span class="clear-search d-none"
                         style="position:absolute; right:12px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:18px; color:#999;">X</span>
                 </div>
-                <select name="webinar_type" class="w-25 form-select" onchange="this.form.submit()">
-                    <option value="">All Types</option>
-                    <option value="upcoming" {{ request('webinar_type') === 'upcoming' ? 'selected' : '' }}>Upcoming</option>
-                    <option value="other" {{ request('webinar_type') === 'other' ? 'selected' : '' }}>Other</option>
-                </select>
             </form>
-            <a href="{{ route('webinar.create') }}" class="btn btn-primary">Add Webinar</a>
+            {{-- <a href="{{ route('webinar.create') }}" class="btn btn-primary">Add Webinar</a> --}}
         </div>
 
         <div class="card-datatable">
@@ -29,8 +24,6 @@
                         <tr>
                             <th>Sr.</th>
                             <th>Title Name</th>
-                            <th>Type</th>
-                            <th>Registrations</th>
                             <th>Slug</th>
                             <th>Subtitle</th>
                             <th>Short Desc</th>
@@ -43,17 +36,11 @@
                         @forelse ($webinar as $row)
                             <tr>
                                 <td class="py-1">{{ $loop->iteration }}</td>
-                                <td class="py-1">
-                                    <a href="{{ route('webinar.registrations', $row->id) }}" class="text-primary fw-semibold">
-                                        {{ $row->title }}
-                                    </a>
-                                </td>
-                                <td class="py-1 text-capitalize">{{ $row->webinar_type ?? '-' }}</td>
-                                <td class="py-1">{{ $row->registrations_count ?? 0 }}</td>
+                                <td class="py-1">{{ $row->title }}</td>
                                 <td class="py-1">{{ $row->slug }}</td>
                                 <td class="py-1">{{ $row->subtitle }}</td>
                                 <td class="py-1">{{ $row->short_desc }}</td>
-                                <td class="">{{ $row->created_at->format('d M Y, h:i A') ?? '-'}}</td>
+                                <td>{{ $row->created_at->format('d M Y, h:i A') ?? '-' }}</td>
                                 <td class="py-1">
                                     <div class="d-inline-block text-nowrap">
                                         <a href="{{ route('webinar.create', $row->id) }}"
@@ -62,19 +49,12 @@
                                             data-bs-original-title="Edit Session">
                                             <i class="icon-base ti tabler-edit icon-22px"></i>
                                         </a>
-                                        <a href="{{ route('webinar.registrations', $row->id) }}"
-                                            class="btn btn-text-secondary rounded-pill btn-icon"
-                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                            data-bs-original-title="View Registrations">
-                                            <i class="icon-base ti tabler-eye icon-22px"></i>
-                                        </a>
                                     </div>
                                 </td>
                             </tr>
-
                         @empty
                             <tr>
-                                <td colspan="9" class="text-center">No webinar found.</td>
+                                <td colspan="7" class="text-center">No webinar found.</td>
                             </tr>
                         @endforelse
                     </tbody>

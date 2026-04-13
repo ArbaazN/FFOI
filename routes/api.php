@@ -17,6 +17,7 @@ Route::middleware(['api.logger', 'api_key'])->group(function () {
     Route::post('partner/save', [ContactController::class, 'partnerStore']);
 
     Route::get('/webinar', [WebinarController::class, 'show']);
+    Route::get('/webinar/upcoming-sessions', [WebinarController::class, 'upcomingSessions']);
     Route::get('/sessions/{slug}', [WebinarController::class, 'sessionDetail']);
     Route::POST('/webinar/registration', [WebinarController::class, 'saveWebinar']);
 

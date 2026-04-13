@@ -147,8 +147,38 @@ class WebinarController extends Controller
                 });
             }
 
+            if ($request->filled('webinar_type')) {
+                $query->where('webinar_type', $request->webinar_type);
+            }
+
             $sessions = $query->orderBy('topic_name', 'asc')->paginate(config('pagination.per_page'));
-            $sessions->appends($request->only('search'));
+            $sessions->appends($request->only('search', 'webinar_type'));
+
+            $topicNames = $sessions->getCollection()
+                ->flatMap(fn ($session) => collect([$session->title, $session->topic_name]))
+                ->filter()
+                ->unique()
+                ->values();
+
+            $registrationCounts = $topicNames->isEmpty()
+                ? collect()
+                : WebinarRegistration::query()
+                    ->selectRaw('topic_interested_in, COUNT(*) as total')
+                    ->whereIn('topic_interested_in', $topicNames)
+                    ->groupBy('topic_interested_in')
+                    ->pluck('total', 'topic_interested_in');
+
+            $sessions->getCollection()->transform(function ($session) use ($registrationCounts) {
+                $count = (int) ($registrationCounts[$session->title] ?? 0);
+
+                if ($session->topic_name !== $session->title) {
+                    $count += (int) ($registrationCounts[$session->topic_name] ?? 0);
+                }
+
+                $session->registration_count = $count;
+
+                return $session;
+            });
 
             return view('admin.webinar.sessionDetailList', compact('sessions'));
         } catch (Exception $e) {
@@ -174,6 +204,7 @@ class WebinarController extends Controller
     {
         try{
             $request->validate([
+                'webinar_type' => 'required|in:upcoming,other',
                 'session_id' => 'required',
                 'topic_name' => 'required',
                 'title' => 'required|unique:webinar_upcoming_session,title',
@@ -220,6 +251,7 @@ class WebinarController extends Controller
             }
 
             WebinarUpcomingSession::create([
+                'webinar_type' => $request->webinar_type,
                 'session_id' => $request->session_id,
                 'topic_name' => $request->topic_name,
                 'title' => $request->title,
@@ -294,6 +326,7 @@ class WebinarController extends Controller
         try {
             $session = WebinarUpcomingSession::findOrFail($id);
             $request->validate([
+                'webinar_type' => 'required|in:upcoming,other',
                 'session_id' => 'required',
                 'topic_name' => 'required',
                 'title' => 'required|unique:webinar_upcoming_session,title,' . $session->id,
@@ -365,6 +398,7 @@ class WebinarController extends Controller
             }
 
             $session->update([
+                'webinar_type' => $request->webinar_type,
                 'session_id' => $request->session_id,
                 'topic_name' => $request->topic_name,
                 'title' => $request->title,
@@ -433,6 +467,43 @@ class WebinarController extends Controller
         }
     }
 
+    public function sessionRegistrationList(Request $request, $id)
+    {
+        try {
+            $session = WebinarUpcomingSession::with('category')->findOrFail($id);
+
+            $query = WebinarRegistration::query()->where(function ($q) use ($session) {
+                $q->where('topic_interested_in', $session->title);
+
+                if (!empty($session->topic_name) && $session->topic_name !== $session->title) {
+                    $q->orWhere('topic_interested_in', $session->topic_name);
+                }
+            });
+
+            if ($request->search) {
+                $search = $request->search;
+
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'LIKE', "%{$search}%")
+                        ->orWhere('email', 'LIKE', "%{$search}%")
+                        ->orWhere('contact', 'LIKE', "%{$search}%")
+                        ->orWhere('city', 'LIKE', "%{$search}%")
+                        ->orWhere('highest_qualification', 'LIKE', "%{$search}%")
+                        ->orWhere('current_status', 'LIKE', "%{$search}%")
+                        ->orWhere('topic_interested_in', 'LIKE', "%{$search}%");
+                });
+            }
+
+            $registrations = $query->latest()->paginate(config('pagination.per_page'));
+            $registrations->appends($request->only('search'));
+
+            return view('admin.webinar.sessionRegistrationList', compact('session', 'registrations'));
+        } catch (Exception $e) {
+            Log::error("Error fetching session registrations: " . $e->getMessage());
+            return back()->with('error', 'Failed to load session registrations.');
+        }
+    }
+
     // =================================================================
 
     public function webinarList(Request $request)
@@ -447,12 +518,8 @@ class WebinarController extends Controller
                 });
             }
 
-            if ($request->filled('webinar_type')) {
-                $query->where('webinar_type', $request->webinar_type);
-            }
-
             $webinar = $query->orderBy('title', 'asc')->paginate(config('pagination.per_page'));
-            $webinar->appends($request->only('search', 'webinar_type'));
+            $webinar->appends($request->only('search'));
 
             return view('admin.webinar.webinarList', compact('webinar'));
         } catch (Exception $e) {

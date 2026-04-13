@@ -17,6 +17,47 @@ use Validator;
 
 class WebinarController extends Controller
 {
+    public function upcomingSessions()
+    {
+        $sessions = WebinarUpcomingSession::with('category')
+            ->where('webinar_type', 'upcoming')
+            ->orderBy('created_at', 'asc')
+            ->get();
+
+        if ($sessions->isEmpty()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Upcoming sessions not found'
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => true,
+            'upcoming_sessions' => $sessions->map(function ($session) {
+                return [
+                    'id' => $session->id,
+                    'session_name' => $session->category->session_name ?? null,
+                    'webinar_type' => $session->webinar_type,
+                    'session_detail_slug' => $session->slug,
+                    'slug' => $session->category->slug ?? null,
+                    'topic_name' => $session->topic_name,
+                    'title' => $session->title,
+                    'heading' => $session->category->heading ?? null,
+                    'short_desc' => $session->category->short_desc ?? null,
+                    'image_url' => $session->category && $session->category->image
+                        ? asset('storage/' . $session->category->image)
+                        : null,
+                    'date' => $session->date ? \Carbon\Carbon::parse($session->date)->format('Y-m-d') : null,
+                    'from' => $session->time_from ?? null,
+                    'to' => $session->time ?? null,
+                    'mode' => $session->mode,
+                    'by' => $session->by,
+                    'created_at' => $session->created_at,
+                ];
+            }),
+        ]);
+    }
+
     public function show(Request $request)
     {
         $type = $request->query('type');
@@ -37,40 +78,40 @@ class WebinarController extends Controller
             $query->where('webinar_type', $type);
         }
 
-        $webinars = $query->latest()->get();
+        $webinar = $query->latest()->first();
 
-        if ($webinars->isEmpty()) {
+        if (!$webinar) {
             return response()->json([
                 'status' => false,
                 'message' => 'Webinar not found'
             ], 404);
         }
 
-        // $sessions = WebinarUpcomingSessionCategory::orderBy('created_at', 'asc')->get();
-        $sessions = WebinarUpcomingSessionCategory::with('session')
+        $sessions = WebinarUpcomingSession::with('category')
+                    ->when(in_array($type, ['upcoming', 'other'], true), function ($query) use ($type) {
+                        $query->where('webinar_type', $type);
+                    })
                     ->orderBy('created_at', 'asc')
                     ->get();
                     
         return response()->json([
             'status' => true,
-            'webinars' => $webinars->map(fn ($webinar) => $this->formatWebinar($webinar)),
-
-            'upcoming_sessions' => $sessions->map(function ($category) {
-                $session = $category->session->first();
+            'webinar' => $this->formatWebinar($webinar),
+            'upcoming_sessions' => $sessions->map(function ($session) {
                 return [
-                    'id' => $category->id,
-                    'session_name' => $category->session_name,
+                    'id' => $session->id,
+                    'session_name' => $session->category->session_name ?? null,
+                    'webinar_type' => $session->webinar_type,
                     'session_detail_slug' => $session->slug ?? null,
-                    'slug' => $category->slug ?? null,
-                    'heading' => $category->heading,
-                    'short_desc' => $category->short_desc,
-                    'image_url' => $category->image
-                                ? asset('storage/' . $category->image)
+                    'slug' => $session->category->slug ?? null,
+                    'heading' => $session->category->heading ?? null,
+                    'short_desc' => $session->category->short_desc ?? null,
+                    'image_url' => $session->category && $session->category->image
+                                ? asset('storage/' . $session->category->image)
                                 : null,
                     'from' => $session->time_from ?? null,
                     'to'   => $session->time ?? null,
-
-                    'created_at' => $category->created_at,
+                    'created_at' => $session->created_at,
                 ];
             }),
         ]);
@@ -155,6 +196,7 @@ class WebinarController extends Controller
             'session' => [
                 'id' => $session->id,
                 'slug' => $session->slug,
+                'webinar_type' => $session->webinar_type,
                 'session_id' => $session->session_id,
                 'topic_name' => $session->topic_name,
                 'title' => $session->title,

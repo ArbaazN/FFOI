@@ -66,6 +66,18 @@
                     </div>
 
                     <div class="mb-4">
+                        <label class="form-label fw-bold">Session Type</label>
+                        <select name="webinar_type" class="form-control @error('webinar_type') is-invalid @enderror">
+                            <option value="">Select</option>
+                            <option value="upcoming" {{ old('webinar_type', $isEdit ? $session->webinar_type : 'upcoming') === 'upcoming' ? 'selected' : '' }}>Upcoming</option>
+                            <option value="other" {{ old('webinar_type', $isEdit ? $session->webinar_type : '') === 'other' ? 'selected' : '' }}>Other</option>
+                        </select>
+                        @error('webinar_type')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4">
                         <label class="form-label fw-bold">Topic Name</label>
                         <input type="text" name="topic_name" class="form-control @error('topic_name') is-invalid @enderror"
                             value="{{ old('topic_name', $isEdit ? $session->topic_name : '') }}">
