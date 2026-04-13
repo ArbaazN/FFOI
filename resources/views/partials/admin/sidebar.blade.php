@@ -85,18 +85,18 @@
                 <div data-i18n="Webinar">Webinar</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item {{ request()->is('webinar/upcomingsession') ? 'active' : '' }}">
+                <li class="menu-item {{ request()->is('webinar/upcomingsession') || request()->is('webinar/upcomingsession/*') ? 'active' : '' }}">
                     <a href="{{ route('webinar.session.list') }}" class="menu-link">
                         <div data-i18n="Upcoming Session">Upcoming Session</div>
                     </a>
                 </li>
-                <li class="menu-item {{ request()->is('webinar/session-details') ? 'active' : '' }}">
+                <li class="menu-item {{ request()->is('webinar/session-details') || request()->is('webinar/session-details/*') ? 'active' : '' }}">
                     <a href="{{ route('webinar.session.detail.list') }}" class="menu-link">
                         <div data-i18n="Session details">Session details</div>
                     </a>
                 </li>
                 @can('blog.create')
-                <li class="menu-item {{ request()->is('webinar') ? 'active' : '' }}">
+                <li class="menu-item {{ request()->is('webinar') || request()->is('webinar/create*') || request()->is('webinar/*/registrations') ? 'active' : '' }}">
                     <a href="{{ route('webinar.list') }}" class="menu-link">
                         <div data-i18n="Webinar">Webinar</div>
                     </a>
