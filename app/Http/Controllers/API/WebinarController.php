@@ -36,23 +36,72 @@ class WebinarController extends Controller
             'upcoming_sessions' => $sessions->map(function ($session) {
                 return [
                     'id' => $session->id,
+                    'slug' => $session->slug,
                     'session_name' => $session->category->session_name ?? null,
                     'webinar_type' => $session->webinar_type,
-                    'session_detail_slug' => $session->slug,
-                    'slug' => $session->category->slug ?? null,
+                    'session_id' => $session->session_id,
+                    'category_slug' => $session->category->slug ?? null,
                     'topic_name' => $session->topic_name,
                     'title' => $session->title,
+                    'subtitle' => $session->subtitle,
                     'heading' => $session->category->heading ?? null,
                     'short_desc' => $session->category->short_desc ?? null,
                     'image_url' => $session->category && $session->category->image
                         ? asset('storage/' . $session->category->image)
+                        : null,
+                    'banner_image_url' => $session->banner_image
+                        ? asset('storage/' . $session->banner_image)
+                        : null,
+                    'who_should_attend_image_url' => $session->image
+                        ? asset('storage/' . $session->image)
+                        : null,
+                    'how_session_helps_image_url' => $session->image_attend
+                        ? asset('storage/' . $session->image_attend)
                         : null,
                     'date' => $session->date ? \Carbon\Carbon::parse($session->date)->format('Y-m-d') : null,
                     'from' => $session->time_from ?? null,
                     'to' => $session->time ?? null,
                     'mode' => $session->mode,
                     'by' => $session->by,
+                    'why_attend_section_heading' => $session->why_attend_section_heading,
+                    'why_attend_section_points' => json_decode($session->why_attend_section_points ?? '[]'),
+                    'why_learn_heading' => $session->why_learn_heading,
+                    'why_learn_points' => json_decode($session->why_learn_points ?? '[]'),
+                    'who_attend_heading' => $session->who_attend_heading,
+                    'who_attend_points' => json_decode($session->who_attend_points ?? '[]'),
+                    'who_attend_disclaimer' => $session->who_attend_disclaimer,
+                    'career_role_heading' => $session->career_role_heading,
+                    'career_role_points' => json_decode($session->career_role_points ?? '[]'),
+                    'career_role_disclaimer' => $session->career_role_disclaimer,
+                    'how_session_help_heading' => $session->how_session_help_heading,
+                    'how_session_help_points' => json_decode($session->how_session_help_points ?? '[]'),
+                    'how_session_help_disclaimer' => $session->how_session_help_disclaimer,
+                    'learn_with_ffoi_heading' => $session->learn_with_ffoi_heading,
+                    'learn_with_ffoi_points' => json_decode($session->learn_with_ffoi_points ?? '[]'),
+                    'instructor_image_url' => $session->instructor_image
+                        ? asset('storage/' . $session->instructor_image)
+                        : null,
+                    'instructor_name' => $session->instructor_name,
+                    'instructor_designation' => $session->instructor_designation,
+                    'instructor_experience' => $session->instructor_experience,
+                    'instructor_desc' => $session->instructor_desc,
+                    'instructor_logo_image1_url' => $session->instructor_logo_image1
+                        ? asset('storage/' . $session->instructor_logo_image1)
+                        : null,
+                    'instructor_logo_image2_url' => $session->instructor_logo_image2
+                        ? asset('storage/' . $session->instructor_logo_image2)
+                        : null,
+                    'faqs' => collect(json_decode($session->faqs_question ?? '[]'))
+                        ->map(function ($question, $index) use ($session) {
+                            $answers = json_decode($session->faqs_answer ?? '[]');
+                            return [
+                                'question' => $question,
+                                'answer' => $answers[$index] ?? '',
+                            ];
+                        })->values(),
+                    'final_CTA_desc' => $session->final_CTA_desc,
                     'created_at' => $session->created_at,
+                    'updated_at' => $session->updated_at,
                 ];
             }),
         ]);
