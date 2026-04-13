@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WebinarRegistrationConfirmationMail;
 use Illuminate\Http\Request;
 use App\Models\WebinarUpcomingSession;
 use App\Models\WebinarUpcomingSessionCategory;
 use App\Models\WebinarRegistration;
 use App\Models\Webinar;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Exception;
 use Validator;
@@ -280,6 +282,17 @@ class WebinarController extends Controller
                 'current_status' => $request->current_status,
                 'topic_interested_in' => $request->topic_interested_in,
             ]);
+
+            try {
+                Mail::to($webinar->email)
+                    ->send(new WebinarRegistrationConfirmationMail($webinar, $selectedWebinar));
+            } catch (\Exception $mailException) {
+                Log::channel('api')->error('Webinar registration mail send error: ' . $mailException->getMessage(), [
+                    'registration_id' => $webinar->id,
+                    'email' => $webinar->email,
+                    'webinar_id' => $selectedWebinar?->id,
+                ]);
+            }
 
             return response()->json([
                 'status' => true,
