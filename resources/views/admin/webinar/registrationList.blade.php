@@ -25,10 +25,11 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Contact</th>
+                            <th>State</th>
                             <th>City</th>
-                            <th>Highest Qualification</th>
-                            <th>Current Status</th>
-                            <th>Topic Interested In</th>
+                            <th>I am a</th>
+                            <th>Area of Interest</th>
+                            <th>Message</th>
                             <th>Registered At</th>
                         </tr>
                     </thead>
@@ -39,10 +40,11 @@
                                 <td>{{ $registration->name }}</td>
                                 <td>{{ $registration->email }}</td>
                                 <td>{{ $registration->contact ?: '-' }}</td>
+                                <td>{{ $registration->state ?: '-' }}</td>
                                 <td>{{ $registration->city ?: '-' }}</td>
-                                <td>{{ $registration->highest_qualification ?: '-' }}</td>
                                 <td>{{ $registration->current_status ?: '-' }}</td>
                                 <td>{{ $registration->topic_interested_in ?: '-' }}</td>
+                                <td>{{ $registration->message ?: '-' }}</td>
                                 <td>{{ $registration->created_at?->format('d M Y, h:i A') ?: '-' }}</td>
                             </tr>
                         @endforeach

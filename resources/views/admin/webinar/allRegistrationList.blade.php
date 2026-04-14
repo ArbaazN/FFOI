@@ -28,12 +28,15 @@
                         <tr>
                             <th>Sr.</th>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>Contact</th>
+                            <th>Email</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>I am a</th>
+                            <th>Area of Interest</th>
+                            <th>Message</th>
                             <th>Session / Webinar</th>
                             <th>Session Date</th>
-                            <th>City</th>
-                            <th>Current Status</th>
                             <th>Registered At</th>
                         </tr>
                     </thead>
@@ -49,12 +52,15 @@
                             <tr>
                                 <td>{{ $registrations->firstItem() + $loop->index }}</td>
                                 <td>{{ $registration->name }}</td>
-                                <td>{{ $registration->email }}</td>
                                 <td>{{ $registration->contact ?: '-' }}</td>
-                                <td>{{ $sessionLabel }}</td>
-                                <td>{{ $registration->session?->date?->format('d M Y') ?: '-' }}</td>
+                                <td>{{ $registration->email }}</td>
+                                <td>{{ $registration->state ?: '-' }}</td>
                                 <td>{{ $registration->city ?: '-' }}</td>
                                 <td>{{ $registration->current_status ?: '-' }}</td>
+                                <td>{{ $registration->topic_interested_in ?: '-' }}</td>
+                                <td>{{ $registration->message ?: '-' }}</td>
+                                <td>{{ $sessionLabel }}</td>
+                                <td>{{ $registration->session?->date?->format('d M Y') ?: '-' }}</td>
                                 <td>{{ $registration->created_at?->format('d M Y, h:i A') ?: '-' }}</td>
                             </tr>
                         @endforeach

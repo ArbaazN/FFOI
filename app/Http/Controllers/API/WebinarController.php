@@ -334,10 +334,12 @@ class WebinarController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|email',
                 'contact' => 'required|string|max:20',
+                'state' => 'nullable|string|max:100',
                 'city' => 'nullable|string|max:100',
                 'highest_qualification' => 'nullable|string|max:255',
-                'current_status' => 'nullable|in:Student,Fresher,Working',
+                'current_status' => 'nullable|string|max:255',
                 'topic_interested_in' => 'nullable|string',
+                'message' => 'nullable|string',
             ]);
 
             if ($validator->fails()) {
@@ -369,10 +371,12 @@ class WebinarController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'contact' => $request->contact,
+                'state' => $request->state,
                 'city' => $request->city,
                 'highest_qualification' => $request->highest_qualification,
                 'current_status' => $request->current_status,
                 'topic_interested_in' => $selectedSession?->title ?? $selectedSession?->topic_name ?? $request->topic_interested_in,
+                'message' => $request->message,
             ]);
 
             try {

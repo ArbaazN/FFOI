@@ -17,10 +17,12 @@ class WebinarRegistration extends Model
         'name',
         'email',
         'contact',
+        'state',
         'city',
         'highest_qualification',
         'current_status',
         'topic_interested_in',
+        'message',
     ];
 
     public function webinar()

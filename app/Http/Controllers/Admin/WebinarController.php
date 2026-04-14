@@ -488,10 +488,12 @@ class WebinarController extends Controller
                     $q->where('name', 'LIKE', "%{$search}%")
                         ->orWhere('email', 'LIKE', "%{$search}%")
                         ->orWhere('contact', 'LIKE', "%{$search}%")
+                        ->orWhere('state', 'LIKE', "%{$search}%")
                         ->orWhere('city', 'LIKE', "%{$search}%")
                         ->orWhere('highest_qualification', 'LIKE', "%{$search}%")
                         ->orWhere('current_status', 'LIKE', "%{$search}%")
-                        ->orWhere('topic_interested_in', 'LIKE', "%{$search}%");
+                        ->orWhere('topic_interested_in', 'LIKE', "%{$search}%")
+                        ->orWhere('message', 'LIKE', "%{$search}%");
                 });
             }
 
@@ -521,10 +523,12 @@ class WebinarController extends Controller
                     $q->where('webinar_registration.name', 'LIKE', "%{$search}%")
                         ->orWhere('webinar_registration.email', 'LIKE', "%{$search}%")
                         ->orWhere('webinar_registration.contact', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.state', 'LIKE', "%{$search}%")
                         ->orWhere('webinar_registration.city', 'LIKE', "%{$search}%")
                         ->orWhere('webinar_registration.highest_qualification', 'LIKE', "%{$search}%")
                         ->orWhere('webinar_registration.current_status', 'LIKE', "%{$search}%")
                         ->orWhere('webinar_registration.topic_interested_in', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.message', 'LIKE', "%{$search}%")
                         ->orWhere('sessions.title', 'LIKE', "%{$search}%")
                         ->orWhere('sessions.topic_name', 'LIKE', "%{$search}%")
                         ->orWhere('webinars.title', 'LIKE', "%{$search}%");
@@ -588,10 +592,12 @@ class WebinarController extends Controller
                     $q->where('name', 'LIKE', "%{$search}%")
                         ->orWhere('email', 'LIKE', "%{$search}%")
                         ->orWhere('contact', 'LIKE', "%{$search}%")
+                        ->orWhere('state', 'LIKE', "%{$search}%")
                         ->orWhere('city', 'LIKE', "%{$search}%")
                         ->orWhere('highest_qualification', 'LIKE', "%{$search}%")
                         ->orWhere('current_status', 'LIKE', "%{$search}%")
-                        ->orWhere('topic_interested_in', 'LIKE', "%{$search}%");
+                        ->orWhere('topic_interested_in', 'LIKE', "%{$search}%")
+                        ->orWhere('message', 'LIKE', "%{$search}%");
                 });
             }
 
