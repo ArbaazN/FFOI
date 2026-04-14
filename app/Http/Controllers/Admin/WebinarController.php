@@ -15,6 +15,52 @@ use Exception;
 
 class WebinarController extends Controller
 {
+    private function generateUniqueCategorySlug(string $sessionName, ?int $ignoreId = null): string
+    {
+        $baseSlug = Str::slug($sessionName);
+        $slug = $baseSlug;
+        $counter = 1;
+
+        while (
+            WebinarUpcomingSessionCategory::where('slug', $slug)
+                ->when($ignoreId, fn ($query) => $query->where('id', '!=', $ignoreId))
+                ->exists()
+        ) {
+            $slug = $baseSlug . '-' . $counter;
+            $counter++;
+        }
+
+        return $slug;
+    }
+
+    private function generateUniqueSessionSlug(string $topicName, ?int $ignoreId = null): string
+    {
+        $baseSlug = Str::slug($topicName);
+        $slug = $baseSlug;
+        $counter = 1;
+
+        while (
+            WebinarUpcomingSession::where('slug', $slug)
+                ->when($ignoreId, fn ($query) => $query->where('id', '!=', $ignoreId))
+                ->exists()
+        ) {
+            $slug = $baseSlug . '-' . $counter;
+            $counter++;
+        }
+
+        return $slug;
+    }
+
+    private function syncChildSessionTopics(WebinarUpcomingSessionCategory $category): void
+    {
+        $category->session()->get()->each(function (WebinarUpcomingSession $session) use ($category) {
+            $session->update([
+                'topic_name' => $category->session_name,
+                'slug' => $this->generateUniqueSessionSlug($category->session_name, $session->id),
+            ]);
+        });
+    }
+
     public function sessionList(Request $request)
     {
         try {
@@ -57,7 +103,7 @@ class WebinarController extends Controller
         ]);
 
         try {
-            $data['slug'] = Str::slug($request->session_name);
+            $data['slug'] = $this->generateUniqueCategorySlug($data['session_name']);
 
             $data['image'] = null;
             if ($request->hasFile('image')) {
@@ -91,12 +137,13 @@ class WebinarController extends Controller
         ]);
 
         try {
-            $data['slug'] = Str::slug($data['session_name']);
+            $data['slug'] = $this->generateUniqueCategorySlug($data['session_name'], $session->id);
 
             if ($request->hasFile('image')) {
                 $data['image'] = $request->file('image')->store('webinar/category', 'public');
             }
             $session->update($data);
+            $this->syncChildSessionTopics($session);
             return redirect()
                 ->route('webinar.session.list')
                 ->with('success', 'Upcoming Session updated successfully.');
@@ -217,7 +264,7 @@ class WebinarController extends Controller
     public function sessionDetailStore(Request $request)
     {
         try{
-            $request->validate([
+            $validated = $request->validate([
                 'webinar_type' => 'required|in:upcoming,other',
                 'session_id' => 'required',
                 'topic_name' => 'required',
@@ -232,6 +279,9 @@ class WebinarController extends Controller
                 'instructor_logo_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'instructor_logo_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             ]);
+
+            $category = WebinarUpcomingSessionCategory::findOrFail($validated['session_id']);
+            $topicName = $category->session_name;
 
             $bannerImage = null;
             $image = null;
@@ -267,9 +317,9 @@ class WebinarController extends Controller
             WebinarUpcomingSession::create([
                 'webinar_type' => $request->webinar_type,
                 'session_id' => $request->session_id,
-                'topic_name' => $request->topic_name,
+                'topic_name' => $topicName,
                 'title' => $request->title,
-                'slug' => Str::slug($request->topic_name),  // ✅ unique slug
+                'slug' => $this->generateUniqueSessionSlug($topicName),
                 'subtitle' => $request->subtitle,
                 'date' => $request->date,
                 'time' => $request->time,
@@ -339,7 +389,7 @@ class WebinarController extends Controller
     {
         try {
             $session = WebinarUpcomingSession::findOrFail($id);
-            $request->validate([
+            $validated = $request->validate([
                 'webinar_type' => 'required|in:upcoming,other',
                 'session_id' => 'required',
                 'topic_name' => 'required',
@@ -354,19 +404,11 @@ class WebinarController extends Controller
                 'instructor_logo_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'instructor_logo_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             ]);
-
-            if ($session->topic_name != $request->topic_name) {
-                $slug = Str::slug($request->topic_name);
-                $slugCount = WebinarUpcomingSession::where('slug', 'like', $slug . '%')
-                    ->where('id', '!=', $session->id)
-                    ->count();
-                if ($slugCount > 0) {
-                    $slug = $slug . '-' . ($slugCount + 1);
-                }
-
-            } else {
-                $slug = $session->slug;
-            }
+            $category = WebinarUpcomingSessionCategory::findOrFail($validated['session_id']);
+            $topicName = $category->session_name;
+            $slug = $session->topic_name !== $topicName
+                ? $this->generateUniqueSessionSlug($topicName, $session->id)
+                : $session->slug;
 
             $bannerImage = null;
             $image = null;
@@ -414,7 +456,7 @@ class WebinarController extends Controller
             $session->update([
                 'webinar_type' => $request->webinar_type,
                 'session_id' => $request->session_id,
-                'topic_name' => $request->topic_name,
+                'topic_name' => $topicName,
                 'title' => $request->title,
                 'slug' => $slug,
                 'subtitle' => $request->subtitle,

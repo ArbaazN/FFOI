@@ -48,11 +48,12 @@
                     <div class="mb-4">
                         <label class="form-label fw-bold">Session Name</label>
 
-                        <select name="session_id" class="form-control @error('session_id') is-invalid @enderror">
+                        <select name="session_id" id="session_id" class="form-control @error('session_id') is-invalid @enderror">
                             <option value="">Select</option>
 
                             @foreach($category as $categoryName)
                                 <option value="{{ $categoryName->id }}"
+                                    data-session-name="{{ $categoryName->session_name }}"
                                     {{ old('session_id', $session->session_id ?? '') == $categoryName->id ? 'selected' : '' }}>
                                     {{ $categoryName->session_name }}
                                 </option>
@@ -79,7 +80,8 @@
 
                     <div class="mb-4">
                         <label class="form-label fw-bold">Topic Name</label>
-                        <input type="text" name="topic_name" class="form-control @error('topic_name') is-invalid @enderror"
+                        <input type="text" id="topic_name" name="topic_name"
+                            class="form-control @error('topic_name') is-invalid @enderror" readonly
                             value="{{ old('topic_name', $isEdit ? $session->topic_name : '') }}">
                         @error('topic_name') 
                         <span class="invalid-feedback">{{ $message }}</span>
@@ -591,3 +593,24 @@
 
 
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sessionSelect = document.getElementById('session_id');
+        const topicInput = document.getElementById('topic_name');
+
+        if (!sessionSelect || !topicInput) {
+            return;
+        }
+
+        const syncTopicName = () => {
+            const selectedOption = sessionSelect.options[sessionSelect.selectedIndex];
+            topicInput.value = selectedOption ? (selectedOption.dataset.sessionName || '') : '';
+        };
+
+        sessionSelect.addEventListener('change', syncTopicName);
+        syncTopicName();
+    });
+</script>
+@endpush
