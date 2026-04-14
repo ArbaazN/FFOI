@@ -52,6 +52,36 @@
                                 </table>
                             @endif
 
+                            @if(!empty($contact->session_date) || !empty($contact->session_time) || !empty($contact->mode))
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 24px; background-color: #ffffff; border: 1px solid #e6ecef; border-radius: 18px;">
+                                    <tr>
+                                        <td style="padding: 22px 24px;">
+                                            <h2 style="margin: 0 0 16px; font-size: 18px; color: #10273a;">Session Details</h2>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                @if(!empty($contact->session_date))
+                                                    <tr>
+                                                        <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a; width: 32%;">Date</td>
+                                                        <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->session_date }}</td>
+                                                    </tr>
+                                                @endif
+                                                @if(!empty($contact->session_time))
+                                                    <tr>
+                                                        <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Time</td>
+                                                        <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->session_time }}</td>
+                                                    </tr>
+                                                @endif
+                                                @if(!empty($contact->mode))
+                                                    <tr>
+                                                        <td style="padding: 0; font-size: 13px; color: #6b7b6a;">Mode</td>
+                                                        <td style="padding: 0; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->mode }}</td>
+                                                    </tr>
+                                                @endif
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            @endif
+
                             @if(!empty($contact->meeting_link))
                                 <div style="margin-bottom: 24px; background-color: #10273a; border-radius: 20px; overflow: hidden;">
                                     <div style="padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.12);">

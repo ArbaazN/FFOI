@@ -16,6 +16,7 @@ class WebinarUpcomingSession extends Model
         'banner_image',
         'slug',
         'webinar_type',
+        'meeting_link',
         'session_id',
         'topic_name',
         'title',

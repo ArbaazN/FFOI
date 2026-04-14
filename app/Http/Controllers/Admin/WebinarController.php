@@ -266,6 +266,7 @@ class WebinarController extends Controller
         try{
             $validated = $request->validate([
                 'webinar_type' => 'required|in:upcoming,other',
+                'meeting_link' => 'nullable|url|max:2048',
                 'session_id' => 'required',
                 'topic_name' => 'required',
                 'title' => 'required|unique:webinar_upcoming_session,title',
@@ -316,6 +317,7 @@ class WebinarController extends Controller
 
             WebinarUpcomingSession::create([
                 'webinar_type' => $request->webinar_type,
+                'meeting_link' => $request->meeting_link,
                 'session_id' => $request->session_id,
                 'topic_name' => $topicName,
                 'title' => $request->title,
@@ -391,6 +393,7 @@ class WebinarController extends Controller
             $session = WebinarUpcomingSession::findOrFail($id);
             $validated = $request->validate([
                 'webinar_type' => 'required|in:upcoming,other',
+                'meeting_link' => 'nullable|url|max:2048',
                 'session_id' => 'required',
                 'topic_name' => 'required',
                 'title' => 'required|unique:webinar_upcoming_session,title,' . $session->id,
@@ -455,6 +458,7 @@ class WebinarController extends Controller
 
             $session->update([
                 'webinar_type' => $request->webinar_type,
+                'meeting_link' => $request->meeting_link,
                 'session_id' => $request->session_id,
                 'topic_name' => $topicName,
                 'title' => $request->title,

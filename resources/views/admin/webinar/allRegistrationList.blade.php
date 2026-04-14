@@ -44,9 +44,7 @@
                     <tbody>
                         @foreach ($registrations as $registration)
                             @php
-                                $sessionLabel = $registration->session?->title
-                                    ?? $registration->session?->topic_name
-                                    ?? $registration->topic_interested_in
+                                $sessionLabel = $registration->session?->topic_name
                                     ?? $registration->webinar?->title
                                     ?? '-';
                             @endphp
