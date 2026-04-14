@@ -159,14 +159,28 @@ class ContactController extends Controller
     {
         $adminEmail = config('mail.admin_email');
 
-        Mail::to($enquiry->email)
-            ->send(new ContactConfirmationMail($enquiry));
-
-        if (! empty($adminEmail)) {
-            Mail::to($adminEmail)
-                ->send(new AdminContactNotificationMail($enquiry));
-        } else {
-            Log::channel('api')->warning('Enquiry admin email is not configured.', $warningContext);
+        try {
+            Mail::to($enquiry->email)
+                ->send(new ContactConfirmationMail($enquiry, $warningContext['type'] ?? 'contact_us'));
+        } catch (\Exception $e) {
+            Log::channel('api')->error('Enquiry confirmation mail send error: ' . $e->getMessage(), array_merge(
+                $warningContext,
+                ['recipient_email' => $enquiry->email]
+            ));
         }
+
+        // if (!empty($adminEmail)) {
+        //     try {
+        //         Mail::to($adminEmail)
+        //             ->send(new AdminContactNotificationMail($enquiry));
+        //     } catch (\Exception $e) {
+        //         Log::channel('api')->error('Enquiry admin notification mail send error: ' . $e->getMessage(), array_merge(
+        //             $warningContext,
+        //             ['admin_email' => $adminEmail]
+        //         ));
+        //     }
+        // } else {
+        //     Log::channel('api')->warning('Enquiry admin email is not configured.', $warningContext);
+        // }
     }
 }

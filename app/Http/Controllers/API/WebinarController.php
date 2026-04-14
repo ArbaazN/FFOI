@@ -387,6 +387,8 @@ class WebinarController extends Controller
                     'registration_id' => $webinar->id,
                     'email' => $webinar->email,
                     'session_id' => $selectedSession?->id,
+                    'session_slug' => $selectedSession?->slug,
+                    'topic_interested_in' => $webinar->topic_interested_in,
                 ]);
             }
 
