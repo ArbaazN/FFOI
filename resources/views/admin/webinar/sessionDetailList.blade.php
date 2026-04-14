@@ -65,6 +65,14 @@
                                             data-bs-original-title="View Registrations">
                                             <i class="icon-base ti tabler-eye icon-22px"></i>
                                         </a>
+                                        <button type="button"
+                                            class="btn btn-text-danger rounded-pill btn-icon deleteBtn"
+                                            data-id="{{ $row->id }}" data-name="{{ $row->topic_name }}"
+                                            data-action="/webinar/session-details"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-original-title="Delete Session Detail">
+                                            <i class="icon-base ti tabler-trash icon-22px text-danger"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

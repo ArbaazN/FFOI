@@ -38,6 +38,7 @@
                             <th>Session / Webinar</th>
                             <th>Session Date</th>
                             <th>Registered At</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,6 +63,16 @@
                                 <td>{{ $sessionLabel }}</td>
                                 <td>{{ $registration->session?->date?->format('d M Y') ?: '-' }}</td>
                                 <td>{{ $registration->created_at?->format('d M Y, h:i A') ?: '-' }}</td>
+                                <td>
+                                    <button type="button"
+                                        class="btn btn-text-danger rounded-pill btn-icon deleteBtn"
+                                        data-id="{{ $registration->id }}" data-name="{{ $registration->name }}"
+                                        data-action="/webinar/registrations"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-original-title="Delete Registration">
+                                        <i class="icon-base ti tabler-trash icon-22px text-danger"></i>
+                                    </button>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

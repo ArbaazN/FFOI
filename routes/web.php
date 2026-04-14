@@ -51,6 +51,7 @@ use Illuminate\Support\Facades\Route;
         Route::get('webinar/upcomingsession/create/{id?}', [WebinarController::class,'sessionCreate'])->name('webinar.session.create');
         Route::post('webinar/upcomingsession/store', [WebinarController::class,'sessionStore'])->name('webinar.session.store');
         Route::post('webinar/upcomingsession/update/{id?}', [WebinarController::class,'sessionUpdate'])->name('webinar.session.update');
+        Route::delete('webinar/upcomingsession/{id}', [WebinarController::class,'sessionDelete'])->name('webinar.session.delete');
 
         Route::get('webinar/session-details', [WebinarController::class,'sessionDetailList'])->name('webinar.session.detail.list');
         Route::get('webinar/session-details/create', [WebinarController::class,'sessionDetailsAdd'])->name('webinar.session.detail.create');
@@ -58,8 +59,10 @@ use Illuminate\Support\Facades\Route;
         Route::get('webinar/session-details/{id}/registrations', [WebinarController::class,'sessionRegistrationList'])->name('webinar.session.detail.registrations');
         Route::post('webinar/session-details/store', [WebinarController::class,'sessionDetailStore'])->name('webinar.session.detail.store');
         Route::post('webinar/session-details/update/{id?}', [WebinarController::class,'sessionDetailUpdate'])->name('webinar.detail.session.update');
+        Route::delete('webinar/session-details/{id}', [WebinarController::class,'sessionDetailDelete'])->name('webinar.session.detail.delete');
 
         Route::get('webinar/registrations', [WebinarController::class,'registrationList'])->name('webinar.registration.list');
+        Route::delete('webinar/registrations/{id}', [WebinarController::class,'registrationDelete'])->name('webinar.registration.delete');
         Route::get('webinar', [WebinarController::class,'webinarList'])->name('webinar.list');
         Route::get('webinar/{id}/registrations', [WebinarController::class,'webinarRegistrationList'])->name('webinar.registrations');
         Route::get('webinar/create/{id?}', [WebinarController::class,'webinarAdd'])->name('webinar.create');

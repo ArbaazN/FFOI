@@ -46,6 +46,14 @@
                                             data-bs-original-title="Edit Session">
                                             <i class="icon-base ti tabler-edit icon-22px"></i>
                                         </a>
+                                        <button type="button"
+                                            class="btn btn-text-danger rounded-pill btn-icon deleteBtn"
+                                            data-id="{{ $row->id }}" data-name="{{ $row->session_name }}"
+                                            data-action="/webinar/upcomingsession"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-original-title="Delete Session">
+                                            <i class="icon-base ti tabler-trash icon-22px text-danger"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

@@ -119,9 +119,20 @@ class WebinarController extends Controller
     {
         try {
             $session = WebinarUpcomingSessionCategory::findOrFail($id);
+
+            if ($session->session()->exists()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Please delete the session details linked to this session first.'
+                ], 422);
+            }
+
             $session->delete();
 
-            return back()->with('success', 'Deleted Successfully');
+            return response()->json([
+                'success' => true,
+                'message' => 'Session deleted successfully.'
+            ]);
 
         } catch (\Exception $e) {
 
@@ -129,7 +140,10 @@ class WebinarController extends Controller
                 'id' => $id
             ]);
 
-            return back()->with('error', 'Failed to delete.');
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to delete session.'
+            ], 500);
         }
     }
 
@@ -507,6 +521,28 @@ class WebinarController extends Controller
         }
     }
 
+    public function sessionDetailDelete($id)
+    {
+        try {
+            $session = WebinarUpcomingSession::findOrFail($id);
+            $session->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Session detail deleted successfully.'
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Session Detail Delete Failed: ' . $e->getMessage(), [
+                'id' => $id,
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to delete session detail.'
+            ], 500);
+        }
+    }
+
     public function registrationList(Request $request)
     {
         try {
@@ -551,6 +587,28 @@ class WebinarController extends Controller
         } catch (Exception $e) {
             Log::error("Error fetching all webinar registrations: " . $e->getMessage());
             return back()->with('error', 'Failed to load registrations.');
+        }
+    }
+
+    public function registrationDelete($id)
+    {
+        try {
+            $registration = WebinarRegistration::findOrFail($id);
+            $registration->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Registration deleted successfully.'
+            ]);
+        } catch (\Exception $e) {
+            Log::error('Webinar Registration Delete Failed: ' . $e->getMessage(), [
+                'id' => $id,
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to delete registration.'
+            ], 500);
         }
     }
 

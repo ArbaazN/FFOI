@@ -1218,8 +1218,9 @@
                         showToast('error', res.message || 'Delete failed');
                     }
                 },
-                error: function() {
-                    alert('Delete request failed');
+                error: function(xhr) {
+                    let message = xhr.responseJSON?.message || 'Delete request failed';
+                    showToast('error', message);
                 }
             });
         });
