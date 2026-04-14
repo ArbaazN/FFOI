@@ -95,6 +95,11 @@
                         <div data-i18n="Session details">Session details</div>
                     </a>
                 </li>
+                <li class="menu-item {{ request()->is('webinar/registrations') ? 'active' : '' }}">
+                    <a href="{{ route('webinar.registration.list') }}" class="menu-link">
+                        <div data-i18n="Registration">Registration</div>
+                    </a>
+                </li>
                 @can('blog.create')
                 <li class="menu-item {{ request()->is('webinar') || request()->is('webinar/create*') || request()->is('webinar/*/registrations') ? 'active' : '' }}">
                     <a href="{{ route('webinar.list') }}" class="menu-link">

@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Str;
-use App\Models\Webinar;
 
 class WebinarRegistration extends Model
 {
@@ -15,6 +13,7 @@ class WebinarRegistration extends Model
 
     protected $fillable = [
         'webinar_id',
+        'session_id',
         'name',
         'email',
         'contact',
@@ -27,5 +26,10 @@ class WebinarRegistration extends Model
     public function webinar()
     {
         return $this->belongsTo(Webinar::class, 'webinar_id');
+    }
+
+    public function session()
+    {
+        return $this->belongsTo(WebinarUpcomingSession::class, 'session_id');
     }
 }

@@ -473,7 +473,8 @@ class WebinarController extends Controller
             $session = WebinarUpcomingSession::with('category')->findOrFail($id);
 
             $query = WebinarRegistration::query()->where(function ($q) use ($session) {
-                $q->where('topic_interested_in', $session->title);
+                $q->where('session_id', $session->id)
+                    ->orWhere('topic_interested_in', $session->title);
 
                 if (!empty($session->topic_name) && $session->topic_name !== $session->title) {
                     $q->orWhere('topic_interested_in', $session->topic_name);
@@ -501,6 +502,51 @@ class WebinarController extends Controller
         } catch (Exception $e) {
             Log::error("Error fetching session registrations: " . $e->getMessage());
             return back()->with('error', 'Failed to load session registrations.');
+        }
+    }
+
+    public function registrationList(Request $request)
+    {
+        try {
+            $query = WebinarRegistration::query()
+                ->with(['session.category', 'webinar'])
+                ->leftJoin('webinar_upcoming_session as sessions', 'sessions.id', '=', 'webinar_registration.session_id')
+                ->leftJoin('webinar as webinars', 'webinars.id', '=', 'webinar_registration.webinar_id')
+                ->select('webinar_registration.*');
+
+            if ($request->search) {
+                $search = $request->search;
+
+                $query->where(function ($q) use ($search) {
+                    $q->where('webinar_registration.name', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.email', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.contact', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.city', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.highest_qualification', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.current_status', 'LIKE', "%{$search}%")
+                        ->orWhere('webinar_registration.topic_interested_in', 'LIKE', "%{$search}%")
+                        ->orWhere('sessions.title', 'LIKE', "%{$search}%")
+                        ->orWhere('sessions.topic_name', 'LIKE', "%{$search}%")
+                        ->orWhere('webinars.title', 'LIKE', "%{$search}%");
+                });
+            }
+
+            if ($request->filled('date')) {
+                $query->whereDate('sessions.date', $request->date);
+            }
+
+            $registrations = $query
+                ->orderByRaw('CASE WHEN sessions.date IS NULL THEN 1 ELSE 0 END')
+                ->orderBy('sessions.date', 'desc')
+                ->orderBy('webinar_registration.created_at', 'desc')
+                ->paginate(config('pagination.per_page'));
+
+            $registrations->appends($request->only('search', 'date'));
+
+            return view('admin.webinar.allRegistrationList', compact('registrations'));
+        } catch (Exception $e) {
+            Log::error("Error fetching all webinar registrations: " . $e->getMessage());
+            return back()->with('error', 'Failed to load registrations.');
         }
     }
 

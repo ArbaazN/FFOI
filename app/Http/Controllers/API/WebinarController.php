@@ -328,8 +328,8 @@ class WebinarController extends Controller
     {
         try{
             $validator = Validator::make($request->all(), [
-                'webinar_id' => 'nullable|exists:webinar,id',
-                'webinar_slug' => 'nullable|string|exists:webinar,slug',
+                'session_id' => 'nullable|exists:webinar_upcoming_session,id',
+                'session_slug' => 'nullable|string|exists:webinar_upcoming_session,slug',
                 'webinar_type' => 'nullable|in:upcoming,other',
                 'name' => 'required|string|max:255',
                 'email' => 'required|email',
@@ -347,41 +347,42 @@ class WebinarController extends Controller
                 ], 422);
             }
 
-            $selectedWebinar = null;
+            $selectedSession = null;
 
-            if ($request->filled('webinar_id')) {
-                $selectedWebinar = Webinar::find($request->webinar_id);
-            } elseif ($request->filled('webinar_slug')) {
-                $selectedWebinar = Webinar::where('slug', $request->webinar_slug)->first();
+            if ($request->filled('session_id')) {
+                $selectedSession = WebinarUpcomingSession::find($request->session_id);
+            } elseif ($request->filled('session_slug')) {
+                $selectedSession = WebinarUpcomingSession::where('slug', $request->session_slug)->first();
             } else {
                 $selectedType = $request->input('webinar_type', 'upcoming');
-                $selectedWebinar = Webinar::query()
+                $selectedSession = WebinarUpcomingSession::query()
                     ->when(in_array($selectedType, ['upcoming', 'other'], true), function ($query) use ($selectedType) {
                         $query->where('webinar_type', $selectedType);
                     })
-                    ->latest()
+                    ->orderBy('date', 'asc')
+                    ->orderBy('created_at', 'asc')
                     ->first();
             }
 
             $webinar = WebinarRegistration::create([
-                'webinar_id' => $selectedWebinar?->id,
+                'session_id' => $selectedSession?->id,
                 'name' => $request->name,
                 'email' => $request->email,
                 'contact' => $request->contact,
                 'city' => $request->city,
                 'highest_qualification' => $request->highest_qualification,
                 'current_status' => $request->current_status,
-                'topic_interested_in' => $request->topic_interested_in,
+                'topic_interested_in' => $selectedSession?->title ?? $selectedSession?->topic_name ?? $request->topic_interested_in,
             ]);
 
             try {
                 Mail::to($webinar->email)
-                    ->send(new WebinarRegistrationConfirmationMail($webinar, $selectedWebinar));
+                    ->send(new WebinarRegistrationConfirmationMail($webinar, $selectedSession));
             } catch (\Exception $mailException) {
                 Log::channel('api')->error('Webinar registration mail send error: ' . $mailException->getMessage(), [
                     'registration_id' => $webinar->id,
                     'email' => $webinar->email,
-                    'webinar_id' => $selectedWebinar?->id,
+                    'session_id' => $selectedSession?->id,
                 ]);
             }
 
