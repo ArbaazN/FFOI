@@ -11,15 +11,15 @@
         <div class="card-body">
             <div class="row g-4">
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">Name</label>
+                    <label class="form-label fw-semibold">Full Name</label>
                     <p class="mb-0">{{ $enquiry->fullname ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">Email</label>
+                    <label class="form-label fw-semibold">Email Address</label>
                     <p class="mb-0">{{ $enquiry->email ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">Mobile</label>
+                    <label class="form-label fw-semibold">Mobile Number</label>
                     <p class="mb-0">{{ $enquiry->contact ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
@@ -31,7 +31,7 @@
                     <p class="mb-0">{{ $enquiry->city ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label fw-semibold">Preferred Territory</label>
+                    <label class="form-label fw-semibold">State (Preferred Territory)</label>
                     <p class="mb-0">{{ $enquiry->preferred_territory ?? '-' }}</p>
                 </div>
                 <div class="col-md-6">

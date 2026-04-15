@@ -3,10 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class AdminContactNotificationMail extends Mailable
@@ -14,14 +11,21 @@ class AdminContactNotificationMail extends Mailable
     use Queueable, SerializesModels;
 
     public $contact;
-    public function __construct($contact)
+    public string $type;
+
+    public function __construct($contact, string $type = 'contact_us')
     {
         $this->contact = $contact;
+        $this->type = $type;
     }
 
     public function build()
     {
-        return $this->subject('New Contact Form Submission')
+        $subject = $this->type === 'partner_with_us'
+            ? 'New Partner With Us Submission'
+            : 'New Contact Form Submission';
+
+        return $this->subject($subject)
                     ->view('emails.admin_contact_notification');
     }
 }

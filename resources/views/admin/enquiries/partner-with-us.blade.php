@@ -20,14 +20,15 @@
                         <thead class="border-top">
                             <tr>
                                 <th>Sr. No.</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Mobile</th>
-                                <th>City / State</th>
-                                <th>Organisation Type</th>
-                                <th>Area of Interest</th>
-                                <th>Message</th>
-                                <th>Date</th>
+                                <th>Full Name</th>
+                                <th>Mobile Number</th>
+                                <th>Email Address</th>
+                                <th>State (Preferred Territory)</th>
+                                <th>City</th>
+                                <th>Current Occupation / Business</th>
+                                <th>Why Partner?</th>
+                                <th>Consent</th>
+                                <th>Submitted On</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -36,12 +37,13 @@
                                 <tr>
                                     <td>{{ ($enquiries->firstItem() ?? 0) + $loop->index }}</td>
                                     <td>{{ $enquiry->fullname }}</td>
-                                    <td>{{ $enquiry->email ?? '-' }}</td>
                                     <td>{{ $enquiry->contact ?? '-' }}</td>
-                                    <td>{{ trim(($enquiry->city ?? '').(!empty($enquiry->city) && !empty($enquiry->preferred_territory) ? ', ' : '').($enquiry->preferred_territory ?? '')) ?: '-' }}</td>
+                                    <td>{{ $enquiry->email ?? '-' }}</td>
+                                    <td>{{ $enquiry->preferred_territory ?? '-' }}</td>
+                                    <td>{{ $enquiry->city ?? '-' }}</td>
                                     <td>{{ $enquiry->current_occupation_business ?? '-' }}</td>
-                                    <td>-</td>
                                     <td>{{ $enquiry->partner_reason ? \Illuminate\Support\Str::words($enquiry->partner_reason, 3, '...') : '-' }}</td>
+                                    <td>{{ $enquiry->consent ? 'Yes' : 'No' }}</td>
                                     <td>{{ optional($enquiry->created_at)->format('d M Y, h:i A') ?? '-' }}</td>
                                     <td>
                                         <a href="{{ route('enquiries.partner-with-us.show', $enquiry->id) }}"
@@ -53,7 +55,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="10" class="text-center">No partner enquiries found.</td>
+                                    <td colspan="11" class="text-center">No partner enquiries found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

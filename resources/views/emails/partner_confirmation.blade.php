@@ -23,7 +23,6 @@
                             </p>
                         </td>
                     </tr>
-
                     <tr>
                         <td style="padding: 32px;">
                             <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.7; color: #183153;">
@@ -32,7 +31,7 @@
 
                             <div style="margin-bottom: 24px; padding: 22px 24px; background-color: #f4f9ef; border: 1px solid #d8e8c1; border-radius: 18px;">
                                 <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #27412a;">
-                                    Your “Partner With Us” enquiry has been submitted successfully. We appreciate your interest in growing with FFOI.
+                                    Your "Partner With Us" enquiry has been submitted successfully. We appreciate your interest in growing with FFOI.
                                 </p>
                             </div>
 
@@ -40,40 +39,35 @@
                                 <tr>
                                     <td style="padding: 22px 24px;">
                                         <h2 style="margin: 0 0 16px; font-size: 18px; color: #0f2a1d;">Submitted Details</h2>
-
                                         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                             <tr>
                                                 <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a; width: 38%;">Full Name</td>
                                                 <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->fullname ?? '-' }}</td>
                                             </tr>
                                             <tr>
-                                                <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Email</td>
+                                                <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Mobile Number</td>
+                                                <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->contact ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Email Address</td>
                                                 <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->email ?? '-' }}</td>
                                             </tr>
-                                            @if(!empty($contact->contact))
-                                                <tr>
-                                                    <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Contact</td>
-                                                    <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->contact }}</td>
-                                                </tr>
-                                            @endif
-                                            @if(!empty($contact->preferred_territory))
-                                                <tr>
-                                                    <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Preferred Territory</td>
-                                                    <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->preferred_territory }}</td>
-                                                </tr>
-                                            @endif
-                                            @if(!empty($contact->city))
-                                                <tr>
-                                                    <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">City</td>
-                                                    <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->city }}</td>
-                                                </tr>
-                                            @endif
-                                            @if(!empty($contact->current_occupation_business))
-                                                <tr>
-                                                    <td style="padding: 0; font-size: 13px; color: #6b7b6a;">Current Occupation / Business</td>
-                                                    <td style="padding: 0; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->current_occupation_business }}</td>
-                                                </tr>
-                                            @endif
+                                            <tr>
+                                                <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">State (Preferred Territory)</td>
+                                                <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->preferred_territory ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">City</td>
+                                                <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->city ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0 0 10px; font-size: 13px; color: #6b7b6a;">Current Occupation / Business</td>
+                                                <td style="padding: 0 0 10px; font-size: 14px; color: #183153; font-weight: 600;">{{ $contact->current_occupation_business ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0; font-size: 13px; color: #6b7b6a;">Consent</td>
+                                                <td style="padding: 0; font-size: 14px; color: #183153; font-weight: 600;">{{ !empty($contact->consent) ? 'Yes' : 'No' }}</td>
+                                            </tr>
                                         </table>
                                     </td>
                                 </tr>
@@ -82,7 +76,7 @@
                             @if(!empty($contact->partner_reason))
                                 <div style="margin-bottom: 24px; background-color: #fffdf7; border: 1px solid #efe4b5; border-radius: 18px;">
                                     <div style="padding: 18px 24px; border-bottom: 1px solid #f2e9c6;">
-                                        <h2 style="margin: 0; font-size: 18px; color: #0f2a1d;">Your Partnership Message</h2>
+                                        <h2 style="margin: 0; font-size: 18px; color: #0f2a1d;">Why do you want to become an FFOI Partner?</h2>
                                     </div>
                                     <div style="padding: 22px 24px;">
                                         <p style="margin: 0; font-size: 15px; line-height: 1.8; color: #334155; white-space: pre-wrap;">{{ $contact->partner_reason }}</p>
@@ -100,7 +94,6 @@
                             </div>
                         </td>
                     </tr>
-
                     <tr>
                         <td style="padding: 0 32px 30px;">
                             <div style="border-top: 1px solid #e7eee2; padding-top: 22px; text-align: center;">
