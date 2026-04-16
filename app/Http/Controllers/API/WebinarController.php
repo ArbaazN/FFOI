@@ -252,7 +252,8 @@ class WebinarController extends Controller
                 'subtitle' => $session->subtitle,
 
                 'date' => \Carbon\Carbon::parse($session->date)->format('Y-m-d'),
-
+                'from' => $session->time_from ?? null,
+                'to' => $session->time ?? null,
                 'time' => $session->time,
                 'mode' => $session->mode,
                 'by' => $session->by,
