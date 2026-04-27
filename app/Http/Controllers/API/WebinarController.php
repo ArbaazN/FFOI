@@ -160,6 +160,7 @@ class WebinarController extends Controller
                                 : null,
                     'from' => $session->time_from ?? null,
                     'to'   => $session->time ?? null,
+                    'date' => $session->date ? \Carbon\Carbon::parse($session->date)->format('Y-m-d') : null,
                     'created_at' => $session->created_at,
                 ];
             }),
