@@ -279,6 +279,10 @@ class WebinarController extends Controller
                 'instructor_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'instructor_logo_image1' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'instructor_logo_image2' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+
+                'image_new.*' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'logo_image1_new.*' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+                'logo_image2_new.*' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             ]);
 
             $category = WebinarUpcomingSessionCategory::findOrFail($validated['session_id']);
@@ -291,28 +295,74 @@ class WebinarController extends Controller
             $instructor_logo_image1 = null;
             $instructor_logo_image2 = null;
 
+            $icons = [];
+            $logo1s = [];
+            $logo2s = [];
+
+
             if ($request->hasFile('banner_image')) {
                 $bannerImage = $request->file('banner_image')->store('webinar/session', 'public');
+            }else{
+                $bannerImage = null;
             }
 
             if ($request->hasFile('image')) {
                 $image = $request->file('image')->store('webinar/session', 'public');
+            }else{
+                $image = null;
             }
 
             if ($request->hasFile('image_attend')) {
                 $imageAttend = $request->file('image_attend')->store('webinar/session', 'public');
+            }else{
+                $imageAttend = null;
             }
 
             if ($request->hasFile('instructor_image')) {
                 $instructor_image = $request->file('instructor_image')->store('webinar/session', 'public');
+            }else{
+                $instructor_image = null;
             }
 
             if ($request->hasFile('instructor_logo_image1')) {
                 $instructor_logo_image1 = $request->file('instructor_logo_image1')->store('webinar/session', 'public');
+            }else{
+                $instructor_logo_image1 = null;
             }
 
             if ($request->hasFile('instructor_logo_image2')) {
                 $instructor_logo_image2 = $request->file('instructor_logo_image2')->store('webinar/session', 'public');
+            }else{
+                $instructor_logo_image2 = null;
+            }
+
+            $names = $request->name_new ?? [];
+            // dd($names);
+            foreach ($names as $index => $name) {
+
+                // ICON
+                if ($request->hasFile("image_new.$index")) {
+                    $icons[$index] = $request->file("image_new.$index")
+                        ->store('webinar/session/items', 'public');
+                } else {
+                    $icons[$index] = null;
+                }
+
+                // LOGO1
+                if ($request->hasFile("logo_image1_new.$index")) {
+                    $logo1s[$index] = $request->file("logo_image1_new.$index")
+                        ->store('webinar/session/items', 'public');
+                } else {
+                    $logo1s[$index] = null;
+                }
+
+                // LOGO2
+                if ($request->hasFile("logo_image2_new.$index")) {
+                    $logo2s[$index] = $request->file("logo_image2_new.$index")
+                        ->store('webinar/session/items', 'public');
+                } else {
+                    $logo2s[$index] = null;
+                }
             }
 
             WebinarUpcomingSession::create([
@@ -349,6 +399,8 @@ class WebinarController extends Controller
                 'career_role_heading' => $request->career_role_heading,
                 'how_session_help_heading' => $request->how_session_help_heading,
                 'learn_with_ffoi_heading' => $request->learn_with_ffoi_heading,
+                'best_of_industries_heading' => $request->best_of_industries_heading,
+
 
                 // Section disclaimer
                 'who_attend_disclaimer' => $request->who_attend_disclaimer,
@@ -366,6 +418,17 @@ class WebinarController extends Controller
                 // FAQs
                 'faqs_question' => json_encode($request->faqs_question ?? []),
                 'faqs_answer' => json_encode($request->faqs_answer ?? []),
+
+                'image_new' => json_encode($icons),
+                'logo_image1_new' => json_encode($logo1s),
+                'logo_image2_new' => json_encode($logo2s),
+
+                'name_new' => json_encode($request->name_new ?? []),
+                'Designation_new' => json_encode($request->Designation_new ?? []),
+                'Description_new' => json_encode($request->Description_new ?? []),
+                'Areaofexperties_new' => json_encode($request->Areaofexperties_new ?? []),
+                'linkedIn_new' => json_encode($request->linkedIn_new ?? []),
+
 
                 'final_CTA_desc' => $request->final_CTA_desc,
 
@@ -456,6 +519,43 @@ class WebinarController extends Controller
                 $instructor_logo_image2 = $session->instructor_logo_image2;
             }
 
+            $names = $request->name_new ?? [];
+            $iconFiles = $request->file('image_new', []);
+            $logo1Files = $request->file('logo_image1_new', []);
+            $logo2Files = $request->file('logo_image2_new', []);
+
+            // old data (important for edit)
+            $oldIcons = json_decode($session->image_new, true) ?? [];
+            $oldLogo1s = json_decode($session->logo_image1_new, true) ?? [];
+            $oldLogo2s = json_decode($session->logo_image2_new, true) ?? [];
+
+            foreach ($names as $index => $name) {
+
+                // ICON
+                if (isset($iconFiles[$index]) && $iconFiles[$index]) {
+                    $icons[$index] = $iconFiles[$index]
+                        ->store('webinar/session/items', 'public');
+                } else {
+                    $icons[$index] = $oldIcons[$index] ?? null;
+                }
+
+                // LOGO1
+                if (isset($logo1Files[$index]) && $logo1Files[$index]) {
+                    $logo1s[$index] = $logo1Files[$index]
+                        ->store('webinar/session/items', 'public');
+                } else {
+                    $logo1s[$index] = $oldLogo1s[$index] ?? null;
+                }
+
+                // LOGO2
+                if (isset($logo2Files[$index]) && $logo2Files[$index]) {
+                    $logo2s[$index] = $logo2Files[$index]
+                        ->store('webinar/session/items', 'public');
+                } else {
+                    $logo2s[$index] = $oldLogo2s[$index] ?? null;
+                }
+            }
+
             $session->update([
                 'webinar_type' => $request->webinar_type,
                 'meeting_link' => $request->meeting_link,
@@ -507,6 +607,17 @@ class WebinarController extends Controller
 
                 'faqs_question' => json_encode($request->faqs_question ?? []),
                 'faqs_answer' => json_encode($request->faqs_answer ?? []),
+
+                'best_of_industries_heading' => $request->best_of_industries_heading,
+                'image_new' => json_encode($icons),
+                'logo_image1_new' => json_encode($logo1s),
+                'logo_image2_new' => json_encode($logo2s),
+
+                'name_new' => json_encode($request->name_new ?? []),
+                'Designation_new' => json_encode($request->Designation_new ?? []),
+                'Description_new' => json_encode($request->Description_new ?? []),
+                'Areaofexperties_new' => json_encode($request->Areaofexperties_new ?? []),
+                'linkedIn_new' => json_encode($request->linkedIn_new ?? []),
 
                 'final_CTA_desc' => $request->final_CTA_desc,
             ]);
@@ -738,6 +849,7 @@ class WebinarController extends Controller
                 'short_desc' => 'required',
                 'banner_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+
             ]);
 
             // Generate Unique Slug
@@ -745,13 +857,18 @@ class WebinarController extends Controller
 
             $bannerImage = null;
             $image = null;
+           
 
             if ($request->hasFile('banner_image')) {
                 $bannerImage = $request->file('banner_image')->store('webinar', 'public');
+            }else{
+                $bannerImage = null;
             }
 
             if ($request->hasFile('image')) {
                 $image = $request->file('image')->store('webinar', 'public');
+            }else{
+                $image = null;
             }
 
             $image_news = [];
@@ -813,6 +930,7 @@ class WebinarController extends Controller
                 'faqs_question' => json_encode($request->faqs_question ?? []),
                 'faqs_answer' => json_encode($request->faqs_answer ?? []),
 
+                'best_of_industries_heading' => $request->best_of_industries_heading,
                 'name_new' => json_encode($request->name_new ?? []),
                 'Designation_new' => json_encode($request->Designation_new ?? []),
                 'Description_new' => json_encode($request->Description_new ?? []),
@@ -822,6 +940,7 @@ class WebinarController extends Controller
                 'logo_image1_new' => json_encode($logo1_news ?? []),
                 'logo_image2_new' => json_encode($logo2_news ?? []),
 
+               
                 'final_CTA_desc' => $request->final_CTA_desc,
             ]);
 
@@ -857,6 +976,7 @@ class WebinarController extends Controller
             $slug = Str::slug($request->title);
             $bannerImage = null;
             $image = null;
+           
 
             $bannerImage = $webinar->banner_image;
             $image = $webinar->image;
@@ -940,6 +1060,7 @@ class WebinarController extends Controller
                 'image_new' => json_encode($image_news ?? []),
                 'logo_image1_new' => json_encode($logo1_news ?? []),
                 'logo_image2_new' => json_encode($logo2_news ?? []),
+
                 
                 'final_CTA_desc' => $request->final_CTA_desc,
             ]);

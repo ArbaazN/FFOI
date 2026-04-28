@@ -47,7 +47,7 @@
                         @if ($isEdit && $webinar->banner_image)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $webinar->banner_image) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -130,7 +130,7 @@
                         @if ($isEdit && $webinar->image)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $webinar->image) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -284,10 +284,10 @@
                     </div>
 
                     <hr>
-                    <h5>Learn from the Best of Industry Industry</h5>
 
+                    <h5>Learn from the Best of Industry Industry</h5>
                     <div class="mb-4">
-                        <label class="form-label fw-bold">Heading</label>
+                        <label class="form-label fw-bold">Title</label>
                         <input type="text" name="best_of_industries_heading" class="form-control @error('best_of_industries_heading') is-invalid @enderror"
                             value="{{ old('best_of_industries_heading', $isEdit ? $webinar->best_of_industries_heading : '') }}">
                         @error('best_of_industries_heading') 
@@ -296,114 +296,115 @@
                     </div>
 
                     <div class="mb-4 dynamic-boi">
+                        <label class="form-label fw-bold">Items</label>
+
                         <div class="boi-wrapper">
                             @php
-                            $name_news = old('name_new', json_decode($webinar->name_new ?? '[]', true));
-                            $Designation_new = old('Designation_new', json_decode($webinar->Designation_new ?? '[]', true));
-                            $Description_new = old('Description_new', json_decode($webinar->Description_new ?? '[]', true));
-                            $Areaofexperties_new = old('Areaofexperties_new', json_decode($webinar->Areaofexperties_new ?? '[]', true));
-                            $linkedIn_new = old('linkedIn_new', json_decode($webinar->linkedIn_new ?? '[]', true));
+                                $icons = old('image_new',
+                                    $isEdit && $webinar->image_new
+                                    ? json_decode($webinar->image_new, true)
+                                    : ['']);
 
-                            $image_new = old('image_new', json_decode($webinar->image_new ?? '[]', true));
-                            $logo_image1_new = old('logo_image1_new', json_decode($webinar->logo_image1_new ?? '[]', true));
-                            $logo_image2_new = old('logo_image2_new', json_decode($webinar->logo_image2_new ?? '[]', true));
+                                $names = old('name_new',
+                                    $isEdit && $webinar->name_new
+                                    ? json_decode($webinar->name_new, true)
+                                    : ['']);
 
+                                $designations = old('Designation_new',
+                                    $isEdit && $webinar->Designation_new
+                                    ? json_decode($webinar->Designation_new, true)
+                                    : ['']);
+
+                                $descs = old('Description_new',
+                                    $isEdit && $webinar->Description_new
+                                    ? json_decode($webinar->Description_new, true)
+                                    : ['']);
+
+                                $areas = old('Areaofexperties_new',
+                                    $isEdit && $webinar->Areaofexperties_new
+                                    ? json_decode($webinar->Areaofexperties_new, true)
+                                    : ['']);
+
+                                $logo1s = old('logo_image1_new',
+                                    $isEdit && $webinar->logo_image1_new
+                                    ? json_decode($webinar->logo_image1_new, true)
+                                    : ['']);
+
+                                $logo2s = old('logo_image2_new',
+                                    $isEdit && $webinar->logo_image2_new
+                                    ? json_decode($webinar->logo_image2_new, true)
+                                    : ['']);
+
+                                $linkedins = old('linkedIn_new',
+                                    $isEdit && $webinar->linkedIn_new
+                                    ? json_decode($webinar->linkedIn_new, true)
+                                    : ['']);
                             @endphp
-
-                            @foreach($name_news as $index => $name_new)
+                            @foreach($names as $index => $name)
                                 <div class="boi-item border p-3 mb-3 rounded">
                                     <div class="mb-2">
-                                        <label for="">Profile image</label>
-                                        @if(!empty($image_new[$index]))
-                                            <div class="mb-2">
-                                                <img src="{{ asset('storage/'.$image_new[$index]) }}"
-                                                    width="80"
-                                                    height="80"
-                                                    style="object-fit:cover;border-radius:5px;">
-                                            </div>
-                                        @endif
-                                      
+                                        <label for="">Profile Image</label>
                                         <input type="file"
                                             name="image_new[]"
                                             class="form-control">
+                                        @if(!empty($icons[$index]))
+                                            <img src="{{ asset('storage/' . $icons[$index]) }}" width="50">
+                                        @endif
                                     </div>
-
                                     <div class="mb-2">
                                         <label for="">Name</label>
                                         <input type="text"
                                             name="name_new[]"
                                             class="form-control"
-                                            value="{{ $name_new }}"
-                                            placeholder="Enter Name">
+                                            value="{{ $name }}">
                                     </div>
-
                                     <div class="mb-2">
                                         <label for="">Designation</label>
                                         <input type="text"
                                             name="Designation_new[]"
                                             class="form-control"
-                                            value="{{ $Designation_new[$index] ?? '' }}"
-                                            placeholder="Enter Designation">
+                                            value="{{ $designations[$index] ?? '' }}">
                                     </div>
-
                                     <div class="mb-2">
                                         <label for="">Description</label>
                                         <input type="text"
                                             name="Description_new[]"
                                             class="form-control"
-                                            value="{{ $Description_new[$index] ?? '' }}"
-                                            placeholder="Enter Description">
+                                            value="{{ $descs[$index] ?? '' }}">
                                     </div>
-
                                     <div class="mb-2">
                                         <label for="">Area of experties</label>
                                         <input type="text"
                                             name="Areaofexperties_new[]"
                                             class="form-control"
-                                            value="{{ $Areaofexperties_new[$index] ?? '' }}"
-                                            placeholder="Enter Area of experties">
+                                            value="{{ $areas[$index] ?? '' }}">
                                     </div>
-
                                     <div class="mb-2">
-                                        <label for="">Logo Image1</label>
-                                        @if(!empty($logo_image1_new[$index]))
-                                            <div class="mb-2">
-                                                <img src="{{ asset('storage/'.$logo_image1_new[$index]) }}"
-                                                    width="80"
-                                                    height="80"
-                                                    style="object-fit:cover;border-radius:5px;">
-                                            </div>
-                                        @endif
+                                        <label for="">Logo Image1 (Image)</label>
                                         <input type="file"
                                             name="logo_image1_new[]"
-                                            class="form-control"
-                                            value="{{ $logo_image1_new[$index] ?? '' }}">
-                                    </div>
-
-                                    <div class="mb-2">
-                                        <label for="">Logo Image2</label>
-                                        @if(!empty($logo_image2_new[$index]))
-                                            <div class="mb-2">
-                                                <img src="{{ asset('storage/'.$logo_image2_new[$index]) }}"
-                                                    width="80"
-                                                    height="80"
-                                                    style="object-fit:cover;border-radius:5px;">
-                                            </div>
+                                            class="form-control">
+                                        @if(!empty($logo1s[$index]))
+                                            <img src="{{ asset('storage/' . $logo1s[$index]) }}" width="50">
                                         @endif
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Logo Image2 (Image)</label>
                                         <input type="file"
                                             name="logo_image2_new[]"
-                                            class="form-control"
-                                            value="{{ $logo_image2_new[$index] ?? '' }}">
+                                            class="form-control">
+                                        @if(!empty($logo2s[$index]))
+                                            <img src="{{ asset('storage/' . $logo2s[$index]) }}" width="50">
+                                        @endif
                                     </div>
-
                                     <div class="mb-2">
                                         <label for="">Linkedin url</label>
                                         <input type="text"
                                             name="linkedIn_new[]"
                                             class="form-control"
-                                            value="{{ $linkedIn_new[$index] ?? '' }}"
-                                            placeholder="Enter Linkedinurl">
+                                            value="{{ $linkedins[$index] ?? '' }}">
                                     </div>
+
 
                                     <button type="button" class="btn btn-danger remove-boi">
                                         Remove
@@ -413,7 +414,7 @@
                         </div>
 
                         <button type="button" class="btn btn-primary mt-2 add-boi">
-                            + Add Best of Industry
+                            + Add Item
                         </button>
                     </div>
 
