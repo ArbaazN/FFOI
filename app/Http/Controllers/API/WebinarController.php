@@ -213,6 +213,40 @@ class WebinarController extends Controller
                             'answer' => $answers[$index] ?? ''
                         ];
                     }),
+                
+                'best_of_industries_heading' => $session->best_of_industries_heading,
+
+                'best_of_industries' => collect(json_decode($session->name_new ?? '[]'))
+                    ->map(function ($name, $index) use ($session) {
+
+                        $icons = json_decode($session->image_new, true) ?? [];
+                        $logo1s = json_decode($session->logo_image1_new, true) ?? [];
+                        $logo2s = json_decode($session->logo_image2_new, true) ?? [];
+                        $designations = json_decode($session->Designation_new, true) ?? [];
+                        $descs = json_decode($session->Description_new, true) ?? [];
+                        $areas = json_decode($session->Areaofexperties_new, true) ?? [];
+                        $links = json_decode($session->linkedIn_new, true) ?? [];
+
+                        return [
+                            'name' => $name,
+                            'designation' => $designations[$index] ?? null,
+                            'desc' => $descs[$index] ?? null,
+                            'area_of_expertise' => $areas[$index] ?? null,
+                            'linkedin' => $links[$index] ?? null,
+
+                            'icon' => !empty($icons[$index])
+                                ? asset('storage/' . $icons[$index])
+                                : null,
+
+                            'logo1' => !empty($logo1s[$index])
+                                ? asset('storage/' . $logo1s[$index])
+                                : null,
+
+                            'logo2' => !empty($logo2s[$index])
+                                ? asset('storage/' . $logo2s[$index])
+                                : null,
+                        ];
+                    }),
 
                 'final_CTA_desc' => $session->final_CTA_desc,
             ]
