@@ -51,6 +51,16 @@ class WebinarUpcomingSession extends Model
         'instructor_desc',
         'instructor_logo_image1',
         'instructor_logo_image2',
+        'best_of_industries_heading',
+        'name_new',
+        'Designation_new',
+        'Description_new',
+        'Areaofexperties_new',
+        'linkedIn_new',
+        'image_new',
+        'logo_image1_new',
+        'logo_image2_new',
+
     ];
 
     protected $casts = [

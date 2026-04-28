@@ -34,7 +34,7 @@
                         @if ($isEdit && $session->banner_image)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $session->banner_image) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -222,7 +222,7 @@
                         @if ($isEdit && $session->image)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $session->image) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -327,7 +327,7 @@
                         @if ($isEdit && $session->image_attend)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $session->image_attend) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -424,7 +424,7 @@
                         @if ($isEdit && $session->instructor_image)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $session->instructor_image) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -476,7 +476,7 @@
                         @if ($isEdit && $session->instructor_logo_image1)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $session->instructor_logo_image1) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -492,7 +492,7 @@
                         @if ($isEdit && $session->instructor_logo_image2)
                             <div class="mb-3">
                                 <img src="{{ asset('storage/' . $session->instructor_logo_image2) }}" alt="Image"
-                                    class="img-thumbnail" style="max-width: 200px;" accept="image/*">
+                                    class="img-thumbnail" style="max-width: 50px;" accept="image/*">
                             </div>
                         @endif
 
@@ -550,6 +550,141 @@
                             + Add FAQ
                         </button>
                     </div>
+                    <hr>
+
+                    <h5>Learn from the Best of Industry Industry</h5>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Title</label>
+                        <input type="text" name="best_of_industries_heading" class="form-control @error('best_of_industries_heading') is-invalid @enderror"
+                            value="{{ old('best_of_industries_heading', $isEdit ? $session->best_of_industries_heading : '') }}">
+                        @error('best_of_industries_heading') 
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-4 dynamic-boi">
+                        <label class="form-label fw-bold">Items</label>
+
+                        <div class="boi-wrapper">
+                            @php
+                                $icons = old('image_new',
+                                    $isEdit && $session->image_new
+                                    ? json_decode($session->image_new, true)
+                                    : ['']);
+
+                                $names = old('name_new',
+                                    $isEdit && $session->name_new
+                                    ? json_decode($session->name_new, true)
+                                    : ['']);
+
+                                $designations = old('Designation_new',
+                                    $isEdit && $session->Designation_new
+                                    ? json_decode($session->Designation_new, true)
+                                    : ['']);
+
+                                $descs = old('Description_new',
+                                    $isEdit && $session->Description_new
+                                    ? json_decode($session->Description_new, true)
+                                    : ['']);
+
+                                $areas = old('Areaofexperties_new',
+                                    $isEdit && $session->Areaofexperties_new
+                                    ? json_decode($session->Areaofexperties_new, true)
+                                    : ['']);
+
+                                $logo1s = old('logo_image1_new',
+                                    $isEdit && $session->logo_image1_new
+                                    ? json_decode($session->logo_image1_new, true)
+                                    : ['']);
+
+                                $logo2s = old('logo_image2_new',
+                                    $isEdit && $session->logo_image2_new
+                                    ? json_decode($session->logo_image2_new, true)
+                                    : ['']);
+
+                                $linkedins = old('linkedIn_new',
+                                    $isEdit && $session->linkedIn_new
+                                    ? json_decode($session->linkedIn_new, true)
+                                    : ['']);
+                            @endphp
+                            @foreach($names as $index => $name)
+                                <div class="boi-item border p-3 mb-3 rounded">
+                                    <div class="mb-2">
+                                        <label for="">Profile Image</label>
+                                        <input type="file"
+                                            name="image_new[]"
+                                            class="form-control">
+                                        @if(!empty($icons[$index]))
+                                            <img src="{{ asset('storage/' . $icons[$index]) }}" width="50">
+                                        @endif
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Name</label>
+                                        <input type="text"
+                                            name="name_new[]"
+                                            class="form-control"
+                                            value="{{ $name }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Designation</label>
+                                        <input type="text"
+                                            name="Designation_new[]"
+                                            class="form-control"
+                                            value="{{ $designations[$index] ?? '' }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Description</label>
+                                        <input type="text"
+                                            name="Description_new[]"
+                                            class="form-control"
+                                            value="{{ $descs[$index] ?? '' }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Area of experties</label>
+                                        <input type="text"
+                                            name="Areaofexperties_new[]"
+                                            class="form-control"
+                                            value="{{ $areas[$index] ?? '' }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Logo Image1 (Image)</label>
+                                        <input type="file"
+                                            name="logo_image1_new[]"
+                                            class="form-control">
+                                        @if(!empty($logo1s[$index]))
+                                            <img src="{{ asset('storage/' . $logo1s[$index]) }}" width="50">
+                                        @endif
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Logo Image2 (Image)</label>
+                                        <input type="file"
+                                            name="logo_image2_new[]"
+                                            class="form-control">
+                                        @if(!empty($logo2s[$index]))
+                                            <img src="{{ asset('storage/' . $logo2s[$index]) }}" width="50">
+                                        @endif
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="">Linkedin url</label>
+                                        <input type="text"
+                                            name="linkedIn_new[]"
+                                            class="form-control"
+                                            value="{{ $linkedins[$index] ?? '' }}">
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-danger remove-boi">
+                                        Remove
+                                    </button>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <button type="button" class="btn btn-primary mt-2 add-boi">
+                            + Add Item
+                        </button>
+                    </div>
+
 
                     <hr>
                     <h5>Final CTA</h5>
