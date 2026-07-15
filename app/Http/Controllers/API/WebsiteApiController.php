@@ -91,11 +91,11 @@ class WebsiteApiController extends Controller
                     "dropdownData" => [
                         [
                             "name" => "Degree Programs",
-                            "subDropdownData" => $group("pgdm_programs/")
+                            "subDropdownData" => $group("degree_programs/")
                         ],
                         [
                             "name" => "Certificate Programs",
-                            "subDropdownData" => $group("mms_programs/")
+                            "subDropdownData" => $group("certificate_programs/")
                         ]
                     ]
                 ],
