@@ -260,11 +260,12 @@ class ProgramController extends Controller
     {
         try {
             $program = Programs::withTrashed()->findOrFail($id);
-            $program->pages()->update([
-                'status' => 'deleted'
-            ]);
+            $program->pages->each(function ($page) {
+                $page->status = 'deleted';
+                $page->save();
 
-            $program->pages()->delete();
+                $page->delete();
+            });
 
             $program->status = 5; // deleted
             $program->save();

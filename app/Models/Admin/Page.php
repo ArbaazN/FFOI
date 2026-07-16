@@ -39,5 +39,12 @@ class Page extends Model
                 $model->updated_by = Auth::id();
             }
         });
+
+        static::deleting(function ($page) {
+            if (!$page->isForceDeleting()) {
+                $page->slug = $page->slug . '-deleted-' . time();
+                $page->saveQuietly();
+            }
+        });
     }
 }
