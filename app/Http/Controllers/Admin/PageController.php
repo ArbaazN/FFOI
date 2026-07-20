@@ -220,16 +220,9 @@ class PageController extends Controller
             $disk->makeDirectory($slugFolder);
         }
 
-        // If we are updating an existing media record, we can reuse it
-        $media = null;
-        if ($oldMediaId) {
-            $media = Media::find($oldMediaId);
-        }
-
-        // if updating existing, optionally delete old file
-        if ($media && $media->file_path && $disk->exists($media->file_path)) {
-            $disk->delete($media->file_path);
-        }
+        // Always create a new media record so pages never share the same media ID.
+        // This prevents changing an image on one page from affecting other pages
+        // that previously shared the same media ID (e.g. after duplicating a program).
 
         // store new file
         $storedPath = $file->store($slugFolder, 'public'); // returns e.g. pages/home/abc.jpg
@@ -242,29 +235,15 @@ class PageController extends Controller
             ? 'image'
             : (Str::startsWith($mime, 'video/') ? 'video' : 'file');
 
-        if ($media) {
-            // update existing media record (keep same ID)
-            $media->update([
-                'file_name' => $fileName,
-                'file_path' => $storedPath,
-                'file_url'  => $fileUrl,
-                'mime_type' => $mime,
-                'type'      => $type,
-                'size'      => $size,
-                'page_id'   => $page?->id,
-            ]);
-        } else {
-            // create new
-            $media = Media::create([
-                'file_name' => $fileName,
-                'file_path' => $storedPath,
-                'file_url'  => $fileUrl,
-                'mime_type' => $mime,
-                'type'      => $type,
-                'size'      => $size,
-                'page_id'   => $page?->id,
-            ]);
-        }
+        $media = Media::create([
+            'file_name' => $fileName,
+            'file_path' => $storedPath,
+            'file_url'  => $fileUrl,
+            'mime_type' => $mime,
+            'type'      => $type,
+            'size'      => $size,
+            'page_id'   => $page?->id,
+        ]);
 
         return $media->id;
     }
