@@ -127,6 +127,7 @@ class ProgramController extends Controller
                 'show_in_menu' => $showInMenu,
                 'menu_order'   => $menuOrder,
                 'program_id'   => $program->id,
+                'product_code' => $data['product_code'] ?? null,
             ]);
 
             DB::commit();
@@ -216,6 +217,7 @@ class ProgramController extends Controller
                 'show_in_menu' => $showInMenu,
                 'menu_order'   => $menuOrder,
                 'program_id'   => $program->id,
+                'product_code' => $data['product_code'] ?? null,
             ]);
 
             DB::commit();
@@ -265,19 +267,21 @@ class ProgramController extends Controller
                 $page = $original->pages()->first();
 
                 $program->pages()->create([
-                    'title'      => $request->new_name,
-                    'slug'       => $uniqueSlug,
-                    'content'    => $page->content,
-                    'program_id' => $program->id,
+                    'title'        => $request->new_name,
+                    'slug'         => $uniqueSlug,
+                    'content'      => $page->content,
+                    'program_id'   => $program->id,
+                    'product_code' => $original->product_code,
                 ]);
             } else {
                 $jsonContent = file_get_contents(resource_path('page-templates/programs.json'));
 
                 $program->pages()->create([
-                    'title'      => $request->new_name,
-                    'slug'       => $uniqueSlug,
-                    'content'    => $jsonContent,
-                    'program_id' => $program->id,
+                    'title'        => $request->new_name,
+                    'slug'         => $uniqueSlug,
+                    'content'      => $jsonContent,
+                    'program_id'   => $program->id,
+                    'product_code' => $original->product_code,
                 ]);
             }
 

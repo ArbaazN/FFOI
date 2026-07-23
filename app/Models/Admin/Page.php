@@ -16,6 +16,7 @@ class Page extends Model
         'type',
         'content',
         'program_id',
+        'product_code',
         'show_in_menu',
         'menu_order',
         'status',
