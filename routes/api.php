@@ -7,6 +7,7 @@ use App\Http\Controllers\API\WebsiteApiController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\WebinarController;
 use App\Http\Controllers\API\MembershipController;
+use App\Http\Controllers\API\ProgramController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,8 @@ Route::middleware(['api.logger', 'api_key'])->group(function () {
     Route::POST('/webinar/registration', [WebinarController::class, 'saveWebinar']);
 
     Route::get('/membership', [MembershipController::class, 'membershipDetail']);
+
+    Route::get('/programs', [ProgramController::class, 'index']);
 
     Route::get('/allBlogs', [BlogApiController::class, 'latestBlogs']);
     Route::get('/blog/{slug}', [BlogApiController::class, 'blogDetail']);

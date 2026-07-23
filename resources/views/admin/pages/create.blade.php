@@ -69,6 +69,13 @@
                     <input type="text" class="form-control" name="slug" value="{{ old('slug', $page->slug) }}"
                         readonly>
                 </div>
+
+                @if ($page->program_id || $page->pageable_type === \App\Models\Admin\Programs::class)
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Product Code</label>
+                        <input type="text" class="form-control" value="{{ $page->product_code }}" readonly>
+                    </div>
+                @endif
             </div>
         </div>
 
