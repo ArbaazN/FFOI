@@ -15,13 +15,20 @@ class Page extends Model
         'slug',
         'type',
         'content',
+        'program_id',
         'show_in_menu',
-        'menu_order'
+        'menu_order',
+        'status',
     ];
 
     public function pageable()
     {
         return $this->morphTo();
+    }
+
+    public function program()
+    {
+        return $this->belongsTo(Programs::class, 'program_id');
     }
         
     // Auto-fill created_by & updated_by

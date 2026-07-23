@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('robots')->default('index,follow');
 
             $table->boolean('show_in_menu')->default(false);
-            $table->integer('menu_order')->default(0);
+            $table->integer('menu_order')->nullable()->default(null);
             $table->string('external_url')->nullable();
 
             $table->enum('status', ['draft', 'published', 'scheduled', 'deleted'])->default('published');

@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProgramController extends Controller
@@ -71,17 +72,21 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name'   => 'required|string|max:255',
-            'type'   => 'nullable|in:degree,certificate',
-            'status' => 'required|in:0,1',
-            'show_in_menu' => 'nullable|boolean',
-            'menu_order'   => 'nullable|integer|min:1',
+            'name'                => 'required|string|max:255',
+            'type'                => 'nullable|in:degree,certificate',
+            'status'              => 'required|in:0,1',
+            'show_in_menu'        => 'nullable|boolean',
+            'menu_order'          => $request->boolean('show_in_menu')
+                ? 'nullable|integer|min:1'
+                : 'nullable',
+            'product_code'        => 'nullable|string|max:255',
+            'product_description' => 'nullable|string',
+            'product_image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
         DB::beginTransaction();
 
         try {
-           
             $slugPrefix = match ($data['type'] ?? null) {
                 'degree'  => 'degree_programs/',
                 'certificate' => 'certificate_programs/',
@@ -90,6 +95,12 @@ class ProgramController extends Controller
 
             $slug = $slugPrefix . Str::slug($data['name']);
             $showInMenu = !empty($data['show_in_menu']);
+
+            if ($request->hasFile('product_image')) {
+                $data['product_image'] = $request->file('product_image')->store('program-products', 'public');
+            } else {
+                unset($data['product_image']);
+            }
 
             $program = Programs::create($data);
 
@@ -101,12 +112,12 @@ class ProgramController extends Controller
                         ->max('menu_order') ?? 0) + 1;
             }
             $filename = "programs.json";
-            if($data['type']=='certificate'){
+            if ($data['type'] == 'certificate') {
                 $filename = "certificate-program.json";
-            }else if($data['type']=='degree'){
+            } else if ($data['type'] == 'degree') {
                 $filename = "programs.json";
             }
-            $jsonContent = file_get_contents(resource_path('page-templates/'.$filename));
+            $jsonContent = file_get_contents(resource_path('page-templates/' . $filename));
 
             $program->pages()->create([
                 'title'        => $data['name'],
@@ -115,6 +126,7 @@ class ProgramController extends Controller
                 'status'       => $data['status'] ? 'published' : 'draft',
                 'show_in_menu' => $showInMenu,
                 'menu_order'   => $menuOrder,
+                'program_id'   => $program->id,
             ]);
 
             DB::commit();
@@ -132,11 +144,17 @@ class ProgramController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'name'   => 'required|string|max:255',
-            'type'   => 'nullable|in:degree,certificate',
-            'status' => 'required|in:0,1',
-            'show_in_menu' => 'nullable|boolean',
-            'menu_order'   => 'nullable|integer|min:1',
+            'name'                => 'required|string|max:255',
+            'type'                => 'nullable|in:degree,certificate',
+            'status'              => 'required|in:0,1',
+            'show_in_menu'        => 'nullable|boolean',
+            'menu_order'          => $request->boolean('show_in_menu')
+                ? 'nullable|integer|min:1'
+                : 'nullable',
+            'product_code'        => 'nullable|string|max:255',
+            'product_description' => 'nullable|string',
+            'product_image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'remove_product_image'=> 'nullable|boolean',
         ]);
 
         DB::beginTransaction();
@@ -173,6 +191,22 @@ class ProgramController extends Controller
                 }
             }
 
+            if ($request->hasFile('product_image')) {
+                if ($program->product_image && Storage::disk('public')->exists($program->product_image)) {
+                    Storage::disk('public')->delete($program->product_image);
+                }
+                $data['product_image'] = $request->file('product_image')->store('program-products', 'public');
+            } elseif (!empty($data['remove_product_image'])) {
+                if ($program->product_image && Storage::disk('public')->exists($program->product_image)) {
+                    Storage::disk('public')->delete($program->product_image);
+                }
+                $data['product_image'] = null;
+            } else {
+                unset($data['product_image']);
+            }
+
+            unset($data['remove_product_image']);
+
             $program->update($data);
 
             $page->update([
@@ -181,6 +215,7 @@ class ProgramController extends Controller
                 'status'       => $data['status'] ? 'published' : 'draft',
                 'show_in_menu' => $showInMenu,
                 'menu_order'   => $menuOrder,
+                'program_id'   => $program->id,
             ]);
 
             DB::commit();
@@ -218,26 +253,31 @@ class ProgramController extends Controller
             }
 
             $program = Programs::create([
-                'name'   => $request->new_name,
-                'type'  => $original->type,
-                'status' => $original->status,
+                'name'                => $request->new_name,
+                'type'                => $original->type,
+                'status'              => $original->status,
+                'product_code'        => $original->product_code,
+                'product_description' => $original->product_description,
+                'product_image'       => $original->product_image,
             ]);
 
             if ($original->pages()->exists()) {
                 $page = $original->pages()->first();
 
                 $program->pages()->create([
-                    'title'   => $request->new_name,
-                    'slug'    => $uniqueSlug,
-                    'content' => $page->content,
+                    'title'      => $request->new_name,
+                    'slug'       => $uniqueSlug,
+                    'content'    => $page->content,
+                    'program_id' => $program->id,
                 ]);
             } else {
                 $jsonContent = file_get_contents(resource_path('page-templates/programs.json'));
 
                 $program->pages()->create([
-                    'title'   => $request->new_name,
-                    'slug'    => $uniqueSlug,
-                    'content' => $jsonContent,
+                    'title'      => $request->new_name,
+                    'slug'       => $uniqueSlug,
+                    'content'    => $jsonContent,
+                    'program_id' => $program->id,
                 ]);
             }
 

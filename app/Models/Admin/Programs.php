@@ -15,6 +15,9 @@ class Programs extends Model
         'name',
         'type',
         'description',
+        'product_code',
+        'product_image',
+        'product_description',
         'status',
     ];
     public $timestamps = true;
