@@ -151,6 +151,83 @@
       }
     },
     {
+      "type": "curriculum_overview",
+      "status": "enable",
+      "data": {
+        "title": "Curriculum Overview",
+        "subtitle": "The program curriculum is structured into four focused parts, designed to build core finance capability along with industry readiness for global finance roles.",
+        "backgroundImage": null,
+        "items": [
+          {
+            "titleInput": "Investment Banking",
+            "timetakenInput": "8 Weeks",
+            "Typertext": "Part 1",
+            "description": [
+                "Equities, fixed income, money markets, and derivatives",
+                "Trade lifecycle, settlement, corporate actions, and static data",
+                "Advanced operations, including forex, commodities, collateral management, and stock lending"
+            ]
+          },
+          {
+            "titleInput": "Hedge Funds",
+            "timetakenInput": "8 Weeks",
+            "Typertext": "Part 2",
+            "description": [
+                "Hedge fund strategies, products, and derivatives",
+                "Option strategies, Greeks, and swaps",
+                "NAV calculations, fund administration, reconciliation, and live trading exposure",
+                "Accounting, taxation, and private equity context"
+            ]
+          },
+          {
+            "titleInput": "Financial Modelling",
+            "timetakenInput": "6 Weeks",
+            "Typertext": "Part 3",
+            "description": [
+                "Income statement, balance sheet, and cash flow analysis",
+                "Valuation techniques including DCF, FCFF, and FCFE",
+                "Ratio analysis, advanced modelling concepts, and LBO case studies",
+                "Live case-based financial statement preparation"
+            ]
+          },
+          {
+            "titleInput": "Industry Readiness",
+            "timetakenInput": "4 Weeks",
+            "Typertext": "Part 4",
+            "description": [
+                "Personal branding, LinkedIn visibility, and professional communication",
+                "Resume building, ATS optimisation, and interview readiness",
+                "Mock interviews, stress interviews, and detailed performance feedback",
+                "Strength - weakness assessment and interview mastery frameworks"
+            ]
+          }
+        ],
+        "outcome": [
+          {
+            "titleInput": "Outcome",
+            "subtitleInput": "By the end of the program, learners are equipped with:",
+            "description": [
+                "Core finance and operations expertise",
+                "Hands-on market and modelling exposure",
+                "Job readiness for investment banking & hedge fund operations roles"
+            ]
+          }
+        ],
+        "buttons": [
+                {
+                    "labelInput": "Download Detailed Curriculum",
+                    "actionInput": "download_detailed_curriculum",
+                    "buttonStyleSelect": "primary"
+                },
+                {
+                    "labelInput": "Apply Now",
+                    "actionInput": "apply_now",
+                    "buttonStyleSelect": "outline"
+                }
+        ]
+      }
+    },
+    {
       "type": "whyFinancialEngineering",
       "data": {
         "titleInput": "Why MBA in <span class=\"text-blue\">Financial Engineering?</span>",
