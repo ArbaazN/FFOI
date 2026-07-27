@@ -126,7 +126,7 @@ class ProgramController extends Controller
                 'status'       => $data['status'] ? 'published' : 'draft',
                 'show_in_menu' => $showInMenu,
                 'menu_order'   => $menuOrder,
-                'program_id'   => $program->id,
+                // 'program_id'   => $program->id,
                 'product_code' => $data['product_code'] ?? null,
             ]);
 
@@ -216,7 +216,7 @@ class ProgramController extends Controller
                 'status'       => $data['status'] ? 'published' : 'draft',
                 'show_in_menu' => $showInMenu,
                 'menu_order'   => $menuOrder,
-                'program_id'   => $program->id,
+                // 'program_id'   => $program->id,
                 'product_code' => $data['product_code'] ?? null,
             ]);
 
@@ -270,7 +270,7 @@ class ProgramController extends Controller
                     'title'        => $request->new_name,
                     'slug'         => $uniqueSlug,
                     'content'      => $page->content,
-                    'program_id'   => $program->id,
+                    // 'program_id'   => $program->id,
                     'product_code' => $original->product_code,
                 ]);
             } else {
@@ -280,7 +280,7 @@ class ProgramController extends Controller
                     'title'        => $request->new_name,
                     'slug'         => $uniqueSlug,
                     'content'      => $jsonContent,
-                    'program_id'   => $program->id,
+                    // 'program_id'   => $program->id,
                     'product_code' => $original->product_code,
                 ]);
             }
